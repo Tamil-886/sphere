@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Safety, Supervision & Medical Care at CampSphere - American Camp Association (ACA) Accredited Gold Standard.">
+  <title>Safety & Supervision Protocols - CampSphere</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- CampSphere Modern Preloader -->
+  <div class="camp-preloader">
+    <div class="preloader-content">
+      <div class="preloader-badge">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+      <div class="preloader-title">Camp<span class="highlight-text">Sphere</span></div>
+      <p class="text-muted small mb-2">Safety Standards & Medical Care...</p>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#campNavbar" aria-controls="campNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="campNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door-fill text-primary"></i> Home Page 1 (Main Camp)</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-compass-fill text-accent"></i> Home Page 2 (Adventure & STEM)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link active" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Dark, RTL & Parent Login -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="section-padding-sm bg-light-blue border-bottom position-relative overflow-hidden">
+    <div class="camp-sticker sticker-heart anim-pulse d-none d-md-inline-flex" style="top: 15px; left: 5%;">
+      <i class="bi bi-heart-pulse-fill me-1 text-danger"></i> 24/7 Nurses
+    </div>
+    <div class="camp-sticker sticker-compass anim-wiggle d-none d-md-inline-flex" style="top: 15px; right: 5%;">
+      <i class="bi bi-shield-check me-1 text-primary"></i> Secure Check-in
+    </div>
+
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <div class="badge-tag badge-tag-accent mb-2 reveal-on-scroll reveal-up">ACA Accredited Gold Standard</div>
+      <h1 class="fw-bold mb-2 reveal-on-scroll reveal-up delay-100">Safety, Supervision & Medical Care</h1>
+      <p class="text-muted mx-auto reveal-on-scroll reveal-up delay-150" style="max-width: 600px;">Every child's physical safety and emotional well-being is safeguarded with rigorous medical protocols and caring mentorship.</p>
+      <nav aria-label="breadcrumb" class="reveal-on-scroll reveal-up delay-200">
+        <ol class="breadcrumb justify-content-center mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Safety</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- Key Safety Pillars -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="row g-4">
+        
+        <div class="col-md-6 col-lg-4">
+          <div class="card-camp p-4 h-100 shadow-sm border-top border-4 border-primary">
+            <div class="feature-icon-wrap bg-primary-light text-primary mb-3"><i class="bi bi-person-check-fill"></i></div>
+            <h4 class="fw-bold mb-2 text-navy">Ultra-Low 1:5 Ratio</h4>
+            <p class="text-muted small mb-0">We exceed industry standards with a 1:4 ratio for Mini Explorers and 1:5 for Juniors and Teens. No camper is ever unattended.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-camp p-4 h-100 shadow-sm border-top border-4 border-accent">
+            <div class="feature-icon-wrap bg-accent-light text-accent mb-3"><i class="bi bi-fingerprint"></i></div>
+            <h4 class="fw-bold mb-2 text-navy">Background Screening</h4>
+            <p class="text-muted small mb-0">100% of staff undergo comprehensive FBI & state criminal background checks, sex offender registry screening, and drug testing.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-camp p-4 h-100 shadow-sm border-top border-4 border-success">
+            <div class="feature-icon-wrap bg-secondary-light text-success mb-3"><i class="bi bi-hospital-fill"></i></div>
+            <h4 class="fw-bold mb-2 text-navy">24/7 Registered Nurses</h4>
+            <p class="text-muted small mb-0">Our air-conditioned on-campus Health Lodge is staffed by registered pediatric nurses for allergy management and daily medications.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-camp p-4 h-100 shadow-sm border-top border-4 border-warning">
+            <div class="feature-icon-wrap bg-highlight-light text-warning mb-3"><i class="bi bi-shield-lock-fill"></i></div>
+            <h4 class="fw-bold mb-2 text-navy">PIN Secured Dismissal</h4>
+            <p class="text-muted small mb-0">Campers are only released to authorized guardians who provide a verified pickup PIN code and matching government photo ID.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-camp p-4 h-100 shadow-sm border-top border-4 border-info">
+            <div class="feature-icon-wrap bg-primary-light text-info mb-3"><i class="bi bi-egg-fried"></i></div>
+            <h4 class="fw-bold mb-2 text-navy">Nut-Free & Allergy Safe</h4>
+            <p class="text-muted small mb-0">Our kitchen is 100% peanut and tree-nut free. We provide specialized gluten-free, dairy-free, and vegan meal prep with color-coded trays.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="card-camp p-4 h-100 shadow-sm border-top border-4 border-secondary">
+            <div class="feature-icon-wrap bg-secondary-light text-secondary mb-3"><i class="bi bi-life-preserver"></i></div>
+            <h4 class="fw-bold mb-2 text-navy">Red Cross Lifeguards</h4>
+            <p class="text-muted small mb-0">All aquatic activities feature Red Cross certified water safety instructors and lifeguards with buddy checks every 10 minutes.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Medical & Emergency Protocol -->
+  <section class="section-padding bg-light-blue">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <div class="badge-tag badge-tag-primary mb-2">Emergency Readiness</div>
+          <h2 class="fw-bold mb-3 text-navy">Prepared for Any Situation</h2>
+          <p class="text-muted mb-4">
+            CampSphere maintains direct dispatch coordination with the Lake Tahoe Fire Protection District and Barton Memorial Hospital (located 6 miles away).
+          </p>
+
+          <div class="card p-3 mb-3 border-0 shadow-sm">
+            <h6 class="fw-bold mb-1 text-navy"><i class="bi bi-bandaid-fill text-danger me-2"></i> Daily Medication Protocol</h6>
+            <p class="text-muted small mb-0">Prescription medications must be submitted in original pharmacy containers and are stored in locked medical fridges administered exclusively by RNs.</p>
+          </div>
+
+          <div class="card p-3 mb-3 border-0 shadow-sm">
+            <h6 class="fw-bold mb-1 text-navy"><i class="bi bi-cloud-lightning-rain-fill text-primary me-2"></i> Severe Weather & Lightning Radar</h6>
+            <p class="text-muted small mb-0">Indoor gymnasium and STEM labs equipped to immediately transition outdoor programs in the event of rain or excessive summer heat index.</p>
+          </div>
+
+          <div class="card p-3 border-0 shadow-sm">
+            <h6 class="fw-bold mb-1 text-navy"><i class="bi bi-chat-heart-fill text-success me-2"></i> Emotional Care & Anti-Bullying</h6>
+            <p class="text-muted small mb-0">Zero-tolerance for exclusionary behavior or bullying. Counselors are certified in youth restorative conflict resolution and positive psychology.</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <img src="https://images.unsplash.com/photo-1577896851231-70ef18881754?w=700&auto=format&fit=crop&q=80" alt="Camp medical staff and counselor caring for campers" class="rounded-4 shadow-lg w-100" style="height: 420px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Safety FAQs -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="text-center section-title-wrap">
+        <div class="badge-tag badge-tag-highlight mb-2">Parent Inquiries</div>
+        <h2 class="fw-bold">Safety & Health FAQs</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Common questions about our medical staff, allergy procedures, and daily check-in protocols.</p>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="accordion" id="safetyFaqAccordion">
+            
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sfHeadingOne">
+                <button class="accordion-button fw-bold text-navy" type="button" data-bs-toggle="collapse" data-bs-target="#sfCollapseOne">
+                  How do you handle severe food allergies (e.g. peanuts, tree nuts, gluten)?
+                </button>
+              </h2>
+              <div id="sfCollapseOne" class="accordion-collapse collapse show" data-bs-parent="#safetyFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  CampSphere is an entirely nut-free campus. Outside food containing nuts is prohibited. Our kitchen staff prepares customized allergy-safe meals on sanitized separate equipment, and campers with EpiPens have emergency packs carried by their dedicated counselor.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sfHeadingTwo">
+                <button class="accordion-button collapsed fw-bold text-navy" type="button" data-bs-toggle="collapse" data-bs-target="#sfCollapseTwo">
+                  What qualifications and background checks do your counselors have?
+                </button>
+              </h2>
+              <div id="sfCollapseTwo" class="accordion-collapse collapse" data-bs-parent="#safetyFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  All staff are at least 19 years old (or 18 with 2 years youth leadership experience) and undergo thorough FBI fingerprint background checks, reference reviews, and 40 hours of intensive pre-season safety training including CPR, AED, and mental health first aid.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sfHeadingThree">
+                <button class="accordion-button collapsed fw-bold text-navy" type="button" data-bs-toggle="collapse" data-bs-target="#sfCollapseThree">
+                  What happens if a child feels unwell or gets injured during camp?
+                </button>
+              </h2>
+              <div id="sfCollapseThree" class="accordion-collapse collapse" data-bs-parent="#safetyFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Our on-site Registered Nurse immediately evaluates the camper in our Health Lodge. Parents receive an immediate direct phone call for any fever, head injury, or significant symptom, along with a written health incident log in the parent portal.
+                </div>
+              </div>
+            </div>
+
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="sfHeadingFour">
+                <button class="accordion-button collapsed fw-bold text-navy" type="button" data-bs-toggle="collapse" data-bs-target="#sfCollapseFour">
+                  How does the secure pickup PIN system work?
+                </button>
+              </h2>
+              <div id="sfCollapseFour" class="accordion-collapse collapse" data-bs-parent="#safetyFaqAccordion">
+                <div class="accordion-body text-muted small">
+                  Upon registration, parents generate a unique 4-digit dismissal PIN and can register up to 4 authorized pickup individuals with matching photo IDs. Counselors verify this code at the carline or check-out gate before releasing any camper.
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <!-- 1. Top Highlights Bar -->
+      <div class="footer-top-features">
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-shield-check text-primary"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">100% ACA Accredited</h6>
+                <small class="text-muted">Highest Safety Standards</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-people-fill text-success"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">1:5 Counselor Ratio</h6>
+                <small class="text-muted">Certified CPR & Medical Staff</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-bus-front-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">Camp Shuttles</h6>
+                <small class="text-muted">12 Safe Neighborhood Zones</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">4.9/5 Parent Rating</h6>
+                <small class="text-muted">4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Footer Columns -->
+      <div class="row g-5">
+        <!-- Col 1: Brand & Contact -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo text-white mb-3" href="index.html">
+            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+            Camp<span class="highlight-text">Sphere</span>
+          </a>
+          <p class="text-muted small mb-4">
+            Empowering youth through experiential STEM learning, outdoor wilderness expeditions, creative arts, and water sports in a safe, accredited environment.
+          </p>
+          <ul class="footer-contact-list list-unstyled">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>742 Evergreen Pine Woods, Lake Tahoe, CA 96150</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <span>+1 (800) 555-CAMP (2267)</span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <span>admissions@campsphere.com</span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Programs -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Robotics & STEM</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Wilderness Survival</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Lakeside Aquatics</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Creative Arts</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Mini Campers (4-6)</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Teen Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Explore</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Our Campus</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right"></i> Daily Schedule</a></li>
+            <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Summer Calendar</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Tuition & Passes</a></li>
+            <li><a href="safety.html"><i class="bi bi-chevron-right"></i> Safety & Medical</a></li>
+            <li><a href="camp-match.html"><i class="bi bi-chevron-right"></i> Camp Matcher</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Portals -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Portals</h5>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="bi bi-chevron-right"></i> Parent Login</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Register Family</a></li>
+            <li><a href="parent/dashboard.html"><i class="bi bi-chevron-right"></i> Parent Portal</a></li>
+            <li><a href="enrollment.html"><i class="bi bi-chevron-right"></i> Online Registration</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> Support & FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter & Social -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Stay Connected</h5>
+          <p class="text-muted small mb-3">Join 12,000+ parents receiving early enrollment discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); window.showCampToast('Thank you for subscribing to CampSphere updates!', 'success', 'Subscribed'); this.reset();">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm" placeholder="Your email" required>
+            </div>
+            <button class="btn btn-primary btn-sm w-100" type="submit">Join Newsletter</button>
+          </form>
+          <div class="d-flex gap-2 mt-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Legal & Meta Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-muted">
+          © 2026 CampSphere Kids Summer Camp & Activity Platform. All rights reserved.
+        </p>
+        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+          <a href="safety.html" class="text-muted">Privacy Policy</a>
+          <span>•</span>
+          <a href="faq.html" class="text-muted">Terms & Safety Waiver</a>
+          <span>•</span>
+          <a href="contact.html" class="text-muted">Campus Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short fs-3"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

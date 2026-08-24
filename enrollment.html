@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enroll in CampSphere Summer Camp - 5-Step Secure Online Registration & Program Selection.">
+  <title>Camp Registration & Enrollment - CampSphere</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- CampSphere Modern Preloader -->
+  <div class="camp-preloader">
+    <div class="preloader-content">
+      <div class="preloader-badge">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+      <div class="preloader-title">Camp<span class="highlight-text">Sphere</span></div>
+      <p class="text-muted small mb-2">Secure Camper Enrollment...</p>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#campNavbar" aria-controls="campNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="campNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door-fill text-primary"></i> Home Page 1 (Main Camp)</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-compass-fill text-accent"></i> Home Page 2 (Adventure & STEM)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Dark, RTL & Parent Login -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="section-padding-sm bg-light-blue border-bottom position-relative overflow-hidden">
+    <div class="camp-sticker sticker-sun anim-float d-none d-md-inline-flex" style="top: 15px; left: 5%;">
+      <i class="bi bi-check-circle-fill me-1 text-success"></i> Instant Confirmation
+    </div>
+    <div class="camp-sticker sticker-plane anim-drift d-none d-md-inline-flex" style="top: 15px; right: 5%;">
+      <i class="bi bi-lock-fill me-1 text-primary"></i> SSL Encrypted
+    </div>
+
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <div class="badge-tag badge-tag-accent mb-2 reveal-on-scroll reveal-up">Official Summer 2026 Registration</div>
+      <h1 class="fw-bold mb-2 reveal-on-scroll reveal-up delay-100">Online Camper Enrollment</h1>
+      <p class="text-muted mx-auto reveal-on-scroll reveal-up delay-150" style="max-width: 600px;">Complete our secure 5-step registration wizard to reserve your child's summer camp session.</p>
+    </div>
+  </section>
+
+  <!-- Enrollment Wizard Section -->
+  <section class="section-padding">
+    <div class="container">
+      
+      <!-- Multi-Step Breadcrumb Progress Bar -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <div class="card-camp p-3 p-md-4 shadow-sm">
+            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+              <span class="fw-bold text-navy"><i class="bi bi-person-check-fill text-primary me-2"></i> Online Camper Enrollment Flow</span>
+              <span class="badge bg-primary text-white fw-bold px-3 py-1" id="wizardStepCounterBadge">Step 1 of 6: Guardian Details</span>
+            </div>
+            
+            <!-- Step flow indicators: Step 1 → Step 2 → Step 3 → Step 4 → Step 5 → Step 6 -->
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3 py-2 px-3 bg-light rounded-3">
+              <div class="step-badge-item active" data-step-indicator="1">
+                <span class="step-num">1</span> <span class="step-text d-none d-sm-inline">Guardian</span>
+              </div>
+              <i class="bi bi-chevron-right text-muted small"></i>
+              <div class="step-badge-item" data-step-indicator="2">
+                <span class="step-num">2</span> <span class="step-text d-none d-sm-inline">Camper</span>
+              </div>
+              <i class="bi bi-chevron-right text-muted small"></i>
+              <div class="step-badge-item" data-step-indicator="3">
+                <span class="step-num">3</span> <span class="step-text d-none d-sm-inline">Program</span>
+              </div>
+              <i class="bi bi-chevron-right text-muted small"></i>
+              <div class="step-badge-item" data-step-indicator="4">
+                <span class="step-num">4</span> <span class="step-text d-none d-sm-inline">Medical</span>
+              </div>
+              <i class="bi bi-chevron-right text-muted small"></i>
+              <div class="step-badge-item" data-step-indicator="5">
+                <span class="step-num">5</span> <span class="step-text d-none d-sm-inline">Add-ons</span>
+              </div>
+              <i class="bi bi-chevron-right text-muted small"></i>
+              <div class="step-badge-item" data-step-indicator="6">
+                <span class="step-num">6</span> <span class="step-text d-none d-sm-inline">Complete</span>
+              </div>
+            </div>
+
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar bg-primary" id="wizardProgressBar" role="progressbar" style="width: 16.6%;" aria-valuenow="16.6" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row g-5">
+        
+        <!-- Left: Form Panels -->
+        <div class="col-lg-8">
+          <form id="enrollmentWizardForm" class="card-camp p-4 p-md-5 shadow-sm" novalidate>
+            
+            <!-- STEP 1: Parent / Guardian Information -->
+            <div class="wizard-panel active" data-step="1">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold text-navy mb-0"><i class="bi bi-person-circle text-primary me-2"></i> Step 1: Parent & Guardian Information</h4>
+                <span class="badge bg-primary text-white">Step 1 / 6</span>
+              </div>
+              <p class="text-muted small mb-4">Please provide the primary account holder and emergency guardian contact details.</p>
+              
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="guardianFirstName">Guardian First Name *</label>
+                  <input type="text" class="form-control" id="guardianFirstName" placeholder="e.g. Sarah" required>
+                  <div class="invalid-feedback">Please enter guardian's first name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="guardianLastName">Guardian Last Name *</label>
+                  <input type="text" class="form-control" id="guardianLastName" placeholder="e.g. Watson" required>
+                  <div class="invalid-feedback">Please enter guardian's last name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="guardianEmail">Email Address (For Booking Confirmation) *</label>
+                  <input type="email" class="form-control" id="guardianEmail" placeholder="e.g. sarah.watson@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid email address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="guardianPhone">Mobile Phone Number *</label>
+                  <input type="tel" class="form-control" id="guardianPhone" placeholder="e.g. (555) 019-2834" required>
+                  <div class="invalid-feedback">Please enter a valid contact phone number.</div>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-bold text-navy" for="guardianAddress">Home Street Address *</label>
+                  <input type="text" class="form-control" id="guardianAddress" placeholder="e.g. 4288 Meadow Pine Way, South Lake Tahoe, CA 96150" required>
+                  <div class="invalid-feedback">Please enter your home address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="guardianRelationship">Relationship to Camper *</label>
+                  <select class="form-select" id="guardianRelationship" required>
+                    <option value="Mother" selected>Mother / Primary Guardian</option>
+                    <option value="Father">Father / Primary Guardian</option>
+                    <option value="Legal Guardian">Legal Guardian</option>
+                    <option value="Grandparent">Grandparent</option>
+                    <option value="Other">Other Authorized Guardian</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="guardianSecondaryContact">Secondary Contact (Optional)</label>
+                  <input type="text" class="form-control" id="guardianSecondaryContact" placeholder="e.g. David Watson (Father) - (555) 987-6543">
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 2: Camper Profile & Details -->
+            <div class="wizard-panel" data-step="2">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold text-navy mb-0"><i class="bi bi-person-badge text-accent me-2"></i> Step 2: Camper Profile & Details</h4>
+                <span class="badge bg-accent text-white">Step 2 / 6</span>
+              </div>
+              <p class="text-muted small mb-4">Please provide basic details about the child you are enrolling for Summer 2026.</p>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperFirstName">Camper First Name *</label>
+                  <input type="text" class="form-control" id="camperFirstName" placeholder="e.g. Emma" required>
+                  <div class="invalid-feedback">Please enter camper's first name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperLastName">Camper Last Name *</label>
+                  <input type="text" class="form-control" id="camperLastName" placeholder="e.g. Watson" required>
+                  <div class="invalid-feedback">Please enter camper's last name.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold text-navy" for="camperDOB">Date of Birth *</label>
+                  <input type="date" class="form-control" id="camperDOB" value="2018-04-12" required>
+                  <div class="invalid-feedback">Please select date of birth.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold text-navy" for="camperAge">Age in June 2026 *</label>
+                  <input type="number" class="form-control" id="camperAge" value="8" min="4" max="18" required>
+                  <div class="invalid-feedback">Valid camper age is between 4 and 18.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label fw-bold text-navy" for="camperGender">Gender</label>
+                  <select class="form-select" id="camperGender">
+                    <option value="Female">Female</option>
+                    <option value="Male">Male</option>
+                    <option value="Non-Binary">Non-Binary</option>
+                    <option value="Other">Prefer not to say</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperGrade">Grade in Fall 2026 *</label>
+                  <input type="text" class="form-control" id="camperGrade" value="3rd Grade" placeholder="e.g. 3rd Grade" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperTShirt">Official Camp T-Shirt Size *</label>
+                  <select class="form-select" id="camperTShirt">
+                    <option value="Youth Small (YS)">Youth Small (Ages 6-8)</option>
+                    <option value="Youth Medium (YM)" selected>Youth Medium (Ages 10-12)</option>
+                    <option value="Youth Large (YL)">Youth Large (Ages 14-16)</option>
+                    <option value="Adult Small (AS)">Adult Small</option>
+                    <option value="Adult Medium (AM)">Adult Medium</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 3: Program Track & Session Dates -->
+            <div class="wizard-panel" data-step="3">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold text-navy mb-0"><i class="bi bi-calendar2-check text-primary me-2"></i> Step 3: Select Camp Program & Session Dates</h4>
+                <span class="badge bg-primary text-white">Step 3 / 6</span>
+              </div>
+              <p class="text-muted small mb-3">Confirm your selected specialty camp course track and cohort week.</p>
+              
+              <!-- Selected Program Spotlight Card -->
+              <div class="p-3 bg-light-blue rounded-3 border mb-3 d-flex align-items-center gap-3 shadow-xs">
+                <img id="wizardSelectedProgImage" src="assets/images/junior_robotics_python_coding.jpeg" alt="Program Thumbnail" class="rounded-3 shadow-xs flex-shrink-0" style="width: 76px; height: 76px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <span class="badge bg-primary text-white mb-1" id="wizardSelectedProgBadge">STEM & Robotics Track</span>
+                  <h6 class="fw-bold text-navy mb-1" id="wizardSelectedProgTitle">Junior Robotics & Python Coding Camp</h6>
+                  <div class="d-flex flex-wrap gap-2 text-muted small">
+                    <span id="wizardSelectedProgAgeLoc"><i class="bi bi-geo-alt-fill text-danger me-1"></i>Pine Innovation Lab #2 • Ages 8–14</span>
+                    <span>•</span>
+                    <strong class="text-primary" id="wizardSelectedProgPrice">$395.00 / wk</strong>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold text-navy" for="wizardProgramSelect">Camp Program / Course Track *</label>
+                <select class="form-select" id="wizardProgramSelect" required>
+                  <option value="Junior Robotics & Python Coding Camp" data-id="prog-1" data-price="395" data-track="STEM & Robotics Track" data-loc="Pine Innovation Lab #2" data-couns="Jessica Vance, M.S." data-img="assets/images/junior_robotics_python_coding.jpeg" data-age="Ages 8 – 14" selected>Junior Robotics & Python Coding Camp ($395/wk - Ages 8-14)</option>
+                  <option value="All-Star Sports & Athletics Camp" data-id="prog-2" data-price="360" data-track="Sports & Athletics" data-loc="Athletic Field & Pine Pavilion" data-couns="Coach Marcus Hayes" data-img="assets/images/all_star_sports_athletics.jpeg" data-age="Ages 7 – 12">All-Star Sports & Athletics Camp ($360/wk - Ages 7-12)</option>
+                  <option value="Little Picassos Art & Pottery Studio" data-id="prog-3" data-price="340" data-track="Creative Arts" data-loc="Art Studio #1" data-couns="Elena Rostova" data-img="assets/images/little_picassos_art_pottery.jpeg" data-age="Ages 5 – 11">Little Picassos Art & Pottery Studio ($340/wk - Ages 5-11)</option>
+                  <option value="Splash & Swim Water Safari" data-id="prog-4" data-price="350" data-track="Aquatics" data-loc="Olympic Pool & Lake Shore" data-couns="Chloe Bennett" data-img="assets/images/splash_swim_water_safari.jpeg" data-age="Ages 5 – 10">Splash & Swim Water Safari ($350/wk - Ages 5-10)</option>
+                  <option value="Wilderness Survival & Trekking" data-id="prog-5" data-price="375" data-track="Outdoor Adventure" data-loc="Alpine Pine Forest Base" data-couns="Sam Wilder" data-img="assets/images/wilderness_survival_trekking.jpeg" data-age="Ages 8 – 15">Wilderness Survival & Trekking ($375/wk - Ages 8-15)</option>
+                  <option value="High-Ropes & Climbing Challenge" data-id="prog-6" data-price="410" data-track="High Adventure" data-loc="Ropes Course & Ridge Wall" data-couns="Jake Miller" data-img="assets/images/high_ropes_climbing_challenge.jpeg" data-age="Ages 11 – 16">High-Ropes & Climbing Challenge ($410/wk - Ages 11-16)</option>
+                  <option value="Rock Band & Musical Theater" data-id="prog-7" data-price="380" data-track="Performing Arts" data-loc="Camp Amphitheater" data-couns="Maya Lin" data-img="assets/images/rock_band_musical_theater.jpeg" data-age="Ages 7 – 14">Rock Band & Musical Theater ($380/wk - Ages 7-14)</option>
+                  <option value="Young Astronauts Space Exploration" data-id="prog-8" data-price="420" data-track="STEM & Robotics Track" data-loc="Observatory & Planetarium Room" data-couns="Dr. Alan Ward" data-img="assets/images/young_astronauts_space_exploration.jpeg" data-age="Ages 8 – 14">Young Astronauts Space Exploration ($420/wk - Ages 8-14)</option>
+                  <option value="Junior Culinary Academy" data-id="prog-9" data-price="385" data-track="Culinary Arts" data-loc="Teaching Kitchen #1" data-couns="Chef Antoine Moreau" data-img="assets/images/junior_culinary_academy.jpeg" data-age="Ages 7 – 13">Junior Culinary Academy ($385/wk - Ages 7-13)</option>
+                  <option value="Eco-Warriors Wildlife & Forestry" data-id="prog-10" data-price="355" data-track="Nature & Science" data-loc="Alpine Forestry Center" data-couns="Dr. Emily Torres" data-img="assets/images/eco_warriors_wildlife_forestry.jpeg" data-age="Ages 6 – 12">Eco-Warriors Wildlife & Forestry ($355/wk - Ages 6-12)</option>
+                  <option value="Game Design & 3D World Building" data-id="prog-11" data-price="405" data-track="STEM & Robotics Track" data-loc="Pine Tech Studio #3" data-couns="Kevin Patel" data-img="assets/images/game_design_3d_world_building.jpeg" data-age="Ages 9 – 15">Game Design & 3D World Building ($405/wk - Ages 9-15)</option>
+                  <option value="Karate & Martial Arts Academy" data-id="prog-12" data-price="350" data-track="Sports & Athletics" data-loc="Dojo & Fitness Studio" data-couns="Sensei Kenji Sato" data-img="assets/images/karate_martial_arts_academy.jpeg" data-age="Ages 6 – 13">Karate & Martial Arts Academy ($350/wk - Ages 6-13)</option>
+                  <option value="Camp Broadway Musical Showcase" data-id="prog-13" data-price="390" data-track="Performing Arts" data-loc="Main Auditorium" data-couns="Rachel Foster" data-img="assets/images/camp_broadway_musical_showcase.jpeg" data-age="Ages 8 – 15">Camp Broadway Musical Showcase ($390/wk - Ages 8-15)</option>
+                  <option value="Lake Kayak & Standup Paddleboarding" data-id="prog-14" data-price="370" data-track="Aquatics" data-loc="Lakefront Pier #2" data-couns="Liam O'Connor" data-img="assets/images/lake_kayak_paddleboarding.jpeg" data-age="Ages 9 – 16">Lake Kayak & Standup Paddleboarding ($370/wk - Ages 9-16)</option>
+                  <option value="Digital Filmmaking & Animation" data-id="prog-15" data-price="395" data-track="Creative Arts" data-loc="Media Production Suite" data-couns="Sofia Alvarez" data-img="assets/images/digital_filmmaking_animation.jpeg" data-age="Ages 9 – 15">Digital Filmmaking & Animation ($395/wk - Ages 9-15)</option>
+                  <option value="Junior Inventors & Maker Lab" data-id="prog-16" data-price="375" data-track="STEM & Robotics Track" data-loc="Maker Workshop #1" data-couns="Brian Murphy" data-img="assets/images/junior_inventors_maker_lab.jpeg" data-age="Ages 7 – 12">Junior Inventors & Maker Lab ($375/wk - Ages 7-12)</option>
+                  <option value="Equestrian & Pony Riding Academy" data-id="prog-17" data-price="445" data-track="Outdoor Adventure" data-loc="Pine Valley Stables" data-couns="Hannah Becker" data-img="assets/images/equestrian_pony_riding.jpeg" data-age="Ages 7 – 14">Equestrian & Pony Riding Academy ($445/wk - Ages 7-14)</option>
+                  <option value="Tennis & Pickleball Champions Camp" data-id="prog-18" data-price="365" data-track="Sports & Athletics" data-loc="Pine Tennis Courts" data-couns="Coach Jordan Vance" data-img="assets/images/tennis_pickleball_champions.jpeg" data-age="Ages 7 – 14">Tennis & Pickleball Champions Camp ($365/wk - Ages 7-14)</option>
+                  <option value="Junior Detective & Forensics Academy" data-id="prog-19" data-price="370" data-track="Nature & Science" data-loc="Science Lab #4" data-couns="Officer Mark Daniels" data-img="assets/images/junior_detective_forensics.jpeg" data-age="Ages 8 – 13">Junior Detective & Forensics Academy ($370/wk - Ages 8-13)</option>
+                  <option value="Ceramics, Pottery & Sculpture Studio" data-id="prog-20" data-price="360" data-track="Creative Arts" data-loc="Pottery Studio #2" data-couns="Clara Dubois" data-img="assets/images/ceramics_pottery_sculpture.jpeg" data-age="Ages 7 – 13">Ceramics, Pottery & Sculpture Studio ($360/wk - Ages 7-13)</option>
+                  <option value="Chess Grandmasters & Strategy Lab" data-id="prog-21" data-price="340" data-track="STEM & Robotics Track" data-loc="Library Strategy Room" data-couns="Grandmaster Ilya Petrov" data-img="assets/images/chess_grandmasters_strategy.jpeg" data-age="Ages 6 – 14">Chess Grandmasters & Strategy Lab ($340/wk - Ages 6-14)</option>
+                  <option value="Scuba Discovery & Marine Ecology" data-id="prog-22" data-price="430" data-track="Aquatics" data-loc="Deep Dive Training Tank" data-couns="Captain Trent Rivera" data-img="assets/images/scuba_discovery_marine_ecology.jpeg" data-age="Ages 10 – 16">Scuba Discovery & Marine Ecology ($430/wk - Ages 10-16)</option>
+                  <option value="Fashion Design & Wearable Arts Studio" data-id="prog-23" data-price="370" data-track="Creative Arts" data-loc="Design Loft #2" data-couns="Valerie Moreau" data-img="assets/images/fashion_design_wearable_arts.jpeg" data-age="Ages 8 – 14">Fashion Design & Wearable Arts Studio ($370/wk - Ages 8-14)</option>
+                  <option value="Alpine Mountain Biking & Trail Blazers" data-id="prog-24" data-price="390" data-track="High Adventure" data-loc="Pine Trailhead Ridge" data-couns="Trevor Scott" data-img="assets/images/mountain_biking_trail_blazers.jpeg" data-age="Ages 10 – 16">Alpine Mountain Biking & Trail Blazers ($390/wk - Ages 10-16)</option>
+                  <option value="Camp MasterChef & Pastry Arts" data-id="prog-25" data-price="395" data-track="Culinary Arts" data-loc="Pastry Kitchen Suite" data-couns="Chef Dominique Laurent" data-img="assets/images/camp_masterchef_pastry_arts.jpeg" data-age="Ages 8 – 14">Camp MasterChef & Pastry Arts ($395/wk - Ages 8-14)</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold text-navy" for="wizardSessionSelect">Session Date Range *</label>
+                <select class="form-select" id="wizardSessionSelect" required>
+                  <option value="June 15 – June 19, 2026" selected>Week 1: June 15 – June 19, 2026 (Space Available)</option>
+                  <option value="June 22 – June 26, 2026">Week 2: June 22 – June 26, 2026 (Space Available)</option>
+                  <option value="July 06 – July 10, 2026">Week 3: July 06 – July 10, 2026 (Space Available)</option>
+                  <option value="July 13 – July 17, 2026">Week 4: July 13 – July 17, 2026 (Space Available)</option>
+                  <option value="July 20 – July 24, 2026">Week 5: July 20 – July 24, 2026 (Space Available)</option>
+                  <option value="August 03 – August 07, 2026">Week 6: August 03 – August 07, 2026 (Space Available)</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold text-navy">Camper Experience Level</label>
+                <div class="d-flex gap-4">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="expLevel" id="expBeg" value="Beginner" checked>
+                    <label class="form-check-label small" for="expBeg">First-time / Beginner</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="expLevel" id="expInt" value="Intermediate">
+                    <label class="form-check-label small" for="expInt">Returning / Intermediate</label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="expLevel" id="expAdv" value="Advanced">
+                    <label class="form-check-label small" for="expAdv">Advanced Pod</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 4: Medical & Safety -->
+            <div class="wizard-panel" data-step="4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold text-navy mb-0"><i class="bi bi-shield-plus text-success me-2"></i> Step 4: Medical, Allergy & Emergency Contacts</h4>
+                <span class="badge bg-success text-white">Step 4 / 6</span>
+              </div>
+              <p class="text-muted small mb-4">Our on-site registered nurse team ensures individualized health safety for every camper.</p>
+
+              <div class="mb-3">
+                <label class="form-label fw-bold text-navy" for="camperAllergies">Known Allergies or Dietary Needs</label>
+                <input type="text" class="form-control" id="camperAllergies" placeholder="e.g. Mild Peanut Allergy (carry EpiPen), Lactose Intolerance, None" value="Mild peanut allergy - carry EpiPen">
+              </div>
+
+              <div class="row g-3 mb-3">
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperEmergencyName">Primary Emergency Contact Name *</label>
+                  <input type="text" class="form-control" id="camperEmergencyName" placeholder="e.g. Sarah Watson" required>
+                  <div class="invalid-feedback">Please enter emergency contact name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperEmergencyPhone">Primary Emergency Phone *</label>
+                  <input type="tel" class="form-control" id="camperEmergencyPhone" placeholder="e.g. (555) 019-2834" required>
+                  <div class="invalid-feedback">Please enter emergency contact phone.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperDoctor">Pediatrician / Family Clinic</label>
+                  <input type="text" class="form-control" id="camperDoctor" value="Lake Tahoe Children's Health ((555) 234-5678)" placeholder="Doctor name and phone">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label fw-bold text-navy" for="camperSwimLevel">Swimming Proficiency Level</label>
+                  <select class="form-select" id="camperSwimLevel">
+                    <option value="Beginner (Life vest in deep end)">Beginner (Needs life vest in deep end)</option>
+                    <option value="Intermediate (Full lap tested)" selected>Intermediate (Can swim full 25m lap)</option>
+                    <option value="Advanced (Swim team level)">Advanced (Swim team level)</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fw-bold text-navy" for="specialNotes">Special Needs / Counselor Notes (Optional)</label>
+                  <textarea class="form-control" id="specialNotes" rows="2" placeholder="Any additional behavioral, physical or dietary considerations counselors should know..."></textarea>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 5: Add-ons & Extended Care -->
+            <div class="wizard-panel" data-step="5">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold text-navy mb-0"><i class="bi bi-plus-circle text-warning me-2"></i> Step 5: Optional Add-ons & Extended Care</h4>
+                <span class="badge bg-warning text-dark">Step 5 / 6</span>
+              </div>
+              <p class="text-muted small mb-4">Customize your camper's week with convenient extended hours and transportation packages.</p>
+
+              <div class="d-flex flex-column gap-3 mb-3">
+                <div class="p-3 border rounded-3 d-flex align-items-center justify-content-between">
+                  <div class="form-check">
+                    <input class="form-check-input wizard-addon-check" type="checkbox" id="addonEarly" data-price="35" data-name="Early Bird Drop-off">
+                    <label class="form-check-label" for="addonEarly">
+                      <strong class="text-navy d-block">Early Bird Drop-off (7:30 – 8:30 AM)</strong>
+                      <small class="text-muted">Supervised morning activities and healthy breakfast snack</small>
+                    </label>
+                  </div>
+                  <strong class="text-primary">+$35.00</strong>
+                </div>
+
+                <div class="p-3 border rounded-3 d-flex align-items-center justify-content-between">
+                  <div class="form-check">
+                    <input class="form-check-input wizard-addon-check" type="checkbox" id="addonLate" data-price="45" data-name="Late Afternoon Club">
+                    <label class="form-check-label" for="addonLate">
+                      <strong class="text-navy d-block">Late Afternoon Club (4:00 – 6:00 PM)</strong>
+                      <small class="text-muted">Supervised craft lounge, outdoor sports games & evening fruit</small>
+                    </label>
+                  </div>
+                  <strong class="text-primary">+$45.00</strong>
+                </div>
+
+                <div class="p-3 border rounded-3 d-flex align-items-center justify-content-between">
+                  <div class="form-check">
+                    <input class="form-check-input wizard-addon-check" type="checkbox" id="addonBus" data-price="50" data-name="Roundtrip Shuttle Bus">
+                    <label class="form-check-label" for="addonBus">
+                      <strong class="text-navy d-block">Roundtrip Shuttle Bus Transportation</strong>
+                      <small class="text-muted">Pick-up and drop-off from 4 central town hub stops</small>
+                    </label>
+                  </div>
+                  <strong class="text-primary">+$50.00</strong>
+                </div>
+              </div>
+            </div>
+
+            <!-- STEP 6: Review & Checkout -->
+            <div class="wizard-panel" data-step="6">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h4 class="fw-bold text-navy mb-0"><i class="bi bi-credit-card text-primary me-2"></i> Step 6: Review & Complete Enrollment</h4>
+                <span class="badge bg-primary text-white">Step 6 / 6</span>
+              </div>
+              <p class="text-muted small mb-4">Frontend simulation demo checkout. No actual charges will be incurred on your card.</p>
+
+              <div class="p-3 bg-light rounded-3 mb-4">
+                <h6 class="fw-bold text-navy mb-2"><i class="bi bi-lock-fill text-success me-1"></i> Simulated Secure Checkout</h6>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label small fw-bold" for="cardholderName">Cardholder Name *</label>
+                    <input type="text" class="form-control" id="cardholderName" placeholder="e.g. Sarah Watson" required>
+                    <div class="invalid-feedback">Please enter cardholder name.</div>
+                  </div>
+                  <div class="col-8">
+                    <label class="form-label small fw-bold" for="cardNumber">Card Number *</label>
+                    <input type="text" class="form-control" id="cardNumber" placeholder="•••• •••• •••• 4242" value="•••• •••• •••• 4242" required>
+                  </div>
+                  <div class="col-2">
+                    <label class="form-label small fw-bold" for="cardExp">Exp *</label>
+                    <input type="text" class="form-control" id="cardExp" placeholder="MM/YY" value="08/28" required>
+                  </div>
+                  <div class="col-2">
+                    <label class="form-label small fw-bold" for="cardCvc">CVC *</label>
+                    <input type="text" class="form-control" id="cardCvc" placeholder="CVC" value="882" required>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-check mb-4">
+                <input class="form-check-input" type="checkbox" id="termsCheck" required checked>
+                <label class="form-check-label small text-muted" for="termsCheck">
+                  I agree to the CampSphere Health Waiver, Code of Conduct, and 100% Refund Guarantee Policy.
+                </label>
+                <div class="invalid-feedback">You must agree before submitting enrollment.</div>
+              </div>
+            </div>
+
+            <!-- Wizard Navigation Buttons -->
+            <div class="d-flex justify-content-between align-items-center pt-4 border-top mt-4 flex-wrap gap-2">
+              <button type="button" class="btn btn-outline-secondary px-4 py-2" id="wizardPrevBtn" style="display: none;">
+                <i class="bi bi-arrow-left me-1"></i> Back
+              </button>
+              <button type="button" class="btn btn-primary ms-auto px-4 py-2 fw-bold shadow-sm" id="wizardNextBtn">
+                Next Step <i class="bi bi-arrow-right ms-1"></i>
+              </button>
+              <button type="submit" class="btn btn-accent btn-lg ms-auto px-4 py-2 fw-bold shadow-sm" id="wizardSubmitBtn" style="display: none;">
+                <i class="bi bi-check-circle-fill me-2"></i> Complete Enrollment
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+        <!-- Right: Dynamic Order Summary Sidebar -->
+        <div class="col-lg-4">
+          <div class="card-camp p-4 shadow-sm sticky-top" style="top: 90px;">
+            <h5 class="fw-bold text-navy mb-3 pb-2 border-bottom"><i class="bi bi-receipt text-primary me-2"></i> Enrollment Summary</h5>
+            
+            <!-- Program Card in Sidebar -->
+            <div class="mb-3 pb-3 border-bottom d-flex align-items-center gap-3">
+              <img id="summaryProgramImage" src="assets/images/junior_robotics_python_coding.jpeg" alt="Program" class="rounded-3 shadow-xs flex-shrink-0" style="width: 58px; height: 58px; object-fit: cover;">
+              <div class="flex-grow-1">
+                <span class="badge bg-primary-light text-primary small mb-1" id="summaryProgramCategory">STEM & Robotics Track</span>
+                <strong class="text-navy d-block" id="summaryProgramName" style="font-size: 0.95rem; line-height: 1.25;">Junior Robotics & Python Coding Camp</strong>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <small class="text-muted d-block">Parent / Guardian</small>
+              <strong class="text-navy" id="summaryParentName">Sarah Watson</strong>
+            </div>
+
+            <div class="mb-3">
+              <small class="text-muted d-block">Enrolled Camper</small>
+              <strong class="text-navy" id="summaryCamperName">Emma Watson (Age 8)</strong>
+            </div>
+
+            <div class="mb-3">
+              <small class="text-muted d-block">Session Week</small>
+              <strong class="text-navy" id="summarySessionDates">June 15 – June 19, 2026</strong>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between mb-2 small">
+              <span class="text-muted">Camp Tuition (5 Days)</span>
+              <strong class="text-navy" id="summarySubtotal">$395.00</strong>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2 small">
+              <span class="text-muted">Chef Hot Lunch & Snacks</span>
+              <strong class="text-success">INCLUDED ($0.00)</strong>
+            </div>
+
+            <div class="d-flex justify-content-between mb-2 small">
+              <span class="text-muted">Optional Add-ons Total</span>
+              <strong class="text-navy" id="summaryAddonsTotal">$0.00</strong>
+            </div>
+
+            <hr class="my-3">
+
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="fw-bold fs-5 text-navy">Total Tuition</span>
+              <span class="fw-bold fs-3 text-primary" id="summaryGrandTotal">$395.00</span>
+            </div>
+
+            <button type="button" class="btn btn-accent w-100 py-2 fw-bold shadow-xs mb-3" id="sidebarEnrollBtn">
+              Next Step <i class="bi bi-arrow-right ms-1"></i>
+            </button>
+
+            <div class="p-3 bg-light-blue rounded-3 small text-muted">
+              <i class="bi bi-shield-check text-success me-1"></i> <strong>100% Refund Guarantee:</strong> Cancel with full refund up to 14 days before camp starts.
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <!-- 1. Top Highlights Bar -->
+      <div class="footer-top-features">
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-shield-check text-primary"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">100% ACA Accredited</h6>
+                <small class="text-muted">Highest Safety Standards</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-people-fill text-success"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">1:5 Counselor Ratio</h6>
+                <small class="text-muted">Certified CPR & Medical Staff</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-bus-front-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">Camp Shuttles</h6>
+                <small class="text-muted">12 Safe Neighborhood Zones</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">4.9/5 Parent Rating</h6>
+                <small class="text-muted">4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Footer Columns -->
+      <div class="row g-5">
+        <!-- Col 1: Brand & Contact -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo text-white mb-3" href="index.html">
+            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+            Camp<span class="highlight-text">Sphere</span>
+          </a>
+          <p class="text-muted small mb-4">
+            Empowering youth through experiential STEM learning, outdoor wilderness expeditions, creative arts, and water sports in a safe, accredited environment.
+          </p>
+          <ul class="footer-contact-list list-unstyled">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>742 Evergreen Pine Woods, Lake Tahoe, CA 96150</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <span>+1 (800) 555-CAMP (2267)</span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <span>admissions@campsphere.com</span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Programs -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Robotics & STEM</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Wilderness Survival</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Lakeside Aquatics</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Creative Arts</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Mini Campers (4-6)</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Teen Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Explore</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Our Campus</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right"></i> Daily Schedule</a></li>
+            <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Summer Calendar</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Tuition & Passes</a></li>
+            <li><a href="safety.html"><i class="bi bi-chevron-right"></i> Safety & Medical</a></li>
+            <li><a href="camp-match.html"><i class="bi bi-chevron-right"></i> Camp Matcher</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Portals -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Portals</h5>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="bi bi-chevron-right"></i> Parent Login</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Register Family</a></li>
+            <li><a href="parent/dashboard.html"><i class="bi bi-chevron-right"></i> Parent Portal</a></li>
+            <li><a href="enrollment.html"><i class="bi bi-chevron-right"></i> Online Registration</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> Support & FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter & Social -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Stay Connected</h5>
+          <p class="text-muted small mb-3">Join 12,000+ parents receiving early enrollment discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); window.showCampToast('Thank you for subscribing to CampSphere updates!', 'success', 'Subscribed'); this.reset();">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm" placeholder="Your email" required>
+            </div>
+            <button class="btn btn-primary btn-sm w-100" type="submit">Join Newsletter</button>
+          </form>
+          <div class="d-flex gap-2 mt-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Legal & Meta Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-muted">
+          © 2026 CampSphere Kids Summer Camp & Activity Platform. All rights reserved.
+        </p>
+        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+          <a href="safety.html" class="text-muted">Privacy Policy</a>
+          <span>•</span>
+          <a href="faq.html" class="text-muted">Terms & Safety Waiver</a>
+          <span>•</span>
+          <a href="contact.html" class="text-muted">Campus Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short fs-3"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/programs-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

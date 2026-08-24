@@ -1,0 +1,169 @@
+/* ==========================================================================
+   CampSphere - Kids Summer Camp & Activity Program
+   Responsive Stylesheet (assets/css/responsive.css)
+   ========================================================================== */
+
+/* Extra Large Screens (>= 1400px) */
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+/* Desktop & Laptop (<= 1199px) */
+@media (max-width: 1199.98px) {
+  .hero-img-main {
+    height: 400px;
+  }
+  .floating-badge {
+    padding: 0.65rem 1rem;
+  }
+  .floating-badge-top {
+    top: 10px;
+    left: -10px;
+  }
+  .floating-badge-bottom {
+    bottom: 10px;
+    right: -10px;
+  }
+  .dashboard-sidebar {
+    width: 240px;
+  }
+  .dashboard-main {
+    margin-left: 240px;
+  }
+}
+
+/* Tablet Devices (<= 991.98px) */
+@media (max-width: 991.98px) {
+  .section-padding {
+    padding: 3.5rem 0;
+  }
+  .hero-section {
+    padding: 3.5rem 0 4.5rem;
+    text-align: center;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-image-wrap {
+    margin-top: 2.5rem;
+  }
+  .hero-img-main {
+    max-width: 90%;
+    margin: 0 auto;
+    height: 360px;
+  }
+  .camp-search-bar {
+    margin-top: 2rem;
+    padding: 1.25rem;
+  }
+  
+  /* Offcanvas / Mobile Nav */
+  .navbar-collapse {
+    background-color: var(--white);
+    padding: 1.25rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin-top: 1rem;
+  }
+  
+  .dashboard-sidebar {
+    transform: translateX(-100%);
+    box-shadow: var(--shadow-xl);
+  }
+  .dashboard-sidebar.show {
+    transform: translateX(0);
+  }
+  .dashboard-main {
+    margin-left: 0 !important;
+  }
+  .dashboard-topbar {
+    padding: 0.85rem 1.25rem;
+  }
+  .dashboard-content {
+    padding: 1.25rem;
+  }
+  
+  .stepper-header {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .stepper-header::before {
+    display: none;
+  }
+  
+  .pricing-card.featured {
+    transform: none;
+  }
+}
+
+/* Mobile Devices (<= 767.98px) */
+@media (max-width: 767.98px) {
+  .top-bar {
+    display: none;
+  }
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.65rem; }
+  h3 { font-size: 1.35rem; }
+  
+  .section-padding {
+    padding: 3rem 0;
+  }
+  
+  .hero-img-main {
+    height: 280px;
+    border-width: 4px;
+  }
+  .floating-badge {
+    position: static;
+    margin: 0.5rem auto;
+    width: fit-content;
+    animation: none;
+  }
+  
+  .cta-banner {
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+  }
+  .cta-banner .d-flex {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .camp-toast {
+    min-width: 280px;
+  }
+  
+  .table-responsive {
+    border-radius: var(--radius-md);
+    overflow-x: auto;
+  }
+}
+
+/* Small Mobile (<= 480px) */
+@media (max-width: 480px) {
+  .btn-lg {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.95rem;
+  }
+  .btn {
+    width: 100%;
+  }
+  .btn-group-responsive {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .program-thumb {
+    height: 180px;
+  }
+  .kpi-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .stat-number {
+    font-size: 2.2rem;
+  }
+}

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Counselor Messaging - Parent Portal at CampSphere.">
+  <title>Counselor Messages - Parent Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+          Camp<span class="highlight-text">Sphere</span>
+        </a>
+        <button class="btn btn-sm btn-light d-lg-none sidebar-toggle-btn" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="children.html"><i class="bi bi-people"></i> My Children <span class="badge bg-primary rounded-pill ms-auto">2</span></a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+          </li>
+          
+          <li class="nav-item pt-3 pb-1">
+            <small class="text-muted text-uppercase fw-bold ps-3" style="font-size: 0.75rem;">Account</small>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="bi bi-person-gear"></i> Family Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i> Portal Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <div>
+              <strong class="text-navy small d-block">Sarah Watson</strong>
+              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+            </div>
+          </div>
+          <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary btn-sm d-lg-none sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h4 class="mb-0 fw-bold text-navy">Counselor & Staff Messaging</h4>
+            <small class="text-muted">Direct communication with your child's track instructors and camp director</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label d-none d-sm-inline">RTL</span>
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <div class="card-camp shadow-sm overflow-hidden">
+          <div class="row g-0">
+            
+            <!-- Conversation List -->
+            <div class="col-md-4 border-end">
+              <div class="p-3 border-bottom bg-light">
+                <input type="text" class="form-control form-control-sm" placeholder="Search conversations...">
+              </div>
+              <div class="list-group list-group-flush" style="max-height: 550px; overflow-y: auto;">
+                
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action chat-contact-item active p-3" data-contact="counselor_jessica">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Counselor Jessica" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <strong class="d-block text-truncate">Counselor Jessica Vance</strong>
+                        <small style="font-size: 0.75rem;">10:15 AM</small>
+                      </div>
+                      <small class="text-truncate d-block opacity-75">Emma's robotics team completed trial...</small>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action chat-contact-item p-3" data-contact="counselor_marcus">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Coach Marcus" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <strong class="d-block text-truncate text-navy">Coach Marcus Hayes</strong>
+                        <small class="text-muted" style="font-size: 0.75rem;">Yesterday</small>
+                      </div>
+                      <small class="text-muted text-truncate d-block">Lucas's soccer cleats size verified...</small>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="javascript:void(0)" class="list-group-item list-group-item-action chat-contact-item p-3" data-contact="nurse_adams">
+                  <div class="d-flex align-items-center gap-3">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80" alt="Nurse Adams" class="rounded-circle" style="width: 44px; height: 44px; object-fit: cover;">
+                    <div class="flex-grow-1 overflow-hidden">
+                      <div class="d-flex justify-content-between align-items-center">
+                        <strong class="d-block text-truncate text-navy">Nurse Rachel Adams, RN</strong>
+                        <small class="text-muted" style="font-size: 0.75rem;">May 18</small>
+                      </div>
+                      <small class="text-muted text-truncate d-block">EpiPen & allergy plan verified on file.</small>
+                    </div>
+                  </div>
+                </a>
+
+              </div>
+            </div>
+
+            <!-- Active Chat Thread -->
+            <div class="col-md-8 d-flex flex-column" style="height: 550px;">
+              
+              <!-- Chat Header -->
+              <div class="p-3 border-bottom d-flex align-items-center justify-content-between bg-light">
+                <div class="d-flex align-items-center gap-3">
+                  <img id="chatRecipientAvatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Counselor Jessica" class="rounded-circle" style="width: 42px; height: 42px; object-fit: cover;">
+                  <div>
+                    <h6 class="fw-bold mb-0 text-navy" id="chatRecipientName">Counselor Jessica Vance</h6>
+                    <small class="text-success"><i class="bi bi-circle-fill" style="font-size: 0.5rem;"></i> Active Now • <span id="chatRecipientRole">Head of STEM & Robotics</span></small>
+                  </div>
+                </div>
+                <button class="btn btn-sm btn-outline-secondary" onclick="window.showCampToast ? window.showCampToast('Staff Direct Line: +1 (800) 555-2267 Ext 104', 'info', 'Staff Info') : null"><i class="bi bi-info-circle"></i> Info</button>
+              </div>
+
+              <!-- Message History Container -->
+              <div class="p-4 flex-grow-1" id="chatMessagesContainer" style="overflow-y: auto;">
+                
+                <div class="d-flex justify-content-start mb-3">
+                  <div class="bg-light p-3 rounded-3 border" style="max-width: 75%; border-bottom-left-radius: 4px !important;">
+                    <div class="fw-bold small text-primary mb-1">Counselor Alex</div>
+                    <p class="mb-1">Hi Sarah! Emma is doing fantastic in the robotics lab today. Her team built their first ultrasonic obstacle avoiding rover!</p>
+                    <div class="text-start small text-muted">10:15 AM</div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-end mb-3">
+                  <div class="bg-primary text-white p-3 rounded-3" style="max-width: 75%; border-bottom-right-radius: 4px !important;">
+                    <p class="mb-1">That's wonderful to hear, Alex! Did she remember her sunscreen and water bottle before heading out to the pool?</p>
+                    <div class="text-end small opacity-75">10:22 AM <i class="bi bi-check-all ms-1"></i></div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-start mb-3">
+                  <div class="bg-light p-3 rounded-3 border" style="max-width: 75%; border-bottom-left-radius: 4px !important;">
+                    <div class="fw-bold small text-primary mb-1">Counselor Alex</div>
+                    <p class="mb-1">Yes! We reapplied SPF 50 right before morning swim rotations and had our fruit snack break. See you at 4:00 PM pickup!</p>
+                    <div class="text-start small text-muted">10:25 AM</div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Chat Input Bar -->
+              <div class="p-3 border-top bg-white">
+                <form id="chatMessageForm" class="d-flex gap-2">
+                  <input type="text" class="form-control" id="chatMessageInput" placeholder="Type a message to Counselor Alex..." required>
+                  <button type="submit" class="btn btn-primary px-4"><i class="bi bi-send-fill"></i></button>
+                </form>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

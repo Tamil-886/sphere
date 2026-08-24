@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Daily Schedule & Passes - Parent Portal at CampSphere.">
+  <title>Daily Schedule - Parent Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+          Camp<span class="highlight-text">Sphere</span>
+        </a>
+        <button class="btn btn-sm btn-light d-lg-none sidebar-toggle-btn" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="children.html"><i class="bi bi-people"></i> My Children <span class="badge bg-primary rounded-pill ms-auto">2</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+          </li>
+          
+          <li class="nav-item pt-3 pb-1">
+            <small class="text-muted text-uppercase fw-bold ps-3" style="font-size: 0.75rem;">Account</small>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="bi bi-person-gear"></i> Family Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i> Portal Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <div>
+              <strong class="text-navy small d-block">Sarah Watson</strong>
+              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+            </div>
+          </div>
+          <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary btn-sm d-lg-none sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h4 class="mb-0 fw-bold text-navy">Daily Schedule & Single-Day Passes</h4>
+            <small class="text-muted">View your active single-day camp passes and master daily timetable</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <a href="../payment-daily.html" class="btn btn-accent btn-sm">
+            <i class="bi bi-plus-circle me-1"></i> Book New Daily Pass
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content">
+        
+        <!-- Active Daily Bookings Table -->
+        <div class="card-camp p-4 shadow-sm mb-4 border-top border-4 border-accent">
+          <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
+            <div>
+              <h5 class="fw-bold text-navy mb-1"><i class="bi bi-ticket-perforated text-accent me-2"></i> My Daily Schedule Bookings</h5>
+              <p class="text-muted small mb-0">Single-day camp passes confirmed for your children</p>
+            </div>
+            <a href="../daily-schedule.html" class="btn btn-outline-primary btn-sm">
+              <i class="bi bi-compass me-1"></i> Explore Daily Passes
+            </a>
+          </div>
+
+          <div class="table-responsive" id="portalDailySchedulesContainer">
+            <table class="table-camp align-middle">
+              <thead>
+                <tr>
+                  <th>Daily Pass / Schedule</th>
+                  <th>Camper</th>
+                  <th>Booked Date & Time</th>
+                  <th>Paid Amount</th>
+                  <th>Status</th>
+                  <th>Transaction ID</th>
+                </tr>
+              </thead>
+              <tbody id="portalDailySchedulesTableBody">
+                <!-- Dynamically populated from JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Master Daily Routine Overview -->
+        <div class="card-camp p-4 shadow-sm">
+          <h5 class="fw-bold text-navy mb-3"><i class="bi bi-clock-fill text-primary me-2"></i> Master Camp Daily Routine</h5>
+          <div class="table-responsive">
+            <table class="table-camp align-middle">
+              <thead>
+                <tr>
+                  <th style="width: 20%;">Time Slot</th>
+                  <th style="width: 30%;">Session Name</th>
+                  <th style="width: 50%;">Highlights</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>7:30 – 8:30 AM</strong></td>
+                  <td>Early Bird Arrival</td>
+                  <td>Indoor board games, quiet reading & breakfast snacks.</td>
+                </tr>
+                <tr>
+                  <td><strong>8:30 – 9:00 AM</strong></td>
+                  <td>Morning Rally & Check-In</td>
+                  <td>Campwide morning cheer, team anthems & announcements.</td>
+                </tr>
+                <tr>
+                  <td><strong>9:00 – 11:30 AM</strong></td>
+                  <td>Specialty Workshop Block 1</td>
+                  <td>Primary curriculum track immersion (Robotics, sports, arts).</td>
+                </tr>
+                <tr>
+                  <td><strong>11:30 AM – 1:00 PM</strong></td>
+                  <td>Chef Hot Lunch & Recess</td>
+                  <td>Nutritious dining hall hot lunch and lawn games.</td>
+                </tr>
+                <tr>
+                  <td><strong>1:00 – 2:30 PM</strong></td>
+                  <td>Aquatics & Pool Free Swim</td>
+                  <td>Certified lifeguard supervised pool splash & kayaking.</td>
+                </tr>
+                <tr>
+                  <td><strong>2:30 – 3:30 PM</strong></td>
+                  <td>Elective Activity Block 2</td>
+                  <td>Camper's choice of archery, crafts, climbing or music.</td>
+                </tr>
+                <tr>
+                  <td><strong>3:30 – 4:00 PM</strong></td>
+                  <td>Campfire Wrap-Up & Pick-Up</td>
+                  <td>Daily ribbons, singalongs and carline dismissals.</td>
+                </tr>
+                <tr>
+                  <td><strong>4:00 – 6:00 PM</strong></td>
+                  <td>After-Camp Club</td>
+                  <td>Supervised extended recreation, crafts & video lounge.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/programs-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>

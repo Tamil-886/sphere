@@ -1,0 +1,119 @@
+/* ==========================================================================
+   CampSphere - Kids Summer Camp & Activity Program
+   RTL (Right-to-Left) Stylesheet (assets/css/rtl.css)
+   ========================================================================== */
+
+[dir="rtl"] {
+  text-align: right;
+  direction: rtl;
+}
+
+[dir="rtl"] .dropdown-menu {
+  text-align: right;
+  left: auto !important;
+  right: 0 !important;
+}
+
+[dir="rtl"] .dropdown-item:hover,
+[dir="rtl"] .dropdown-item.active {
+  transform: translateX(-3px);
+}
+
+[dir="rtl"] .floating-badge-top {
+  left: auto;
+  right: -30px;
+}
+
+[dir="rtl"] .floating-badge-bottom {
+  right: auto;
+  left: -20px;
+}
+
+[dir="rtl"] .program-badge {
+  left: auto;
+  right: 14px;
+}
+
+[dir="rtl"] .program-price-tag {
+  right: auto;
+  left: 14px;
+}
+
+[dir="rtl"] .footer-links a:hover {
+  transform: translateX(-4px);
+}
+
+[dir="rtl"] .dashboard-sidebar {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .dashboard-main {
+  margin-left: 0;
+  margin-right: 270px;
+}
+
+@media (max-width: 1199.98px) {
+  [dir="rtl"] .dashboard-main {
+    margin-right: 240px;
+  }
+}
+
+@media (max-width: 991.98px) {
+  [dir="rtl"] .dashboard-sidebar {
+    transform: translateX(100%);
+  }
+  [dir="rtl"] .dashboard-sidebar.show {
+    transform: translateX(0);
+  }
+  [dir="rtl"] .dashboard-main {
+    margin-right: 0 !important;
+  }
+}
+
+[dir="rtl"] .camp-toast {
+  border-left: none;
+  border-right: 5px solid var(--primary);
+  animation-name: slideInLeft;
+}
+
+[dir="rtl"] .toast-container-custom {
+  right: auto;
+  left: 24px;
+}
+
+[dir="rtl"] .back-to-top {
+  right: auto;
+  left: 24px;
+}
+
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-50px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+[dir="rtl"] .bi-arrow-right::before,
+[dir="rtl"] .bi-chevron-right::before {
+  content: "\f284"; /* chevron-left / arrow-left */
+}
+
+[dir="rtl"] .bi-arrow-left::before,
+[dir="rtl"] .bi-chevron-left::before {
+  content: "\f285"; /* chevron-right / arrow-right */
+}
+
+[dir="rtl"] .reveal-left {
+  transform: translateX(36px);
+}
+
+[dir="rtl"] .reveal-right {
+  transform: translateX(-36px);
+}
+
+[dir="rtl"] .btn:hover i.bi-arrow-right,
+[dir="rtl"] .btn:hover i.bi-chevron-right {
+  transform: translateX(-4px);
+}
+

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampSphere - Adventure, STEM & Creative Arts Kids Summer Camp Experience.">
+  <title>CampSphere - Kids Adventure & Creative Summer Camp (Home 2)</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- CampSphere Modern Preloader -->
+  <div class="camp-preloader">
+    <div class="preloader-content">
+      <div class="preloader-badge">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+      <div class="preloader-title">Camp<span class="highlight-text">Sphere</span></div>
+      <p class="text-muted small mb-2">Preparing Adventure & STEM Experience...</p>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#campNavbar2" aria-controls="campNavbar2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="campNavbar2">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door-fill text-primary"></i> Home Page 1 (Main Camp)</a></li>
+              <li><a class="dropdown-item active" href="home-2.html"><i class="bi bi-compass-fill text-accent"></i> Home Page 2 (Adventure & STEM)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+          <!-- Programs Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <!-- Pages Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Dark, RTL & Parent Login -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Hero 2: Adventure & Exploration Split Grid with Animations & Stickers -->
+  <section class="hero-2-section position-relative overflow-hidden">
+    <!-- Topographic & Ambient Campfire Glows -->
+    <div class="adventure-topo-lines" style="opacity: 0.35;"></div>
+    <div class="adventure-sun-glow" style="top: -50px; left: 6%; opacity: 0.5;"></div>
+    <div class="adventure-lake-glow" style="bottom: -70px; right: 6%; opacity: 0.5;"></div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-on-scroll reveal-up">
+          <span class="badge bg-danger text-white fw-bold mb-3 px-3 py-2 text-uppercase letter-spacing-1">
+            <i class="bi bi-fire me-1"></i> Unleash Young Creators & Explorers
+          </span>
+          <h1 class="display-4 fw-extrabold mb-3">
+            Ignite Curiosity with Hands-on <span class="text-secondary-custom">STEM</span>, <span class="text-accent-custom">Adventure</span> & <span class="text-highlight-custom">Arts</span>!
+          </h1>
+          <p class="lead text-white-50 mb-4">
+            A dynamic youth camp experience combining high-ropes wilderness trekking, coding & robotics masterclasses, Olympic swim training, and musical theater on Lake Tahoe.
+          </p>
+          <div class="d-flex flex-wrap align-items-center gap-3">
+            <a href="enrollment.html" class="btn btn-accent btn-lg btn-shimmer"><i class="bi bi-rocket-takeoff"></i> Reserve Summer Seat</a>
+            <a href="#campVideoModal" data-bs-toggle="modal" class="btn btn-outline-white btn-lg"><i class="bi bi-play-circle-fill text-warning"></i> Watch Camp Tour</a>
+          </div>
+
+          <div class="row g-3 mt-4 pt-3 border-top border-secondary border-opacity-25">
+            <div class="col-4">
+              <h3 class="fw-bold text-highlight-custom mb-0 stat-number" data-count="25" data-suffix="+">25+</h3>
+              <small class="text-white-50">Elective Camps</small>
+            </div>
+            <div class="col-4">
+              <h3 class="fw-bold text-secondary-custom mb-0">1:5</h3>
+              <small class="text-white-50">Counselor Ratio</small>
+            </div>
+            <div class="col-4">
+              <h3 class="fw-bold text-accent-custom mb-0 stat-number" data-count="100" data-suffix="%">100%</h3>
+              <small class="text-white-50">Safety Record</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 position-relative reveal-on-scroll reveal-zoom delay-150">
+          <!-- Playful Stickers in Hero 2 -->
+          <div class="camp-sticker sticker-rocket anim-float d-none d-sm-inline-flex" style="top: -15px; left: -10px;">
+            <i class="bi bi-rocket-takeoff-fill me-1 text-accent"></i> Robotics & STEM
+          </div>
+          <div class="camp-sticker sticker-sun anim-pulse d-none d-sm-inline-flex" style="top: 20px; right: -15px;">
+            <i class="bi bi-sun-fill me-1 text-warning"></i> Lake Tahoe 2026
+          </div>
+          <div class="camp-sticker sticker-compass anim-wiggle camp-sticker-icon-only d-none d-sm-inline-flex" style="bottom: 10px; left: 10px;">
+            <i class="bi bi-compass-fill text-primary"></i>
+          </div>
+
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="hero-2-grid-item mb-3">
+                <img src="assets/images/hero2_lake_adventure.jpg" alt="Outdoor Lake Kayaking & Water Safari" class="w-100" style="height: 220px; object-fit: cover;">
+              </div>
+              <div class="hero-2-grid-item">
+                <img src="assets/images/hero2_stem_robotics.jpg" alt="Hands-on Junior Robotics & Python Coding" class="w-100" style="height: 180px; object-fit: cover;">
+              </div>
+            </div>
+            <div class="col-6 pt-4">
+              <div class="hero-2-grid-item mb-3">
+                <img src="assets/images/hero2_creative_arts.jpg" alt="Creative Arts & Painting Studio" class="w-100" style="height: 180px; object-fit: cover;">
+              </div>
+              <div class="hero-2-grid-item">
+                <img src="assets/images/hero2_camp_nature_bonding.jpg" alt="Campfire Stories, Nature & Teamwork Bonding" class="w-100" style="height: 220px; object-fit: cover;">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Tour Modal -->
+  <div class="modal fade" id="campVideoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark text-white">
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title"><i class="bi bi-camera-reels text-warning me-2"></i> CampSphere Virtual Campus Tour</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-0">
+          <div class="ratio ratio-16x9">
+            <iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ?autoplay=0" title="Camp Tour Video" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Four Pillars of Excellence -->
+  <section class="section-padding position-relative">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
+          <div class="card-camp p-4 text-center h-100 border-top border-4 border-primary shadow-sm">
+            <div class="category-icon bg-primary-light text-primary mx-auto mb-3"><i class="bi bi-compass"></i></div>
+            <h4 class="fw-bold mb-2">Outdoor Adventure</h4>
+            <p class="text-muted small mb-0">High-ropes, rock wall climbing, orienteering, kayaking, and survival skills that build grit and resilience.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
+          <div class="card-camp p-4 text-center h-100 border-top border-4 border-accent shadow-sm">
+            <div class="category-icon bg-accent-light text-accent mx-auto mb-3"><i class="bi bi-laptop"></i></div>
+            <h4 class="fw-bold mb-2">STEM & Coding</h4>
+            <p class="text-muted small mb-0">Hands-on LEGO Spike robotics, Python game design, 3D printing, and drone flight navigation.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
+          <div class="card-camp p-4 text-center h-100 border-top border-4 border-secondary shadow-sm">
+            <div class="category-icon bg-secondary-light text-secondary mx-auto mb-3"><i class="bi bi-water"></i></div>
+            <h4 class="fw-bold mb-2">Aquatics & Swim</h4>
+            <p class="text-muted small mb-0">Daily certified Red Cross swim instruction, splash races, water polo, and supervised lake recreation.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
+          <div class="card-camp p-4 text-center h-100 border-top border-4 border-warning shadow-sm">
+            <div class="category-icon bg-highlight-light text-warning mx-auto mb-3"><i class="bi bi-palette-fill"></i></div>
+            <h4 class="fw-bold mb-2">Arts & Theater</h4>
+            <p class="text-muted small mb-0">Ceramic pottery wheel, canvas painting, musical theater choreography, and Friday camp shows.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Visual Daily Schedule Breakdown -->
+  <section class="section-padding bg-light-blue position-relative">
+    <div class="camp-sticker sticker-tent anim-float d-none d-lg-inline-flex" style="top: 20px; right: 5%;">
+      <i class="bi bi-clock-history me-1 text-primary"></i> Daily Camp Routine
+    </div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-secondary mb-2">Structure & Balance</div>
+        <h2 class="fw-bold">A Day in the Life of a Camper</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Every day blends structured skill workshops, energetic outdoor games, wholesome meals, and joyful free play.</p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-10 reveal-on-scroll reveal-up delay-150">
+          <div class="card-camp p-4 p-md-5 shadow-sm">
+            <div class="row align-items-center py-3 border-bottom">
+              <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                <span class="badge bg-primary text-white rounded-pill px-3 py-2 w-100 d-inline-flex align-items-center justify-content-center fw-bold shadow-xs"><i class="bi bi-clock-fill me-2"></i> 8:00 – 8:45 AM</span>
+              </div>
+              <div class="col-md-8 col-lg-9 ps-md-3">
+                <h5 class="fw-bold mb-1 text-navy">Curbside Drop-off & Morning Muster</h5>
+                <p class="text-muted small mb-0">Counselor greeting, team spirit chants, daily goal briefing, and morning energy stretch.</p>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3 border-bottom">
+              <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                <span class="badge bg-accent text-white rounded-pill px-3 py-2 w-100 d-inline-flex align-items-center justify-content-center fw-bold shadow-xs"><i class="bi bi-clock-fill me-2"></i> 9:00 – 11:30 AM</span>
+              </div>
+              <div class="col-md-8 col-lg-9 ps-md-3">
+                <h5 class="fw-bold mb-1 text-navy">Morning Specialty Focus (STEM / Sports / Arts)</h5>
+                <p class="text-muted small mb-0">Intensive project-based skill building with certified track specialists.</p>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3 border-bottom">
+              <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                <span class="badge bg-highlight text-white rounded-pill px-3 py-2 w-100 d-inline-flex align-items-center justify-content-center fw-bold shadow-xs" style="background-color: #D97706 !important;"><i class="bi bi-clock-fill me-2"></i> 11:45 AM – 1:00 PM</span>
+              </div>
+              <div class="col-md-8 col-lg-9 ps-md-3">
+                <h5 class="fw-bold mb-1 text-navy">Fresh Chef Lunch & Supervised Free Play</h5>
+                <p class="text-muted small mb-0">Nutritious hot lunch, fruit bar, lawn games, board games, and quiet tree-shade rest.</p>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3 border-bottom">
+              <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                <span class="badge bg-secondary text-white rounded-pill px-3 py-2 w-100 d-inline-flex align-items-center justify-content-center fw-bold shadow-xs"><i class="bi bi-clock-fill me-2"></i> 1:15 – 3:15 PM</span>
+              </div>
+              <div class="col-md-8 col-lg-9 ps-md-3">
+                <h5 class="fw-bold mb-1 text-navy">Aquatics Splash, Pool Games & Team Relay</h5>
+                <p class="text-muted small mb-0">Red Cross certified lifeguard supervision, water polo tournaments, and obstacle races.</p>
+              </div>
+            </div>
+
+            <div class="row align-items-center py-3">
+              <div class="col-md-4 col-lg-3 mb-2 mb-md-0">
+                <span class="badge bg-dark-navy text-white rounded-pill px-3 py-2 w-100 d-inline-flex align-items-center justify-content-center fw-bold shadow-xs"><i class="bi bi-clock-fill me-2"></i> 3:30 – 4:15 PM</span>
+              </div>
+              <div class="col-md-8 col-lg-9 ps-md-3">
+                <h5 class="fw-bold mb-1 text-navy">All-Camp Celebration & Secure Dismissal</h5>
+                <p class="text-muted small mb-0">Camper of the Day ribbons, counselor awards, afternoon snack, and PIN-secured pickup.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Mentor Spotlight -->
+  <section class="section-padding position-relative">
+    <div class="container">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-accent mb-2">Our World-Class Staff</div>
+        <h2 class="fw-bold">Meet Your Child's Mentors</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Passionate, background-checked, and CPR-certified educators dedicated to inspiring every camper.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
+          <div class="card-camp text-center p-4 h-100 shadow-sm d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=300&auto=format&fit=crop&q=80" alt="Counselor Jessica Vance" class="rounded-circle mx-auto mb-3 shadow" style="width: 110px; height: 110px; object-fit: cover;">
+            <h5 class="fw-bold mb-1 text-navy">Jessica Vance</h5>
+            <div class="mb-2">
+              <span class="badge rounded-pill px-3 py-1 bg-primary-light text-primary">Head of STEM & Robotics</span>
+            </div>
+            <p class="text-muted small mb-3 flex-grow-1">M.S. in Computer Science, 6 years youth STEM coaching and FIRST LEGO League mentor.</p>
+            <div class="d-flex align-items-center justify-content-center gap-2 text-warning small mt-auto pt-2 border-top border-light-subtle">
+              <i class="bi bi-award-fill"></i> CPR & First Aid Certified
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
+          <div class="card-camp text-center p-4 h-100 shadow-sm d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=300&auto=format&fit=crop&q=80" alt="Coach Marcus Hayes" class="rounded-circle mx-auto mb-3 shadow" style="width: 110px; height: 110px; object-fit: cover;">
+            <h5 class="fw-bold mb-1 text-navy">Marcus Hayes</h5>
+            <div class="mb-2">
+              <span class="badge rounded-pill px-3 py-1 bg-accent-light text-accent">Athletics Director</span>
+            </div>
+            <p class="text-muted small mb-3 flex-grow-1">Former NCAA soccer athlete, USA Track & Field Level 2 certified coach.</p>
+            <div class="d-flex align-items-center justify-content-center gap-2 text-warning small mt-auto pt-2 border-top border-light-subtle">
+              <i class="bi bi-award-fill"></i> Wilderness First Responder
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
+          <div class="card-camp text-center p-4 h-100 shadow-sm d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=300&auto=format&fit=crop&q=80" alt="Counselor Chloe Bennett" class="rounded-circle mx-auto mb-3 shadow" style="width: 110px; height: 110px; object-fit: cover;">
+            <h5 class="fw-bold mb-1 text-navy">Chloe Bennett</h5>
+            <div class="mb-2">
+              <span class="badge rounded-pill px-3 py-1 bg-secondary-light text-secondary">Aquatics Director</span>
+            </div>
+            <p class="text-muted small mb-3 flex-grow-1">Red Cross certified Water Safety Instructor with 8 years competitive swimming experience.</p>
+            <div class="d-flex align-items-center justify-content-center gap-2 text-warning small mt-auto pt-2 border-top border-light-subtle">
+              <i class="bi bi-award-fill"></i> Red Cross Lifeguard Instructor
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
+          <div class="card-camp text-center p-4 h-100 shadow-sm d-flex flex-column">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300&auto=format&fit=crop&q=80" alt="Counselor Tyler Scott" class="rounded-circle mx-auto mb-3 shadow" style="width: 110px; height: 110px; object-fit: cover;">
+            <h5 class="fw-bold mb-1 text-navy">Tyler Scott</h5>
+            <div class="mb-2">
+              <span class="badge rounded-pill px-3 py-1 bg-highlight-light text-warning">Wilderness Specialist</span>
+            </div>
+            <p class="text-muted small mb-3 flex-grow-1">Certified Leave-No-Trace master educator, wilderness survival and high-ropes supervisor.</p>
+            <div class="d-flex align-items-center justify-content-center gap-2 text-warning small mt-auto pt-2 border-top border-light-subtle">
+              <i class="bi bi-award-fill"></i> ACCT Level 2 Ropes Certified
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Transparent Pricing Preview -->
+  <section class="section-padding bg-soft-lavender position-relative">
+    <div class="container">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-primary mb-2">Transparent Tuition</div>
+        <h2 class="fw-bold">Flexible Passes for Every Family</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">All plans include lunch, camp t-shirt, equipment, and live photo app access. Sibling discounts available.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-lg-4 col-md-6 reveal-on-scroll reveal-up delay-100">
+          <div class="pricing-card h-100 d-flex flex-column">
+            <h4 class="fw-bold mb-1 text-navy">Single Week Pass</h4>
+            <p class="text-muted small mb-0">Ideal for trying out a specific specialty track.</p>
+            <div class="pricing-price">$360 <span class="period">/ week</span></div>
+            <ul class="pricing-features flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Full 5-day camp access (8:30am - 4:00pm)</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Daily chef hot lunch & organic snacks</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> CampSphere official t-shirt & badge</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Live parent portal photo feed</li>
+            </ul>
+            <a href="enrollment.html" class="btn btn-outline-primary w-100 mt-auto">Enroll Single Week</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 reveal-on-scroll reveal-zoom delay-200">
+          <div class="pricing-card featured h-100 d-flex flex-column">
+            <div class="pricing-badge">Most Popular • 15% Off</div>
+            <h4 class="fw-bold mb-1 text-primary">Multi-Week Adventure</h4>
+            <p class="text-muted small mb-0">3-week bundle with free extended care included.</p>
+            <div class="pricing-price text-primary">$310 <span class="period">/ week ($930 total)</span></div>
+            <ul class="pricing-features flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Choose any 3 weeks throughout summer</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> <strong>FREE</strong> Early drop-off (7:30 AM)</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Sibling 10% discount applicable</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Unlimited track switching flexibility</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Priority camp elective selection</li>
+            </ul>
+            <a href="enrollment.html" class="btn btn-accent w-100 shadow btn-shimmer mt-auto">Enroll Multi-Week Pass</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 reveal-on-scroll reveal-up delay-300">
+          <div class="pricing-card h-100 d-flex flex-column">
+            <h4 class="fw-bold mb-1 text-navy">Full Summer VIP</h4>
+            <p class="text-muted small mb-0">Complete 8-week season with VIP perks.</p>
+            <div class="pricing-price">$275 <span class="period">/ week ($2,200 total)</span></div>
+            <ul class="pricing-features flex-grow-1">
+              <li><i class="bi bi-check-circle-fill text-success"></i> Full 8-week summer season pass</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Free extended care (7:30am - 6:00pm)</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> Free weekend campout package</li>
+              <li><i class="bi bi-check-circle-fill text-success"></i> 2 Free camp jerseys & backpack kit</li>
+            </ul>
+            <a href="enrollment.html" class="btn btn-outline-primary w-100 mt-auto">Enroll Full Summer</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Camp Matcher Quiz Banner -->
+  <section class="section-padding position-relative">
+    <div class="container">
+      <div class="cta-banner reveal-on-scroll reveal-zoom" style="background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);">
+        <div class="row align-items-center position-relative" style="z-index: 2;">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark fw-bold mb-2 px-3 py-2">Personalized Recommendation</span>
+            <h2 class="display-6 fw-bold mb-2">Find the Camp That Matches Your Child's Passions</h2>
+            <p class="mb-0 text-white-50 lead">Answer 4 quick questions about their favorite activities, age, and weekly schedule to see instant top camp matches.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <a href="camp-match.html" class="btn btn-warning btn-lg text-dark fw-bold shadow-lg btn-shimmer">
+              <i class="bi bi-stars me-1"></i> Start Matching Quiz
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <!-- 1. Top Highlights Bar -->
+      <div class="footer-top-features">
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-shield-check text-primary"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">100% ACA Accredited</h6>
+                <small class="text-muted">Highest Safety Standards</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-people-fill text-success"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">1:5 Counselor Ratio</h6>
+                <small class="text-muted">Certified CPR & Medical Staff</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-bus-front-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">Camp Shuttles</h6>
+                <small class="text-muted">12 Safe Neighborhood Zones</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">4.9/5 Parent Rating</h6>
+                <small class="text-muted">4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Footer Columns -->
+      <div class="row g-5">
+        <!-- Col 1: Brand & Contact -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo text-white mb-3" href="index.html">
+            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+            Camp<span class="highlight-text">Sphere</span>
+          </a>
+          <p class="text-muted small mb-4">
+            Empowering youth through experiential STEM learning, outdoor wilderness expeditions, creative arts, and water sports in a safe, accredited environment.
+          </p>
+          <ul class="footer-contact-list list-unstyled">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>742 Evergreen Pine Woods, Lake Tahoe, CA 96150</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <span>+1 (800) 555-CAMP (2267)</span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <span>admissions@campsphere.com</span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Programs -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Robotics & STEM</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Wilderness Survival</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Lakeside Aquatics</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Creative Arts</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Mini Campers (4-6)</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Teen Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Explore</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Our Campus</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right"></i> Daily Schedule</a></li>
+            <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Summer Calendar</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Tuition & Passes</a></li>
+            <li><a href="safety.html"><i class="bi bi-chevron-right"></i> Safety & Medical</a></li>
+            <li><a href="camp-match.html"><i class="bi bi-chevron-right"></i> Camp Matcher</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Portals -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Portals</h5>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="bi bi-chevron-right"></i> Parent Login</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Register Family</a></li>
+            <li><a href="parent/dashboard.html"><i class="bi bi-chevron-right"></i> Parent Portal</a></li>
+            <li><a href="enrollment.html"><i class="bi bi-chevron-right"></i> Online Registration</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> Support & FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter & Social -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Stay Connected</h5>
+          <p class="text-muted small mb-3">Join 12,000+ parents receiving early enrollment discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); window.showCampToast('Thank you for subscribing to CampSphere updates!', 'success', 'Subscribed'); this.reset();">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm" placeholder="Your email" required>
+            </div>
+            <button class="btn btn-primary btn-sm w-100" type="submit">Join Newsletter</button>
+          </form>
+          <div class="d-flex gap-2 mt-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Legal & Meta Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-muted">
+          © 2026 CampSphere Kids Summer Camp & Activity Platform. All rights reserved.
+        </p>
+        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+          <a href="safety.html" class="text-muted">Privacy Policy</a>
+          <span>•</span>
+          <a href="faq.html" class="text-muted">Terms & Safety Waiver</a>
+          <span>•</span>
+          <a href="contact.html" class="text-muted">Campus Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short fs-3"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/programs-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

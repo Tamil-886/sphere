@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Camper Profile & Medical Records - Emma Watson at CampSphere.">
+  <title>Emma Watson - Camper Profile</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+          Camp<span class="highlight-text">Sphere</span>
+        </a>
+        <button class="btn btn-sm btn-light d-lg-none sidebar-toggle-btn" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="children.html"><i class="bi bi-people"></i> My Children <span class="badge bg-primary rounded-pill ms-auto">2</span></a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+          </li>
+          
+          <li class="nav-item pt-3 pb-1">
+            <small class="text-muted text-uppercase fw-bold ps-3" style="font-size: 0.75rem;">Account</small>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="bi bi-person-gear"></i> Family Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i> Portal Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <div>
+              <strong class="text-navy small d-block">Sarah Watson</strong>
+              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+            </div>
+          </div>
+          <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <a href="children.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left me-1"></i> Back to Campers</a>
+          <div>
+            <h4 class="mb-0 fw-bold text-navy">Camper Profile: Emma Watson</h4>
+            <small class="text-muted">Camper ID: CH-101 • Grade 3</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label d-none d-sm-inline">RTL</span>
+          </button>
+          <button class="btn btn-sm btn-outline-primary" onclick="window.showCampToast('Medical form is synchronized with Health Lodge.', 'success', 'Verified');">
+            <i class="bi bi-check2-all me-1"></i> Health Records Verified
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <!-- Profile Banner -->
+        <div class="card-camp p-4 mb-4 shadow-sm">
+          <div class="d-flex flex-column flex-sm-row align-items-center gap-4">
+            <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?w=180&auto=format&fit=crop&q=80" alt="Emma Watson" class="rounded-circle shadow" style="width: 100px; height: 100px; object-fit: cover;">
+            <div class="flex-grow-1 text-center text-sm-start">
+              <div class="d-flex flex-wrap align-items-center gap-2 justify-content-center justify-content-sm-start mb-1">
+                <h3 class="fw-bold text-navy mb-0">Emma Watson</h3>
+                <span class="badge bg-primary text-white">Junior Adventurer Track</span>
+                <span class="badge bg-danger text-white"><i class="bi bi-shield-exclamation me-1"></i> Peanut Allergy</span>
+              </div>
+              <p class="text-muted small mb-2">Born: April 12, 2018 (Age 8) • Lake Tahoe Elementary • T-Shirt Size: Youth Medium (YM)</p>
+              <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-sm-start small">
+                <span><i class="bi bi-person-fill text-primary"></i> Parent: Sarah Watson</span>
+                <span><i class="bi bi-telephone-fill text-success"></i> (555) 019-2834</span>
+                <span><i class="bi bi-key-fill text-warning"></i> Pickup PIN: <strong>8492</strong></span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4 mb-4">
+          
+          <!-- Medical & Dietary Safety Card -->
+          <div class="col-lg-6">
+            <div class="card-camp p-4 shadow-sm h-100">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-heart-pulse-fill text-danger me-2"></i> Medical & Dietary Safety Records</h5>
+              
+              <div class="p-3 bg-danger-light rounded-3 mb-3 border border-danger border-opacity-25">
+                <strong class="text-danger d-block mb-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Severe Allergy Alert: Peanuts</strong>
+                <p class="small text-muted mb-0">Emma carries an Auvi-Q / EpiPen auto-injector in her camp pack. Dedicated counselor Alex carries the backup kit.</p>
+              </div>
+
+              <ul class="list-unstyled small mb-0">
+                <li class="py-2 border-bottom d-flex justify-content-between">
+                  <span class="text-muted">Dietary Meal Plan:</span>
+                  <strong class="text-navy">Nut-Free Facility Verified</strong>
+                </li>
+                <li class="py-2 border-bottom d-flex justify-content-between">
+                  <span class="text-muted">Daily Medications:</span>
+                  <strong class="text-navy">None during camp hours</strong>
+                </li>
+                <li class="py-2 border-bottom d-flex justify-content-between">
+                  <span class="text-muted">Swimming Proficiency:</span>
+                  <strong class="text-navy">Intermediate (Deep pool permitted)</strong>
+                </li>
+                <li class="py-2 border-bottom d-flex justify-content-between">
+                  <span class="text-muted">Primary Pediatrician:</span>
+                  <strong class="text-navy">Dr. Emily Chang (555-8821)</strong>
+                </li>
+                <li class="py-2 d-flex justify-content-between">
+                  <span class="text-muted">Medical Insurance Carrier:</span>
+                  <strong class="text-navy">BlueCross PPO (#BC-99210)</strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Emergency Contacts Card -->
+          <div class="col-lg-6">
+            <div class="card-camp p-4 shadow-sm h-100">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-telephone-plus-fill text-primary me-2"></i> Authorized Pickups & Emergency Contacts</h5>
+
+              <div class="p-3 border rounded-3 bg-light mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <strong class="text-navy small">1. Sarah Watson (Mother)</strong>
+                  <span class="badge bg-success">Primary Guardian</span>
+                </div>
+                <small class="text-muted d-block">Phone: (555) 019-2834 • Email: sarah.watson@example.com</small>
+              </div>
+
+              <div class="p-3 border rounded-3 bg-light mb-3">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <strong class="text-navy small">2. David Watson (Father)</strong>
+                  <span class="badge bg-secondary">Secondary Guardian</span>
+                </div>
+                <small class="text-muted d-block">Phone: (555) 019-9941 • Email: david.watson@example.com</small>
+              </div>
+
+              <div class="p-3 border rounded-3 bg-light">
+                <div class="d-flex justify-content-between align-items-center mb-1">
+                  <strong class="text-navy small">3. Clara Jenkins (Grandmother)</strong>
+                  <span class="badge bg-light text-dark border">Authorized Pickup</span>
+                </div>
+                <small class="text-muted d-block">Phone: (555) 348-1192 • PIN: 8492</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Enrolled Camp Sessions Table -->
+        <div class="card-camp shadow-sm mb-4">
+          <div class="card-camp-header d-flex flex-wrap justify-content-between align-items-center gap-2">
+            <h5 class="fw-bold mb-0 text-navy"><i class="bi bi-calendar-check text-primary me-2"></i> Emma's 2026 Camp Enrollments</h5>
+            <a href="../enrollment.html" class="btn btn-sm btn-accent"><i class="bi bi-plus-circle me-1"></i> Add Another Camp Week</a>
+          </div>
+          <div class="card-camp-body p-0">
+            <div class="table-responsive">
+              <table class="table-camp">
+                <thead>
+                  <tr>
+                    <th>Program Title</th>
+                    <th>Session Week</th>
+                    <th>Counselor</th>
+                    <th>Location / Room</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Junior Robotics & Python Coding</strong></td>
+                    <td>June 15 – June 19, 2026</td>
+                    <td>Counselor Alex (STEM Lab)</td>
+                    <td>Pine Innovation Lab #2</td>
+                    <td><span class="status-badge status-badge-confirmed">Confirmed</span></td>
+                    <td><a href="receipts.html" class="btn btn-sm btn-outline-primary py-1 px-2"><i class="bi bi-receipt"></i></a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Splash & Swim Water Safari</strong></td>
+                    <td>July 06 – July 10, 2026</td>
+                    <td>Chloe Bennett (Aquatics)</td>
+                    <td>Olympic Pool & Lake Deck</td>
+                    <td><span class="status-badge status-badge-confirmed">Confirmed</span></td>
+                    <td><a href="receipts.html" class="btn btn-sm btn-outline-primary py-1 px-2"><i class="bi bi-receipt"></i></a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Counselor Daily Observation Notes -->
+        <div class="card-camp p-4 shadow-sm">
+          <h5 class="fw-bold text-navy mb-3"><i class="bi bi-journal-text text-accent me-2"></i> Counselor Notes & Daily Log</h5>
+          <div class="p-3 bg-light rounded-3 border">
+            <div class="d-flex justify-content-between align-items-center mb-1">
+              <strong class="text-navy small"><i class="bi bi-person-badge text-primary me-1"></i> Counselor Alex</strong>
+              <small class="text-muted">May 20, 2026 (Pre-Camp Medical Check)</small>
+            </div>
+            <p class="text-muted small mb-0">
+              "Pre-camp intake complete. We have confirmed Emma's EpiPen station assignment in the front lab kit. Looking forward to our robotics building sessions!"
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

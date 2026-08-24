@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Invoice & Payment Details - Parent Portal at CampSphere.">
+  <title>Invoice Details - Parent Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+          Camp<span class="highlight-text">Sphere</span>
+        </a>
+        <button class="btn btn-sm btn-light d-lg-none sidebar-toggle-btn" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="children.html"><i class="bi bi-people"></i> My Children <span class="badge bg-primary rounded-pill ms-auto">2</span></a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+          </li>
+          
+          <li class="nav-item pt-3 pb-1">
+            <small class="text-muted text-uppercase fw-bold ps-3" style="font-size: 0.75rem;">Account</small>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="bi bi-person-gear"></i> Family Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i> Portal Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <div>
+              <strong class="text-navy small d-block">Sarah Watson</strong>
+              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+            </div>
+          </div>
+          <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <a href="payments.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left me-1"></i> Back to Payments</a>
+          <div>
+            <h4 class="mb-0 fw-bold text-navy" id="invoiceHeaderTitle">Invoice: INV-2026-001</h4>
+            <small class="text-muted" id="invoiceHeaderDate">Payment Received: May 10, 2026</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label d-none d-sm-inline">RTL</span>
+          </button>
+          <button class="btn btn-primary btn-sm btn-download-receipt" id="invoicePrintBtn" data-receipt-id="INV-2026-001">
+            <i class="bi bi-printer me-1"></i> Print Official Invoice
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+            
+            <div class="card-camp p-5 shadow-sm" id="invoiceContainer">
+              <div class="d-flex justify-content-between align-items-start mb-4 pb-4 border-bottom">
+                <div>
+                  <a class="brand-logo mb-2" href="../index.html">
+                    <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+                    Camp<span class="highlight-text">Sphere</span>
+                  </a>
+                  <p class="text-muted small mb-0">
+                    CampSphere Youth Summer Camp Programs LLC<br>
+                    742 Evergreen Pine Woods, Lake Tahoe, CA 96150<br>
+                    Tax ID (EIN): 94-2849102 • Phone: +1 (800) 555-CAMP
+                  </p>
+                </div>
+                <div class="text-end">
+                  <span class="status-badge status-badge-paid fs-6 mb-2" id="invoiceStatusBadge"><i class="bi bi-check-circle-fill"></i> Paid in Full</span>
+                  <div class="text-muted small">Invoice #: <strong id="invoiceNumberText">INV-2026-001</strong></div>
+                  <div class="text-muted small">Date: <span id="invoiceDateText">May 10, 2026</span></div>
+                  <div class="text-muted small" id="invoiceMethodText"><i class="bi bi-credit-card me-1"></i> Visa •••• 4242</div>
+                </div>
+              </div>
+
+              <!-- Billed To -->
+              <div class="row mb-4 small">
+                <div class="col-sm-6">
+                  <span class="text-muted text-uppercase fw-bold d-block mb-1">Billed To (Parent / Guardian)</span>
+                  <strong class="text-navy fs-6" id="invoiceParentName">Sarah Watson</strong>
+                  <p class="text-muted mb-0" id="invoiceParentAddress">1204 Pine Vista Drive, Tahoe City, CA<br>Phone: (555) 019-2834 • Email: sarah.watson@example.com</p>
+                </div>
+                <div class="col-sm-6 text-sm-end mt-3 mt-sm-0">
+                  <span class="text-muted text-uppercase fw-bold d-block mb-1">Enrolled Camper & Program</span>
+                  <strong class="text-navy fs-6" id="invoiceCamperInfo">Emma Watson (Age 8)</strong>
+                  <p class="text-muted mb-0" id="invoiceProgramDetails">Program: Junior STEM & Robotics<br>Session: June 15 – June 19, 2026</p>
+                </div>
+              </div>
+
+              <!-- Itemized Table -->
+              <div class="table-responsive mb-4">
+                <table class="table-camp">
+                  <thead>
+                    <tr>
+                      <th>Description</th>
+                      <th>Schedule / Session Period</th>
+                      <th>Qty</th>
+                      <th class="text-end">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody id="invoiceTableBody">
+                    <tr>
+                      <td>
+                        <strong id="itemMainTitle">Junior Robotics & Python Coding</strong>
+                        <small class="text-muted d-block" id="itemMainDesc">Full 5-Day Day Camp, 8:30 AM – 4:00 PM</small>
+                      </td>
+                      <td id="itemSessionPeriod">June 15 – 19, 2026</td>
+                      <td>1</td>
+                      <td class="text-end" id="itemMainPrice">$395.00</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Chef Hot Lunch & Daily Organic Snacks</strong>
+                        <small class="text-muted d-block">Nut-Free Allergy Compliant Meal Plan</small>
+                      </td>
+                      <td id="itemLunchPeriod">June 15 – 19, 2026</td>
+                      <td>1</td>
+                      <td class="text-end text-success">$0.00 (Included)</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Official CampSphere T-Shirt & Materials Kit</strong>
+                        <small class="text-muted d-block">Welcome Package</small>
+                      </td>
+                      <td id="itemKitPeriod">June 15 – 19, 2026</td>
+                      <td>1</td>
+                      <td class="text-end text-success">$0.00 (Included)</td>
+                    </tr>
+                  </tbody>
+                  <tfoot>
+                    <tr>
+                      <td colspan="3" class="text-end fw-bold text-navy">Subtotal:</td>
+                      <td class="text-end fw-bold" id="invoiceSubtotal">$395.00</td>
+                    </tr>
+                    <tr>
+                      <td colspan="3" class="text-end fw-bold text-navy">Taxes & Fees:</td>
+                      <td class="text-end fw-bold">$0.00</td>
+                    </tr>
+                    <tr class="fs-5">
+                      <td colspan="3" class="text-end fw-bold text-navy">Total Paid:</td>
+                      <td class="text-end fw-bold text-primary" id="invoiceTotalPaid">$395.00</td>
+                    </tr>
+                  </tfoot>
+                </table>
+              </div>
+
+              <div class="p-3 bg-light rounded-3 small text-muted">
+                <i class="bi bi-shield-check text-success me-1"></i> <strong>Tax Note:</strong> This document qualifies as an official child care expense statement under IRS Form 2441. Keep for your tax records.
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampSphere Weekly Schedule Payment & Session Checkout Portal.">
+  <title>Weekly Schedule Payment - CampSphere</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp sticky-top" id="mainNavbar">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Navigation Menu -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door text-primary"></i> Home - Classic Camp</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-stars text-accent"></i> Home - Modern Adventure</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+          <!-- Programs Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs (25)</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item active" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+              <li><a class="dropdown-item" href="wishlist.html"><i class="bi bi-heart-fill text-danger"></i> Saved Wishlist</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <!-- Pages Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Wishlist, Dark, RTL & Parent Profile / Login -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          
+          <!-- User Profile Dropdown -->
+          <div class="dropdown nav-user-dropdown ms-lg-1" id="navUserDropdownContainer">
+            <button class="btn btn-outline-primary btn-sm dropdown-toggle d-flex align-items-center gap-2 rounded-pill px-3 py-1 fw-bold shadow-xs" type="button" id="navUserMenuDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Sarah Watson" class="rounded-circle nav-user-avatar" style="width: 26px; height: 26px; object-fit: cover;">
+              <span class="user-display-name">Sarah Watson</span>
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-2 p-2" aria-labelledby="navUserMenuDropdown" style="min-width: 240px;">
+              <li class="px-3 py-2 border-bottom mb-2 bg-light rounded-2">
+                <strong class="d-block text-navy">Sarah Watson</strong>
+                <small class="text-muted text-truncate d-block" style="font-size: 0.75rem;">sarah.watson@example.com</small>
+                <span class="badge bg-success-light text-success mt-1" style="font-size: 0.68rem;"><i class="bi bi-shield-check me-1"></i> Active Parent Account</span>
+              </li>
+              <li><a class="dropdown-item py-2 rounded-2 fw-semibold" href="parent/dashboard.html"><i class="bi bi-speedometer2 text-primary me-2"></i> Parent Dashboard</a></li>
+              <li><a class="dropdown-item py-2 rounded-2 fw-semibold" href="parent/weekly-schedule.html"><i class="bi bi-calendar-week text-success me-2"></i> Weekly Schedule</a></li>
+              <li><hr class="dropdown-divider my-1"></li>
+              <li><a class="dropdown-item py-2 rounded-2 text-danger nav-logout-action" href="javascript:void(0)"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="section-padding-sm bg-light-blue border-bottom">
+    <div class="container text-center">
+      <span class="badge bg-success text-white px-3 py-2 rounded-pill mb-2">Weekly Session Checkout</span>
+      <h1 class="fw-bold mb-1 text-navy">Weekly Schedule Payment & Booking</h1>
+      <p class="text-muted mx-auto" style="max-width: 600px;">Secure your full Monday–Friday weekly cohort session for Summer 2026.</p>
+    </div>
+  </section>
+
+  <!-- Main Checkout Container -->
+  <section class="section-padding">
+    <div class="container">
+      
+      <!-- Order Booked Successfully Alert Container -->
+      <div id="bookingSuccessAlertContainer" class="mb-4" style="display: none;"></div>
+
+      <form id="weeklySchedulePaymentForm" novalidate>
+        <div class="row g-4">
+          
+          <!-- Left Column: Form Details -->
+          <div class="col-lg-8">
+            
+            <!-- Step 1: Selected Weekly Cohort Session -->
+            <div class="card-camp p-4 shadow-sm mb-4 border-top border-4 border-success">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-calendar-week text-success me-2"></i> 1. Select Weekly Camp Session</h5>
+              
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label small fw-bold" for="weeklySessionSelect">Weekly Cohort Theme & Dates <span class="text-danger">*</span></label>
+                  <select class="form-select" id="weeklySessionSelect" required>
+                    <option value="" disabled>-- Select a Weekly Camp Session --</option>
+                    <option value="week-1" data-price="395" data-title="Space & Robotics Odyssey" data-dates="June 15 – June 19, 2026" data-week="Week 1" selected>Week 1: Space & Robotics Odyssey (June 15 – June 19, 2026) — $395.00</option>
+                    <option value="week-2" data-price="360" data-title="Summer Olympic Champions" data-dates="June 22 – June 26, 2026" data-week="Week 2">Week 2: Summer Olympic Champions (June 22 – June 26, 2026) — $360.00</option>
+                    <option value="week-3" data-price="375" data-title="Aquatic Safari & Water Fest" data-dates="July 06 – July 10, 2026" data-week="Week 3">Week 3: Aquatic Safari & Water Fest (July 06 – July 10, 2026) — $375.00</option>
+                    <option value="week-4" data-price="375" data-title="Wilderness Bushcraft & Survival" data-dates="July 13 – July 17, 2026" data-week="Week 4">Week 4: Wilderness Bushcraft & Survival (July 13 – July 17, 2026) — $375.00</option>
+                    <option value="week-5" data-price="395" data-title="Minecraft & Python Game Studio" data-dates="July 20 – July 24, 2026" data-week="Week 5">Week 5: Minecraft & Python Game Studio (July 20 – July 24, 2026) — $395.00</option>
+                    <option value="week-6" data-price="350" data-title="Broadway & Musical Rock Band" data-dates="July 27 – July 31, 2026" data-week="Week 6">Week 6: Broadway & Musical Rock Band (July 27 – July 31, 2026) — $350.00</option>
+                    <option value="week-7" data-price="410" data-title="High-Ropes & Climbing Apex" data-dates="Aug 03 – Aug 07, 2026" data-week="Week 7">Week 7: High-Ropes & Climbing Apex (Aug 03 – Aug 07, 2026) — $410.00</option>
+                    <option value="week-8" data-price="380" data-title="Color War Grand Finale" data-dates="Aug 10 – Aug 14, 2026" data-week="Week 8">Week 8: Color War Grand Finale (Aug 10 – Aug 14, 2026) — $380.00</option>
+                  </select>
+                  <div class="invalid-feedback">Please select a weekly camp session.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 2: Camper Profile -->
+            <div class="card-camp p-4 shadow-sm mb-4">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-person-fill text-primary me-2"></i> 2. Camper Information</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyCamperFirstName">Camper First Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="weeklyCamperFirstName" placeholder="e.g., Lucas" required>
+                  <div class="invalid-feedback">Please enter camper's first name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyCamperLastName">Camper Last Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="weeklyCamperLastName" placeholder="e.g., Watson" required>
+                  <div class="invalid-feedback">Please enter camper's last name.</div>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label small fw-bold" for="weeklyCamperAge">Age <span class="text-danger">*</span></label>
+                  <select class="form-select" id="weeklyCamperAge" required>
+                    <option value="">-- Age --</option>
+                    <option value="5">5 Years</option>
+                    <option value="6">6 Years</option>
+                    <option value="7">7 Years</option>
+                    <option value="8">8 Years</option>
+                    <option value="9">9 Years</option>
+                    <option value="10" selected>10 Years</option>
+                    <option value="11">11 Years</option>
+                    <option value="12">12 Years</option>
+                    <option value="13">13 Years</option>
+                    <option value="14">14 Years</option>
+                    <option value="15">15 Years</option>
+                    <option value="16">16 Years</option>
+                  </select>
+                  <div class="invalid-feedback">Please select camper's age.</div>
+                </div>
+                <div class="col-md-8">
+                  <label class="form-label small fw-bold" for="weeklyCamperCare">Optional Extended Care</label>
+                  <select class="form-select" id="weeklyCamperCare">
+                    <option value="none" data-add="0">Standard Hours Only (8:30 AM – 4:00 PM) - Included</option>
+                    <option value="early" data-add="50">Full-Week Early Bird Care (7:30 AM drop-off) +$50.00</option>
+                    <option value="after" data-add="65">Full-Week After-Camp Club (Until 6:00 PM) +$65.00</option>
+                    <option value="both" data-add="100">Full-Week Both Early + After Care +$100.00</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 3: Guardian Details -->
+            <div class="card-camp p-4 shadow-sm mb-4">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-shield-lock-fill text-primary me-2"></i> 3. Primary Guardian & Emergency Contact</h5>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyGuardianName">Guardian Full Name <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="weeklyGuardianName" placeholder="e.g., Sarah Watson" required>
+                  <div class="invalid-feedback">Please enter primary guardian's full name.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyGuardianEmail">Email Address (for Confirmation) <span class="text-danger">*</span></label>
+                  <input type="email" class="form-control" id="weeklyGuardianEmail" placeholder="e.g., sarah.watson@example.com" required>
+                  <div class="invalid-feedback">Please enter a valid guardian email address.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyGuardianPhone">Primary Phone <span class="text-danger">*</span></label>
+                  <input type="tel" class="form-control" id="weeklyGuardianPhone" placeholder="(555) 019-2834" required>
+                  <div class="invalid-feedback">Please enter a valid phone number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyEmergencyContact">Emergency Phone</label>
+                  <input type="tel" class="form-control" id="weeklyEmergencyContact" placeholder="(555) 392-1049">
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 4: Payment Details -->
+            <div class="card-camp p-4 shadow-sm mb-4">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-credit-card-2-front-fill text-primary me-2"></i> 4. Payment Information</h5>
+              
+              <div class="p-3 bg-light rounded-3 mb-3 border">
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="form-check mb-0">
+                    <input class="form-check-input" type="radio" name="weeklyPaymentOption" id="weeklyPayCard" checked>
+                    <label class="form-check-label fw-bold text-navy" for="weeklyPayCard">
+                      Credit / Debit Card
+                    </label>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <i class="bi bi-credit-card text-success fs-5"></i>
+                    <i class="bi bi-shield-check text-success fs-5"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row g-3">
+                <div class="col-12">
+                  <label class="form-label small fw-bold" for="weeklyCardNumber">Card Number <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="weeklyCardNumber" placeholder="4532 •••• •••• 4242" maxlength="19" required>
+                  <div class="invalid-feedback">Please enter a valid 16-digit card number.</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyCardExpiry">Expiration Date <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="weeklyCardExpiry" placeholder="MM/YY" maxlength="5" required>
+                  <div class="invalid-feedback">Please enter expiration date (MM/YY).</div>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label small fw-bold" for="weeklyCardCvc">CVC Security Code <span class="text-danger">*</span></label>
+                  <input type="text" class="form-control" id="weeklyCardCvc" placeholder="CVC" maxlength="4" required>
+                  <div class="invalid-feedback">Please enter 3-4 digit CVC code.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column: Sticky Summary & Checkout -->
+          <div class="col-lg-4">
+            <div class="card-camp p-4 shadow-sm sticky-top" style="top: 90px; border-top: 5px solid #2E7D32;">
+              <span class="badge bg-success text-white px-3 py-1 rounded-pill mb-2">Selected Schedule Type</span>
+              <h4 class="fw-bold text-navy mb-1" id="weeklySummaryScheduleType">Weekly Schedule Session</h4>
+              <p class="text-muted small mb-3">5-Day Full Monday–Friday Session</p>
+              
+              <div class="p-3 bg-light rounded-3 mb-3 border">
+                <span class="badge bg-primary text-white mb-1" id="weeklySummaryWeekBadge">Week 1</span>
+                <strong class="text-navy d-block mb-1" id="weeklySummaryThemeTitle">Space & Robotics Odyssey</strong>
+                <small class="text-muted d-block" id="weeklySummaryDateRange">June 15 – June 19, 2026</small>
+              </div>
+
+              <div class="p-3 bg-light rounded-3 mb-3 border">
+                <div class="d-flex justify-content-between mb-1">
+                  <small class="text-muted">Schedule Format:</small>
+                  <strong class="text-navy small">Mon–Fri Full Day</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <small class="text-muted">Chef Hot Lunch:</small>
+                  <strong class="text-success small">Included (5 Days)</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <small class="text-muted">Friday Showcase:</small>
+                  <strong class="text-success small">Included</strong>
+                </div>
+                <div class="d-flex justify-content-between" id="extendedCareLine" style="display: none !important;">
+                  <small class="text-muted">Extended Care:</small>
+                  <strong class="text-navy small" id="extendedCareAmount">+$0.00</strong>
+                </div>
+              </div>
+
+              <hr class="my-3">
+
+              <div class="d-flex justify-content-between align-items-center mb-1">
+                <span class="text-muted">Weekly Base Tuition:</span>
+                <strong class="text-navy" id="weeklySummaryBasePrice">$395.00</strong>
+              </div>
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Registration & Materials:</span>
+                <span class="text-success fw-bold">FREE ($0.00)</span>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center p-3 bg-success-light rounded-3 mb-4" style="background-color: #E8F5E9;">
+                <strong class="text-navy fs-5">Total Paid Today:</strong>
+                <span class="fs-4 fw-extrabold text-success" id="weeklySummaryTotalAmount">$395.00</span>
+              </div>
+
+              <button type="submit" class="btn btn-success btn-lg w-100 fw-bold shadow-sm" id="payWeeklyBtn">
+                <i class="bi bi-shield-check me-1"></i> Complete Weekly Payment
+              </button>
+
+              <div class="text-center mt-3">
+                <small class="text-muted d-block"><i class="bi bi-lock-fill text-success"></i> 256-Bit SSL Secure Payment</small>
+                <small class="text-muted">Saves directly to your User Dashboard</small>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container text-center">
+      <p class="mb-0 text-muted small">&copy; 2026 CampSphere Summer Camp. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/forms.js"></script>
+  <script>
+    // Dynamic URL Parameter & Price Sync
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const weekParam = urlParams.get('week') || 'week-1';
+      const select = document.getElementById('weeklySessionSelect');
+      const careSelect = document.getElementById('weeklyCamperCare');
+      
+      if (select) {
+        if (select.querySelector(`option[value="${weekParam}"]`)) {
+          select.value = weekParam;
+        }
+        
+        function updateSummary() {
+          const opt = select.options[select.selectedIndex];
+          const basePrice = parseInt(opt.getAttribute('data-price') || '395', 10);
+          const title = opt.getAttribute('data-title') || opt.text;
+          const dates = opt.getAttribute('data-dates') || 'June 15 – June 19, 2026';
+          const weekBadge = opt.getAttribute('data-week') || 'Week 1';
+          
+          let addPrice = 0;
+          if (careSelect) {
+            const careOpt = careSelect.options[careSelect.selectedIndex];
+            addPrice = parseInt(careOpt.getAttribute('data-add') || '0', 10);
+          }
+
+          const grandTotal = basePrice + addPrice;
+          
+          const titleEl = document.getElementById('weeklySummaryThemeTitle');
+          const badgeEl = document.getElementById('weeklySummaryWeekBadge');
+          const datesEl = document.getElementById('weeklySummaryDateRange');
+          const basePriceEl = document.getElementById('weeklySummaryBasePrice');
+          const totalEl = document.getElementById('weeklySummaryTotalAmount');
+          const careLine = document.getElementById('extendedCareLine');
+          const careAmtEl = document.getElementById('extendedCareAmount');
+          
+          if (titleEl) titleEl.textContent = title;
+          if (badgeEl) badgeEl.textContent = weekBadge;
+          if (datesEl) datesEl.textContent = dates;
+          if (basePriceEl) basePriceEl.textContent = `$${basePrice}.00`;
+          if (totalEl) totalEl.textContent = `$${grandTotal}.00`;
+
+          if (careLine && careAmtEl) {
+            if (addPrice > 0) {
+              careLine.style.removeProperty('display');
+              careAmtEl.textContent = `+$${addPrice}.00`;
+            } else {
+              careLine.style.setProperty('display', 'none', 'important');
+            }
+          }
+        }
+        
+        select.addEventListener('change', updateSummary);
+        if (careSelect) careSelect.addEventListener('change', updateSummary);
+        updateSummary();
+      }
+
+      // Pre-fill active logged-in user guardian details
+      try {
+        const session = JSON.parse(localStorage.getItem('campsphere_user_session') || 'null');
+        if (session && session.loggedIn) {
+          if (session.name && document.getElementById('weeklyGuardianName')) document.getElementById('weeklyGuardianName').value = session.name;
+          if (session.email && document.getElementById('weeklyGuardianEmail')) document.getElementById('weeklyGuardianEmail').value = session.email;
+          if (session.phone && document.getElementById('weeklyGuardianPhone')) document.getElementById('weeklyGuardianPhone').value = session.phone;
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>

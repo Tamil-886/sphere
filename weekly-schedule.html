@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampSphere Weekly Schedule - 8 Summer 2026 Camp Themes, Dates & Cohort Enrollment.">
+  <title>Weekly Schedule - CampSphere</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- CampSphere Modern Preloader -->
+  <div class="camp-preloader">
+    <div class="preloader-content">
+      <div class="preloader-badge">
+        <i class="bi bi-calendar-week"></i>
+      </div>
+      <div class="preloader-title">Camp<span class="highlight-text">Sphere</span></div>
+      <p class="text-muted small mb-2">Weekly Schedule & Cohort Themes...</p>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#campNavbar" aria-controls="campNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="campNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door-fill text-primary"></i> Home Page 1 (Main Camp)</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-compass-fill text-accent"></i> Home Page 2 (Adventure & STEM)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+          <!-- Programs Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item active" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-warning"></i> Camp Match Quiz</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Dark, RTL & Parent Login -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <section class="section-padding-sm bg-light-blue border-bottom position-relative overflow-hidden">
+    <div class="camp-sticker sticker-tent anim-float d-none d-md-inline-flex" style="top: 15px; left: 5%;">
+      <i class="bi bi-calendar-check-fill me-1 text-primary"></i> 8 Summer Weeks
+    </div>
+    <div class="camp-sticker sticker-star anim-pulse d-none d-md-inline-flex" style="top: 15px; right: 5%;">
+      <i class="bi bi-award-fill me-1 text-warning"></i> Friday Grand Showcases
+    </div>
+
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <div class="badge-tag badge-tag-primary mb-2 reveal-on-scroll reveal-up">Summer 2026 Cohorts</div>
+      <h1 class="fw-bold mb-2 reveal-on-scroll reveal-up delay-100">Weekly Summer Camp Schedule</h1>
+      <p class="text-muted mx-auto reveal-on-scroll reveal-up delay-150" style="max-width: 650px;">
+        8 unique thematic weeks designed for deep skill-building, teamwork challenges, and exciting Friday exhibitions.
+      </p>
+      <nav aria-label="breadcrumb" class="reveal-on-scroll reveal-up delay-200">
+        <ol class="breadcrumb justify-content-center mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item"><a href="programs.html">Programs</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Weekly Schedule</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 8-Week Summer Session Grid -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="d-flex flex-wrap justify-content-between align-items-center mb-4">
+        <div>
+          <span class="badge bg-primary text-white mb-2">Full Monday – Friday Sessions</span>
+          <h2 class="fw-bold mb-1 text-navy">Summer 2026 Weekly Schedule</h2>
+          <p class="text-muted small mb-0">Select any week to view session details and proceed to weekly payment.</p>
+        </div>
+        <div class="d-flex gap-2 mt-3 mt-sm-0">
+          <button class="btn btn-outline-primary btn-sm" onclick="window.print();">
+            <i class="bi bi-printer-fill me-1"></i> Print Season Calendar
+          </button>
+          <a href="daily-schedule.html" class="btn btn-outline-secondary btn-sm">
+            <i class="bi bi-clock-history me-1"></i> Need Single-Day Passes?
+          </a>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <!-- Week 1 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-100">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-primary">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-primary text-white px-3 py-1 rounded-pill">Week 1: June 15 – June 19, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$395</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Space & Robotics Odyssey</h4>
+            <p class="text-muted small mb-3">Model rocket aerodynamics, Mars rover autonomous navigation, lunar habitat prototyping, and nighttime telescope party.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 7–14</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Pine STEM Pavilion</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Rocket Launch Gala</div>
+            </div>
+            <a href="payment-weekly.html?week=week-1" class="btn btn-primary w-100 fw-bold">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($395)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-150">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-accent">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-accent text-white px-3 py-1 rounded-pill">Week 2: June 22 – June 26, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$360</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Summer Olympic Champions</h4>
+            <p class="text-muted small mb-3">Soccer drills, basketball tournament brackets, track & field relays, agility obstacle courses, and closing gold medal gala.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 6–14</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Camp Athletic Stadium</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Olympic Medal Games</div>
+            </div>
+            <a href="payment-weekly.html?week=week-2" class="btn btn-accent w-100 fw-bold">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($360)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-200">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-secondary">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-secondary text-white px-3 py-1 rounded-pill">Week 3: July 06 – July 10, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$375</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Aquatic Safari & Water Fest</h4>
+            <p class="text-muted small mb-3">Lake Tahoe kayak expedition, stand-up paddleboarding, Red Cross water safety skills, and splash obstacle courses.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 7–15</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Lake Cove & Aquatic Center</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Regatta & Splash Fest</div>
+            </div>
+            <a href="payment-weekly.html?week=week-3" class="btn btn-secondary w-100 fw-bold text-white">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($375)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 4 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-250">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-warning">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-warning text-dark px-3 py-1 rounded-pill">Week 4: July 13 – July 17, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$375</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Wilderness Bushcraft & Survival</h4>
+            <p class="text-muted small mb-3">Debris hut shelter design, edible plant identification, flint & steel fire building, and topographic compass navigation.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 8–15</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Alpine Forest & Ridge Camp</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Bushcraft Expo</div>
+            </div>
+            <a href="payment-weekly.html?week=week-4" class="btn btn-outline-primary w-100 fw-bold">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($375)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 5 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-300">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-primary">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-primary text-white px-3 py-1 rounded-pill">Week 5: July 20 – July 24, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$395</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Minecraft & Python Game Studio</h4>
+            <p class="text-muted small mb-3">Custom block modding, Python script automation, Redstone logic puzzles, and multiplayer server castle siege tournaments.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 8–15</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Innovation Tech Lab #1</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Game Dev Showcase</div>
+            </div>
+            <a href="payment-weekly.html?week=week-5" class="btn btn-primary w-100 fw-bold">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($395)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 6 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-350">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-accent">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-accent text-white px-3 py-1 rounded-pill">Week 6: July 27 – July 31, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$350</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Broadway & Musical Rock Band</h4>
+            <p class="text-muted small mb-3">Vocal harmony coaching, electric guitar, keyboards, stage choreography, lighting design, and live concert showcase.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 6–14</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Outdoor Amphitheater & Sound Lab</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Live Parent Concert</div>
+            </div>
+            <a href="payment-weekly.html?week=week-6" class="btn btn-accent w-100 fw-bold">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($350)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 7 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-400">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-secondary">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-secondary text-white px-3 py-1 rounded-pill">Week 7: Aug 03 – Aug 07, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$410</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">High-Ropes & Climbing Apex</h4>
+            <p class="text-muted small mb-3">Multi-tier aerial challenge courses, 40-ft rock climbing wall, dual tandem ziplines, and team trust building.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 9–16</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> High Adventure Ropes Course</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Summit Challenge</div>
+            </div>
+            <a href="payment-weekly.html?week=week-7" class="btn btn-secondary w-100 fw-bold text-white">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($410)
+            </a>
+          </div>
+        </div>
+
+        <!-- Week 8 -->
+        <div class="col-lg-6 reveal-on-scroll reveal-up delay-450">
+          <div class="card-camp h-100 p-4 shadow-sm border-top border-4 border-dark">
+            <div class="d-flex justify-content-between align-items-start mb-2">
+              <span class="badge bg-dark text-white px-3 py-1 rounded-pill">Week 8: Aug 10 – Aug 14, 2026</span>
+              <div class="text-end">
+                <span class="fs-4 fw-extrabold text-navy">$380</span>
+                <small class="text-muted d-block">per week</small>
+              </div>
+            </div>
+            <h4 class="fw-bold text-navy mb-2">Color War Grand Finale</h4>
+            <p class="text-muted small mb-3">The ultimate all-camp summer showdown! 4-color team relays, counselor dunk tank, mega obstacle course, and banquet gala.</p>
+            <div class="row g-2 mb-3 small text-muted">
+              <div class="col-sm-6"><i class="bi bi-person-fill text-primary me-1"></i> Ages 5–16</div>
+              <div class="col-sm-6"><i class="bi bi-geo-alt-fill text-accent me-1"></i> Main Camp Great Lawn</div>
+              <div class="col-sm-6"><i class="bi bi-clock-fill text-secondary me-1"></i> Mon–Fri: 8:30 AM – 4:00 PM</div>
+              <div class="col-sm-6"><i class="bi bi-trophy-fill text-warning me-1"></i> Friday Championship Gala</div>
+            </div>
+            <a href="payment-weekly.html?week=week-8" class="btn btn-dark w-100 fw-bold">
+              <i class="bi bi-credit-card me-1"></i> Book Weekly Schedule ($380)
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand mb-3">
+            <a class="brand-logo text-white" href="index.html">
+              <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+              Camp<span class="highlight-text">Sphere</span>
+            </a>
+          </div>
+          <p class="footer-desc mb-4">Summer camp adventures empowering children ages 5–16 through outdoor mastery, STEM robotics, and creative arts.</p>
+          <div class="footer-contact-item mb-2">
+            <i class="bi bi-geo-alt-fill text-accent me-2"></i> 100 Alpine Way, South Lake Tahoe, CA 96150
+          </div>
+          <div class="footer-contact-item mb-2">
+            <i class="bi bi-telephone-fill text-accent me-2"></i> (555) 392-CAMP
+          </div>
+          <div class="footer-contact-item">
+            <i class="bi bi-envelope-fill text-accent me-2"></i> hello@campsphere.org
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Programs & Schedules</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html">All Programs</a></li>
+            <li><a href="daily-schedule.html">Daily Schedule</a></li>
+            <li><a href="weekly-schedule.html">Weekly Schedule</a></li>
+            <li><a href="calendar.html">Camp Calendar</a></li>
+            <li><a href="camp-match.html">Camp Match Quiz</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-title">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="safety.html">Safety Standards</a></li>
+            <li><a href="pricing.html">Pricing & Scholarships</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-title">Camp Headquarters</h5>
+          <p class="footer-desc">Accredited by ACA (American Camp Association). Licensed childcare provider.</p>
+          <div class="d-flex gap-2">
+            <a href="enrollment.html" class="btn btn-accent btn-sm">Enroll Online</a>
+            <a href="parent/dashboard.html" class="btn btn-outline-light btn-sm">User Dashboard</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom text-center pt-4 border-top border-secondary">
+        <p class="mb-0 text-muted small">&copy; 2026 CampSphere Summer Camp. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+</body>
+</html>

@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampSphere - The Premier Kids Summer Camp & Activity Program. STEM, Sports, Arts, Nature & Adventure for Ages 4-18.">
+  <title>CampSphere - Kids Summer Camp & Activity Program</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- CampSphere Modern Preloader -->
+  <div class="camp-preloader">
+    <div class="preloader-content">
+      <div class="preloader-badge">
+        <i class="bi bi-tree-fill"></i>
+      </div>
+      <div class="preloader-title">Camp<span class="highlight-text">Sphere</span></div>
+      <p class="text-muted small mb-2">Preparing Your Summer Adventure...</p>
+      <div class="preloader-spinner"></div>
+    </div>
+  </div>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#campNavbar" aria-controls="campNavbar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="campNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <!-- Home Dropdown (Exactly 2 Homepages) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="index.html"><i class="bi bi-house-door-fill text-primary"></i> Home Page 1 (Main Camp)</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-compass-fill text-accent"></i> Home Page 2 (Adventure & STEM)</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+
+          <!-- Programs Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <!-- Pages Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Dark, RTL & Parent Login -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 1. Hero Section: Premium Summer Adventure Background Banner -->
+  <section class="hero-section hero-adventure-banner position-relative overflow-hidden">
+    <!-- Atmospheric Summer Aurora Mesh Glows & Topo Adventure Waves -->
+    <div class="adventure-sun-glow"></div>
+    <div class="adventure-lake-glow"></div>
+    <div class="adventure-forest-glow"></div>
+    <div class="adventure-topo-lines"></div>
+
+    <!-- Animated Geometric Background Blobs -->
+    <div class="hero-blob blob-blue"></div>
+    <div class="hero-blob blob-orange"></div>
+    <div class="hero-blob blob-teal"></div>
+    
+    <div class="hero-shape-1"></div>
+    <div class="hero-shape-2"></div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-on-scroll reveal-up">
+          <div class="badge-tag badge-tag-highlight mb-3 d-inline-flex align-items-center gap-2">
+            <i class="bi bi-sun-fill text-warning"></i> Summer 2026 Registration Now Open!
+          </div>
+          <h1 class="display-4 fw-extrabold mb-3">
+            Where Summer <span class="text-primary-custom">Adventures</span> & Lifelong <span class="text-accent-custom">Friendships</span> Begin!
+          </h1>
+          <p class="lead text-dark-subtle mb-4">
+            Inspiring kids ages 4–18 through hands-on STEM robotics, outdoor sports, creative arts, lakeside aquatics, and wilderness survival in a safe, accredited environment.
+          </p>
+          <div class="d-flex flex-wrap align-items-center gap-3 hero-actions">
+            <a href="enrollment.html" class="btn btn-accent btn-lg shadow-sm btn-shimmer">
+              <i class="bi bi-clipboard2-check-fill"></i> Start Enrollment
+            </a>
+            <a href="programs.html" class="btn btn-outline-primary btn-lg">
+              <i class="bi bi-compass"></i> Explore 25 Programs
+            </a>
+          </div>
+
+          <div class="d-flex align-items-center gap-4 mt-4 pt-3 border-top">
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-shield-fill-check text-success fs-3"></i>
+              <div>
+                <strong class="d-block text-navy">100% ACA Certified</strong>
+                <small class="text-muted">1:5 Staff Ratio</small>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <i class="bi bi-star-fill text-warning fs-3"></i>
+              <div>
+                <strong class="d-block text-navy">4.9/5 Rating</strong>
+                <small class="text-muted">Over 4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 position-relative reveal-on-scroll reveal-zoom delay-150">
+          <!-- Playful Decorative Stickers in Hero -->
+          <div class="camp-sticker sticker-sun anim-float" style="top: -15px; left: -10px;">
+            <i class="bi bi-sun-fill me-1 text-warning"></i> Sunny Days!
+          </div>
+          <div class="camp-sticker sticker-plane anim-drift" style="top: 20px; right: -15px;">
+            <i class="bi bi-send-fill me-1 text-primary"></i> 1:5 Ratio
+          </div>
+          <div class="camp-sticker sticker-star anim-pulse camp-sticker-icon-only" style="bottom: -15px; left: 20px;">
+            <i class="bi bi-star-fill text-warning"></i>
+          </div>
+          <div class="camp-sticker sticker-rocket anim-bob" style="bottom: 40px; right: -10px;">
+            <i class="bi bi-rocket-takeoff-fill me-1 text-accent"></i> STEM & Fun
+          </div>
+
+          <div class="hero-image-wrap">
+            <img src="assets/images/Summer_adventures_and_lifelong_f…_202608240950.jpeg" alt="Happy kids having fun together at outdoor summer camp" class="hero-img-main">
+            
+            <div class="floating-badge floating-badge-top">
+              <div class="floating-icon bg-primary text-white"><i class="bi bi-trophy-fill"></i></div>
+              <div>
+                <h6 class="mb-0 fw-bold">#1 Rated Camp</h6>
+                <small class="text-muted">California Pines 2025</small>
+              </div>
+            </div>
+
+            <div class="floating-badge floating-badge-bottom">
+              <div class="floating-icon bg-accent text-white"><i class="bi bi-heart-pulse-fill"></i></div>
+              <div>
+                <h6 class="mb-0 fw-bold">Full Medical Staff</h6>
+                <small class="text-muted">24/7 On-Campus Nurses</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Camp Discovery & Search Bar Hub -->
+  <div class="container">
+    <div class="camp-search-bar">
+      <form action="programs.html" method="GET">
+        <div class="row g-3 align-items-center">
+          
+          <!-- Block 1: Activity Category -->
+          <div class="col-lg-3 col-md-6">
+            <div class="search-field-box">
+              <div class="search-box-header">
+                <span class="search-box-icon bg-primary-light text-primary"><i class="bi bi-tags-fill"></i></span>
+                <span class="search-box-title">Activity Track</span>
+              </div>
+              <select class="search-select" name="category">
+                <option value="all">All Tracks (25 Camps)</option>
+                <option value="stem">STEM & Robotics (5)</option>
+                <option value="sports">Sports & Athletics (4)</option>
+                <option value="arts">Creative Visual Arts (3)</option>
+                <option value="aquatics">Lakeside Aquatics (3)</option>
+                <option value="nature">Nature & Wildlife (3)</option>
+                <option value="adventure">Outdoor Adventure (3)</option>
+                <option value="music">Music & Drama (2)</option>
+                <option value="culinary">Culinary Arts (1)</option>
+                <option value="lit">Leadership / LIT (1)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Block 2: Camper Age Group -->
+          <div class="col-lg-3 col-md-6">
+            <div class="search-field-box">
+              <div class="search-box-header">
+                <span class="search-box-icon bg-accent-light text-accent"><i class="bi bi-person-arms-up"></i></span>
+                <span class="search-box-title">Camper Age</span>
+              </div>
+              <select class="search-select" name="age">
+                <option value="all">All Ages (4–18 Yrs)</option>
+                <option value="mini">Mini Explorers (Ages 4–6)</option>
+                <option value="junior">Junior Adventurers (Ages 7–12)</option>
+                <option value="teen">Teen Champions (Ages 11–16)</option>
+                <option value="lit">Leader In Training (Ages 15–18)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Block 3: Session Dates -->
+          <div class="col-lg-3 col-md-6">
+            <div class="search-field-box">
+              <div class="search-box-header">
+                <span class="search-box-icon bg-info-light text-info"><i class="bi bi-calendar-event-fill"></i></span>
+                <span class="search-box-title">Session Dates</span>
+              </div>
+              <select class="search-select" name="session">
+                <option value="all">Any Summer Week (June–Aug)</option>
+                <option value="june-1">Week 1: June 15 – June 19</option>
+                <option value="june-2">Week 2: June 22 – June 26</option>
+                <option value="july-1">Week 3: July 06 – July 10</option>
+                <option value="july-2">Week 4: July 13 – July 17</option>
+                <option value="july-3">Week 5: July 20 – July 24</option>
+                <option value="aug-1">Week 6: August 03 – August 07</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Block 4: Search Button -->
+          <div class="col-lg-3 col-md-6">
+            <button type="submit" class="btn btn-primary w-100 py-3 fw-bold rounded-3 shadow-sm btn-shimmer d-flex align-items-center justify-content-center gap-2">
+              <i class="bi bi-search"></i>
+              <span>Find Matching Camps</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Quick Tags Strip -->
+        <div class="camp-quick-tags-strip">
+          <span class="small text-muted fw-bold me-1"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> Popular Searches:</span>
+          <a href="programs.html?category=stem" class="camp-quick-tag"><i class="bi bi-cpu text-primary"></i> Robotics & Coding</a>
+          <a href="programs.html?category=sports" class="camp-quick-tag"><i class="bi bi-trophy text-accent"></i> All-Star Sports</a>
+          <a href="programs.html?category=aquatics" class="camp-quick-tag"><i class="bi bi-water text-info"></i> Lakeside Swim</a>
+          <a href="programs.html?category=arts" class="camp-quick-tag"><i class="bi bi-palette text-warning"></i> Pottery & Arts</a>
+          <a href="programs.html?category=adventure" class="camp-quick-tag"><i class="bi bi-fire text-danger"></i> High-Ropes Challenge</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Why Choose Us -->
+  <section class="section-padding position-relative">
+    <!-- Playful Nature Sticker -->
+    <div class="camp-sticker sticker-leaf anim-wiggle d-none d-lg-inline-flex" style="top: 25px; left: 4%;">
+      <i class="bi bi-tree-fill me-1 text-success"></i> 50-Acre Campus
+    </div>
+
+    <div class="container">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-primary mb-2">Why Parents Trust Us</div>
+        <h2 class="fw-bold">Building Confidence, Character & Joy</h2>
+        <p class="text-muted mx-auto" style="max-width: 620px;">
+          For over 15 years, CampSphere has provided premier summer developmental experiences focused on safety, inclusion, and unforgettable memories.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
+          <div class="feature-box text-center">
+            <div class="feature-icon-wrap bg-primary-light text-primary mx-auto">
+              <i class="bi bi-shield-check"></i>
+            </div>
+            <h4 class="fw-bold mb-2">1:5 Counselor Ratio</h4>
+            <p class="text-muted mb-0 small">Ultra-low ratios ensure every camper receives dedicated mentorship and personalized care throughout their day.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
+          <div class="feature-box text-center">
+            <div class="feature-icon-wrap bg-accent-light text-accent mx-auto">
+              <i class="bi bi-mortarboard-fill"></i>
+            </div>
+            <h4 class="fw-bold mb-2">Certified Specialists</h4>
+            <p class="text-muted mb-0 small">Our STEM instructors, sports coaches, and arts directors are CPR/First Aid certified professionals.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
+          <div class="feature-box text-center">
+            <div class="feature-icon-wrap bg-secondary-light text-secondary mx-auto">
+              <i class="bi bi-tree-fill"></i>
+            </div>
+            <h4 class="fw-bold mb-2">50-Acre Campus</h4>
+            <p class="text-muted mb-0 small">Private nature trails, Olympic pool, high-ropes courses, climate-controlled STEM labs, and creative studios.</p>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
+          <div class="feature-box text-center">
+            <div class="feature-icon-wrap bg-highlight-light text-warning mx-auto">
+              <i class="bi bi-camera-fill"></i>
+            </div>
+            <h4 class="fw-bold mb-2">Live Parent App</h4>
+            <p class="text-muted mb-0 small">Receive daily photo feeds, check-in/check-out security alerts, and direct counselor messaging via our portal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Featured Programs -->
+  <section class="section-padding bg-light-blue position-relative">
+    <!-- Playful Creative & Sports Stickers -->
+    <div class="camp-sticker sticker-paint anim-float d-none d-lg-inline-flex" style="top: 25px; right: 5%;">
+      <i class="bi bi-palette-fill me-1 text-accent"></i> Creative Arts
+    </div>
+    <div class="camp-sticker sticker-ball anim-pulse d-none d-lg-inline-flex" style="bottom: 25px; left: 3%;">
+      <i class="bi bi-dribbble me-1 text-danger"></i> All-Star Sports
+    </div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="d-flex flex-wrap justify-content-between align-items-end mb-4 section-title-wrap reveal-on-scroll reveal-up">
+        <div>
+          <div class="badge-tag badge-tag-accent mb-2">Top Summer Picks</div>
+          <h2 class="fw-bold mb-0">Featured Camp Programs</h2>
+        </div>
+        <a href="programs.html" class="btn btn-outline-primary mt-3 mt-sm-0">
+          View All 25 Programs <i class="bi bi-arrow-right ms-1"></i>
+        </a>
+      </div>
+
+      <div class="row g-4">
+        <!-- Card 1: Sports -->
+        <div class="col-lg-4 col-md-6 reveal-on-scroll reveal-up delay-100 program-card-item" data-program-id="prog-2">
+          <div class="program-card">
+            <div class="program-thumb">
+              <img src="assets/images/all_star_sports_athletics.jpeg" alt="All-Star Sports & Athletics Camp">
+              <span class="badge-tag badge-tag-accent program-badge">Sports</span>
+              <button type="button" class="btn-wishlist" data-program-id="prog-2" data-program-title="All-Star Sports & Athletics Camp" aria-label="Add to Wishlist" title="Save to Wishlist">
+                <i class="bi bi-heart"></i>
+              </button>
+              <span class="program-price-tag">$360 / wk</span>
+            </div>
+            <div class="program-body">
+              <div class="program-meta">
+                <span><i class="bi bi-person-fill text-primary"></i> Ages 7–12</span>
+                <span><i class="bi bi-clock-fill text-secondary"></i> Mon–Fri (Full Day)</span>
+                <span class="text-warning ms-auto"><i class="bi bi-star-fill"></i> 4.8</span>
+              </div>
+              <h3 class="program-title"><a href="program-details.html?id=prog-2">All-Star Sports & Athletics Camp</a></h3>
+              <p class="program-desc">Soccer drills, basketball tournaments, track & field, and teamwork relay games designed to build stamina and sportsmanship.</p>
+              <div class="program-footer">
+                <a href="program-details.html?id=prog-2" class="fw-bold text-primary">Learn More <i class="bi bi-chevron-right"></i></a>
+                <a href="enrollment.html?program=prog-2" class="btn btn-sm btn-accent btn-shimmer">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2: Coding & STEM -->
+        <div class="col-lg-4 col-md-6 reveal-on-scroll reveal-up delay-200 program-card-item" data-program-id="prog-1">
+          <div class="program-card">
+            <div class="program-thumb">
+              <img src="assets/images/junior_robotics_python_coding.jpeg" alt="Junior Robotics & Python Coding Camp">
+              <span class="badge-tag badge-tag-primary program-badge">STEM</span>
+              <button type="button" class="btn-wishlist" data-program-id="prog-1" data-program-title="Junior Robotics & Python Coding" aria-label="Add to Wishlist" title="Save to Wishlist">
+                <i class="bi bi-heart"></i>
+              </button>
+              <span class="program-price-tag">$395 / wk</span>
+            </div>
+            <div class="program-body">
+              <div class="program-meta">
+                <span><i class="bi bi-person-fill text-primary"></i> Ages 8–14</span>
+                <span><i class="bi bi-clock-fill text-secondary"></i> Mon–Fri (Full Day)</span>
+                <span class="text-warning ms-auto"><i class="bi bi-star-fill"></i> 4.9</span>
+              </div>
+              <h3 class="program-title"><a href="program-details.html?id=prog-1">Junior Robotics & Python Coding</a></h3>
+              <p class="program-desc">Hands-on LEGO Spike Prime robotics, Minecraft modding, drone programming, and interactive engineering challenges.</p>
+              <div class="program-footer">
+                <a href="program-details.html?id=prog-1" class="fw-bold text-primary">Learn More <i class="bi bi-chevron-right"></i></a>
+                <a href="enrollment.html?program=prog-1" class="btn btn-sm btn-accent btn-shimmer">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3: Arts & Crafts -->
+        <div class="col-lg-4 col-md-6 reveal-on-scroll reveal-up delay-300 program-card-item" data-program-id="prog-3">
+          <div class="program-card">
+            <div class="program-thumb">
+              <img src="assets/images/Art_and_pottery_studio_202608241021.jpeg" alt="Little Picassos Art & Pottery Studio">
+              <span class="badge-tag badge-tag-highlight program-badge">Arts</span>
+              <button type="button" class="btn-wishlist" data-program-id="prog-3" data-program-title="Little Picassos Art & Pottery Studio" aria-label="Add to Wishlist" title="Save to Wishlist">
+                <i class="bi bi-heart"></i>
+              </button>
+              <span class="program-price-tag">$340 / wk</span>
+            </div>
+            <div class="program-body">
+              <div class="program-meta">
+                <span><i class="bi bi-person-fill text-primary"></i> Ages 5–11</span>
+                <span><i class="bi bi-clock-fill text-secondary"></i> Mon–Fri (Full Day)</span>
+                <span class="text-warning ms-auto"><i class="bi bi-star-fill"></i> 4.9</span>
+              </div>
+              <h3 class="program-title"><a href="program-details.html?id=prog-3">Little Picassos Art & Pottery Studio</a></h3>
+              <p class="program-desc">Canvas painting, ceramic wheel pottery, tie-dye textile making, and a Friday camp gallery exhibition for parents.</p>
+              <div class="program-footer">
+                <a href="program-details.html?id=prog-3" class="fw-bold text-primary">Learn More <i class="bi bi-chevron-right"></i></a>
+                <a href="enrollment.html?program=prog-3" class="btn btn-sm btn-accent btn-shimmer">Enroll Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Activity Categories -->
+  <section class="section-padding position-relative">
+    <div class="container">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-secondary mb-2">Endless Variety</div>
+        <h2 class="fw-bold">Explore Our Camp Disciplines</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Every child discovers their passion with our balanced rotation of creative, physical, and intellectual tracks.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-6 col-md-4 col-lg-2 reveal-on-scroll reveal-zoom delay-100">
+          <div class="category-card">
+            <div class="category-icon bg-primary-light text-primary"><i class="bi bi-trophy"></i></div>
+            <h5 class="fw-bold mb-1">Sports</h5>
+            <small class="text-muted">6 Programs</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal-on-scroll reveal-zoom delay-150">
+          <div class="category-card">
+            <div class="category-icon bg-accent-light text-accent"><i class="bi bi-cpu"></i></div>
+            <h5 class="fw-bold mb-1">STEM Lab</h5>
+            <small class="text-muted">5 Programs</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal-on-scroll reveal-zoom delay-200">
+          <div class="category-card">
+            <div class="category-icon bg-highlight-light text-warning"><i class="bi bi-palette"></i></div>
+            <h5 class="fw-bold mb-1">Fine Arts</h5>
+            <small class="text-muted">4 Programs</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal-on-scroll reveal-zoom delay-250">
+          <div class="category-card">
+            <div class="category-icon bg-secondary-light text-secondary"><i class="bi bi-tsunami"></i></div>
+            <h5 class="fw-bold mb-1">Aquatics</h5>
+            <small class="text-muted">3 Programs</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal-on-scroll reveal-zoom delay-300">
+          <div class="category-card">
+            <div class="category-icon bg-primary-light text-success"><i class="bi bi-compass"></i></div>
+            <h5 class="fw-bold mb-1">Wilderness</h5>
+            <small class="text-muted">4 Programs</small>
+          </div>
+        </div>
+        <div class="col-6 col-md-4 col-lg-2 reveal-on-scroll reveal-zoom delay-350">
+          <div class="category-card">
+            <div class="category-icon bg-soft-lavender text-primary"><i class="bi bi-music-note-beamed"></i></div>
+            <h5 class="fw-bold mb-1">Music</h5>
+            <small class="text-muted">3 Programs</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Age Groups Overview (Camp Nature & Lake Breeze Themed Atmosphere) -->
+  <section class="section-padding bg-camp-nature position-relative overflow-hidden">
+    <!-- Topographic & Ambient Camp Sun Glows -->
+    <div class="adventure-topo-lines" style="opacity: 0.18;"></div>
+    <div class="adventure-sun-glow" style="top: -60px; right: 8%; opacity: 0.35;"></div>
+    <div class="adventure-lake-glow" style="bottom: -80px; left: 5%; opacity: 0.35;"></div>
+
+    <!-- Playful Rainbow Sticker -->
+    <div class="camp-sticker sticker-rainbow anim-float d-none d-lg-inline-flex" style="top: 20px; left: 5%;">
+      <i class="bi bi-stars me-1 text-primary"></i> Ages 4 to 18
+    </div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-highlight mb-2">Age-Tailored Curricula</div>
+        <h2 class="fw-bold">Designed for Every Stage of Childhood</h2>
+        <p class="text-muted mx-auto" style="max-width: 650px;">Activities and supervision are structured specifically around physical development, attention span, and social growth.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
+          <div class="age-group-card">
+            <span class="age-pill bg-primary text-white mb-3">Ages 4 – 6</span>
+            <h4 class="fw-bold mb-2 text-navy">Mini Explorers</h4>
+            <p class="text-muted small mb-3">Gentle sensory activities, splash pool play, introductory story arts, and structured nap/rest stations with 1:4 ratio.</p>
+            <a href="age-groups.html" class="age-card-link text-primary">Learn Curriculum <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
+          <div class="age-group-card">
+            <span class="age-pill bg-secondary text-white mb-3">Ages 7 – 10</span>
+            <h4 class="fw-bold mb-2 text-navy">Junior Adventurers</h4>
+            <p class="text-muted small mb-3">Hands-on LEGO robotics, swimming lessons, soccer tournaments, pottery, and nature trail exploration.</p>
+            <a href="age-groups.html" class="age-card-link text-secondary">Learn Curriculum <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
+          <div class="age-group-card">
+            <span class="age-pill bg-accent text-white mb-3">Ages 11 – 15</span>
+            <h4 class="fw-bold mb-2 text-navy">Teen Champions</h4>
+            <p class="text-muted small mb-3">High-ropes obstacle course, Python game design, competitive sports leagues, musical theater, and overnight campouts.</p>
+            <a href="age-groups.html" class="age-card-link text-accent">Learn Curriculum <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
+          <div class="age-group-card">
+            <span class="age-pill bg-dark text-white mb-3">Ages 16 – 18</span>
+            <h4 class="fw-bold mb-2 text-navy">Leader-in-Training (LIT)</h4>
+            <p class="text-muted small mb-3">Leadership workshops, First Aid/CPR certification, junior counselor mentorship, and community project credits.</p>
+            <a href="age-groups.html" class="age-card-link text-dark">Learn Curriculum <i class="bi bi-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Camp Match Quiz Promo -->
+  <section class="section-padding position-relative">
+    <div class="container">
+      <div class="cta-banner position-relative reveal-on-scroll reveal-zoom">
+        <div class="camp-sticker sticker-tent anim-float d-none d-lg-inline-flex" style="top: 20px; right: 25px;">
+          <i class="bi bi-fire me-1 text-warning"></i> Find Your Camp
+        </div>
+
+        <div class="row align-items-center position-relative" style="z-index: 2;">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark fw-bold mb-2 px-3 py-2">Smart Camp Matcher</span>
+            <h2 class="display-6 fw-bold mb-2">Not Sure Which Camp Is Right for Your Child?</h2>
+            <p class="mb-0 text-white-50 lead">Take our interactive 60-second Camp Match Quiz. Get instant personalized recommendations based on your child's age, passions, and schedule.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <a href="camp-match.html" class="btn btn-warning btn-lg text-dark fw-bold shadow-lg btn-shimmer">
+              <i class="bi bi-magic me-1"></i> Launch Camp Match Quiz
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Safety & Supervision Guarantee -->
+  <section class="section-padding bg-light-blue position-relative">
+    <!-- Heart & Safety Badge -->
+    <div class="camp-sticker sticker-heart anim-pulse d-none d-lg-inline-flex" style="top: 20px; right: 6%;">
+      <i class="bi bi-shield-fill-check me-1 text-danger"></i> 100% ACA Accredited
+    </div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6 reveal-on-scroll reveal-left">
+          <div class="badge-tag badge-tag-accent mb-2">Safety First Always</div>
+          <h2 class="fw-bold mb-3">Your Child's Well-Being Is Our #1 Mission</h2>
+          <p class="text-muted mb-4">
+            CampSphere maintains the highest safety standards in the youth camping industry. Every counselor undergoes FBI background checks and intensive pre-season behavioral training.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="safety-checklist-item">
+              <div class="safety-check-icon"><i class="bi bi-check2"></i></div>
+              <div class="safety-checklist-content">
+                <h6>Strict Secure Check-in / Check-out PIN System</h6>
+                <p>Only verified guardians with encrypted photo-ID match are permitted for camper dismissal.</p>
+              </div>
+            </div>
+
+            <div class="safety-checklist-item">
+              <div class="safety-check-icon"><i class="bi bi-check2"></i></div>
+              <div class="safety-checklist-content">
+                <h6>Certified Registered Nurses On-Site 24/7</h6>
+                <p>Full medical clinic equipped for allergy management, medication distribution, and first aid.</p>
+              </div>
+            </div>
+
+            <div class="safety-checklist-item">
+              <div class="safety-check-icon"><i class="bi bi-check2"></i></div>
+              <div class="safety-checklist-content">
+                <h6>Nut-Free & Allergy-Safe Nutrition Program</h6>
+                <p>Chef-prepared fresh lunches catering to gluten-free, dairy-free, vegan, and kosher dietary needs.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="safety.html" class="btn btn-outline-primary"><i class="bi bi-shield-lock-fill me-1"></i> Read Full Safety Manual</a>
+        </div>
+
+        <div class="col-lg-6 reveal-on-scroll reveal-right delay-150">
+          <img src="assets/images/Prioritizing_child_safety_and_wellbeing_202608241026.jpeg" alt="Camp counselor prioritizing child safety and wellbeing" class="rounded-4 shadow-lg w-100" style="height: 420px; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Testimonials -->
+  <section class="section-padding position-relative">
+    <div class="camp-sticker sticker-balloon anim-float d-none d-lg-inline-flex" style="top: 25px; left: 5%;">
+      <i class="bi bi-balloon-fill me-1 text-danger"></i> 4,200+ Happy Families
+    </div>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="text-center section-title-wrap reveal-on-scroll reveal-up">
+        <div class="badge-tag badge-tag-primary mb-2">Real Parent Reviews</div>
+        <h2 class="fw-bold">Loved by Campers, Trusted by Parents</h2>
+        <p class="text-muted mx-auto" style="max-width: 600px;">Hear what our camp families have to say about their summer experience at CampSphere.</p>
+      </div>
+
+      <div class="row g-4 align-items-stretch">
+        <div class="col-md-4 reveal-on-scroll reveal-up delay-100">
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-quote">"My 9-year-old daughter Emma attended the Robotics and Swim camp. She came home every single day bursting with enthusiasm and new friendships!"</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&auto=format&fit=crop&q=80" alt="Parent Sarah Jenkins" class="testimonial-avatar">
+              <div>
+                <h6 class="fw-bold mb-0 text-navy">Sarah Jenkins</h6>
+                <small class="text-muted">Parent of 2 Campers (Ages 7 & 9)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 reveal-on-scroll reveal-up delay-200">
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-quote">"The safety standards and counselor communications were unbelievable. The daily photo updates gave us complete peace of mind while we were at work."</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&auto=format&fit=crop&q=80" alt="Parent David Miller" class="testimonial-avatar">
+              <div>
+                <h6 class="fw-bold mb-0 text-navy">David Miller</h6>
+                <small class="text-muted">Parent of Lucas (Age 11)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 reveal-on-scroll reveal-up delay-300">
+          <div class="testimonial-card">
+            <div class="star-rating">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="testimonial-quote">"Our son was shy and hesitant about outdoor sports. The counselors were so encouraging that he ended up winning the team spirit trophy!"</p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80" alt="Parent Elena Rodriguez" class="testimonial-avatar">
+              <div>
+                <h6 class="fw-bold mb-0 text-navy">Elena Rodriguez</h6>
+                <small class="text-muted">Parent of Mateo (Age 8)</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Statistics / Counter with Dynamic JS Animation -->
+  <section class="section-padding bg-dark-navy text-white position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row g-4">
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
+          <div class="stat-box text-center">
+            <div class="stat-number text-highlight-custom" data-count="15" data-suffix="+">15+</div>
+            <div class="stat-label text-white-50">Years of Summer Joy</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
+          <div class="stat-box text-center">
+            <div class="stat-number text-secondary-custom" data-count="4200" data-suffix="+">4,200+</div>
+            <div class="stat-label text-white-50">Happy Campers Enrolled</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
+          <div class="stat-box text-center">
+            <div class="stat-number text-accent-custom" data-count="85" data-suffix="+">85+</div>
+            <div class="stat-label text-white-50">Certified Counselors</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
+          <div class="stat-box text-center">
+            <div class="stat-number text-primary-light" data-count="99" data-suffix="%">99%</div>
+            <div class="stat-label text-white-50">Parent Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- 12. Final Enrollment CTA -->
+  <section class="section-padding py-5 position-relative">
+    <div class="container">
+      <div class="cta-banner position-relative overflow-hidden shadow-xl" style="background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F766E 100%); border-radius: 24px; padding: 3.5rem 3rem;">
+        <!-- Ambient Camp Atmosphere Glows -->
+        <div class="adventure-topo-lines" style="opacity: 0.35;"></div>
+        <div class="adventure-sun-glow" style="top: -60px; right: 10%; opacity: 0.5;"></div>
+        <div class="adventure-lake-glow" style="bottom: -70px; left: 8%; opacity: 0.5;"></div>
+
+        <!-- Floating Camp Badge -->
+        <div class="camp-sticker sticker-tent anim-float d-none d-lg-inline-flex" style="top: 25px; right: 30px;">
+          <i class="bi bi-fire me-1 text-warning"></i> 100% ACA Accredited
+        </div>
+
+        <div class="row align-items-center text-center text-lg-start position-relative" style="z-index: 2;">
+          <div class="col-lg-8">
+            <span class="badge bg-warning text-dark fw-bold mb-2 px-3 py-2 rounded-pill shadow-sm">
+              <i class="bi bi-stars me-1"></i> Final 2026 Spots Available
+            </span>
+            <h2 class="display-6 fw-bold mb-2 text-white">Give Your Child an Unforgettable Summer!</h2>
+            <p class="mb-0 text-white-50 lead fs-6" style="max-width: 620px;">Spots fill quickly! Reserve your child's favorite session today with our flexible 100% refundable deposit guarantee.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-4 mt-lg-0">
+            <a href="enrollment.html" class="btn btn-accent btn-lg shadow-lg btn-shimmer px-4 py-3 fw-bold">
+              <i class="bi bi-rocket-takeoff-fill me-2"></i> Enroll Online Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <!-- 1. Top Highlights Bar -->
+      <div class="footer-top-features">
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-shield-check text-primary"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">100% ACA Accredited</h6>
+                <small class="text-muted">Highest Safety Standards</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-people-fill text-success"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">1:5 Counselor Ratio</h6>
+                <small class="text-muted">Certified CPR & Medical Staff</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-bus-front-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">Camp Shuttles</h6>
+                <small class="text-muted">12 Safe Neighborhood Zones</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">4.9/5 Parent Rating</h6>
+                <small class="text-muted">4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Footer Columns -->
+      <div class="row g-5">
+        <!-- Col 1: Brand & Contact -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo text-white mb-3" href="index.html">
+            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+            Camp<span class="highlight-text">Sphere</span>
+          </a>
+          <p class="text-muted small mb-4">
+            Empowering youth through experiential STEM learning, outdoor wilderness expeditions, creative arts, and water sports in a safe, accredited environment.
+          </p>
+          <ul class="footer-contact-list list-unstyled">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>742 Evergreen Pine Woods, Lake Tahoe, CA 96150</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <span>+1 (800) 555-CAMP (2267)</span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <span>admissions@campsphere.com</span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Programs -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Robotics & STEM</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Wilderness Survival</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Lakeside Aquatics</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Creative Arts</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Mini Campers (4-6)</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Teen Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Explore</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Our Campus</a></li>
+            <li><a href="schedule.html"><i class="bi bi-chevron-right"></i> Daily Schedule</a></li>
+            <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Summer Calendar</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Tuition & Passes</a></li>
+            <li><a href="safety.html"><i class="bi bi-chevron-right"></i> Safety & Medical</a></li>
+            <li><a href="camp-match.html"><i class="bi bi-chevron-right"></i> Camp Matcher</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Portals -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Portals</h5>
+          <ul class="footer-links">
+            <li><a href="login.html"><i class="bi bi-chevron-right"></i> Parent Login</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Register Family</a></li>
+            <li><a href="parent/dashboard.html"><i class="bi bi-chevron-right"></i> Parent Portal</a></li>
+            <li><a href="enrollment.html"><i class="bi bi-chevron-right"></i> Online Registration</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> Support & FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter & Social -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Stay Connected</h5>
+          <p class="text-muted small mb-3">Join 12,000+ parents receiving early enrollment discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); window.showCampToast('Thank you for subscribing to CampSphere updates!', 'success', 'Subscribed'); this.reset();">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm" placeholder="Your email" required>
+            </div>
+            <button class="btn btn-primary btn-sm w-100" type="submit">Join Newsletter</button>
+          </form>
+          <div class="d-flex gap-2 mt-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Legal & Meta Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-muted">
+          © 2026 CampSphere Kids Summer Camp & Activity Platform. All rights reserved.
+        </p>
+        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+          <a href="safety.html" class="text-muted">Privacy Policy</a>
+          <span>•</span>
+          <a href="faq.html" class="text-muted">Terms & Safety Waiver</a>
+          <span>•</span>
+          <a href="contact.html" class="text-muted">Campus Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short fs-3"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/programs-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/filters.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

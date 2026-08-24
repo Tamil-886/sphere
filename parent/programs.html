@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="My Programs - Parent Portal at CampSphere.">
+  <title>My Programs - Parent Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+          Camp<span class="highlight-text">Sphere</span>
+        </a>
+        <button class="btn btn-sm btn-light d-lg-none sidebar-toggle-btn" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="children.html"><i class="bi bi-people"></i> My Children <span class="badge bg-primary rounded-pill ms-auto">2</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="programs.html"><i class="bi bi-compass"></i> My Programs</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="receipts.html"><i class="bi bi-receipt"></i> Download Receipts</a>
+          </li>
+          
+          <li class="nav-item pt-3 pb-1">
+            <small class="text-muted text-uppercase fw-bold ps-3" style="font-size: 0.75rem;">Account</small>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="bi bi-person-gear"></i> Family Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i> Portal Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <div>
+              <strong class="text-navy small d-block">Sarah Watson</strong>
+              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+            </div>
+          </div>
+          <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-outline-secondary btn-sm d-lg-none sidebar-toggle-btn" aria-label="Toggle sidebar">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <h4 class="mb-0 fw-bold text-navy">My Enrolled Programs</h4>
+            <small class="text-muted">Explore active curriculum tracks, assigned counselors, and classroom locations</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label d-none d-sm-inline">RTL</span>
+          </button>
+          <a href="../programs.html" class="btn btn-primary btn-sm">
+            <i class="bi bi-plus-circle me-1"></i> Browse More Programs
+          </a>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <div class="row g-4">
+          
+          <!-- Program 1: Emma's Robotics -->
+          <div class="col-lg-6">
+            <div class="card-camp shadow-sm h-100">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?w=600&auto=format&fit=crop&q=80" alt="Robotics camp" class="w-100 h-100" style="object-fit: cover;">
+                <span class="badge bg-primary position-absolute top-0 start-0 m-3 px-3 py-2">Camper: Emma Watson</span>
+                <span class="badge bg-success position-absolute top-0 end-0 m-3 px-3 py-2">Confirmed</span>
+              </div>
+              <div class="card-camp-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted small"><i class="bi bi-calendar3 text-primary me-1"></i> June 15 – June 19, 2026 (Week 1)</span>
+                  <span class="badge bg-primary-light text-primary">Full Day</span>
+                </div>
+                <h4 class="fw-bold text-navy mb-2">Junior Robotics & Python Coding</h4>
+                <p class="text-muted small mb-3">LEGO Spike Prime autonomous rover assembly, sensor calibration, and arcade game coding in Python.</p>
+
+                <div class="p-3 bg-light rounded-3 mb-3 small">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Lead Instructor:</span>
+                    <strong class="text-navy">Jessica Vance (STEM Director)</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Campus Building:</span>
+                    <strong class="text-navy">Pine Innovation Lab #2</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Curbside Drop-off:</span>
+                    <strong class="text-navy">West Pine Gate (8:30 AM)</strong>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="weekly-schedule.html" class="btn btn-outline-primary btn-sm flex-grow-1"><i class="bi bi-calendar-week me-1"></i> Weekly Schedule</a>
+                  <a href="../program-details.html" class="btn btn-sm btn-outline-secondary">Itinerary</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Program 2: Lucas's Sports -->
+          <div class="col-lg-6">
+            <div class="card-camp shadow-sm h-100">
+              <div class="position-relative" style="height: 180px;">
+                <img src="../assets/images/teen_high_adventure_camp.jpg" alt="Sports camp" class="w-100 h-100" style="object-fit: cover;">
+                <span class="badge bg-accent position-absolute top-0 start-0 m-3 px-3 py-2">Camper: Lucas Watson</span>
+                <span class="badge bg-success position-absolute top-0 end-0 m-3 px-3 py-2">Confirmed</span>
+              </div>
+              <div class="card-camp-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted small"><i class="bi bi-calendar3 text-accent me-1"></i> June 22 – June 26, 2026 (Week 2)</span>
+                  <span class="badge bg-accent-light text-accent">Full Day</span>
+                </div>
+                <h4 class="fw-bold text-navy mb-2">All-Star Sports & Athletics Camp</h4>
+                <p class="text-muted small mb-3">Soccer drills, basketball bracket games, obstacle course relays, and team sportsmanship challenges.</p>
+
+                <div class="p-3 bg-light rounded-3 mb-3 small">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Lead Instructor:</span>
+                    <strong class="text-navy">Coach Marcus Hayes</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Campus Building:</span>
+                    <strong class="text-navy">Lakeside Field #1 & Pavilion</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Curbside Drop-off:</span>
+                    <strong class="text-navy">North Stadium Gate (8:30 AM)</strong>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="weekly-schedule.html" class="btn btn-outline-primary btn-sm flex-grow-1"><i class="bi bi-calendar-week me-1"></i> Weekly Schedule</a>
+                  <a href="../program-details.html" class="btn btn-sm btn-outline-secondary">Itinerary</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Program 3: Emma's Swim Safari -->
+          <div class="col-lg-6">
+            <div class="card-camp shadow-sm h-100">
+              <div class="position-relative" style="height: 180px;">
+                <img src="https://images.unsplash.com/photo-1530549387789-4c1017266635?w=600&auto=format&fit=crop&q=80" alt="Swimming camp" class="w-100 h-100" style="object-fit: cover;">
+                <span class="badge bg-secondary position-absolute top-0 start-0 m-3 px-3 py-2">Camper: Emma Watson</span>
+                <span class="badge bg-success position-absolute top-0 end-0 m-3 px-3 py-2">Confirmed</span>
+              </div>
+              <div class="card-camp-body">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="text-muted small"><i class="bi bi-calendar3 text-secondary me-1"></i> July 06 – July 10, 2026 (Week 3)</span>
+                  <span class="badge bg-secondary-light text-secondary">Full Day</span>
+                </div>
+                <h4 class="fw-bold text-navy mb-2">Splash & Swim Water Safari</h4>
+                <p class="text-muted small mb-3">Red Cross certified swim stroke lessons, water polo tournaments, paddleboard relays, and aquatic games.</p>
+
+                <div class="p-3 bg-light rounded-3 mb-3 small">
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Lead Instructor:</span>
+                    <strong class="text-navy">Chloe Bennett (Aquatics Director)</strong>
+                  </div>
+                  <div class="d-flex justify-content-between mb-1">
+                    <span class="text-muted">Campus Building:</span>
+                    <strong class="text-navy">Olympic Pool & Lake Deck</strong>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Curbside Drop-off:</span>
+                    <strong class="text-navy">Poolhouse Gate (8:30 AM)</strong>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-2">
+                  <a href="weekly-schedule.html" class="btn btn-outline-primary btn-sm flex-grow-1"><i class="bi bi-calendar-week me-1"></i> Weekly Schedule</a>
+                  <a href="../program-details.html" class="btn btn-sm btn-outline-secondary">Itinerary</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Wishlist & Saved Camps Quick Access -->
+          <div class="col-lg-6">
+            <div class="card-camp shadow-sm h-100 border-dashed p-4 text-center d-flex flex-column justify-content-center align-items-center" style="border: 2px dashed #CBD5E1; background: #F8FAFC;">
+              <div class="rounded-circle bg-danger-light text-danger d-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.5rem;">
+                <i class="bi bi-heart-fill"></i>
+              </div>
+              <h4 class="fw-bold text-navy mb-1">Saved Wishlist Camps</h4>
+              <p class="text-muted small mb-3" style="max-width: 320px;">You have camps saved in your summer wishlist. Browse and complete enrollment for next sessions.</p>
+              <div class="d-flex gap-2">
+                <a href="../programs.html" class="btn btn-danger btn-sm">
+                  <i class="bi bi-heart-fill me-1"></i> View Wishlist Programs (<span class="wishlist-count-badge">0</span>)
+                </a>
+                <a href="../programs.html" class="btn btn-outline-primary btn-sm">Browse 25 Camps</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/filters.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Program Details | CampSphere Summer 2026. Explore curriculum, certified mentors, daily schedule, and live enrollment.">
+  <title>Program Details | CampSphere Summer 2026</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp sticky-top" id="mainNavbar">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Navigation Menu -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door text-primary"></i> Home - Classic Camp</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-stars text-accent"></i> Home - Modern Adventure</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+          <!-- Programs Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs (25)</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+              <li><a class="dropdown-item" href="wishlist.html"><i class="bi bi-heart-fill text-danger"></i> Saved Wishlist</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <!-- Pages Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
+              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side Actions -->
+        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb Navigation -->
+  <section class="py-2 bg-light border-bottom">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-0 small">
+          <li class="breadcrumb-item"><a href="index.html" class="text-decoration-none text-muted">Home</a></li>
+          <li class="breadcrumb-item"><a href="programs.html" class="text-decoration-none text-muted">Programs</a></li>
+          <li class="breadcrumb-item active text-navy fw-bold" aria-current="page" id="breadcrumbProgramTitle">Junior Robotics & Python Coding Camp</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 1. Premium EdTech Hero Section -->
+  <section class="edtech-hero-section">
+    <!-- Ambient Sparkles & Background Glows -->
+    <div class="hero-ambient-glow"></div>
+    <div class="hero-ambient-glow-2"></div>
+    <i class="bi bi-stars text-warning sparkle-decoration" style="top: 15%; left: 8%;"></i>
+    <i class="bi bi-sparkle text-primary sparkle-decoration" style="top: 45%; left: 4%;"></i>
+    <i class="bi bi-stars text-success sparkle-decoration" style="bottom: 12%; right: 48%;"></i>
+
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row align-items-center g-4 g-lg-5">
+        
+        <!-- Left Column: Titles, Badges, Trust Metrics, and Quick Actions -->
+        <div class="col-lg-6">
+          
+          <!-- Badges & Status Strip -->
+          <div class="d-flex flex-wrap gap-2 align-items-center mb-3">
+            <span class="badge-tag badge-tag-primary" id="detailTrackBadge">STEM & Robotics</span>
+            <span class="badge-bestseller"><i class="bi bi-fire"></i> Best Seller</span>
+            <span class="badge-certificate"><i class="bi bi-patch-check-fill"></i> Certificate Included</span>
+            <span class="badge bg-light text-navy border px-3 py-1 rounded-pill fw-bold" id="detailAgeBadge">Ages 8 – 14</span>
+            <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 px-3 py-1 rounded-pill fw-bold" id="detailSpotsBadge">
+              <i class="bi bi-check-circle-fill me-1"></i> 6 Spots Available
+            </span>
+          </div>
+
+          <!-- Main Title -->
+          <h1 class="fw-extrabold display-6 text-navy mb-3" id="mainCampTitle" style="line-height: 1.25;">
+            Junior Robotics & Python Coding Camp
+          </h1>
+
+          <!-- Description -->
+          <p class="text-muted lead mb-4 fs-6" id="mainCampDesc">
+            Turn curiosity into engineering brilliance. Campers design, build, and program autonomous robots using LEGO® Spike Prime, master Python logic through arcade game coding, and pilot programmable obstacle drones.
+          </p>
+
+          <!-- Trust & Highlight Metric Strip -->
+          <div class="row g-3 mb-4 p-3 bg-white bg-opacity-80 rounded-4 border shadow-xs">
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2 small text-navy">
+                <i class="bi bi-clock-fill text-primary fs-5"></i>
+                <div>
+                  <strong class="d-block text-navy">8:30 AM – 4:00 PM</strong>
+                  <span class="text-muted" style="font-size: 0.75rem;">Mon–Fri Full-Day Cohort</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2 small text-navy">
+                <i class="bi bi-people-fill text-success fs-5"></i>
+                <div>
+                  <strong class="d-block text-navy">1:5 Mentor Ratio</strong>
+                  <span class="text-muted" style="font-size: 0.75rem;">Small Group Learning Pods</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2 small text-navy">
+                <i class="bi bi-egg-fried text-warning fs-5"></i>
+                <div>
+                  <strong class="d-block text-navy">Hot Lunch Included</strong>
+                  <span class="text-muted" style="font-size: 0.75rem;">Chef-Prepared Daily Meals</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="d-flex align-items-center gap-2 small text-navy">
+                <img id="heroInstructorThumb" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80" alt="Lead Instructor" class="rounded-circle" style="width: 28px; height: 28px; object-fit: cover;">
+                <div>
+                  <strong class="d-block text-navy" id="heroInstructorName">Led by Jessica Vance</strong>
+                  <span class="text-muted" style="font-size: 0.75rem;">M.S. Robotics Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Action Bar -->
+          <div class="d-flex flex-wrap align-items-center gap-3 pt-2">
+            <div>
+              <span class="detail-price-display fs-2 fw-extrabold text-primary" id="detailHeroPrice">$395</span>
+              <span class="text-muted small fw-bold">/ week</span>
+            </div>
+            <a href="enrollment.html" class="btn btn-accent btn-lg shadow-sm btn-shimmer px-4" id="heroEnrollBtn">
+              <i class="bi bi-clipboard2-check-fill me-2"></i> Enroll in Camp
+            </a>
+            <button type="button" class="btn btn-outline-danger btn-lg btn-wishlist-detail" data-program-id="prog-1" data-program-title="Junior Robotics & Python Coding Camp" aria-label="Save to Wishlist" title="Save to Wishlist">
+              <i class="bi bi-heart"></i>
+            </button>
+            <div class="small text-muted ms-sm-auto" id="detailRatingScore">
+              <i class="bi bi-star-fill text-warning"></i> <strong class="text-navy ms-1">4.9</strong> (68 verified reviews)
+            </div>
+          </div>
+
+          <div class="mt-3">
+            <small class="text-muted"><i class="bi bi-shield-check text-success me-1"></i> 100% Risk-Free: Full refund available up to 14 days before start.</small>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visual Frame with Glassmorphism Badges -->
+        <div class="col-lg-6">
+          <div class="hero-media-container">
+            <div class="hero-main-image-frame">
+              <img id="mainCampImage" src="assets/images/junior_robotics_python_coding.jpeg" alt="Camp Program" class="w-100 h-100">
+              
+              <!-- Floating Glassmorphism Stickers -->
+              <div class="floating-glass-sticker sticker-top-right">
+                <i class="bi bi-award-fill text-warning fs-5"></i>
+                <span>Accredited STEM Curriculum</span>
+              </div>
+
+              <div class="floating-glass-sticker sticker-bottom-left" id="detailLocationBadge">
+                <i class="bi bi-geo-alt-fill text-danger fs-6"></i>
+                <span>Pine Innovation Lab #2</span>
+              </div>
+            </div>
+
+            <!-- Floating Trust Badge Underneath -->
+            <div class="floating-glass-sticker sticker-floating-pill d-none d-sm-inline-flex">
+              <i class="bi bi-trophy-fill text-warning fs-5"></i>
+              <div>
+                <span class="d-block text-navy fw-bold" style="font-size: 0.8rem;">Friday Championship Gala</span>
+                <small class="text-muted" style="font-size: 0.7rem;">Live Parent Showcase Demo</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Sticky Sub-navigation Bar -->
+  <nav class="sticky-program-subnav d-none d-md-block" id="programSubNav">
+    <div class="container">
+      <div class="subnav-links-wrap">
+        <a href="#overview" class="subnav-tab-btn active"><i class="bi bi-info-circle me-1"></i> Overview</a>
+        <a href="#learn" class="subnav-tab-btn"><i class="bi bi-lightbulb me-1"></i> What You'll Learn</a>
+        <a href="#curriculum" class="subnav-tab-btn"><i class="bi bi-calendar2-range me-1"></i> 5-Day Curriculum</a>
+        <a href="#instructor" class="subnav-tab-btn"><i class="bi bi-person-badge me-1"></i> Lead Mentor</a>
+        <a href="#reviews" class="subnav-tab-btn"><i class="bi bi-star me-1"></i> Reviews (68)</a>
+        <a href="#faq" class="subnav-tab-btn"><i class="bi bi-question-circle me-1"></i> FAQs</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 3. Main Body Container (8 Cols Content / 4 Cols Sticky Booking) -->
+  <section class="section-padding bg-light-blue">
+    <div class="container">
+      <div class="row g-4 g-lg-5">
+        
+        <!-- Left: Content Information (8 Cols) -->
+        <div class="col-lg-8">
+          
+          <!-- Section 1: Overview & 6-Fact Matrix Sheet -->
+          <div class="card-camp p-4 shadow-sm mb-4 border-0" id="overview">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h4 class="fw-bold text-navy mb-0"><i class="bi bi-grid-fill text-primary me-2"></i> Program Overview & Fast Facts</h4>
+              <span class="badge bg-primary-light text-primary rounded-pill px-3 py-1">Summer 2026</span>
+            </div>
+            <p class="text-muted small mb-4">
+              Comprehensive specialty camp experience designed to build hands-on mastery, confidence, and lifelong friendships. All equipment, supplies, curriculum licenses, and chef dining are 100% included with no hidden fees.
+            </p>
+
+            <div class="row g-3">
+              <div class="col-sm-6 col-md-4">
+                <div class="modern-fact-card">
+                  <div class="fact-icon-bubble bg-primary-light text-primary">
+                    <i class="bi bi-person-fill"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.725rem;">Age Bracket</small>
+                    <strong class="text-navy small" id="factAge">8 – 14 Years Old</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="modern-fact-card">
+                  <div class="fact-icon-bubble bg-accent-light text-accent">
+                    <i class="bi bi-clock-history"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.725rem;">Hours (Mon–Fri)</small>
+                    <strong class="text-navy small" id="factHours">8:30 AM – 4:00 PM</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="modern-fact-card">
+                  <div class="fact-icon-bubble bg-success-light text-success">
+                    <i class="bi bi-people-fill"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.725rem;">Mentor Ratio</small>
+                    <strong class="text-navy small" id="factRatio">1:5 Dedicated Ratio</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="modern-fact-card">
+                  <div class="fact-icon-bubble bg-warning-light text-warning">
+                    <i class="bi bi-bar-chart-steps"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.725rem;">Skill Level</small>
+                    <strong class="text-navy small" id="factSkill">Beginner to Intermediate</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="modern-fact-card">
+                  <div class="fact-icon-bubble bg-info-light text-info">
+                    <i class="bi bi-cup-hot-fill"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.725rem;">Chef Dining</small>
+                    <strong class="text-navy small" id="factMeals">Fresh Hot Lunch + 2 Snacks</strong>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-4">
+                <div class="modern-fact-card">
+                  <div class="fact-icon-bubble bg-purple-light text-purple">
+                    <i class="bi bi-box2-heart-fill"></i>
+                  </div>
+                  <div>
+                    <small class="text-muted d-block" style="font-size: 0.725rem;">Take-Home</small>
+                    <strong class="text-navy small" id="factTakeHome">Custom Robot & Game Code</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 2: What You'll Learn (Core Mastery Pillars) -->
+          <div class="card-camp p-4 shadow-sm mb-4 border-0" id="learn">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h4 class="fw-bold text-navy mb-0"><i class="bi bi-lightbulb-fill text-warning me-2"></i> What Your Child Will Master</h4>
+              <span class="badge bg-warning-light text-warning rounded-pill px-3 py-1">Core Competencies</span>
+            </div>
+            <p class="text-muted small mb-4">
+              Structured progressive learning modules combining theoretical principles with real-world builds, problem solving, and team challenges.
+            </p>
+
+            <div class="row g-3" id="pillarsContainer">
+              <!-- Dynamically populated from programs-data.js -->
+              <div class="col-md-6">
+                <div class="mastery-pillar-card">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="fact-icon-bubble bg-primary-light text-primary">
+                      <i class="bi bi-cpu-fill"></i>
+                    </div>
+                    <h6 class="fw-bold mb-0 text-navy">LEGO® Spike Prime Robotics</h6>
+                  </div>
+                  <p class="text-muted small mb-0">Construct dual-motor chassis, gear transmissions, and sensor arrays for autonomous obstacle navigation.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mastery-pillar-card">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="fact-icon-bubble bg-accent-light text-accent">
+                      <i class="bi bi-code-slash"></i>
+                    </div>
+                    <h6 class="fw-bold mb-0 text-navy">Python Coding & Game Dev</h6>
+                  </div>
+                  <p class="text-muted small mb-0">Transition from visual block logic to real text-based Python syntax, loops, functions, and game physics.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mastery-pillar-card">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="fact-icon-bubble bg-success-light text-success">
+                      <i class="bi bi-send-fill"></i>
+                    </div>
+                    <h6 class="fw-bold mb-0 text-navy">Autonomous Drone Missions</h6>
+                  </div>
+                  <p class="text-muted small mb-0">Code flight paths, hover altitudes, and obstacle ring avoidance routines using indoor sensor arrays.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="mastery-pillar-card">
+                  <div class="d-flex align-items-center gap-3 mb-2">
+                    <div class="fact-icon-bubble bg-warning-light text-warning">
+                      <i class="bi bi-trophy-fill"></i>
+                    </div>
+                    <h6 class="fw-bold mb-0 text-navy">Friday Robo-Tournament</h6>
+                  </div>
+                  <p class="text-muted small mb-0">Compete in the friendly Maze Navigator challenge followed by open showcase demo with medals and awards.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 3: 5-Day Curriculum Blueprint Accordion -->
+          <div class="card-camp p-4 shadow-sm mb-4 border-0" id="curriculum">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+              <h4 class="fw-bold text-navy mb-0"><i class="bi bi-calendar-range-fill text-success me-2"></i> 5-Day Curriculum Blueprint</h4>
+              <span class="badge bg-success-light text-success rounded-pill px-3 py-1">Mon – Fri Itinerary</span>
+            </div>
+            <p class="text-muted small mb-3">
+              Every day balances intensive workshop tracks in the morning with refreshing outdoor recreation, pool swimming, and electives in the afternoon.
+            </p>
+
+            <div class="accordion" id="curriculumAccordion">
+              
+              <!-- Monday -->
+              <div class="accordion-item" id="day1">
+                <h2 class="accordion-header" id="cHead1">
+                  <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cCollapse1" aria-expanded="true">
+                    <span class="badge bg-primary me-2">Monday</span> Day 1: Structural Mechanics & Robotic Chassis
+                  </button>
+                </h2>
+                <div id="cCollapse1" class="accordion-collapse collapse show" data-bs-parent="#curriculumAccordion">
+                  <div class="accordion-body text-muted small">
+                    Campers unbox their Spike Prime kits, learn gear ratios (torque vs speed), assemble an all-terrain rover base, and calibrate optical encoders.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tuesday -->
+              <div class="accordion-item" id="day2">
+                <h2 class="accordion-header" id="cHead2">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cCollapse2">
+                    <span class="badge bg-primary me-2">Tuesday</span> Day 2: Sensor Arrays & Autonomous Path Finding
+                  </button>
+                </h2>
+                <div id="cCollapse2" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                  <div class="accordion-body text-muted small">
+                    Integrating ultrasonic distance sensors and dual-color sensors. Campers code their bots to follow black lines and detect obstacles from 30cm.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Wednesday -->
+              <div class="accordion-item" id="day3">
+                <h2 class="accordion-header" id="cHead3">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cCollapse3">
+                    <span class="badge bg-primary me-2">Wednesday</span> Day 3: Python Programming & Arcade Game Dev
+                  </button>
+                </h2>
+                <div id="cCollapse3" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                  <div class="accordion-body text-muted small">
+                    Bridging graphical blocks to pure Python. Campers learn variables, conditionals, while loops, and functions by building a retro Space Invaders arcade game.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Thursday -->
+              <div class="accordion-item" id="day4">
+                <h2 class="accordion-header" id="cHead4">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cCollapse4">
+                    <span class="badge bg-primary me-2">Thursday</span> Day 4: Drone Aerodynamics & Flight Physics
+                  </button>
+                </h2>
+                <div id="cCollapse4" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                  <div class="accordion-body text-muted small">
+                    Programming indoor micro-quadcopters. Campers script takeoff altitudes, pitch/yaw maneuvers, flip stunts, and sensor-based landing pads.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Friday -->
+              <div class="accordion-item" id="day5">
+                <h2 class="accordion-header" id="cHead5">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#cCollapse5">
+                    <span class="badge bg-primary me-2">Friday</span> Day 5: Championship Arena & Parent Showcase
+                  </button>
+                </h2>
+                <div id="cCollapse5" class="accordion-collapse collapse" data-bs-parent="#curriculumAccordion">
+                  <div class="accordion-body text-muted small">
+                    The culminating championship day! Morning qualifying rounds followed by a 2:30 PM grand parent showcase, live tournament finals, and official STEM medals.
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Section 4: Lead Camp Instructor Spotlight -->
+          <div class="instructor-spotlight-card mb-4" id="instructor">
+            <h4 class="fw-bold text-navy mb-3"><i class="bi bi-person-badge-fill text-accent me-2"></i> Meet Your Lead Mentor</h4>
+            <div class="d-flex flex-column flex-sm-row align-items-center align-items-sm-start gap-4 mb-3">
+              <div class="instructor-avatar-frame">
+                <img id="instructorPhoto" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80" alt="Lead Instructor">
+              </div>
+              <div class="text-center text-sm-start flex-grow-1">
+                <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-sm-start gap-2 mb-1">
+                  <h5 class="fw-bold text-navy mb-0" id="instructorName">Jessica Vance, M.S.</h5>
+                  <span class="badge bg-success-light text-success"><i class="bi bi-patch-check-fill me-1"></i> Verified Lead Mentor</span>
+                </div>
+                <span class="badge bg-primary-light text-primary mb-2 d-inline-block" id="instructorRole">Director of Robotics & STEM Education</span>
+                <p class="text-muted small mb-3" id="instructorBio">
+                  Jessica holds a Master's in Computer Science from UC Berkeley and has guided youth STEM education for 6 seasons. Her curriculum has inspired hundreds of campers to pursue robotics competitions.
+                </p>
+                <div class="d-flex flex-wrap justify-content-center justify-content-sm-start gap-3 text-muted small">
+                  <span><i class="bi bi-shield-check text-success me-1"></i> CPR & First Aid Certified</span>
+                  <span><i class="bi bi-fingerprint text-primary me-1"></i> Level 2 FBI Background Checked</span>
+                  <span><i class="bi bi-award-fill text-warning me-1"></i> ACA Certified Director</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 5: Verified Parent Reviews -->
+          <div class="card-camp p-4 shadow-sm mb-4 border-0" id="reviews">
+            <div class="d-flex flex-wrap align-items-center justify-content-between mb-4">
+              <div>
+                <h4 class="fw-bold text-navy mb-1"><i class="bi bi-star-fill text-warning me-2"></i> Verified Parent Feedback</h4>
+                <p class="text-muted small mb-0">Real reviews from parents whose campers attended in 2025 & 2026</p>
+              </div>
+              <div class="text-end">
+                <span class="fs-3 fw-extrabold text-navy">4.9</span> <span class="text-muted small">/ 5.0</span>
+                <div class="text-warning small"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+              </div>
+            </div>
+
+            <div class="row g-3">
+              <div class="col-md-6">
+                <div class="review-card-modern">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <strong class="text-navy small">David M. (Parent)</strong>
+                    <div class="text-warning small" style="font-size: 0.75rem;"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                  </div>
+                  <span class="badge bg-light text-muted border mb-2" style="font-size: 0.7rem;"><i class="bi bi-check-circle-fill text-success me-1"></i> Verified Camper Emma (Age 10)</span>
+                  <p class="text-muted small mb-0">"My daughter built her first Python arcade game and couldn't stop talking about how much fun the instructors made every coding session. Worth every penny!"</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="review-card-modern">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <strong class="text-navy small">Rachel T. (Parent)</strong>
+                    <div class="text-warning small" style="font-size: 0.75rem;"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></div>
+                  </div>
+                  <span class="badge bg-light text-muted border mb-2" style="font-size: 0.7rem;"><i class="bi bi-check-circle-fill text-success me-1"></i> Verified Camper Lucas (Age 8)</span>
+                  <p class="text-muted small mb-0">"The 1:5 ratio is real. The mentors spent time helping Lucas fine-tune his rover sensors. The Friday parent showcase was extraordinarily well organized."</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section 6: Frequently Asked Questions -->
+          <div class="card-camp p-4 shadow-sm border-0" id="faq">
+            <h4 class="fw-bold text-navy mb-3"><i class="bi bi-question-circle-fill text-info me-2"></i> Frequently Asked Questions</h4>
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fq1">
+                  <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#fqc1">
+                    Does my child need prior experience before enrolling?
+                  </button>
+                </h2>
+                <div id="fqc1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted small">
+                    No experience required! On Day 1, instructors assess each camper's baseline knowledge and divide them into matched skill pods (Beginner, Intermediate, Advanced) so every child thrives.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fq2">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#fqc2">
+                    What is the cancellation and refund policy?
+                  </button>
+                </h2>
+                <div id="fqc2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted small">
+                    CampSphere offers a 100% full tuition refund up to 14 days before your scheduled session begins. You can also switch session weeks anytime with zero transfer fees.
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="fq3">
+                  <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#fqc3">
+                    Are hot lunches and dietary accommodations included?
+                  </button>
+                </h2>
+                <div id="fqc3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body text-muted small">
+                    Yes! Every camper receives a hot, balanced lunch prepared daily by certified dining staff, plus morning and afternoon snacks. Vegetarian, gluten-free, and strict nut-free table options are available.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: Modern Sticky Booking Widget (4 Cols) -->
+        <div class="col-lg-4">
+          <div class="sticky-booking-widget-modern">
+            <span class="badge bg-primary text-white mb-2 px-3 py-1 rounded-pill">Fast-Track Enrollment</span>
+            <h4 class="fw-bold text-navy mb-1">Reserve Your Spot</h4>
+            <p class="text-muted small mb-3">Instant booking for Summer 2026 cohorts</p>
+            
+            <div class="d-flex justify-content-between align-items-center mb-3 p-3 bg-light rounded-3 border">
+              <span class="text-muted small fw-bold">Base Tuition:</span>
+              <strong class="text-primary fs-4"><span class="detail-price-display">$395</span> <small class="text-muted fs-6 fw-normal">/ wk</small></strong>
+            </div>
+
+            <form id="campBookingForm" action="enrollment.html" method="GET">
+              
+              <!-- Session Dropdown -->
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-navy" for="detailSessionSelect">Select Cohort Session Week</label>
+                <select class="form-select" id="detailSessionSelect" name="session">
+                  <option value="w1">Week 1: June 15 – June 19 (6 Seats Left)</option>
+                  <option value="w2">Week 2: June 22 – June 26 (4 Seats Left)</option>
+                  <option value="w3">Week 3: July 06 – July 10 (Available)</option>
+                  <option value="w4">Week 4: July 13 – July 17 (Available)</option>
+                  <option value="w5">Week 5: July 20 – July 24 (Available)</option>
+                  <option value="w6">Week 6: July 27 – July 31 (Available)</option>
+                </select>
+              </div>
+
+              <!-- Extended Care Options -->
+              <div class="mb-3">
+                <label class="form-label small fw-bold text-navy">Optional Extended Care</label>
+                <div class="form-check p-2 rounded bg-light mb-2 border">
+                  <input class="form-check-input ms-0 me-2" type="checkbox" id="calcEarlyCare" data-addon-price="35">
+                  <label class="form-check-label small d-flex justify-content-between flex-grow-1" for="calcEarlyCare">
+                    <span>Early Drop-off (7:30 AM)</span>
+                    <strong class="text-navy">+$35</strong>
+                  </label>
+                </div>
+                <div class="form-check p-2 rounded bg-light mb-2 border">
+                  <input class="form-check-input ms-0 me-2" type="checkbox" id="calcLateCare" data-addon-price="45">
+                  <label class="form-check-label small d-flex justify-content-between flex-grow-1" for="calcLateCare">
+                    <span>Late Pick-up (till 6:00 PM)</span>
+                    <strong class="text-navy">+$45</strong>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Cost Summary -->
+              <div class="p-3 bg-light rounded-3 mb-3 small border">
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted">Weekly Base Tuition:</span>
+                  <strong class="text-navy" id="detailBaseTuitionDisplay">$395.00</strong>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted">Chef Hot Lunch:</span>
+                  <span class="text-success fw-bold">FREE ($0.00)</span>
+                </div>
+                <div class="d-flex justify-content-between mb-1">
+                  <span class="text-muted">Camp T-Shirt & Kit:</span>
+                  <span class="text-success fw-bold">FREE ($0.00)</span>
+                </div>
+                <hr class="my-2">
+                <div class="d-flex justify-content-between fw-bold text-navy align-items-center">
+                  <span>Total Due Today:</span>
+                  <span class="text-primary fs-4 fw-extrabold" id="detailTotalDeposit">$395.00</span>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="d-grid gap-2 mb-3">
+                <a href="enrollment.html" class="btn btn-accent btn-lg shadow-sm btn-shimmer fw-bold" id="sidebarEnrollBtn">
+                  <i class="bi bi-clipboard2-check-fill me-2"></i> Enroll in Camp
+                </a>
+                <button type="button" class="btn btn-outline-danger btn-wishlist-detail" data-program-id="prog-1" data-program-title="Junior Robotics & Python Coding Camp">
+                  <i class="bi bi-heart me-1"></i> Save to Wishlist
+                </button>
+              </div>
+
+              <div class="text-center">
+                <small class="text-muted d-block mb-1"><i class="bi bi-shield-check text-success me-1"></i> 100% Refundable up to 14 days before start.</small>
+                <small class="text-muted"><i class="bi bi-lock-fill text-muted me-1"></i> 256-Bit SSL Encrypted Booking</small>
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Section 7: Related Programs Grid -->
+      <div class="mt-5 pt-4 border-top">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <div>
+            <span class="badge bg-primary text-white mb-1">Explore More</span>
+            <h3 class="fw-bold text-navy mb-0">Similar Recommended Programs</h3>
+          </div>
+          <a href="programs.html" class="btn btn-outline-primary btn-sm">View All 25 Programs <i class="bi bi-arrow-right"></i></a>
+        </div>
+        <div class="row g-4" id="relatedProgramsContainer">
+          <!-- Dynamically populated from programs-data.js -->
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Global Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <!-- Top Highlights Bar -->
+      <div class="footer-top-features">
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-shield-check text-primary"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">100% ACA Accredited</h6>
+                <small class="text-muted">Highest Safety Standards</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-people-fill text-success"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">1:5 Counselor Ratio</h6>
+                <small class="text-muted">Certified CPR & Medical Staff</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-bus-front-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">Camp Shuttles</h6>
+                <small class="text-muted">12 Safe Neighborhood Zones</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">4.9/5 Parent Rating</h6>
+                <small class="text-muted">4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Footer Row -->
+      <div class="row g-4 py-5 border-bottom border-secondary border-opacity-25">
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo mb-3 d-inline-flex" href="index.html">
+            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+            <span class="text-white">Camp</span><span class="highlight-text">Sphere</span>
+          </a>
+          <p class="text-muted small mb-4">
+            Tahoe's premier day & overnight adventure camp, dedicated to sparking curiosity, building outdoor resilience, and shaping future leaders since 2012.
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6 class="text-white fw-bold mb-3">Quick Navigation</h6>
+          <ul class="footer-links-list">
+            <li><a href="about.html">About CampSphere</a></li>
+            <li><a href="programs.html">Summer Programs</a></li>
+            <li><a href="daily-schedule.html">Daily Schedule</a></li>
+            <li><a href="weekly-schedule.html">Weekly Schedule</a></li>
+            <li><a href="pricing.html">Tuition & Pricing</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-2 col-md-3 col-6">
+          <h6 class="text-white fw-bold mb-3">Camp Safety</h6>
+          <ul class="footer-links-list">
+            <li><a href="safety.html">Safety Protocols</a></li>
+            <li><a href="faq.html">Parent FAQs</a></li>
+            <li><a href="contact.html">Contact Headquarters</a></li>
+            <li><a href="parent/dashboard.html">Parent Portal</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-6">
+          <h6 class="text-white fw-bold mb-3">Camp Headquarters</h6>
+          <ul class="footer-links-list">
+            <li><i class="bi bi-geo-alt text-primary me-2"></i> 742 Pine Ridge Trail, Lake Tahoe, CA 96150</li>
+            <li><i class="bi bi-telephone text-primary me-2"></i> (555) 382-CAMP (2267)</li>
+            <li><i class="bi bi-envelope text-primary me-2"></i> hello@campsphere.org</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="py-3 text-center text-muted small">
+        <p class="mb-0">&copy; 2026 CampSphere Summer Camp. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/programs-data.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/forms.js"></script>
+
+  <script>
+    // In-Page Subnav Active Highlight on Scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const subnavLinks = document.querySelectorAll('.subnav-tab-btn');
+      const sections = document.querySelectorAll('#overview, #learn, #curriculum, #instructor, #reviews, #faq');
+      
+      window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(sec => {
+          const secTop = sec.offsetTop - 120;
+          if (window.pageYOffset >= secTop) {
+            current = sec.getAttribute('id');
+          }
+        });
+        
+        subnavLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

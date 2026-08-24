@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enrollment Details - Order CS-849201 at CampSphere.">
+  <title>Enrollment CS-849201 - Parent Dashboard</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap 5 & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/responsive.css">
+  <link rel="stylesheet" href="../assets/css/dark-mode.css">
+  <link rel="stylesheet" href="../assets/css/rtl.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    
+    <!-- Sidebar -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a class="brand-logo" href="../index.html">
+          <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+          Camp<span class="highlight-text">Sphere</span>
+        </a>
+        <button class="btn btn-sm btn-light d-lg-none sidebar-toggle-btn" aria-label="Close sidebar"><i class="bi bi-x-lg"></i></button>
+      </div>
+
+      <div class="sidebar-nav">
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link" href="dashboard.html"><i class="bi bi-speedometer2"></i> Dashboard Overview</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="children.html"><i class="bi bi-people"></i> My Children <span class="badge bg-primary rounded-pill ms-auto">2</span></a>
+          </li>
+                    <li class="nav-item">
+            <a class="nav-link active" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
+          </li>
+          
+          <li class="nav-item pt-3 pb-1">
+            <small class="text-muted text-uppercase fw-bold ps-3" style="font-size: 0.75rem;">Account</small>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="profile.html"><i class="bi bi-person-gear"></i> Family Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="settings.html"><i class="bi bi-sliders"></i> Portal Settings</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <div>
+              <strong class="text-navy small d-block">Sarah Watson</strong>
+              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+            </div>
+          </div>
+          <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="dashboard-main">
+      
+      <!-- Topbar -->
+      <header class="dashboard-topbar">
+        <div class="d-flex align-items-center gap-3">
+          <a href="enrollments.html" class="btn btn-outline-secondary btn-sm"><i class="bi bi-arrow-left me-1"></i> Back to Enrollments</a>
+          <div>
+            <h4 class="mb-0 fw-bold text-navy">Enrollment Reference: CS-849201</h4>
+            <small class="text-muted">Registered on May 10, 2026 • Status: Confirmed & Paid</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-translate"></i> <span class="rtl-label d-none d-sm-inline">RTL</span>
+          </button>
+          <button class="btn btn-outline-primary btn-sm btn-download-receipt" data-receipt-id="CS-849201">
+            <i class="bi bi-printer me-1"></i> Download PDF Receipt
+          </button>
+        </div>
+      </header>
+
+      <div class="dashboard-content">
+        
+        <div class="row g-4">
+          
+          <!-- Left: Breakdown Details -->
+          <div class="col-lg-8">
+            <div class="card-camp p-4 shadow-sm mb-4">
+              <div class="d-flex align-items-center gap-3 mb-3 pb-3 border-bottom flex-wrap">
+                <img id="detailProgramImage" src="../assets/images/junior_robotics_python_coding.jpeg" alt="Program" class="rounded-3 shadow-xs flex-shrink-0" style="width: 72px; height: 72px; object-fit: cover;">
+                <div class="flex-grow-1">
+                  <span class="badge bg-primary text-white mb-1" id="detailCategoryBadge">STEM & Robotics Track</span>
+                  <h3 class="fw-bold text-navy mb-0" id="detailProgramName">Junior Robotics & Python Coding</h3>
+                  <small class="text-muted d-block mt-1">Transaction ID: <span class="font-monospace fw-bold text-primary" id="detailBookingId">CS-849201</span> • <span id="detailEnrollDate">Enrolled on May 10, 2026</span></small>
+                </div>
+                <span class="status-badge status-badge-confirmed fs-6 ms-auto" id="detailStatusBadge"><i class="bi bi-check-circle-fill"></i> Confirmed</span>
+              </div>
+
+              <div class="row g-3 mb-4 small">
+                <div class="col-sm-6">
+                  <span class="text-muted d-block">Enrolled Camper</span>
+                  <strong class="text-navy fs-6" id="detailCamperName">Emma Watson (Age 8)</strong>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-muted d-block">Session Dates</span>
+                  <strong class="text-navy fs-6" id="detailSessionDate">June 15 – June 19, 2026</strong>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-muted d-block">Drop-off & Pick-up Hours</span>
+                  <strong class="text-navy">8:30 AM – 4:00 PM</strong>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-muted d-block">Camp Classroom</span>
+                  <strong class="text-navy" id="detailLocation">Pine Innovation Lab #2</strong>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-muted d-block">Lead Counselor</span>
+                  <strong class="text-navy" id="detailCounselor">Jessica Vance, M.S.</strong>
+                </div>
+                <div class="col-sm-6">
+                  <span class="text-muted d-block">Authorized Pickup PIN</span>
+                  <strong class="text-primary fs-6" id="detailPickupPin">8492</strong>
+                </div>
+              </div>
+
+              <div class="p-3 bg-light-blue rounded-3 border">
+                <h6 class="fw-bold text-navy mb-1"><i class="bi bi-info-circle text-primary me-1"></i> Check-in Instructions</h6>
+                <p class="text-muted small mb-0">
+                  Please arrive at West Pine Gate between 8:15 and 8:30 AM. Counselor team will greet you curbside. Pack a labeled water bottle, swimsuit, and sun hat. All robotics gear provided.
+                </p>
+              </div>
+            </div>
+
+            <!-- Transfer / Modify Session Notice -->
+            <div class="card-camp p-4 shadow-sm">
+              <h5 class="fw-bold text-navy mb-2">Need to Change Weeks or Transfer Track?</h5>
+              <p class="text-muted small mb-3">
+                You can transfer to another week or program up to 7 days prior to camp start date at zero fee, subject to seat availability.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary" onclick="window.showCampToast('Transfer request submitted to Camp Registrar. We will confirm via email.', 'info', 'Transfer Requested');">
+                <i class="bi bi-arrow-left-right me-1"></i> Request Session Transfer
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Itemized Financial Summary -->
+          <div class="col-lg-4">
+            <div class="card-camp p-4 shadow-sm">
+              <h5 class="fw-bold text-navy mb-3 pb-2 border-bottom"><i class="bi bi-cash-stack text-success me-2"></i> Payment Breakdown</h5>
+              
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Junior STEM Camp (5 Days)</span>
+                <strong class="text-navy">$395.00</strong>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Chef Fresh Hot Lunch & Fruit</span>
+                <strong class="text-success">FREE ($0.00)</strong>
+              </div>
+
+              <div class="d-flex justify-content-between mb-2 small">
+                <span class="text-muted">Official Camp Shirt & Badge</span>
+                <strong class="text-success">FREE ($0.00)</strong>
+              </div>
+
+              <hr class="my-3">
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fw-bold fs-6 text-navy">Total Paid</span>
+                <strong class="text-primary fs-5" id="detailTotalPaid">$395.00</strong>
+              </div>
+
+              <div class="p-3 bg-light rounded-3 small text-muted mb-3">
+                <div class="d-flex justify-content-between mb-1">
+                  <span>Method:</span>
+                  <strong class="text-navy"><i class="bi bi-credit-card me-1"></i> Visa •••• 4242</strong>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Transaction ID:</span>
+                  <strong class="text-navy">TXN-99418290</strong>
+                </div>
+              </div>
+
+              <button class="btn btn-primary w-100 btn-download-receipt" data-receipt-id="CS-849201">
+                <i class="bi bi-printer me-1"></i> Print Official Receipt
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+<!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/dark-mode.js"></script>
+  <script src="../assets/js/rtl.js"></script>
+  <script src="../assets/js/programs-data.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/forms.js"></script>
+  <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
+
