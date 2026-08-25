@@ -414,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
           programName: 'Summer Sports Adventure',
           programType: 'Program',
           category: 'Sports & Athletics',
-          programImage: 'assets/images/outdoor_adventure_camp.jpeg',
+          programImage: 'assets/images/all_star_sports_athletics.jpeg',
           selectedDate: 'June 22 – June 26, 2026',
           selectedTime: '8:30 AM – 4:00 PM',
           scheduleDetails: 'Program Enrollment: Summer Sports Adventure (June 22 – June 26, 2026)',
@@ -440,7 +440,7 @@ document.addEventListener('DOMContentLoaded', () => {
           programName: 'Splash & Swim Safari',
           programType: 'Program',
           category: 'Aquatics',
-          programImage: 'assets/images/water_sports_adventure_lake.jpeg',
+          programImage: 'https://images.unsplash.com/photo-1530549387789-4c1017266635?w=800&auto=format&fit=crop&q=80',
           selectedDate: 'July 06 – July 10, 2026',
           selectedTime: '8:30 AM – 4:00 PM',
           scheduleDetails: 'Program Enrollment: Splash & Swim Safari (July 06 – July 10, 2026)',
@@ -888,7 +888,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const resolvedImg = progImg.startsWith('http') || progImg.startsWith('../') ? progImg : '../' + progImg;
 
         const detailImg = document.getElementById('detailProgramImage');
-        if (detailImg) detailImg.src = resolvedImg;
+        if (detailImg) {
+          detailImg.src = resolvedImg;
+          detailImg.onerror = function() {
+            this.onerror = null;
+            this.src = '../assets/images/junior_robotics_python_coding.jpeg';
+          };
+        }
 
         const detailCat = document.getElementById('detailCategoryBadge');
         if (detailCat) detailCat.textContent = matchedEnrollment.programCategory || matchedEnrollment.track || 'Specialty Camp';

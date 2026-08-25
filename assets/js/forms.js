@@ -166,10 +166,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // Program & Session
       const selectedOpt = programSelect ? programSelect.options[programSelect.selectedIndex] : null;
+      const progId = selectedOpt?.getAttribute('data-id');
       const basePrice = selectedOpt ? parseFloat(selectedOpt.getAttribute('data-price') || 395) : 395;
       const progName = selectedOpt ? selectedOpt.textContent.split('(')[0].trim() : 'Junior Robotics & Python Coding Camp';
       const progTrack = selectedOpt?.getAttribute('data-track') || 'STEM & Robotics Track';
-      const progImg = selectedOpt?.getAttribute('data-img') || 'assets/images/junior_robotics_python_coding.jpeg';
+      let progImg = selectedOpt?.getAttribute('data-img') || 'assets/images/junior_robotics_python_coding.jpeg';
+
+      // Fallback lookup from CAMPSPHERE_PROGRAMS dataset if available
+      if (window.CAMPSPHERE_PROGRAMS && progId && window.CAMPSPHERE_PROGRAMS[progId]) {
+        const pData = window.CAMPSPHERE_PROGRAMS[progId];
+        if (pData.images && pData.images[0]) {
+          progImg = pData.images[0];
+        } else if (pData.image) {
+          progImg = pData.image;
+        }
+      }
+
       const progLoc = selectedOpt?.getAttribute('data-loc') || 'Pine Innovation Lab #2';
       const progAge = selectedOpt?.getAttribute('data-age') || 'Ages 8 – 14';
 
@@ -178,7 +190,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const summaryCat = document.getElementById('summaryProgramCategory');
       if (summaryCat) summaryCat.textContent = progTrack;
       const summaryImg = document.getElementById('summaryProgramImage');
-      if (summaryImg) summaryImg.src = progImg;
+      if (summaryImg) {
+        summaryImg.src = progImg;
+        summaryImg.alt = progName;
+        summaryImg.onerror = function() {
+          this.onerror = null;
+          this.src = 'assets/images/junior_robotics_python_coding.jpeg';
+        };
+      }
 
       if (summarySession && sessionSelect) {
         summarySession.textContent = sessionSelect.value || 'June 15 – June 19, 2026';
@@ -190,7 +209,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const spotBadge = document.getElementById('wizardSelectedProgBadge');
       if (spotBadge) spotBadge.textContent = progTrack;
       const spotImg = document.getElementById('wizardSelectedProgImage');
-      if (spotImg) spotImg.src = progImg;
+      if (spotImg) {
+        spotImg.src = progImg;
+        spotImg.alt = progName;
+        spotImg.onerror = function() {
+          this.onerror = null;
+          this.src = 'assets/images/junior_robotics_python_coding.jpeg';
+        };
+      }
       const spotAgeLoc = document.getElementById('wizardSelectedProgAgeLoc');
       if (spotAgeLoc) spotAgeLoc.innerHTML = `<i class="bi bi-geo-alt-fill text-danger me-1"></i>${progLoc} • ${progAge}`;
       const spotPrice = document.getElementById('wizardSelectedProgPrice');

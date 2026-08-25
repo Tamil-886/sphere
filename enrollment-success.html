@@ -399,7 +399,13 @@
         }
         if (!progImg) progImg = 'assets/images/junior_robotics_python_coding.jpeg';
         const imgEl = document.getElementById('confirmedProgramImage');
-        if (imgEl) imgEl.src = progImg;
+        if (imgEl) {
+          imgEl.src = progImg;
+          imgEl.onerror = function() {
+            this.onerror = null;
+            this.src = 'assets/images/junior_robotics_python_coding.jpeg';
+          };
+        }
 
         const catEl = document.getElementById('confirmedCategoryBadge');
         if (catEl) catEl.textContent = latest.programCategory || latest.track || 'Specialty Camp';
