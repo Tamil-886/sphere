@@ -1145,11 +1145,31 @@ body.dark-mode .btn-outline-secondary:hover {
   color: #FFFFFF !important;
 }
 
+[data-theme="dark"] .btn-outline-white,
+body.dark-mode .btn-outline-white {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  backdrop-filter: blur(4px);
+}
+
+[data-theme="dark"] .btn-outline-white:hover,
+body.dark-mode .btn-outline-white:hover {
+  background-color: #FFFFFF !important;
+  color: #0B0F19 !important;
+  border-color: #FFFFFF !important;
+}
+
 [data-theme="dark"] .btn-light,
 body.dark-mode .btn-light {
   background-color: #1E293B !important;
   border-color: #334155 !important;
   color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .text-white-50,
+body.dark-mode .text-white-50 {
+  color: rgba(248, 250, 252, 0.78) !important;
 }
 
 /* --------------------------------------------------------------------------

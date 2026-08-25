@@ -377,15 +377,16 @@ ul {
 }
 
 .btn-outline-white {
-  border-color: rgba(255, 255, 255, 0.35);
-  color: var(--white);
-  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.45);
+  color: #FFFFFF !important;
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(4px);
 }
 
 .btn-outline-white:hover {
-  background-color: var(--white);
-  color: var(--dark);
-  border-color: var(--white);
+  background-color: #FFFFFF;
+  color: #0B0F19 !important;
+  border-color: #FFFFFF;
   transform: translateY(-1px);
 }
 
