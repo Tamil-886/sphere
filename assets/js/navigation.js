@@ -54,6 +54,29 @@ document.addEventListener('DOMContentLoaded', () => {
       session = null;
     }
 
+    const isLoggedIn = session && session.loggedIn;
+    const userName = isLoggedIn ? (session.name || `${session.firstName || ''} ${session.lastName || ''}`.trim() || 'Parent User') : '';
+    const firstName = isLoggedIn ? (session.firstName || userName.split(' ')[0] || 'Parent') : '';
+    const userEmail = isLoggedIn ? (session.email || '') : '';
+    const userAvatar = isLoggedIn ? (session.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80') : '';
+
+    // Update all user name displays across the page (Hero, Badges, Dropdowns)
+    if (isLoggedIn) {
+      document.querySelectorAll('.user-display-name').forEach(el => el.textContent = userName);
+      document.querySelectorAll('.user-display-firstname').forEach(el => el.textContent = firstName);
+      document.querySelectorAll('.user-display-email').forEach(el => el.textContent = userEmail);
+    }
+
+    // Dynamic Hero Banner Greeting on Home Page
+    const heroGreetings = document.querySelectorAll('#heroUserGreeting, .hero-user-greeting');
+    heroGreetings.forEach(el => {
+      if (isLoggedIn) {
+        el.innerHTML = `<i class="bi bi-person-check-fill text-primary"></i> Welcome back, <strong class="user-display-name text-navy">${userName}</strong>! <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1">Active Parent</span>`;
+      } else {
+        el.innerHTML = `<i class="bi bi-sun-fill text-warning"></i> Summer 2026 Registration Now Open!`;
+      }
+    });
+
     // Find auth elements in public Navbars (excluding footers and dashboard sidebars)
     const authElements = document.querySelectorAll('a[href*="login.html"], .nav-user-dropdown');
     
@@ -63,11 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      if (session && session.loggedIn) {
-        const userName = session.name || 'Parent User';
-        const userEmail = session.email || 'parent@campsphere.com';
-        const userAvatar = session.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80';
-
+      if (isLoggedIn) {
         let providerBadge = '<span class="badge bg-success-light text-success mt-1" style="font-size: 0.68rem;"><i class="bi bi-shield-check me-1"></i> Active Parent Account</span>';
         if (session.authProvider === 'Google') {
           providerBadge = '<span class="badge bg-primary-light text-primary mt-1" style="font-size: 0.68rem;"><i class="bi bi-google me-1"></i> Google Account</span>';
@@ -83,7 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </button>
             <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 rounded-3 mt-2 p-2" aria-labelledby="navUserMenuDropdown" style="min-width: 240px;">
               <li class="px-3 py-2 border-bottom mb-2 bg-light rounded-2">
-                <strong class="d-block text-navy">${userName}</strong>
+                <strong class="d-block text-navy user-display-name">${userName}</strong>
                 <small class="text-muted text-truncate d-block" style="font-size: 0.75rem;">${userEmail}</small>
                 ${providerBadge}
               </li>

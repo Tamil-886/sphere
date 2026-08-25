@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const summaryAddons = document.getElementById('summaryAddonsTotal');
     const summaryTotal = document.getElementById('summaryGrandTotal');
 
-    // Auto-prefill Guardian if logged in
+    // Auto-prefill Guardian if logged in or defaults
     function prefillUserData() {
       let session = null;
       try {
@@ -91,16 +91,16 @@ document.addEventListener('DOMContentLoaded', () => {
         session = null;
       }
 
-      if (session && session.loggedIn) {
-        const fnInput = document.getElementById('guardianFirstName');
-        const lnInput = document.getElementById('guardianLastName');
-        const emInput = document.getElementById('guardianEmail');
-        const phInput = document.getElementById('guardianPhone');
-        const addrInput = document.getElementById('guardianAddress');
-        const cardholderInput = document.getElementById('cardholderName');
-        const emergNameInput = document.getElementById('camperEmergencyName');
-        const emergPhoneInput = document.getElementById('camperEmergencyPhone');
+      const fnInput = document.getElementById('guardianFirstName');
+      const lnInput = document.getElementById('guardianLastName');
+      const emInput = document.getElementById('guardianEmail');
+      const phInput = document.getElementById('guardianPhone');
+      const addrInput = document.getElementById('guardianAddress');
+      const cardholderInput = document.getElementById('cardholderName');
+      const emergNameInput = document.getElementById('camperEmergencyName');
+      const emergPhoneInput = document.getElementById('camperEmergencyPhone');
 
+      if (session && session.loggedIn) {
         const firstName = session.firstName || (session.name ? session.name.split(' ')[0] : 'Sarah');
         const lastName = session.lastName || (session.name && session.name.split(' ').length > 1 ? session.name.split(' ').slice(1).join(' ') : 'Watson');
         const fullName = session.name || `${firstName} ${lastName}`.trim();
@@ -117,6 +117,15 @@ document.addEventListener('DOMContentLoaded', () => {
         if (emergNameInput) emergNameInput.value = fullName;
         if (emergPhoneInput) emergPhoneInput.value = phone;
         if (summaryParent) summaryParent.textContent = fullName;
+      } else {
+        if (fnInput && !fnInput.value) fnInput.value = 'Sarah';
+        if (lnInput && !lnInput.value) lnInput.value = 'Watson';
+        if (emInput && !emInput.value) emInput.value = 'sarah.watson@example.com';
+        if (phInput && !phInput.value) phInput.value = '(555) 019-2834';
+        if (addrInput && !addrInput.value) addrInput.value = '4288 Meadow Pine Way, South Lake Tahoe, CA 96150';
+        if (cardholderInput && !cardholderInput.value) cardholderInput.value = 'Sarah Watson';
+        if (emergNameInput && !emergNameInput.value) emergNameInput.value = 'Sarah Watson';
+        if (emergPhoneInput && !emergPhoneInput.value) emergPhoneInput.value = '(555) 019-2834';
       }
     }
 
@@ -214,6 +223,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function showStep(step) {
       currentStep = step;
+
+      // Auto-propagate guardian name/phone to emergency contact and cardholder name if empty
+      const gFn = document.getElementById('guardianFirstName')?.value.trim() || 'Sarah';
+      const gLn = document.getElementById('guardianLastName')?.value.trim() || 'Watson';
+      const gFull = `${gFn} ${gLn}`.trim();
+      const gPh = document.getElementById('guardianPhone')?.value.trim() || '(555) 019-2834';
+
+      const emName = document.getElementById('camperEmergencyName');
+      if (emName && !emName.value.trim()) emName.value = gFull;
+      const emPhone = document.getElementById('camperEmergencyPhone');
+      if (emPhone && !emPhone.value.trim()) emPhone.value = gPh;
+      const cardName = document.getElementById('cardholderName');
+      if (cardName && !cardName.value.trim()) cardName.value = gFull;
 
       panels.forEach((p, idx) => {
         p.classList.toggle('active', idx + 1 === step);
@@ -544,6 +566,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       // 4. Save to centralized payment records
+      const txId = 'TX-' + Math.floor(100000 + Math.random() * 900000);
+      const totalAmountNum = parseFloat(totalPaid.replace(/[^0-9.]/g, '')) || 395;
       const newPayment = {
         id: txId,
         transactionId: txId,
@@ -556,13 +580,13 @@ document.addEventListener('DOMContentLoaded', () => {
         camperAge: parseInt(camperAge) || 8,
         programName: programTitle,
         programType: 'Program',
-        category: selectedProgObj?.category || 'Specialty Camp',
-        programImage: selectedProgObj?.images?.[0] || 'assets/images/junior_robotics_python_coding.jpeg',
+        category: track || 'Specialty Camp',
+        programImage: programImage || 'assets/images/junior_robotics_python_coding.jpeg',
         selectedDate: sessionDate,
         selectedTime: '8:30 AM – 4:00 PM',
         scheduleDetails: `Program Enrollment: ${programTitle} (${sessionDate})`,
-        amount: totalTuitionStr,
-        amountNumeric: parseFloat(totalTuitionStr.replace(/[^0-9.]/g, '')) || 395,
+        amount: totalPaid,
+        amountNumeric: totalAmountNum,
         paymentDate: todayFormatted,
         paymentTime: new Date().toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit' }),
         paymentTimestamp: new Date().toISOString(),
@@ -571,7 +595,9 @@ document.addEventListener('DOMContentLoaded', () => {
         statusBadge: 'Paid in Full',
         nextPaymentDate: 'None (Paid in Full)'
       };
-      recordCentralizedPayment(newPayment);
+      if (typeof recordCentralizedPayment === 'function') {
+        recordCentralizedPayment(newPayment);
+      }
 
       if (window.showCampToast) {
         window.showCampToast(`Enrollment completed successfully for ${camperFullName}!`, 'success', 'Enrollment Confirmed');
@@ -734,6 +760,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const passwordInput = document.getElementById('registerPassword');
       const confirmPasswordInput = document.getElementById('registerConfirmPassword');
       const termsAgreeInput = document.getElementById('termsAgree');
+      const submitBtn = document.getElementById('registerSubmitBtn');
 
       const firstName = firstNameInput ? firstNameInput.value.trim() : '';
       const lastName = lastNameInput ? lastNameInput.value.trim() : '';
@@ -778,22 +805,17 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       const users = getRegisteredUsers();
-      const existingUser = users.find(u => u.email.toLowerCase() === email);
+      const existingUserIndex = users.findIndex(u => u.email && u.email.toLowerCase() === email);
 
-      if (existingUser) {
-        if (emailInput) emailInput.classList.add('is-invalid');
-        if (window.showCampToast) {
-          window.showCampToast(`An account with ${email} already exists. Please log in.`, 'warning', 'Account Exists');
-        }
-        return;
-      }
+      // Create or update user account (allows same email to be registered/updated)
+      const fullName = `${firstName} ${lastName}`.trim();
+      const userId = existingUserIndex !== -1 ? users[existingUserIndex].id : ('usr_' + Date.now());
 
-      // Create new user account
       const newUser = {
-        id: 'usr_' + Date.now(),
+        id: userId,
         firstName: firstName,
         lastName: lastName,
-        name: `${firstName} ${lastName}`,
+        name: fullName,
         email: email,
         phone: phone,
         password: password,
@@ -801,37 +823,33 @@ document.addEventListener('DOMContentLoaded', () => {
         pickupPin: String(Math.floor(1000 + Math.random() * 9000)),
         registeredAt: new Date().toISOString(),
         avatar: 'https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=80&auto=format&fit=crop&q=80',
-        children: [],
-        enrollments: []
+        children: existingUserIndex !== -1 ? (users[existingUserIndex].children || []) : [],
+        enrollments: existingUserIndex !== -1 ? (users[existingUserIndex].enrollments || []) : []
       };
 
-      users.push(newUser);
+      if (existingUserIndex !== -1) {
+        users[existingUserIndex] = newUser;
+      } else {
+        users.push(newUser);
+      }
       saveRegisteredUsers(users);
 
-      // Create active user session immediately
-      const userSession = {
-        loggedIn: true,
-        id: newUser.id,
-        name: newUser.name,
-        firstName: newUser.firstName,
-        lastName: newUser.lastName,
-        email: newUser.email,
-        phone: newUser.phone,
-        role: 'parent',
-        avatar: newUser.avatar,
-        loginTime: new Date().toISOString()
-      };
-
-      localStorage.setItem('campsphere_user_session', JSON.stringify(userSession));
-      localStorage.setItem('campsphere_active_user_id', newUser.id);
-      sessionStorage.setItem('campsphere_welcome_toast', `Welcome to CampSphere, ${newUser.name}! Your parent account is ready.`);
-
-      if (window.showCampToast) {
-        window.showCampToast(`Account created for ${newUser.name}! Opening parent portal...`, 'success', 'Registration Successful');
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Account Created! Redirecting...`;
       }
 
+      // Store prefill email and success toast for the Login page
+      sessionStorage.setItem('campsphere_prefill_login_email', email);
+      sessionStorage.setItem('campsphere_login_toast', `Account registered for ${fullName}! Please enter your password to sign in.`);
+
+      if (window.showCampToast) {
+        window.showCampToast(`Account created for ${fullName}! Redirecting to login page...`, 'success', 'Registration Successful');
+      }
+
+      // Automatically redirect to the Login page
       setTimeout(() => {
-        window.location.href = 'parent/dashboard.html';
+        window.location.href = 'login.html';
       }, 700);
     });
   }
@@ -842,16 +860,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const loginEmailInput = document.getElementById('loginEmail');
   const loginPasswordInput = document.getElementById('loginPassword');
 
-  // Check if email was prefilled after registration
+  // Check if registration success toast or email was queued for login
   if (loginEmailInput) {
+    const loginToast = sessionStorage.getItem('campsphere_login_toast');
+    if (loginToast) {
+      sessionStorage.removeItem('campsphere_login_toast');
+      if (window.showCampToast) {
+        setTimeout(() => {
+          window.showCampToast(loginToast, 'success', 'Account Ready');
+        }, 300);
+      }
+    }
+
     const prefilledEmail = sessionStorage.getItem('campsphere_prefill_login_email');
     if (prefilledEmail) {
       loginEmailInput.value = prefilledEmail;
-      if (loginPasswordInput) loginPasswordInput.value = '';
-      sessionStorage.removeItem('campsphere_prefill_login_email');
-      if (window.showCampToast) {
-        window.showCampToast(`Your registered email (${prefilledEmail}) is pre-filled. Enter your password to log in.`, 'info', 'Account Ready');
+      if (loginPasswordInput) {
+        loginPasswordInput.value = '';
+        loginPasswordInput.focus();
       }
+      sessionStorage.removeItem('campsphere_prefill_login_email');
     }
   }
 
@@ -868,52 +896,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!email || !password) {
         if (window.showCampToast) {
-          window.showCampToast('Please enter both your email address and password.', 'error', 'Missing Credentials');
+          window.showCampToast('Please enter both your registered email and password.', 'error', 'Missing Credentials');
         }
         return;
       }
 
       const users = getRegisteredUsers();
-      let matchedUser = users.find(u => u.email && u.email.toLowerCase() === email);
+      const matchedUser = users.find(u => u.email && u.email.toLowerCase() === email);
 
-      if (!matchedUser) {
-        // Auto-provision account for deployed frontend demo so any visitor can sign in smoothly
-        const namePart = email.split('@')[0].replace(/[._-]/g, ' ');
-        const formattedName = namePart.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-        matchedUser = {
-          id: 'usr_' + Date.now(),
-          firstName: formattedName.split(' ')[0] || 'Parent',
-          lastName: formattedName.split(' ').slice(1).join(' ') || 'User',
-          name: formattedName || 'Parent User',
-          email: email,
-          phone: '(555) 019-2834',
-          password: password,
-          address: '1204 Pine Vista Drive, Tahoe City, CA 96145',
-          pickupPin: String(Math.floor(1000 + Math.random() * 9000)),
-          registeredAt: new Date().toISOString(),
-          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80',
-          children: [],
-          enrollments: []
-        };
-        users.push(matchedUser);
-        saveRegisteredUsers(users);
-      } else if (matchedUser.password && matchedUser.password !== password) {
+      // Authenticate: must match a registered account and password
+      if (!matchedUser || matchedUser.password !== password) {
+        if (loginEmailInput) loginEmailInput.classList.add('is-invalid');
         if (loginPasswordInput) loginPasswordInput.classList.add('is-invalid');
         if (window.showCampToast) {
-          window.showCampToast('Incorrect password. Please verify your password and try again.', 'error', 'Invalid Password');
+          window.showCampToast('Invalid email or password. Please check your credentials and try again.', 'error', 'Invalid Credentials');
         }
         return;
       }
 
       // Valid Credentials: create active user session
+      const resolvedName = matchedUser.name || `${matchedUser.firstName || ''} ${matchedUser.lastName || ''}`.trim() || 'Parent User';
+      const resolvedFirstName = matchedUser.firstName || resolvedName.split(' ')[0] || 'Parent';
+      const resolvedLastName = matchedUser.lastName || (resolvedName.split(' ').length > 1 ? resolvedName.split(' ').slice(1).join(' ') : '');
+
       const userSession = {
         loggedIn: true,
         id: matchedUser.id,
-        name: matchedUser.name || `${matchedUser.firstName} ${matchedUser.lastName}`,
-        firstName: matchedUser.firstName,
-        lastName: matchedUser.lastName,
+        name: resolvedName,
+        firstName: resolvedFirstName,
+        lastName: resolvedLastName,
         email: matchedUser.email,
-        phone: matchedUser.phone,
+        phone: matchedUser.phone || '',
         role: 'parent',
         avatar: matchedUser.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80',
         loginTime: new Date().toISOString()
@@ -923,8 +936,8 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('campsphere_active_user_id', matchedUser.id);
       sessionStorage.setItem('campsphere_welcome_toast', `Welcome back, ${userSession.name}! You are now signed in.`);
 
-      // Redirect to Parent Dashboard
-      window.location.href = 'parent/dashboard.html';
+      // Redirect directly to the Home Page
+      window.location.href = 'index.html';
     });
   }
 
@@ -1010,7 +1023,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (modalInstance) modalInstance.hide();
         }
 
-        window.location.href = 'parent/dashboard.html';
+        window.location.href = 'index.html';
       }, 700);
     });
 
@@ -1114,7 +1127,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (modalInstance) modalInstance.hide();
         }
 
-        window.location.href = 'parent/dashboard.html';
+        window.location.href = 'index.html';
       }, 700);
     });
 
