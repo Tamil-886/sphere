@@ -697,6 +697,30 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('campsphere_registered_users', JSON.stringify(users));
   }
 
+  // Password Visibility Toggle for Login & Register forms
+  document.querySelectorAll('.btn-toggle-password').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.getAttribute('data-target');
+      const input = document.getElementById(targetId);
+      const icon = btn.querySelector('i');
+      if (input) {
+        if (input.type === 'password') {
+          input.type = 'text';
+          if (icon) {
+            icon.classList.remove('bi-eye');
+            icon.classList.add('bi-eye-slash');
+          }
+        } else {
+          input.type = 'password';
+          if (icon) {
+            icon.classList.remove('bi-eye-slash');
+            icon.classList.add('bi-eye');
+          }
+        }
+      }
+    });
+  });
+
   // 4.1 Parent Registration Form Handler
   const registerForm = document.getElementById('campRegisterForm');
   if (registerForm) {
@@ -784,21 +808,35 @@ document.addEventListener('DOMContentLoaded', () => {
       users.push(newUser);
       saveRegisteredUsers(users);
 
-      // Save prefill email for convenient login
-      sessionStorage.setItem('campsphere_prefill_login_email', email);
+      // Create active user session immediately
+      const userSession = {
+        loggedIn: true,
+        id: newUser.id,
+        name: newUser.name,
+        firstName: newUser.firstName,
+        lastName: newUser.lastName,
+        email: newUser.email,
+        phone: newUser.phone,
+        role: 'parent',
+        avatar: newUser.avatar,
+        loginTime: new Date().toISOString()
+      };
+
+      localStorage.setItem('campsphere_user_session', JSON.stringify(userSession));
+      localStorage.setItem('campsphere_active_user_id', newUser.id);
+      sessionStorage.setItem('campsphere_welcome_toast', `Welcome to CampSphere, ${newUser.name}! Your parent account is ready.`);
 
       if (window.showCampToast) {
-        window.showCampToast(`Account created for ${newUser.name}! Please log in with your email and password.`, 'success', 'Registration Successful');
+        window.showCampToast(`Account created for ${newUser.name}! Opening parent portal...`, 'success', 'Registration Successful');
       }
 
       setTimeout(() => {
-        window.location.href = 'login.html';
-      }, 900);
+        window.location.href = 'parent/dashboard.html';
+      }, 700);
     });
   }
 
-  // 4.2 Login Form Handler & 1-Click Demo Fill
-  const demoParentBtn = document.getElementById('demoParentLoginBtn');
+  // 4.2 Login Form Handler
   const googleLoginBtn = document.getElementById('googleLoginBtn');
   const appleLoginBtn = document.getElementById('appleLoginBtn');
   const loginEmailInput = document.getElementById('loginEmail');
@@ -817,18 +855,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (demoParentBtn && loginEmailInput && loginPasswordInput) {
-    demoParentBtn.addEventListener('click', () => {
-      loginEmailInput.value = 'parent@campsphere.com';
-      loginPasswordInput.value = 'parent12345';
-      loginEmailInput.classList.remove('is-invalid');
-      loginPasswordInput.classList.remove('is-invalid');
-      if (window.showCampToast) {
-        window.showCampToast('Parent credentials populated. Click "Sign In" to continue.', 'info', 'Demo Autofill');
-      }
-    });
-  }
-
   const loginForm = document.getElementById('campLoginForm');
   if (loginForm) {
     loginForm.addEventListener('submit', (e) => {
@@ -842,23 +868,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (!email || !password) {
         if (window.showCampToast) {
-          window.showCampToast('Please enter both your registered email and password.', 'error', 'Missing Credentials');
+          window.showCampToast('Please enter both your email address and password.', 'error', 'Missing Credentials');
         }
         return;
       }
 
       const users = getRegisteredUsers();
-      const matchedUser = users.find(u => u.email.toLowerCase() === email);
+      let matchedUser = users.find(u => u.email && u.email.toLowerCase() === email);
 
       if (!matchedUser) {
-        if (loginEmailInput) loginEmailInput.classList.add('is-invalid');
-        if (window.showCampToast) {
-          window.showCampToast('No registered account found with this email address. Please check your email or register.', 'error', 'Account Not Found');
-        }
-        return;
-      }
-
-      if (matchedUser.password !== password) {
+        // Auto-provision account for deployed frontend demo so any visitor can sign in smoothly
+        const namePart = email.split('@')[0].replace(/[._-]/g, ' ');
+        const formattedName = namePart.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+        matchedUser = {
+          id: 'usr_' + Date.now(),
+          firstName: formattedName.split(' ')[0] || 'Parent',
+          lastName: formattedName.split(' ').slice(1).join(' ') || 'User',
+          name: formattedName || 'Parent User',
+          email: email,
+          phone: '(555) 019-2834',
+          password: password,
+          address: '1204 Pine Vista Drive, Tahoe City, CA 96145',
+          pickupPin: String(Math.floor(1000 + Math.random() * 9000)),
+          registeredAt: new Date().toISOString(),
+          avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80',
+          children: [],
+          enrollments: []
+        };
+        users.push(matchedUser);
+        saveRegisteredUsers(users);
+      } else if (matchedUser.password && matchedUser.password !== password) {
         if (loginPasswordInput) loginPasswordInput.classList.add('is-invalid');
         if (window.showCampToast) {
           window.showCampToast('Incorrect password. Please verify your password and try again.', 'error', 'Invalid Password');
@@ -884,8 +923,8 @@ document.addEventListener('DOMContentLoaded', () => {
       localStorage.setItem('campsphere_active_user_id', matchedUser.id);
       sessionStorage.setItem('campsphere_welcome_toast', `Welcome back, ${userSession.name}! You are now signed in.`);
 
-      // Redirect to Home page
-      window.location.href = 'index.html';
+      // Redirect to Parent Dashboard
+      window.location.href = 'parent/dashboard.html';
     });
   }
 
@@ -926,7 +965,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         const users = getRegisteredUsers();
-        let user = users.find(u => u.email.toLowerCase() === email);
+        let user = users.find(u => u.email && u.email.toLowerCase() === email);
         if (!user) {
           user = {
             id: 'usr_g_' + Date.now(),
@@ -971,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (modalInstance) modalInstance.hide();
         }
 
-        window.location.href = 'index.html';
+        window.location.href = 'parent/dashboard.html';
       }, 700);
     });
 
@@ -1030,7 +1069,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       setTimeout(() => {
         const users = getRegisteredUsers();
-        let user = users.find(u => u.email.toLowerCase() === email);
+        let user = users.find(u => u.email && u.email.toLowerCase() === email);
         if (!user) {
           user = {
             id: 'usr_a_' + Date.now(),
@@ -1075,7 +1114,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (modalInstance) modalInstance.hide();
         }
 
-        window.location.href = 'index.html';
+        window.location.href = 'parent/dashboard.html';
       }, 700);
     });
 
