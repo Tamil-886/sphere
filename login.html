@@ -72,13 +72,13 @@
 
             <div class="mb-3">
               <div class="d-flex justify-content-between align-items-center mb-1">
-                <label class="form-label small fw-bold text-navy mb-0">Password *</label>
-                <a href="forgot-password.html" class="small text-primary">Forgot Password?</a>
+                <label class="form-label small fw-bold text-navy mb-0" for="loginPassword">Password *</label>
+                <a href="forgot-password.html" class="small text-primary text-decoration-none fw-semibold">Forgot Password?</a>
               </div>
               <div class="input-group">
                 <span class="input-group-text bg-light"><i class="bi bi-lock text-muted"></i></span>
-                <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
-                <button class="btn btn-outline-secondary btn-toggle-password" type="button" data-target="loginPassword" aria-label="Toggle password visibility">
+                <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required autocomplete="current-password">
+                <button class="btn btn-outline-secondary btn-toggle-password" type="button" data-target="loginPassword" aria-label="Toggle password visibility" title="Toggle password visibility">
                   <i class="bi bi-eye"></i>
                 </button>
               </div>

@@ -749,28 +749,31 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('campsphere_registered_users', JSON.stringify(users));
   }
 
-  // Password Visibility Toggle for Login & Register forms
-  document.querySelectorAll('.btn-toggle-password').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const targetId = btn.getAttribute('data-target');
-      const input = document.getElementById(targetId);
-      const icon = btn.querySelector('i');
-      if (input) {
-        if (input.type === 'password') {
-          input.type = 'text';
-          if (icon) {
-            icon.classList.remove('bi-eye');
-            icon.classList.add('bi-eye-slash');
-          }
-        } else {
-          input.type = 'password';
-          if (icon) {
-            icon.classList.remove('bi-eye-slash');
-            icon.classList.add('bi-eye');
-          }
+  // Password Visibility Toggle for Login, Register, Reset, and Settings forms
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn-toggle-password');
+    if (!btn) return;
+    e.preventDefault();
+    const targetId = btn.getAttribute('data-target');
+    const input = targetId ? document.getElementById(targetId) : btn.closest('.input-group')?.querySelector('input');
+    const icon = btn.querySelector('i');
+    if (input) {
+      if (input.type === 'password') {
+        input.type = 'text';
+        if (icon) {
+          icon.classList.remove('bi-eye');
+          icon.classList.add('bi-eye-slash');
         }
+        btn.setAttribute('aria-label', 'Hide password');
+      } else {
+        input.type = 'password';
+        if (icon) {
+          icon.classList.remove('bi-eye-slash');
+          icon.classList.add('bi-eye');
+        }
+        btn.setAttribute('aria-label', 'Show password');
       }
-    });
+    }
   });
 
   // 4.1 Parent Registration Form Handler

@@ -117,3 +117,26 @@
   transform: translateX(-4px);
 }
 
+/* RTL Input Groups */
+[dir="rtl"] .input-group > .input-group-text,
+body.rtl-mode .input-group > .input-group-text {
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0 !important;
+  border-left: none;
+  border-right: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .input-group > .btn-toggle-password,
+[dir="rtl"] .input-group > .btn.btn-toggle-password,
+body.rtl-mode .input-group > .btn-toggle-password,
+body.rtl-mode .input-group > .btn.btn-toggle-password {
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm) !important;
+  border-right: none;
+  border-left: 1px solid var(--border-color);
+}
+
+[dir="rtl"] .input-group > :not(:first-child):not(.dropdown-menu) {
+  margin-left: 0;
+  margin-right: -1px;
+}
+
+

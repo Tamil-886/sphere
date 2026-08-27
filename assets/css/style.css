@@ -2066,6 +2066,119 @@ ul {
 }
 
 /* --------------------------------------------------------------------------
+   Input Groups & Password Toggle Buttons
+   -------------------------------------------------------------------------- */
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  width: 100%;
+  border-radius: var(--radius-sm);
+}
+
+.input-group > .form-control {
+  position: relative;
+  flex: 1 1 auto;
+  width: 1%;
+  min-width: 0;
+}
+
+.input-group > .input-group-text {
+  background-color: #F8FAFC;
+  border: 1px solid var(--border-color);
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.input-group > :not(:first-child):not(.dropdown-menu) {
+  margin-left: -1px;
+  border-top-left-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+}
+
+.input-group > :not(:last-child):not(.dropdown-toggle) {
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.input-group > :first-child {
+  border-top-left-radius: var(--radius-sm) !important;
+  border-bottom-left-radius: var(--radius-sm) !important;
+}
+
+.input-group > :last-child {
+  border-top-right-radius: var(--radius-sm) !important;
+  border-bottom-right-radius: var(--radius-sm) !important;
+}
+
+/* Password Toggle Button */
+.input-group > .btn-toggle-password,
+.btn-toggle-password {
+  background-color: var(--white);
+  border: 1px solid var(--border-color);
+  color: var(--muted);
+  padding: 0.65rem 0.95rem;
+  font-size: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: none !important;
+  transform: none !important;
+  border-top-right-radius: var(--radius-sm);
+  border-bottom-right-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background-color var(--transition-fast), border-color var(--transition-fast);
+  z-index: 2;
+}
+
+.input-group > .btn-toggle-password:hover,
+.btn-toggle-password:hover {
+  background-color: #F1F5F9;
+  color: var(--primary);
+  border-color: var(--border-color);
+  transform: none !important;
+}
+
+.input-group > .btn-toggle-password:focus,
+.btn-toggle-password:focus {
+  outline: none;
+  box-shadow: none !important;
+  border-color: var(--primary);
+  color: var(--primary);
+  z-index: 3;
+}
+
+.btn-toggle-password i {
+  pointer-events: none;
+  font-size: 1.05rem;
+  transition: transform var(--transition-fast);
+}
+
+/* Unified Focus-Within Effect for Input Groups */
+.input-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(30, 64, 175, 0.12);
+  border-radius: var(--radius-sm);
+}
+
+.input-group:focus-within > .input-group-text,
+.input-group:focus-within > .form-control,
+.input-group:focus-within > .btn-toggle-password {
+  border-color: var(--primary);
+}
+
+.input-group:focus-within > .form-control:focus {
+  box-shadow: none;
+}
+
+
+/* --------------------------------------------------------------------------
    10. Dashboard Structure (Parent & Admin)
    -------------------------------------------------------------------------- */
 .dashboard-wrapper {

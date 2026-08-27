@@ -157,15 +157,33 @@
               <form id="passwordChangeForm">
                 <div class="mb-3">
                   <label class="form-label small fw-bold" for="currentPasswordInput">Current Password</label>
-                  <input type="password" class="form-control" id="currentPasswordInput" required placeholder="••••••••">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-lock text-muted"></i></span>
+                    <input type="password" class="form-control" id="currentPasswordInput" required placeholder="••••••••" autocomplete="current-password">
+                    <button class="btn btn-outline-secondary btn-toggle-password" type="button" data-target="currentPasswordInput" aria-label="Toggle password visibility" title="Toggle password visibility">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <div class="mb-3">
                   <label class="form-label small fw-bold" for="newPasswordInput">New Password</label>
-                  <input type="password" class="form-control" id="newPasswordInput" required placeholder="Minimum 6 characters">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-shield-lock text-muted"></i></span>
+                    <input type="password" class="form-control" id="newPasswordInput" required placeholder="Minimum 6 characters" autocomplete="new-password">
+                    <button class="btn btn-outline-secondary btn-toggle-password" type="button" data-target="newPasswordInput" aria-label="Toggle password visibility" title="Toggle password visibility">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <div class="mb-4">
                   <label class="form-label small fw-bold" for="confirmPasswordInput">Confirm New Password</label>
-                  <input type="password" class="form-control" id="confirmPasswordInput" required placeholder="Repeat new password">
+                  <div class="input-group">
+                    <span class="input-group-text bg-light"><i class="bi bi-check2-square text-muted"></i></span>
+                    <input type="password" class="form-control" id="confirmPasswordInput" required placeholder="Repeat new password" autocomplete="new-password">
+                    <button class="btn btn-outline-secondary btn-toggle-password" type="button" data-target="confirmPasswordInput" aria-label="Toggle password visibility" title="Toggle password visibility">
+                      <i class="bi bi-eye"></i>
+                    </button>
+                  </div>
                 </div>
                 <button type="submit" class="btn btn-primary btn-sm px-4" id="updatePasswordBtn">Update Password</button>
               </form>

@@ -1072,6 +1072,37 @@ body.dark-mode .input-group-text {
   color: #94A3B8 !important;
 }
 
+[data-theme="dark"] .input-group > .btn-toggle-password,
+[data-theme="dark"] .btn-toggle-password,
+body.dark-mode .input-group > .btn-toggle-password,
+body.dark-mode .btn-toggle-password {
+  background-color: #1E293B !important;
+  border-color: #334155 !important;
+  color: #94A3B8 !important;
+}
+
+[data-theme="dark"] .input-group > .btn-toggle-password:hover,
+[data-theme="dark"] .btn-toggle-password:hover,
+body.dark-mode .input-group > .btn-toggle-password:hover,
+body.dark-mode .btn-toggle-password:hover {
+  background-color: #334155 !important;
+  color: #60A5FA !important;
+}
+
+[data-theme="dark"] .input-group:focus-within,
+body.dark-mode .input-group:focus-within {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25) !important;
+}
+
+[data-theme="dark"] .input-group:focus-within > .input-group-text,
+[data-theme="dark"] .input-group:focus-within > .form-control,
+[data-theme="dark"] .input-group:focus-within > .btn-toggle-password,
+body.dark-mode .input-group:focus-within > .input-group-text,
+body.dark-mode .input-group:focus-within > .form-control,
+body.dark-mode .input-group:focus-within > .btn-toggle-password {
+  border-color: #3B82F6 !important;
+}
+
 [data-theme="dark"] .form-label,
 body.dark-mode .form-label {
   color: #E2E8F0 !important;
