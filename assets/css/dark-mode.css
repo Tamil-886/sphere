@@ -365,12 +365,22 @@ body.dark-mode .nav-wishlist-btn.has-items {
 
 [data-theme="dark"] .navbar-toggler,
 body.dark-mode .navbar-toggler {
+  background-color: rgba(255, 255, 255, 0.1) !important;
   border-color: #334155 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .navbar-toggler i,
+[data-theme="dark"] .navbar-toggler .bi,
+body.dark-mode .navbar-toggler i,
+body.dark-mode .navbar-toggler .bi {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
 }
 
 [data-theme="dark"] .navbar-toggler-icon,
 body.dark-mode .navbar-toggler-icon {
-  filter: invert(1) brightness(2);
+  filter: invert(1) brightness(2) !important;
 }
 
 /* --------------------------------------------------------------------------
@@ -1437,6 +1447,30 @@ body.dark-mode .sidebar-footer,
 body.dark-mode .sidebar-header {
   background-color: #0F172A !important;
   border-color: #1E293B !important;
+}
+
+[data-theme="dark"] .sidebar-toggle-btn,
+body.dark-mode .sidebar-toggle-btn {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-color: #334155 !important;
+  color: #FFFFFF !important;
+}
+
+[data-theme="dark"] .sidebar-toggle-btn i,
+[data-theme="dark"] .sidebar-toggle-btn .bi,
+body.dark-mode .sidebar-toggle-btn i,
+body.dark-mode .sidebar-toggle-btn .bi {
+  color: #FFFFFF !important;
+  fill: #FFFFFF !important;
+}
+
+[data-theme="dark"] .sidebar-toggle-btn:hover,
+body.dark-mode .sidebar-toggle-btn:hover,
+[data-theme="dark"] .sidebar-toggle-btn:focus,
+body.dark-mode .sidebar-toggle-btn:focus {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+  border-color: #64748B !important;
+  color: #FFFFFF !important;
 }
 
 [data-theme="dark"] .sidebar-nav .nav-link,

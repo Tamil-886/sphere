@@ -146,25 +146,63 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================================================
   // 2. Responsive Mobile Sidebar Toggle
   // ==========================================================================
-  const sidebarToggleBtns = document.querySelectorAll('.sidebar-toggle-btn');
-  const dashboardSidebar = document.querySelector('.dashboard-sidebar');
+  function initDashboardSidebar() {
+    const dashboardSidebar = document.querySelector('.dashboard-sidebar');
+    if (!dashboardSidebar || dashboardSidebar.dataset.sidebarInitialized === 'true') return;
+    dashboardSidebar.dataset.sidebarInitialized = 'true';
 
-  sidebarToggleBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      if (dashboardSidebar) {
-        dashboardSidebar.classList.toggle('show');
+    let backdrop = document.querySelector('.sidebar-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'sidebar-backdrop';
+      document.body.appendChild(backdrop);
+    }
+
+    const openSidebar = () => {
+      dashboardSidebar.classList.add('show');
+      backdrop.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeSidebar = () => {
+      dashboardSidebar.classList.remove('show');
+      backdrop.classList.remove('show');
+      document.body.style.overflow = '';
+    };
+
+    // Use event delegation for all toggle buttons
+    document.addEventListener('click', (e) => {
+      const toggleBtn = e.target.closest('.sidebar-toggle-btn');
+      if (toggleBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (dashboardSidebar.classList.contains('show')) {
+          closeSidebar();
+        } else {
+          openSidebar();
+        }
       }
     });
-  });
 
-  // Close sidebar when clicking outside on mobile
-  document.addEventListener('click', (e) => {
-    if (dashboardSidebar && dashboardSidebar.classList.contains('show')) {
-      if (!dashboardSidebar.contains(e.target) && !e.target.closest('.sidebar-toggle-btn')) {
-        dashboardSidebar.classList.remove('show');
+    backdrop.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeSidebar();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dashboardSidebar.classList.contains('show')) {
+        closeSidebar();
       }
-    }
-  });
+    });
+
+    dashboardSidebar.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link && window.innerWidth < 992) {
+        closeSidebar();
+      }
+    });
+  }
+  initDashboardSidebar();
 
   // Update Camper Count Badges in Sidebar & Nav
   function updateCamperBadges() {

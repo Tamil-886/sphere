@@ -167,24 +167,83 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // ------------------------------------------------------------------------
-  // 5. Dashboard Sidebar Toggle for Mobile / Tablet
+  // 5. Dashboard Sidebar Toggle for Mobile / Tablet with Backdrop Overlay
   // ------------------------------------------------------------------------
-  const sidebarToggleBtn = document.querySelector('.sidebar-toggle-btn');
-  const dashboardSidebar = document.querySelector('.dashboard-sidebar');
+  function initDashboardSidebar() {
+    const dashboardSidebar = document.querySelector('.dashboard-sidebar');
+    if (!dashboardSidebar || dashboardSidebar.dataset.sidebarInitialized === 'true') return;
+    dashboardSidebar.dataset.sidebarInitialized = 'true';
 
-  if (sidebarToggleBtn && dashboardSidebar) {
-    sidebarToggleBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      dashboardSidebar.classList.toggle('show');
-    });
+    let backdrop = document.querySelector('.sidebar-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.className = 'sidebar-backdrop';
+      document.body.appendChild(backdrop);
+    }
 
-    // Close when clicking outside on mobile
+    const openSidebar = () => {
+      dashboardSidebar.classList.add('show');
+      backdrop.classList.add('show');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeSidebar = () => {
+      dashboardSidebar.classList.remove('show');
+      backdrop.classList.remove('show');
+      document.body.style.overflow = '';
+    };
+
+    // Use event delegation for all toggle buttons
     document.addEventListener('click', (e) => {
-      if (window.innerWidth < 992 && dashboardSidebar.classList.contains('show')) {
-        if (!dashboardSidebar.contains(e.target) && !sidebarToggleBtn.contains(e.target)) {
-          dashboardSidebar.classList.remove('show');
+      const toggleBtn = e.target.closest('.sidebar-toggle-btn');
+      if (toggleBtn) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (dashboardSidebar.classList.contains('show')) {
+          closeSidebar();
+        } else {
+          openSidebar();
         }
       }
     });
+
+    backdrop.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeSidebar();
+    });
+
+    // Close when clicking links inside sidebar on mobile
+    dashboardSidebar.addEventListener('click', (e) => {
+      const link = e.target.closest('a');
+      if (link && window.innerWidth < 992) {
+        closeSidebar();
+      }
+    });
+
+    // Close when pressing Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && dashboardSidebar.classList.contains('show')) {
+        closeSidebar();
+      }
+    });
   }
+  initDashboardSidebar();
+
+  // ------------------------------------------------------------------------
+  // 6. Public Mobile Navbar Auto-Close on Link Click
+  // ------------------------------------------------------------------------
+  const allNavbarCollapses = document.querySelectorAll('.navbar-collapse');
+  allNavbarCollapses.forEach(collapseEl => {
+    if (typeof bootstrap !== 'undefined') {
+      const navClickables = collapseEl.querySelectorAll('.nav-link:not(.dropdown-toggle), .dropdown-item, .nav-wishlist-btn, a[href*="login.html"]');
+      navClickables.forEach(link => {
+        link.addEventListener('click', () => {
+          if (window.innerWidth < 992 && collapseEl.classList.contains('show')) {
+            const bsCollapse = bootstrap.Collapse.getInstance(collapseEl) || new bootstrap.Collapse(collapseEl, { toggle: false });
+            bsCollapse.hide();
+          }
+        });
+      });
+    }
+  });
 });
