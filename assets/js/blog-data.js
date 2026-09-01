@@ -1,5 +1,5 @@
 /**
- * CampSphere - Full 8 Blog Articles Dataset & Detail Rendering Engine
+ * CampSphere - Full 9 Blog Articles Dataset & Detail Rendering Engine
  * assets/js/blog-data.js
  */
 
@@ -361,6 +361,54 @@ const CAMPSPHERE_BLOG_ARTICLES = {
       { name: "Lisa Bennett", date: "April 10, 2026", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80", text: "My 14-year-old was furious about leaving her phone behind at first. By the end of Week 2, she told me she had never felt happier or more peaceful." }
     ],
     relatedIds: ["article-3", "article-5"]
+  },
+
+  "article-9": {
+    id: "article-9",
+    title: "Space Exploration & Rocketry: Inspiring Future Innovators",
+    category: "STEM & Robotics",
+    categorySlug: "stem",
+    date: "April 02, 2026",
+    readTime: "5 Min Read",
+    author: {
+      name: "Jessica Vance, M.S.",
+      role: "Director of Robotics & STEM Education",
+      photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&auto=format&fit=crop&q=80"
+    },
+    heroImage: "assets/images/Space_exploration_and_rocket_engineering_202608241141.jpeg",
+    lead: "From launching pneumatic rockets to analyzing lunar topography under high-powered telescopes, aerospace discovery transforms complex astrophysics into unforgettable hands-on wonder for young learners.",
+    contentHtml: `
+      <h3>1. Hands-On Aerospace Engineering for Kids</h3>
+      <p>
+        Space science isn't just about reading textbooks or watching videos of rocket launches. At CampSphere, campers build their own multi-stage model rockets, calculate center of pressure vs. center of gravity, and analyze launch trajectories in real time.
+      </p>
+
+      <div class="article-tip-box">
+        <h5 class="fw-bold text-navy mb-2"><i class="bi bi-lightbulb-fill text-warning me-2"></i> The Thrill of the Launch Pad</h5>
+        <p class="mb-0">
+          Counting down 3... 2... 1... and watching an engine fire with a clean parachute deployment gives campers an unforgettable rush of accomplishment and demonstrates the laws of aerodynamics in action.
+        </p>
+      </div>
+
+      <h3>2. Essential Skills Developed Through Rocket Science</h3>
+      <p>
+        Building and launching model rockets teaches cross-disciplinary STEM capabilities that prepare students for future tech and science tracks:
+      </p>
+      <ul class="article-checklist">
+        <li><i class="bi bi-check-circle-fill text-success"></i> <div><strong>Aerodynamic Principles:</strong> Campers optimize fin designs, nose cone shapes, and drag coefficients to maximize altitude and flight stability.</div></li>
+        <li><i class="bi bi-check-circle-fill text-success"></i> <div><strong>Telemetry & Data Collection:</strong> Using miniature altimeters and micro-sensors, students log flight apogees, velocities, and descent rates.</div></li>
+        <li><i class="bi bi-check-circle-fill text-success"></i> <div><strong>Team Mission Control Protocol:</strong> Working as payload specialists, flight directors, and safety range officers fosters clear communication and teamwork.</div></li>
+      </ul>
+
+      <h3>3. Stargazing & Night Sky Astronomy</h3>
+      <p>
+        Under Lake Tahoe's crystal-clear night skies, campers observe Saturn's rings, Jupiter's Galilean moons, and deep space nebulae through our 12-inch Dobsonian telescopes, instilling lifelong wonder and cosmic perspective.
+      </p>
+    `,
+    comments: [
+      { name: "Carlos Rivera", date: "April 05, 2026", avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&auto=format&fit=crop&q=80", text: "My 10-year-old hasn't stopped talking about the model rocket launch! He now wants to study astrophysics in college." }
+    ],
+    relatedIds: ["article-2", "article-5"]
   }
 };
 

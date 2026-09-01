@@ -496,12 +496,70 @@ document.addEventListener('DOMContentLoaded', () => {
     return [];
   }
 
-  // Dynamic Data Renderer for Dashboard, Enrollments, Children, Schedules and Payments
+  function getActiveUserInquiries() {
+    let session = null;
+    try {
+      session = JSON.parse(localStorage.getItem('campsphere_user_session') || 'null');
+    } catch (e) {
+      session = null;
+    }
+
+    let users = [];
+    try {
+      users = JSON.parse(localStorage.getItem('campsphere_registered_users') || '[]');
+    } catch (e) {
+      users = [];
+    }
+
+    if (session && session.loggedIn) {
+      const activeUser = users.find(u => u.id === session.id || (u.email && session.email && u.email.toLowerCase() === session.email.toLowerCase()));
+      if (activeUser && activeUser.inquiries && Array.isArray(activeUser.inquiries) && activeUser.inquiries.length > 0) {
+        return activeUser.inquiries;
+      }
+    }
+
+    // Check global campsphere_inquiries matching user email or ID
+    try {
+      const globalInquiries = JSON.parse(localStorage.getItem('campsphere_inquiries') || 'null');
+      if (globalInquiries && Array.isArray(globalInquiries) && globalInquiries.length > 0) {
+        if (session && session.loggedIn && session.email) {
+          const userSpecific = globalInquiries.filter(inq => (inq.userEmail && inq.userEmail.toLowerCase() === session.email.toLowerCase()) || (inq.userId && inq.userId === session.id));
+          if (userSpecific.length > 0) return userSpecific;
+        } else if (!session || !session.loggedIn) {
+          return globalInquiries;
+        }
+      }
+    } catch (e) {}
+
+    // Fallback default sample for initial logged-in user view (Sarah Watson)
+    if (!session || !session.loggedIn || session.email === 'parent@campsphere.com') {
+      return [
+        {
+          id: 'INQ-482091',
+          referenceId: 'INQ-482091',
+          name: 'Sarah Watson',
+          email: 'parent@campsphere.com',
+          phone: '(555) 019-2834',
+          subject: 'Schedule a Campus Tour & STEM Lab Visit',
+          topic: 'Schedule a Campus Tour',
+          message: 'Hello CampSphere team, we would love to schedule a guided tour of the Lake Tahoe campus and the STEM Robotics Lab before the session begins on June 15th. Are Saturday morning tours available?',
+          date: 'May 14, 2026 • 09:30 AM',
+          status: 'Pending',
+          userEmail: 'parent@campsphere.com'
+        }
+      ];
+    }
+
+    return [];
+  }
+
+  // Dynamic Data Renderer for Dashboard, Enrollments, Children, Schedules, Inquiries and Payments
   function renderDashboardDynamicData() {
     const children = getActiveUserCampers();
     const enrollments = getActiveUserEnrollments();
     const dailySchedules = getActiveUserDailySchedules();
     const weeklySchedules = getActiveUserWeeklySchedules();
+    const inquiries = getActiveUserInquiries();
     const payments = getActiveUserPayments();
 
     // 1. Dashboard Overview KPIs & Badges
@@ -769,6 +827,90 @@ document.addEventListener('DOMContentLoaded', () => {
             <p class="text-muted small mb-3">Reserve 5-day cohort weeks for full summer immersion.</p>
             <a href="../payment-weekly.html" class="btn btn-success btn-sm px-3 py-1 fw-bold">
               <i class="bi bi-plus-circle me-1"></i> Book a Weekly Schedule Cohort
+            </a>
+          </div>
+        `;
+      }
+    }
+
+    // 3d. User Inquiries Table (parent/dashboard.html)
+    const inquiriesTableBody = document.getElementById('dashboardInquiriesTableBody');
+    const inquiriesContainer = document.getElementById('dashboardInquiriesContainer');
+    const inquiriesBadge = document.getElementById('dashboardInquiriesBadge');
+
+    if (inquiriesBadge) {
+      inquiriesBadge.textContent = `${inquiries.length} ${inquiries.length === 1 ? 'Inquiry' : 'Inquiries'}`;
+    }
+
+    if (inquiriesTableBody) {
+      if (inquiries.length > 0) {
+        let rows = '';
+        inquiries.forEach((inq, idx) => {
+          const refId = inq.referenceId || inq.id || ('INQ-' + (idx + 1));
+          const topic = inq.topic || inq.subject || 'General Inquiry';
+          const name = inq.name || 'Parent';
+          const email = inq.email || inq.userEmail || '';
+          const phone = inq.phone || '(555) 019-2834';
+          const msg = inq.message || '';
+          const snippet = msg.length > 65 ? msg.substring(0, 65) + '...' : msg;
+          const date = inq.date || 'Recent';
+          const status = inq.status || 'Pending';
+
+          let statusBadgeClass = 'bg-warning-light text-warning-dark';
+          let statusIcon = 'bi-hourglass-split';
+          if (status.toLowerCase() === 'answered' || status.toLowerCase() === 'resolved') {
+            statusBadgeClass = 'bg-success-light text-success';
+            statusIcon = 'bi-check2-circle';
+          } else if (status.toLowerCase() === 'under review') {
+            statusBadgeClass = 'bg-info-light text-info';
+            statusIcon = 'bi-eye-fill';
+          }
+
+          rows += `
+            <tr>
+              <td>
+                <div class="d-flex align-items-center gap-2">
+                  <span class="badge bg-primary-light text-primary p-2 rounded-circle"><i class="bi bi-chat-left-text fs-6"></i></span>
+                  <div>
+                    <strong class="text-navy d-block">${topic}</strong>
+                    <span class="font-monospace text-primary small" style="font-size: 0.72rem;">Ref: ${refId}</span>
+                  </div>
+                </div>
+              </td>
+              <td>
+                <span class="text-muted d-block small" style="max-width: 260px; line-height: 1.4;">${snippet}</span>
+              </td>
+              <td>
+                <div class="small fw-bold text-navy"><i class="bi bi-calendar-event text-muted me-1"></i> ${date}</div>
+                <small class="text-muted d-block">Submitted Online</small>
+              </td>
+              <td>
+                <strong class="text-navy d-block small">${name}</strong>
+                <small class="text-muted d-block">${email}</small>
+                ${phone ? `<small class="text-muted d-block">${phone}</small>` : ''}
+              </td>
+              <td>
+                <span class="badge ${statusBadgeClass} px-2 py-1 small"><i class="bi ${statusIcon} me-1"></i> ${status}</span>
+              </td>
+              <td>
+                <button type="button" class="btn btn-sm btn-outline-primary py-1 px-2 view-inquiry-btn" data-inquiry-id="${refId}" title="View Full Message Details">
+                  <i class="bi bi-eye me-1"></i> Details
+                </button>
+              </td>
+            </tr>
+          `;
+        });
+        inquiriesTableBody.innerHTML = rows;
+      } else if (inquiriesContainer) {
+        inquiriesContainer.innerHTML = `
+          <div class="p-4 text-center">
+            <div class="mb-2 mx-auto" style="width: 48px; height: 48px; border-radius: 50%; background: #E3F2FD; display: flex; align-items: center; justify-content: center;">
+              <i class="bi bi-chat-left-dots text-primary fs-4"></i>
+            </div>
+            <h6 class="fw-bold text-navy mb-1">No Inquiries Submitted Yet</h6>
+            <p class="text-muted small mb-3">Have questions about camp schedules, dietary needs, or campus tours?</p>
+            <a href="../contact.html" class="btn btn-primary btn-sm px-3 py-2 fw-bold">
+              <i class="bi bi-send-fill me-1"></i> Send Us a Message
             </a>
           </div>
         `;
@@ -1833,5 +1975,63 @@ document.addEventListener('DOMContentLoaded', () => {
       const isEnabled = this.checked;
       notify(`${settingName} has been ${isEnabled ? 'enabled' : 'disabled'}.`, 'info', 'Preference Saved');
     });
+  });
+
+  // 8.5 View Inquiry Details Modal Event Listener
+  document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.view-inquiry-btn');
+    if (!btn) return;
+    e.preventDefault();
+
+    const inqId = btn.getAttribute('data-inquiry-id');
+    const allInquiries = getActiveUserInquiries();
+    const inq = allInquiries.find(i => (i.referenceId === inqId || i.id === inqId)) || allInquiries[0];
+
+    if (inq) {
+      const topicEl = document.getElementById('inquiryDetailTopic');
+      const refEl = document.getElementById('inquiryDetailRefId');
+      const statusEl = document.getElementById('inquiryDetailStatusBadge');
+      const nameEl = document.getElementById('inquiryDetailName');
+      const dateEl = document.getElementById('inquiryDetailDate');
+      const emailEl = document.getElementById('inquiryDetailEmail');
+      const phoneEl = document.getElementById('inquiryDetailPhone');
+      const msgEl = document.getElementById('inquiryDetailMessageText');
+
+      const topic = inq.topic || inq.subject || 'General Inquiry';
+      const refId = inq.referenceId || inq.id || 'INQ-000000';
+      const status = inq.status || 'Pending';
+      const name = inq.name || 'Parent User';
+      const date = inq.date || 'Recent';
+      const email = inq.email || inq.userEmail || 'parent@campsphere.com';
+      const phone = inq.phone || '(555) 019-2834';
+      const msg = inq.message || 'No message details provided.';
+
+      if (topicEl) topicEl.textContent = topic;
+      if (refEl) refEl.textContent = refId;
+      if (nameEl) nameEl.textContent = name;
+      if (dateEl) dateEl.textContent = date;
+      if (emailEl) emailEl.textContent = email;
+      if (phoneEl) phoneEl.textContent = phone;
+      if (msgEl) msgEl.textContent = msg;
+
+      if (statusEl) {
+        let badgeClass = 'bg-warning-light text-warning-dark';
+        let icon = 'bi-hourglass-split';
+        if (status.toLowerCase() === 'answered' || status.toLowerCase() === 'resolved') {
+          badgeClass = 'bg-success-light text-success';
+          icon = 'bi-check2-circle';
+        } else if (status.toLowerCase() === 'under review') {
+          badgeClass = 'bg-info-light text-info';
+          icon = 'bi-eye-fill';
+        }
+        statusEl.innerHTML = `<span class="badge ${badgeClass}"><i class="bi ${icon} me-1"></i> ${status}</span>`;
+      }
+
+      const modalEl = document.getElementById('inquiryDetailModal');
+      if (modalEl && typeof bootstrap !== 'undefined') {
+        const modalInst = bootstrap.Modal.getInstance(modalEl) || new bootstrap.Modal(modalEl);
+        modalInst.show();
+      }
+    }
   });
 });

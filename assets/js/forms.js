@@ -700,19 +700,182 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ------------------------------------------------------------------------
-  // 3. Contact Form Simulation
+  // 3. Contact & Inquiry Form Controller
   // ------------------------------------------------------------------------
-  const contactForm = document.getElementById('campContactForm');
-  if (contactForm) {
+  function initContactForm() {
+    const contactForm = document.getElementById('campContactForm');
+    if (!contactForm) return;
+
+    const nameInput = document.getElementById('contactName');
+    const emailInput = document.getElementById('contactEmail');
+    const phoneInput = document.getElementById('contactPhone');
+    const subjectInput = document.getElementById('contactSubject');
+    const messageInput = document.getElementById('contactMessage');
+    const submitBtn = document.getElementById('contactSubmitBtn');
+    const formAlert = document.getElementById('contactFormAlert');
+    const userNotice = document.getElementById('contactUserStatusNotice');
+    const userNameDisplay = document.getElementById('contactLoggedInUserName');
+    const userEmailDisplay = document.getElementById('contactLoggedInUserEmail');
+
+    // Check if user is currently logged in and prefill
+    let session = null;
+    try {
+      session = JSON.parse(localStorage.getItem('campsphere_user_session') || 'null');
+    } catch (e) {
+      session = null;
+    }
+
+    if (session && session.loggedIn) {
+      if (userNotice) userNotice.classList.remove('d-none');
+      if (userNameDisplay) userNameDisplay.textContent = session.name || session.firstName || 'Parent';
+      if (userEmailDisplay) userEmailDisplay.textContent = session.email || '';
+
+      if (nameInput && !nameInput.value) nameInput.value = session.name || `${session.firstName || ''} ${session.lastName || ''}`.trim() || 'Sarah Watson';
+      if (emailInput && !emailInput.value) emailInput.value = session.email || 'parent@campsphere.com';
+      if (phoneInput && !phoneInput.value) phoneInput.value = session.phone || '(555) 019-2834';
+    }
+
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('contactName')?.value || 'Parent';
-      if (window.showCampToast) {
-        window.showCampToast(`Thank you, ${name}! Your inquiry has been sent to our Camp Director. We'll reply within 24 hours.`, 'success', 'Message Sent');
+
+      // Clear previous validation styling
+      [nameInput, emailInput, phoneInput, subjectInput, messageInput].forEach(el => {
+        if (el) el.classList.remove('is-invalid');
+      });
+      if (formAlert) formAlert.classList.add('d-none');
+
+      const name = nameInput ? nameInput.value.trim() : '';
+      const email = emailInput ? emailInput.value.trim().toLowerCase() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const subject = subjectInput ? subjectInput.value.trim() : 'General Program Inquiries';
+      const message = messageInput ? messageInput.value.trim() : '';
+
+      // Validation check
+      let hasError = false;
+      if (!name) {
+        if (nameInput) nameInput.classList.add('is-invalid');
+        hasError = true;
       }
-      contactForm.reset();
+      if (!email || !email.includes('@') || !email.includes('.')) {
+        if (emailInput) emailInput.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (!phone) {
+        if (phoneInput) phoneInput.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (!subject) {
+        if (subjectInput) subjectInput.classList.add('is-invalid');
+        hasError = true;
+      }
+      if (!message || message.length < 5) {
+        if (messageInput) messageInput.classList.add('is-invalid');
+        hasError = true;
+      }
+
+      if (hasError) {
+        if (formAlert) {
+          formAlert.textContent = 'Please fill out all required fields marked with * before sending your inquiry.';
+          formAlert.classList.remove('d-none');
+        }
+        if (window.showCampToast) {
+          window.showCampToast('Please fill out all required inquiry fields.', 'error', 'Incomplete Form');
+        }
+        return;
+      }
+
+      // Show submitting loading state on button to prevent duplicate submissions
+      const originalBtnHtml = submitBtn ? submitBtn.innerHTML : 'Send Inquiry';
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span> Sending Inquiry...`;
+      }
+
+      setTimeout(() => {
+        // Generate Unique Inquiry Reference
+        const inqId = 'INQ-' + Math.floor(100000 + Math.random() * 900000);
+        const now = new Date();
+        const formattedDate = now.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }) + ' • ' + now.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit', hour12: true });
+
+        const newInquiry = {
+          id: inqId,
+          referenceId: inqId,
+          name: name,
+          email: email,
+          phone: phone,
+          subject: subject,
+          topic: subject,
+          message: message,
+          date: formattedDate,
+          isoDate: now.toISOString(),
+          status: 'Pending',
+          userEmail: email,
+          userId: (session && session.loggedIn) ? session.id : null
+        };
+
+        // 1. Save to global inquiries list (campsphere_inquiries)
+        let inquiries = [];
+        try {
+          inquiries = JSON.parse(localStorage.getItem('campsphere_inquiries') || '[]');
+        } catch (err) {
+          inquiries = [];
+        }
+        inquiries.unshift(newInquiry);
+        localStorage.setItem('campsphere_inquiries', JSON.stringify(inquiries));
+
+        // 2. Attach to matching registered user in campsphere_registered_users
+        try {
+          let users = JSON.parse(localStorage.getItem('campsphere_registered_users') || '[]');
+          const userIdx = users.findIndex(u => (session && session.id && u.id === session.id) || (u.email && u.email.toLowerCase() === email));
+          if (userIdx !== -1) {
+            if (!users[userIdx].inquiries) users[userIdx].inquiries = [];
+            users[userIdx].inquiries.unshift(newInquiry);
+            localStorage.setItem('campsphere_registered_users', JSON.stringify(users));
+          }
+        } catch (err) {}
+
+        // Restore button state
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalBtnHtml;
+        }
+
+        // Reset form
+        contactForm.reset();
+        // If logged in, re-fill name & email
+        if (session && session.loggedIn) {
+          if (nameInput) nameInput.value = session.name || session.firstName || '';
+          if (emailInput) emailInput.value = session.email || '';
+          if (phoneInput) phoneInput.value = session.phone || '';
+        }
+
+        // Populate Success Modal Fields
+        const refEl = document.getElementById('inquiryRefId');
+        const topicEl = document.getElementById('inquirySummaryTopic');
+        const nameEl = document.getElementById('inquirySummaryName');
+        const emailEl = document.getElementById('inquirySummaryEmail');
+
+        if (refEl) refEl.textContent = inqId;
+        if (topicEl) topicEl.textContent = subject;
+        if (nameEl) nameEl.textContent = name;
+        if (emailEl) emailEl.textContent = email;
+
+        // Show styled Success Modal
+        const successModalEl = document.getElementById('inquirySuccessModal');
+        if (successModalEl && typeof bootstrap !== 'undefined') {
+          const modalInstance = new bootstrap.Modal(successModalEl);
+          modalInstance.show();
+        } else if (window.showCampToast) {
+          window.showCampToast(`Inquiry #${inqId} submitted successfully! We'll reply within 24 business hours.`, 'success', 'Inquiry Sent');
+        }
+
+        if (window.showCampToast) {
+          window.showCampToast(`Inquiry #${inqId} has been submitted!`, 'success', 'Submitted');
+        }
+      }, 600);
     });
   }
+  initContactForm();
 
   // ------------------------------------------------------------------------
   // 4. Multi-User Authentication Database, Registration & Login
