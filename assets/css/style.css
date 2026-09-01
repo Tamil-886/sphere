@@ -741,57 +741,103 @@ ul {
 .hero-image-wrap {
   position: relative;
   z-index: 1;
+  display: block;
+  border-radius: 28px;
+  padding: 0;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -14px;
+  border-radius: 36px;
+  background: radial-gradient(circle at 50% 50%, rgba(56, 189, 248, 0.22), rgba(99, 102, 241, 0.12), transparent 70%);
+  filter: blur(22px);
+  z-index: -1;
+  pointer-events: none;
+  animation: heroHaloGlow 8s ease-in-out infinite alternate;
 }
 
 .hero-main-img, .hero-img-main {
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-xl);
-  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  box-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.2), 0 0 0 1px rgba(255, 255, 255, 0.85), 0 10px 20px -5px rgba(0, 0, 0, 0.05);
+  border: 3px solid rgba(255, 255, 255, 0.95);
   object-fit: cover;
   width: 100%;
-  height: 460px;
+  height: auto;
+  aspect-ratio: 2400 / 1792;
+  display: block;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-image-wrap:hover .hero-img-main {
+  transform: scale(1.015);
+  box-shadow: 0 32px 65px -12px rgba(15, 23, 42, 0.26), 0 0 0 1px rgba(255, 255, 255, 1);
 }
 
 .floating-stat-card, .floating-badge {
   position: absolute;
-  background-color: rgba(255, 255, 255, 0.96);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
   padding: 0.85rem 1.25rem;
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-lg);
+  border-radius: 18px;
+  box-shadow: 0 20px 35px -8px rgba(15, 23, 42, 0.15), 0 0 0 1px rgba(226, 232, 240, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  z-index: 2;
-  animation: floatSlow 4s ease-in-out infinite;
+  gap: 0.85rem;
+  z-index: 5;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: default;
+}
+
+.floating-badge:hover {
+  transform: translateY(-8px) scale(1.04) !important;
+  box-shadow: 0 28px 45px -10px rgba(15, 23, 42, 0.22), 0 0 0 1px rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.98);
 }
 
 .floating-stat-card.card-1, .floating-badge-bottom {
-  bottom: 25px;
-  left: -20px;
+  bottom: 22px;
+  left: -24px;
+  animation: premiumFloatSlow 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .floating-stat-card.card-2, .floating-badge-top {
-  top: 30px;
-  right: -20px;
-  animation-delay: 2s;
+  top: 25px;
+  right: -24px;
+  animation: premiumFloatSlowReverse 6.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
+  animation-delay: 0.8s;
 }
 
 .floating-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   flex-shrink: 0;
+  box-shadow: 0 8px 16px -4px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-@keyframes floatSlow {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
+.floating-badge:hover .floating-icon {
+  transform: scale(1.15) rotate(6deg);
+}
+
+@keyframes heroHaloGlow {
+  0% {
+    opacity: 0.5;
+    transform: scale(0.96);
+  }
+  100% {
+    opacity: 0.85;
+    transform: scale(1.04);
+  }
 }
 
 /* Modern Discovery & Search Bar Hub */
@@ -3640,70 +3686,132 @@ body {
 }
 
 /* --------------------------------------------------------------------------
-   E. Sticker Animation Keyframes
+   E. Premium Physics Sticker & Badge Animations
    -------------------------------------------------------------------------- */
 .anim-float {
-  animation: stickerFloat 4.5s ease-in-out infinite;
+  animation: premiumFloat 6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .anim-float-reverse {
-  animation: stickerFloatReverse 5s ease-in-out infinite;
+  animation: premiumFloatReverse 6.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .anim-pulse {
-  animation: stickerPulse 3s ease-in-out infinite;
+  animation: premiumPulseGlow 4s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .anim-rotate-slow {
-  animation: stickerRotate 20s linear infinite;
+  animation: premiumRotate 22s linear infinite;
 }
 
 .anim-drift {
-  animation: stickerDrift 6s ease-in-out infinite;
+  animation: premiumDrift 7s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
 .anim-wiggle {
-  animation: stickerWiggle 3.5s ease-in-out infinite;
+  animation: premiumWiggle 5.5s ease-in-out infinite;
 }
 
 .anim-bob {
-  animation: stickerBob 3.6s ease-in-out infinite;
+  animation: premiumBob 5.5s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite;
 }
 
-@keyframes stickerFloat {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(2.5deg); }
+@keyframes premiumFloat {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(3px, -12px, 0) rotate(2deg);
+  }
+  66% {
+    transform: translate3d(-3px, -6px, 0) rotate(-1.5deg);
+  }
 }
 
-@keyframes stickerFloatReverse {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(10px) rotate(-2.5deg); }
+@keyframes premiumFloatReverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate3d(-3px, 11px, 0) rotate(-2deg);
+  }
+  66% {
+    transform: translate3d(3px, 5px, 0) rotate(1.5deg);
+  }
 }
 
-@keyframes stickerPulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
+@keyframes premiumFloatSlow {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(1.2deg);
+  }
 }
 
-@keyframes stickerRotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes premiumFloatSlowReverse {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0) rotate(-1.2deg);
+  }
 }
 
-@keyframes stickerDrift {
-  0%, 100% { transform: translateX(0) translateY(0); }
-  50% { transform: translateX(8px) translateY(-6px); }
+@keyframes premiumDrift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(8px, -10px, 0) rotate(2.5deg);
+  }
 }
 
-@keyframes stickerWiggle {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(4deg); }
-  75% { transform: rotate(-4deg); }
+@keyframes premiumBob {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(-4px, -12px, 0) rotate(-2.5deg);
+  }
 }
 
-@keyframes stickerBob {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
+@keyframes premiumPulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 24px -6px rgba(245, 158, 11, 0.28);
+  }
+  50% {
+    transform: scale(1.12) rotate(8deg);
+    box-shadow: 0 18px 36px -6px rgba(245, 158, 11, 0.55);
+  }
+}
+
+@keyframes premiumRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes premiumWiggle {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate3d(2px, -4px, 0) rotate(3deg);
+  }
+  40% {
+    transform: translate3d(-2px, -8px, 0) rotate(-3deg);
+  }
+  60% {
+    transform: translate3d(2px, -4px, 0) rotate(2deg);
+  }
+  80% {
+    transform: translate3d(-1px, -2px, 0) rotate(-1deg);
+  }
 }
 
 /* --------------------------------------------------------------------------

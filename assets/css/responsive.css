@@ -81,22 +81,24 @@ h6, .h6 {
    -------------------------------------------------------------------------- */
 @media (max-width: 1199.98px) {
   .hero-img-main {
-    height: 380px;
+    height: auto !important;
+    aspect-ratio: 2400 / 1792;
+    width: 100%;
   }
   .hero-main-image-frame {
-    height: 380px;
+    height: auto;
   }
   .floating-badge {
-    padding: 0.6rem 0.95rem;
+    padding: 0.65rem 1rem;
     font-size: 0.8rem;
   }
   .floating-badge-top {
-    top: 10px;
-    left: -5px;
+    top: 15px;
+    right: -10px;
   }
   .floating-badge-bottom {
-    bottom: 10px;
-    right: -5px;
+    bottom: 15px;
+    left: -10px;
   }
   .dashboard-sidebar {
     width: 250px;
@@ -247,16 +249,20 @@ h6, .h6 {
 
   .hero-image-wrap {
     margin-top: 2.5rem;
+    max-width: 580px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-img-main {
-    max-width: 90%;
+    max-width: 100%;
     margin: 0 auto;
-    height: 340px;
+    height: auto !important;
+    aspect-ratio: 2400 / 1792;
   }
 
   .hero-main-image-frame {
-    height: 340px;
+    height: auto;
   }
 
   .camp-search-bar {
@@ -405,21 +411,39 @@ h6, .h6 {
 
   /* Hero & Banners */
   .hero-img-main {
-    height: 260px;
-    border-width: 3px;
+    height: auto !important;
+    aspect-ratio: 2400 / 1792;
+    border-width: 2.5px;
+    width: 100%;
   }
 
   .hero-main-image-frame {
-    height: 280px;
+    height: auto;
     border-radius: 1.25rem;
   }
 
   .floating-badge {
-    position: static !important;
-    margin: 0.5rem auto !important;
-    width: fit-content;
-    animation: none !important;
-    display: flex;
+    position: absolute !important;
+    padding: 0.55rem 0.85rem !important;
+    font-size: 0.75rem !important;
+    border-radius: 14px !important;
+  }
+
+  .floating-badge-top {
+    top: 10px !important;
+    right: -6px !important;
+  }
+
+  .floating-badge-bottom {
+    bottom: 12px !important;
+    left: -6px !important;
+  }
+
+  .floating-icon {
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
   }
 
   .floating-glass-sticker {
