@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const navbar = document.querySelector('.navbar-camp');
   if (navbar) {
     const handleNavScroll = () => {
-      if (window.scrollY > 30) {
+      if (window.scrollY > 15) {
         navbar.classList.add('is-sticky');
       } else {
         navbar.classList.remove('is-sticky');

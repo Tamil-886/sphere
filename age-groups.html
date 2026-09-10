@@ -5,14 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="CampSphere Age Groups - Curricula tailored for Mini Explorers (4-6), Juniors (7-10), Teens (11-15) and LITs (16-18).">
   <title>Age Groups & Developmental Programs - CampSphere</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +36,7 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-camp">
+  <nav class="navbar navbar-expand-lg navbar-camp sticky-top" id="mainNavbar">
     <div class="container">
       <a class="brand-logo" href="index.html">
         <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
@@ -93,18 +85,17 @@
               Pages
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-speedometer2 text-primary"></i> Parent Dashboard</a></li>
               <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
               <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
-              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
               <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
             </ul>
           </li>
         </ul>
 
         <!-- Right Side: Dark, RTL & Parent Login -->
-        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+        <div class="nav-actions-wrap d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
             <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
           </a>
@@ -112,7 +103,7 @@
             <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
           </button>
           <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
-            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+            <i class="bi bi-arrow-left-right"></i> <span class="rtl-label">RTL</span>
           </button>
           <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
             <i class="bi bi-person-circle me-1"></i> Parent Login
@@ -124,10 +115,10 @@
 
   <!-- Header -->
   <section class="section-padding-sm bg-light-blue border-bottom position-relative overflow-hidden">
-    <div class="camp-sticker sticker-rainbow anim-float d-none d-md-inline-flex" style="top: 15px; left: 5%;">
+    <div class="camp-sticker sticker-rainbow anim-float" style="top: 15px; left: 5%;">
       <i class="bi bi-stars me-1 text-primary"></i> Ages 4 to 18
     </div>
-    <div class="camp-sticker sticker-sun anim-pulse d-none d-md-inline-flex" style="top: 15px; right: 5%;">
+    <div class="camp-sticker sticker-sun anim-pulse" style="top: 15px; right: 5%;">
       <i class="bi bi-sun-fill me-1 text-warning"></i> 4 Tier Groups
     </div>
 

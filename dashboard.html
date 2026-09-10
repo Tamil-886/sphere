@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CampSphere Parent & Family Dashboard - Manage camper profiles, track summer 2026 enrollments, daily activity schedules, carline passes, and payment receipts.">
+  <title>Parent & Family Dashboard | CampSphere Summer 2026</title>
+
+  <!-- Google Fonts: Plus Jakarta Sans & Fredoka -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
+  <link rel="stylesheet" href="assets/css/dark-mode.css">
+  <link rel="stylesheet" href="assets/css/rtl.css">
+</head>
+<body>
+
+  <!-- Main Sticky Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-camp sticky-top" id="mainNavbar">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+        Camp<span class="highlight-text">Sphere</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <!-- Navigation Menu -->
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Home
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html"><i class="bi bi-house-door text-primary"></i> Home - Classic Camp</a></li>
+              <li><a class="dropdown-item" href="home-2.html"><i class="bi bi-stars text-accent"></i> Home - Modern Adventure</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+
+          <!-- Programs Dropdown -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Programs
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="programs.html"><i class="bi bi-grid-fill text-primary"></i> All Programs (25)</a></li>
+              <li><a class="dropdown-item" href="daily-schedule.html"><i class="bi bi-clock-history text-accent"></i> Daily Schedule</a></li>
+              <li><a class="dropdown-item" href="weekly-schedule.html"><i class="bi bi-calendar-week text-success"></i> Weekly Schedule</a></li>
+              <li><a class="dropdown-item" href="calendar.html"><i class="bi bi-calendar3 text-info"></i> Camp Calendar</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="camp-match.html"><i class="bi bi-magic text-success"></i> Camp Match Quiz</a></li>
+              <li><a class="dropdown-item" href="wishlist.html"><i class="bi bi-heart-fill text-danger"></i> Saved Wishlist</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item"><a class="nav-link" href="safety.html">Safety</a></li>
+          <li class="nav-item"><a class="nav-link" href="pricing.html">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+
+          <!-- Pages Dropdown (Active on Dashboard) -->
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Pages
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item active" href="dashboard.html"><i class="bi bi-speedometer2 text-primary"></i> Parent Dashboard</a></li>
+              <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
+              <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Right Side: Wishlist, Dark Mode, RTL & Auth / Parent Login -->
+        <div class="nav-actions-wrap d-flex align-items-center gap-2 mt-3 mt-lg-0">
+          <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
+            <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
+          </a>
+          <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
+          </button>
+          <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
+            <i class="bi bi-arrow-left-right"></i> <span class="rtl-label">RTL</span>
+          </button>
+          <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
+            <i class="bi bi-person-circle me-1"></i> Parent Login
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Standardized Hero Banner -->
+  <section class="section-padding-sm bg-light-blue position-relative page-hero-banner">
+    <div class="container text-center position-relative" style="z-index: 2;">
+      <nav aria-label="breadcrumb" class="d-flex justify-content-center mb-3">
+        <ol class="breadcrumb mb-0">
+          <li class="breadcrumb-item"><a href="index.html"><i class="bi bi-house-door me-1"></i>Home</a></li>
+          <li class="breadcrumb-item"><a href="parent/dashboard.html">Parent Portal</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+        </ol>
+      </nav>
+      <span class="badge-tag badge-tag-primary mb-2">Summer 2026 Family Hub</span>
+      <h1 class="fw-bold mb-2">Family Camp Dashboard</h1>
+      <p class="text-muted mx-auto mb-0" style="max-width: 660px;">
+        Welcome to your family camp portal! Manage registered campers, view active summer enrollments, check daily activity schedules, and access official tax receipts in one place.
+      </p>
+    </div>
+  </section>
+
+  <!-- Main Dashboard Content Section -->
+  <section class="section-padding bg-light-blue pt-4 pb-5">
+    <div class="container">
+
+      <!-- 1. Top Welcome Card with Quick Actions -->
+      <div class="dashboard-welcome-card mb-4 position-relative overflow-hidden p-4 rounded-4 shadow-sm border bg-white">
+        <div class="row align-items-center g-3 position-relative" style="z-index: 2;">
+          <div class="col-lg-8">
+            <div class="d-flex flex-wrap align-items-center gap-2 mb-2">
+              <span class="badge bg-primary-light text-primary px-3 py-1 rounded-pill fw-bold small">
+                <i class="bi bi-tree-fill me-1"></i> Lake Tahoe Summer Camp
+              </span>
+              <span class="badge bg-success-light text-success px-3 py-1 rounded-pill fw-bold small">
+                <i class="bi bi-shield-check me-1"></i> Registration Confirmed
+              </span>
+              <span class="badge bg-warning-light text-warning-dark px-3 py-1 rounded-pill fw-bold small">
+                <i class="bi bi-sun-fill me-1"></i> Summer 2026
+              </span>
+            </div>
+            <h3 class="fw-extrabold text-navy mb-2">
+              Welcome to Your Family Hub, <span class="user-display-name">Sarah</span>! 🏕️
+            </h3>
+            <p class="text-muted mb-3" style="max-width: 640px;">
+              Everything is set for <strong>Emma</strong> and <strong>Lucas</strong>! Track daily schedules, authorized carline pickups, medical updates, and weekly sessions in one cheerful place.
+            </p>
+            <div class="d-flex flex-wrap gap-2 align-items-center">
+              <a href="weekly-schedule.html" class="btn btn-accent btn-sm rounded-pill px-3 shadow-xs">
+                <i class="bi bi-calendar-week me-1"></i> View Weekly Schedule
+              </a>
+              <a href="enrollment.html" class="btn btn-primary btn-sm rounded-pill px-3">
+                <i class="bi bi-plus-circle me-1"></i> Enroll in New Program
+              </a>
+              <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#carlineModal">
+                <i class="bi bi-qr-code me-1"></i> View Carline Pass QR
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 text-center text-lg-end d-none d-md-block">
+            <div class="p-3 bg-light rounded-4 shadow-sm border d-inline-flex flex-column align-items-center" style="min-width: 190px;">
+              <div class="feature-icon-wrap bg-primary-light text-primary mb-2 mx-auto" style="width: 48px; height: 48px; font-size: 1.35rem; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+                <i class="bi bi-backpack4-fill"></i>
+              </div>
+              <strong class="text-navy small d-block">Orientation Countdown</strong>
+              <div class="fs-4 fw-extrabold text-primary my-1">14 Days</div>
+              <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-2 py-1 small">
+                <i class="bi bi-check2-all me-1"></i> Ready for Day 1
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. KPI Metric Summary Cards -->
+      <div class="row g-4 mb-4">
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card p-3 rounded-3 bg-white border shadow-xs d-flex align-items-center justify-content-between">
+            <div>
+              <span class="text-muted small fw-bold d-block">Active Enrollments</span>
+              <div class="kpi-value text-primary fs-3 fw-extrabold my-1" id="kpiActiveEnrollments">3</div>
+              <small class="text-success"><i class="bi bi-check-circle-fill me-1"></i> 100% Confirmed</small>
+            </div>
+            <div class="kpi-icon bg-primary-light text-primary rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 1.4rem;">
+              <i class="bi bi-clipboard2-check"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card p-3 rounded-3 bg-white border shadow-xs d-flex align-items-center justify-content-between">
+            <div>
+              <span class="text-muted small fw-bold d-block">Registered Campers</span>
+              <div class="kpi-value text-secondary fs-3 fw-extrabold my-1" id="kpiRegisteredCampers">2</div>
+              <small class="text-muted" id="kpiCampersSubtitle"><i class="bi bi-person-heart text-danger me-1"></i> Emma & Lucas</small>
+            </div>
+            <div class="kpi-icon bg-secondary-light text-secondary rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 1.4rem;">
+              <i class="bi bi-people"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card p-3 rounded-3 bg-white border shadow-xs d-flex align-items-center justify-content-between">
+            <div>
+              <span class="text-muted small fw-bold d-block">Next Camp Starts</span>
+              <div class="kpi-value text-accent fs-3 fw-extrabold my-1">June 15</div>
+              <small class="text-muted"><i class="bi bi-calendar-check text-accent me-1"></i> Week 1 Kickoff</small>
+            </div>
+            <div class="kpi-icon bg-accent-light text-accent rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 1.4rem;">
+              <i class="bi bi-calendar-event"></i>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+          <div class="kpi-card p-3 rounded-3 bg-white border shadow-xs d-flex align-items-center justify-content-between">
+            <div>
+              <span class="text-muted small fw-bold d-block">Billing & Tuition</span>
+              <div class="kpi-value text-success fs-3 fw-extrabold my-1" id="kpiDashboardBillingStatus">$0.00 Due</div>
+              <small class="text-success"><i class="bi bi-shield-check me-1"></i> Paid in Full</small>
+            </div>
+            <div class="kpi-icon bg-highlight-light text-warning rounded-circle d-flex align-items-center justify-content-center" style="width: 48px; height: 48px; font-size: 1.4rem;">
+              <i class="bi bi-cash-stack"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Middle Section: Campers & Active Enrollments -->
+      <div class="row g-4 mb-4">
+        
+        <!-- Left Column: Registered Campers (5 Cols) -->
+        <div class="col-lg-5">
+          <div class="card-camp h-100 shadow-sm bg-white rounded-3 border">
+            <div class="card-camp-header d-flex justify-content-between align-items-center p-3 border-bottom">
+              <div class="d-flex align-items-center gap-2">
+                <h5 class="fw-bold mb-0 text-navy"><i class="bi bi-person-hearts text-primary me-1"></i> My Campers</h5>
+                <span class="badge bg-primary-light text-primary rounded-pill px-2 py-1 small" id="dashboardActiveCampersBadge">2 Campers</span>
+              </div>
+              <button type="button" class="btn btn-sm btn-outline-primary rounded-pill px-3" data-bs-toggle="modal" data-bs-target="#addChildModal">
+                <i class="bi bi-person-plus me-1"></i> Add Camper
+              </button>
+            </div>
+            <div class="card-camp-body p-3 d-flex flex-column gap-3" id="dashboardCampersList">
+              
+              <!-- Child 1: Emma -->
+              <div class="camper-mini-card p-3 border rounded-3 d-flex align-items-center justify-content-between shadow-xs">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="position-relative flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1543332164-6e82f355badc?w=120&auto=format&fit=crop&q=80" alt="Emma Watson" class="rounded-circle shadow-sm" style="width: 52px; height: 52px; object-fit: cover;">
+                    <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-white border-2" style="width: 14px; height: 14px;" title="Active Camper"></span>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold text-navy mb-1">Emma Watson</h6>
+                    <div class="d-flex align-items-center flex-wrap gap-2 text-muted small mb-1">
+                      <span>Age 8 • 3rd Grade</span>
+                      <span>•</span>
+                      <span class="badge bg-danger-light text-danger"><i class="bi bi-shield-exclamation me-1"></i> Peanut Alert</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                      <span class="badge bg-primary-light text-primary"><i class="bi bi-robot me-1"></i> Junior STEM & Robotics</span>
+                      <span class="badge bg-secondary-light text-secondary"><i class="bi bi-water me-1"></i> Swim Safari</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="parent/child-details.html" class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ms-2" style="width: 36px; height: 36px;" title="View Profile"><i class="bi bi-chevron-right"></i></a>
+              </div>
+
+              <!-- Child 2: Lucas -->
+              <div class="camper-mini-card p-3 border rounded-3 d-flex align-items-center justify-content-between shadow-xs">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="position-relative flex-shrink-0">
+                    <img src="https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=120&auto=format&fit=crop&q=80" alt="Lucas Watson" class="rounded-circle shadow-sm" style="width: 52px; height: 52px; object-fit: cover;">
+                    <span class="position-absolute bottom-0 end-0 bg-success rounded-circle border border-white border-2" style="width: 14px; height: 14px;" title="Active Camper"></span>
+                  </div>
+                  <div>
+                    <h6 class="fw-bold text-navy mb-1">Lucas Watson</h6>
+                    <div class="d-flex align-items-center flex-wrap gap-2 text-muted small mb-1">
+                      <span>Age 11 • 6th Grade</span>
+                      <span>•</span>
+                      <span class="badge bg-success-light text-success"><i class="bi bi-check2-circle me-1"></i> No Allergies</span>
+                    </div>
+                    <div class="d-flex flex-wrap gap-1">
+                      <span class="badge bg-accent-light text-accent"><i class="bi bi-trophy me-1"></i> All-Star Sports Camp</span>
+                    </div>
+                  </div>
+                </div>
+                <a href="parent/child-details.html" class="btn btn-sm btn-outline-secondary rounded-circle d-flex align-items-center justify-content-center flex-shrink-0 ms-2" style="width: 36px; height: 36px;" title="View Profile"><i class="bi bi-chevron-right"></i></a>
+              </div>
+
+              <!-- Camp Readiness Checklist Widget -->
+              <div class="p-3 bg-light rounded-3 border mt-1">
+                <div class="d-flex justify-content-between align-items-center mb-2">
+                  <span class="fw-bold small text-navy"><i class="bi bi-card-checklist text-primary me-1"></i> Camp Readiness Checklist</span>
+                  <span class="badge bg-success text-white small">100% Prepared</span>
+                </div>
+                <div class="progress mb-2" style="height: 6px;">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 100%;" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="row g-2 small text-muted" style="font-size: 0.775rem;">
+                  <div class="col-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Sunscreen & Towel</div>
+                  <div class="col-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Medical Waivers</div>
+                  <div class="col-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Labeled Lunchbox</div>
+                  <div class="col-6"><i class="bi bi-check-circle-fill text-success me-1"></i> Carline Pass</div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Active Enrollments Table (7 Cols) -->
+        <div class="col-lg-7">
+          <div class="card-camp h-100 shadow-sm bg-white rounded-3 border">
+            <div class="card-camp-header d-flex justify-content-between align-items-center flex-wrap gap-2 p-3 border-bottom">
+              <div class="d-flex align-items-center gap-2">
+                <h5 class="fw-bold mb-0 text-navy"><i class="bi bi-journal-bookmark-fill text-accent me-1"></i> Active Camp Enrollments</h5>
+                <span class="badge bg-accent-light text-accent rounded-pill px-2 py-1 small" id="dashboardActiveSessionsBadge">3 Enrolled</span>
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <a href="enrollment.html" class="btn btn-sm btn-accent rounded-pill px-3"><i class="bi bi-plus-circle me-1"></i> Enroll New</a>
+                <a href="parent/enrollments.html" class="small fw-bold text-primary">All Enrollments <i class="bi bi-chevron-right"></i></a>
+              </div>
+            </div>
+            <div class="card-camp-body p-0" id="dashboardEnrollmentsContainer">
+              <div class="table-responsive">
+                <table class="table-camp mb-0">
+                  <thead>
+                    <tr>
+                      <th>Program / Track</th>
+                      <th>Camper</th>
+                      <th>Session Dates</th>
+                      <th>Tuition</th>
+                      <th>Status</th>
+                      <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody id="dashboardSessionsTableBody">
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="assets/images/junior_robotics_python_coding.jpeg" alt="Junior Robotics & Python Coding" class="rounded-3 shadow-xs flex-shrink-0" style="width: 46px; height: 46px; object-fit: cover;">
+                          <div>
+                            <strong class="text-navy d-block mb-1" style="font-size: 0.875rem;">Junior Robotics & Python Coding</strong>
+                            <span class="badge bg-primary-light text-primary" style="font-size: 0.7rem;">STEM & Tech</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <strong class="text-navy d-block">Emma Watson</strong>
+                        <small class="text-muted">Age 8</small>
+                      </td>
+                      <td>
+                        <div class="small fw-semibold text-navy"><i class="bi bi-calendar-check text-primary me-1"></i> June 15 – 19</div>
+                        <small class="text-muted d-block">Week 1 (5 Days)</small>
+                      </td>
+                      <td>
+                        <strong class="text-navy d-block">$395.00</strong>
+                        <span class="badge bg-success-light text-success" style="font-size: 0.7rem;"><i class="bi bi-check-circle-fill me-1"></i> Paid in Full</span>
+                      </td>
+                      <td>
+                        <span class="status-badge status-badge-confirmed d-inline-block mb-1"><i class="bi bi-check-circle-fill me-1"></i> Confirmed</span>
+                        <small class="text-muted d-block font-monospace" style="font-size: 0.7rem;">ID: CS-882104</small>
+                      </td>
+                      <td>
+                        <a href="parent/enrollment-details.html" class="btn btn-sm btn-outline-primary py-1 px-2 text-nowrap">View Details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="assets/images/all_star_sports_athletics.jpeg" alt="All-Star Sports & Athletics Camp" class="rounded-3 shadow-xs flex-shrink-0" style="width: 46px; height: 46px; object-fit: cover;">
+                          <div>
+                            <strong class="text-navy d-block mb-1" style="font-size: 0.875rem;">All-Star Sports & Athletics Camp</strong>
+                            <span class="badge bg-accent-light text-accent" style="font-size: 0.7rem;">Sports</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <strong class="text-navy d-block">Lucas Watson</strong>
+                        <small class="text-muted">Age 11</small>
+                      </td>
+                      <td>
+                        <div class="small fw-semibold text-navy"><i class="bi bi-calendar-check text-primary me-1"></i> June 15 – 19</div>
+                        <small class="text-muted d-block">Week 1 (5 Days)</small>
+                      </td>
+                      <td>
+                        <strong class="text-navy d-block">$360.00</strong>
+                        <span class="badge bg-success-light text-success" style="font-size: 0.7rem;"><i class="bi bi-check-circle-fill me-1"></i> Paid in Full</span>
+                      </td>
+                      <td>
+                        <span class="status-badge status-badge-confirmed d-inline-block mb-1"><i class="bi bi-check-circle-fill me-1"></i> Confirmed</span>
+                        <small class="text-muted d-block font-monospace" style="font-size: 0.7rem;">ID: CS-882105</small>
+                      </td>
+                      <td>
+                        <a href="parent/enrollment-details.html" class="btn btn-sm btn-outline-primary py-1 px-2 text-nowrap">View Details</a>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div class="d-flex align-items-center gap-3">
+                          <img src="assets/images/Splash_&_Swim_Water_Safari_202608241021.jpeg" alt="Splash & Swim Water Safari" class="rounded-3 shadow-xs flex-shrink-0" style="width: 46px; height: 46px; object-fit: cover;">
+                          <div>
+                            <strong class="text-navy d-block mb-1" style="font-size: 0.875rem;">Splash & Swim Water Safari</strong>
+                            <span class="badge bg-info-light text-info" style="font-size: 0.7rem;">Aquatics</span>
+                          </div>
+                        </div>
+                      </td>
+                      <td>
+                        <strong class="text-navy d-block">Emma Watson</strong>
+                        <small class="text-muted">Age 8</small>
+                      </td>
+                      <td>
+                        <div class="small fw-semibold text-navy"><i class="bi bi-calendar-check text-primary me-1"></i> June 22 – 26</div>
+                        <small class="text-muted d-block">Week 2 (5 Days)</small>
+                      </td>
+                      <td>
+                        <strong class="text-navy d-block">$350.00</strong>
+                        <span class="badge bg-success-light text-success" style="font-size: 0.7rem;"><i class="bi bi-check-circle-fill me-1"></i> Paid in Full</span>
+                      </td>
+                      <td>
+                        <span class="status-badge status-badge-confirmed d-inline-block mb-1"><i class="bi bi-check-circle-fill me-1"></i> Confirmed</span>
+                        <small class="text-muted d-block font-monospace" style="font-size: 0.7rem;">ID: CS-882106</small>
+                      </td>
+                      <td>
+                        <a href="parent/enrollment-details.html" class="btn btn-sm btn-outline-primary py-1 px-2 text-nowrap">View Details</a>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 4. Daily Schedule Timeline Preview & Parent Services Hub -->
+      <div class="row g-4 mb-4">
+        
+        <!-- Daily Schedule Highlights (7 Cols) -->
+        <div class="col-lg-7">
+          <div class="card-camp shadow-sm bg-white rounded-3 border h-100">
+            <div class="card-camp-header d-flex justify-content-between align-items-center p-3 border-bottom">
+              <div class="d-flex align-items-center gap-2">
+                <h5 class="fw-bold mb-0 text-navy"><i class="bi bi-clock-history text-success me-1"></i> Camp Daily Timetable Preview</h5>
+                <span class="badge bg-success-light text-success rounded-pill px-2 py-1 small">Typical Camp Day</span>
+              </div>
+              <a href="daily-schedule.html" class="small fw-bold text-primary">Full Schedule <i class="bi bi-chevron-right"></i></a>
+            </div>
+            <div class="card-camp-body p-3">
+              <div class="timeline-schedule d-flex flex-column gap-3">
+                <div class="d-flex align-items-start gap-3 p-2 rounded-2 bg-light">
+                  <span class="badge bg-primary text-white rounded-pill px-2 py-1 mt-1 small">08:30 AM</span>
+                  <div>
+                    <strong class="text-navy d-block small">Curbside Check-in & Morning Cabin Rally</strong>
+                    <span class="text-muted" style="font-size: 0.8rem;">Camper check-in at North Meadow Gate, counselor greeting & sunscreen check.</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3 p-2 rounded-2 bg-light">
+                  <span class="badge bg-info text-white rounded-pill px-2 py-1 mt-1 small">09:15 AM</span>
+                  <div>
+                    <strong class="text-navy d-block small">Core Specialty Workshop Session</strong>
+                    <span class="text-muted" style="font-size: 0.8rem;">Hands-on robotics lab coding, athletic drills, and pottery studio creation.</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3 p-2 rounded-2 bg-light">
+                  <span class="badge bg-warning text-dark rounded-pill px-2 py-1 mt-1 small">12:00 PM</span>
+                  <div>
+                    <strong class="text-navy d-block small">Nut-Free Lunch & Lake Amphitheater Games</strong>
+                    <span class="text-muted" style="font-size: 0.8rem;">Supervised shaded lunch, counselor skit games, and camper hydration break.</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3 p-2 rounded-2 bg-light">
+                  <span class="badge bg-accent text-white rounded-pill px-2 py-1 mt-1 small">01:30 PM</span>
+                  <div>
+                    <strong class="text-navy d-block small">Elective Discovery & Team Relays</strong>
+                    <span class="text-muted" style="font-size: 0.8rem;">Aquatics water safari, rock wall climbing, archery, and outdoor challenges.</span>
+                  </div>
+                </div>
+                <div class="d-flex align-items-start gap-3 p-2 rounded-2 bg-light">
+                  <span class="badge bg-secondary text-white rounded-pill px-2 py-1 mt-1 small">04:00 PM</span>
+                  <div>
+                    <strong class="text-navy d-block small">Carline Dismissal & Daily Achievement Badges</strong>
+                    <span class="text-muted" style="font-size: 0.8rem;">Authorized QR carline pickup, daily recap sticker awards, and safe departure.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parent Quick Tools & Resources (5 Cols) -->
+        <div class="col-lg-5">
+          <div class="card-camp shadow-sm bg-white rounded-3 border h-100">
+            <div class="card-camp-header d-flex justify-content-between align-items-center p-3 border-bottom">
+              <h5 class="fw-bold mb-0 text-navy"><i class="bi bi-grid-fill text-warning me-1"></i> Quick Parent Services</h5>
+              <span class="badge bg-light text-muted border small">Summer 2026</span>
+            </div>
+            <div class="card-camp-body p-3">
+              <div class="row g-3">
+                <div class="col-6">
+                  <a href="#" class="p-3 border rounded-3 text-center d-block text-decoration-none bg-light-blue hover-lift" data-bs-toggle="modal" data-bs-target="#carlineModal">
+                    <i class="bi bi-qr-code text-primary fs-3 d-block mb-1"></i>
+                    <strong class="text-navy small d-block">Carline Pass</strong>
+                    <small class="text-muted" style="font-size: 0.72rem;">Digital Pickup QR</small>
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a href="safety.html" class="p-3 border rounded-3 text-center d-block text-decoration-none bg-light-blue hover-lift">
+                    <i class="bi bi-shield-fill-check text-success fs-3 d-block mb-1"></i>
+                    <strong class="text-navy small d-block">Medical & Safety</strong>
+                    <small class="text-muted" style="font-size: 0.72rem;">Waivers & Protocols</small>
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a href="#" class="p-3 border rounded-3 text-center d-block text-decoration-none bg-light-blue hover-lift" data-bs-toggle="modal" data-bs-target="#receiptModal">
+                    <i class="bi bi-file-earmark-pdf-fill text-danger fs-3 d-block mb-1"></i>
+                    <strong class="text-navy small d-block">FSA / Tax Receipt</strong>
+                    <small class="text-muted" style="font-size: 0.72rem;">Child Care EIN</small>
+                  </a>
+                </div>
+                <div class="col-6">
+                  <a href="contact.html" class="p-3 border rounded-3 text-center d-block text-decoration-none bg-light-blue hover-lift">
+                    <i class="bi bi-chat-dots-fill text-info fs-3 d-block mb-1"></i>
+                    <strong class="text-navy small d-block">Camp Director</strong>
+                    <small class="text-muted" style="font-size: 0.72rem;">24/7 Message Desk</small>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Emergency Camp Line Notice -->
+              <div class="p-3 bg-light rounded-3 border mt-3 d-flex align-items-center gap-3">
+                <div class="p-2 bg-danger-light text-danger rounded-circle">
+                  <i class="bi bi-telephone-fill fs-5"></i>
+                </div>
+                <div>
+                  <strong class="text-navy small d-block">Camp Day Emergency Desk</strong>
+                  <span class="text-muted small">Hotline: <strong class="text-dark">(555) 321-CAMP</strong></span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 5. Single-Day Explorer Schedule Table -->
+      <div class="card-camp shadow-sm bg-white rounded-3 border mb-4">
+        <div class="card-camp-header d-flex justify-content-between align-items-center flex-wrap gap-2 p-3 border-bottom">
+          <div class="d-flex align-items-center gap-2">
+            <h5 class="fw-bold mb-0 text-navy"><i class="bi bi-calendar2-day text-secondary me-1"></i> Single-Day Activity Passes & Bookings</h5>
+            <span class="badge bg-secondary-light text-secondary rounded-pill px-2 py-1 small">Daily Passes</span>
+          </div>
+          <a href="daily-schedule.html" class="btn btn-sm btn-outline-secondary rounded-pill px-3">
+            <i class="bi bi-plus-circle me-1"></i> Book Single-Day Pass
+          </a>
+        </div>
+        <div class="card-camp-body p-0" id="dashboardDailySchedulesContainer">
+          <div class="table-responsive">
+            <table class="table-camp mb-0">
+              <thead>
+                <tr>
+                  <th>Pass Title / Activity</th>
+                  <th>Camper</th>
+                  <th>Pass Date & Time Slot</th>
+                  <th>Tuition</th>
+                  <th>Status</th>
+                  <th>Pass ID</th>
+                </tr>
+              </thead>
+              <tbody id="dashboardDailySchedulesTableBody">
+                <tr>
+                  <td>
+                    <div class="d-flex align-items-center gap-2">
+                      <span class="badge bg-accent-light text-accent p-2 rounded-circle"><i class="bi bi-clock-history fs-6"></i></span>
+                      <div>
+                        <strong class="text-navy d-block">Single-Day Robotics Workshop Pass</strong>
+                        <span class="badge bg-light text-muted border" style="font-size: 0.7rem;">Daily Explorer Pass</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <strong class="text-navy d-block">Emma Watson</strong>
+                    <small class="text-muted">Single-Day Camper</small>
+                  </td>
+                  <td>
+                    <div class="small fw-bold text-navy"><i class="bi bi-calendar2-day text-primary me-1"></i> June 17, 2026</div>
+                    <small class="text-muted d-block">8:30 AM – 4:00 PM</small>
+                  </td>
+                  <td>
+                    <strong class="text-navy d-block">$85.00</strong>
+                    <span class="badge bg-success-light text-success" style="font-size: 0.7rem;"><i class="bi bi-check-circle-fill me-1"></i> Paid in Full</span>
+                  </td>
+                  <td>
+                    <span class="status-badge status-badge-confirmed d-inline-block"><i class="bi bi-check-circle-fill me-1"></i> Confirmed</span>
+                  </td>
+                  <td>
+                    <span class="font-monospace text-primary fw-bold small">TXN-DS-88219</span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Carline Pass QR Modal -->
+  <div class="modal fade" id="carlineModal" tabindex="-1" aria-labelledby="carlineModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" style="max-width: 420px;">
+      <div class="modal-content rounded-4 border-0 shadow-lg text-center p-4">
+        <div class="modal-header border-0 pb-0 justify-content-center">
+          <h5 class="fw-bold text-navy mb-0" id="carlineModalLabel">
+            <i class="bi bi-qr-code text-primary me-2"></i> Official Carline Pass
+          </h5>
+          <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-4">
+          <p class="text-muted small mb-3">Display this QR code on your windshield or phone screen during morning drop-off and afternoon dismissal.</p>
+          <div class="p-3 bg-white border rounded-3 d-inline-block shadow-sm mb-3">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=CAMPSPHERE-PASS-SARAH-WATSON-2026" alt="Carline QR Code" class="img-fluid" style="width: 180px; height: 180px;">
+          </div>
+          <div class="p-2 bg-light rounded-2 small text-navy fw-bold mb-2">
+            Family: Watson • Campers: Emma & Lucas
+          </div>
+          <span class="badge bg-success-light text-success border border-success border-opacity-25 px-3 py-1 rounded-pill">
+            <i class="bi bi-shield-check me-1"></i> Authorized Pickup Active
+          </span>
+        </div>
+        <div class="modal-footer border-0 pt-0 justify-content-center">
+          <button type="button" class="btn btn-outline-secondary btn-sm rounded-pill px-4" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-sm rounded-pill px-4" onclick="window.print()">
+            <i class="bi bi-printer me-1"></i> Print Pass
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Child Modal -->
+  <div class="modal fade" id="addChildModal" tabindex="-1" aria-labelledby="addChildModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg p-3">
+        <div class="modal-header border-0 pb-0">
+          <h5 class="fw-bold text-navy mb-0" id="addChildModalLabel">
+            <i class="bi bi-person-plus text-primary me-2"></i> Register New Camper
+          </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="addCamperModalForm">
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-navy">Child's Full Name *</label>
+              <input type="text" class="form-control" id="camperFullNameInput" placeholder="e.g. Maya Watson" required>
+            </div>
+            <div class="row g-2 mb-3">
+              <div class="col-6">
+                <label class="form-label small fw-bold text-navy">Age *</label>
+                <input type="number" class="form-control" id="camperAgeInput" min="4" max="18" placeholder="e.g. 9" required>
+              </div>
+              <div class="col-6">
+                <label class="form-label small fw-bold text-navy">Grade Level *</label>
+                <input type="text" class="form-control" id="camperGradeInput" placeholder="e.g. 4th Grade" required>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-navy">Allergies / Dietary Restrictions</label>
+              <input type="text" class="form-control" id="camperAllergiesInput" placeholder="e.g. None or Peanut Allergy">
+            </div>
+            <div class="mb-3">
+              <label class="form-label small fw-bold text-navy">Special Interests / Camp Track</label>
+              <select class="form-select" id="camperTrackSelect">
+                <option value="STEM & Robotics">STEM & Robotics</option>
+                <option value="Sports & Athletics">Sports & Athletics</option>
+                <option value="Creative Arts & Pottery">Creative Arts & Pottery</option>
+                <option value="Aquatics & Swim">Aquatics & Swim</option>
+                <option value="Wilderness Adventure">Wilderness Adventure</option>
+              </select>
+            </div>
+            <div class="d-grid gap-2">
+              <button type="submit" class="btn btn-primary fw-bold">
+                <i class="bi bi-check2-circle me-1"></i> Save Camper Profile
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FSA / Child Care Tax Receipt Modal -->
+  <div class="modal fade" id="receiptModal" tabindex="-1" aria-labelledby="receiptModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content rounded-4 border-0 shadow-lg p-4">
+        <div class="modal-header border-0 pb-0 justify-content-between">
+          <div class="d-flex align-items-center gap-2">
+            <div class="p-2 bg-primary-light text-primary rounded-circle"><i class="bi bi-receipt fs-5"></i></div>
+            <div>
+              <h5 class="fw-bold text-navy mb-0" id="receiptModalLabel">Official Tax & FSA Receipt</h5>
+              <small class="text-muted">Federal Tax ID / EIN: 94-3829104</small>
+            </div>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body py-4">
+          <div class="p-3 bg-light rounded-3 border mb-3">
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Account Holder:</span>
+              <strong class="text-navy small">Sarah Watson</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Total Tuition Paid:</span>
+              <strong class="text-success small">$1,105.00 USD</strong>
+            </div>
+            <div class="d-flex justify-content-between mb-2">
+              <span class="text-muted small">Tax Year:</span>
+              <strong class="text-navy small">2026 Child Care Credit Eligible</strong>
+            </div>
+            <div class="d-flex justify-content-between">
+              <span class="text-muted small">Camp Facility:</span>
+              <strong class="text-navy small">CampSphere Lake Tahoe, NV</strong>
+            </div>
+          </div>
+          <p class="text-muted small mb-0">
+            This official receipt satisfies IRS Form 2441 (Child and Dependent Care Expenses) and Employer FSA/HSA reimbursement requirements.
+          </p>
+        </div>
+        <div class="modal-footer border-0 pt-0 justify-content-end">
+          <button type="button" class="btn btn-outline-secondary btn-sm" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary btn-sm" onclick="window.print()">
+            <i class="bi bi-download me-1"></i> Download PDF Receipt
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-camp">
+    <div class="container">
+      <!-- 1. Top Highlights Bar -->
+      <div class="footer-top-features">
+        <div class="row g-4">
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-shield-check text-primary"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">100% ACA Accredited</h6>
+                <small class="text-muted">Highest Safety Standards</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-people-fill text-success"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">1:5 Counselor Ratio</h6>
+                <small class="text-muted">Certified CPR & Medical Staff</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-bus-front-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">Camp Shuttles</h6>
+                <small class="text-muted">12 Safe Neighborhood Zones</small>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-sm-6">
+            <div class="footer-feature-item">
+              <div class="footer-feature-icon">
+                <i class="bi bi-star-fill text-warning"></i>
+              </div>
+              <div>
+                <h6 class="text-white fw-bold mb-0">4.9/5 Parent Rating</h6>
+                <small class="text-muted">4,200+ Happy Campers</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Main Footer Columns -->
+      <div class="row g-5">
+        <!-- Col 1: Brand & Contact -->
+        <div class="col-lg-4 col-md-6">
+          <a class="brand-logo text-white mb-3" href="index.html">
+            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+            Camp<span class="highlight-text">Sphere</span>
+          </a>
+          <p class="text-muted small mb-4">
+            Empowering youth through experiential STEM learning, outdoor wilderness expeditions, creative arts, and water sports in a safe, accredited environment.
+          </p>
+          <ul class="footer-contact-list list-unstyled">
+            <li>
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>742 Evergreen Pine Woods, Lake Tahoe, CA 96150</span>
+            </li>
+            <li>
+              <i class="bi bi-telephone-fill"></i>
+              <span>+1 (800) 555-CAMP (2267)</span>
+            </li>
+            <li>
+              <i class="bi bi-envelope-fill"></i>
+              <span>admissions@campsphere.com</span>
+            </li>
+            <li>
+              <i class="bi bi-clock-fill"></i>
+              <span>Mon – Fri: 8:00 AM – 6:00 PM PST</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Col 2: Programs -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Programs</h5>
+          <ul class="footer-links">
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Robotics & STEM</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Wilderness Survival</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Lakeside Aquatics</a></li>
+            <li><a href="programs.html"><i class="bi bi-chevron-right"></i> Creative Arts</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Mini Campers (4-6)</a></li>
+            <li><a href="age-groups.html"><i class="bi bi-chevron-right"></i> Teen Leadership</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Quick Navigation -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Explore</h5>
+          <ul class="footer-links">
+            <li><a href="about.html"><i class="bi bi-chevron-right"></i> About Our Campus</a></li>
+            <li><a href="daily-schedule.html"><i class="bi bi-chevron-right"></i> Daily Schedule</a></li>
+            <li><a href="weekly-schedule.html"><i class="bi bi-chevron-right"></i> Weekly Schedule</a></li>
+            <li><a href="calendar.html"><i class="bi bi-chevron-right"></i> Summer Calendar</a></li>
+            <li><a href="pricing.html"><i class="bi bi-chevron-right"></i> Tuition & Passes</a></li>
+            <li><a href="safety.html"><i class="bi bi-chevron-right"></i> Safety & Medical</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Portals -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Portals</h5>
+          <ul class="footer-links">
+            <li><a href="dashboard.html"><i class="bi bi-chevron-right"></i> Parent Dashboard</a></li>
+            <li><a href="login.html"><i class="bi bi-chevron-right"></i> Parent Login</a></li>
+            <li><a href="register.html"><i class="bi bi-chevron-right"></i> Register Family</a></li>
+            <li><a href="enrollment.html"><i class="bi bi-chevron-right"></i> Online Registration</a></li>
+            <li><a href="faq.html"><i class="bi bi-chevron-right"></i> Support & FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 5: Newsletter & Social -->
+        <div class="col-lg-2 col-sm-6">
+          <h5>Stay Connected</h5>
+          <p class="text-muted small mb-3">Join 12,000+ parents receiving early enrollment discounts.</p>
+          <form class="mb-3" onsubmit="event.preventDefault(); window.showCampToast('Thank you for subscribing to CampSphere updates!', 'success', 'Subscribed'); this.reset();">
+            <div class="input-group mb-2">
+              <input type="email" class="form-control form-control-sm" placeholder="Your email" required>
+            </div>
+            <button class="btn btn-primary btn-sm w-100" type="submit">Join Newsletter</button>
+          </form>
+          <div class="d-flex gap-2 mt-3">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. Bottom Legal & Meta Bar -->
+      <div class="footer-bottom d-flex flex-wrap justify-content-between align-items-center gap-3">
+        <p class="mb-0 text-muted">
+          © 2026 CampSphere Kids Summer Camp & Activity Platform. All rights reserved.
+        </p>
+        <div class="d-flex flex-wrap align-items-center gap-3 text-muted small">
+          <a href="safety.html" class="text-muted">Privacy Policy</a>
+          <span>•</span>
+          <a href="faq.html" class="text-muted">Terms & Safety Waiver</a>
+          <span>•</span>
+          <a href="contact.html" class="text-muted">Campus Directions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button type="button" class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up-short fs-3"></i>
+  </button>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/dark-mode.js"></script>
+  <script src="assets/js/rtl.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/navigation.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

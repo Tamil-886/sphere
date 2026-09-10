@@ -5,14 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="CampSphere - The Premier Kids Summer Camp & Activity Program. STEM, Sports, Arts, Nature & Adventure for Ages 4-18.">
   <title>CampSphere - Kids Summer Camp & Activity Program</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +36,7 @@
   </div>
 
   <!-- Main Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-camp">
+  <nav class="navbar navbar-expand-lg navbar-camp sticky-top" id="mainNavbar">
     <div class="container">
       <a class="brand-logo" href="index.html">
         <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
@@ -96,18 +88,17 @@
               Pages
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-speedometer2 text-primary"></i> Parent Dashboard</a></li>
               <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
               <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
-              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
               <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
             </ul>
           </li>
         </ul>
 
         <!-- Right Side: Dark, RTL & Parent Login -->
-        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+        <div class="nav-actions-wrap d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
             <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
           </a>
@@ -115,7 +106,7 @@
             <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
           </button>
           <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
-            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+            <i class="bi bi-arrow-left-right"></i> <span class="rtl-label">RTL</span>
           </button>
           <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
             <i class="bi bi-person-circle me-1"></i> Parent Login
@@ -144,7 +135,7 @@
     <div class="container position-relative" style="z-index: 2;">
       <div class="row align-items-center g-5">
         <div class="col-lg-6 reveal-on-scroll reveal-up">
-          <div class="badge-tag badge-tag-highlight mb-3 d-inline-flex align-items-center gap-2" id="heroUserGreeting">
+          <div class="badge-tag badge-tag-highlight mb-3 d-inline-flex align-items-center gap-2">
             <i class="bi bi-sun-fill text-warning"></i> Summer 2026 Registration Now Open!
           </div>
           <h1 class="display-4 fw-extrabold mb-3">
@@ -306,7 +297,39 @@
     </div>
   </div>
 
-  <!-- 3. Why Choose Us -->
+  <!-- 3. Statistics & Milestone Counters -->
+  <section class="section-padding bg-dark-navy text-white position-relative">
+    <div class="container position-relative" style="z-index: 2;">
+      <div class="row g-4">
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
+          <div class="stat-box text-center">
+            <div class="stat-number text-highlight-custom" data-count="15" data-suffix="+">15+</div>
+            <div class="stat-label text-white-50">Years of Summer Joy</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
+          <div class="stat-box text-center">
+            <div class="stat-number text-secondary-custom" data-count="4200" data-suffix="+">4,200+</div>
+            <div class="stat-label text-white-50">Happy Campers Enrolled</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
+          <div class="stat-box text-center">
+            <div class="stat-number text-accent-custom" data-count="85" data-suffix="+">85+</div>
+            <div class="stat-label text-white-50">Certified Counselors</div>
+          </div>
+        </div>
+        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
+          <div class="stat-box text-center">
+            <div class="stat-number text-primary-light" data-count="99" data-suffix="%">99%</div>
+            <div class="stat-label text-white-50">Parent Satisfaction Rate</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Why Choose Us -->
   <section class="section-padding position-relative">
     <!-- Playful Nature Sticker -->
     <div class="camp-sticker sticker-leaf anim-wiggle d-none d-lg-inline-flex" style="top: 25px; left: 4%;">
@@ -728,41 +751,7 @@
     </div>
   </section>
 
-  <!-- 10. Statistics / Counter with Dynamic JS Animation -->
-  <section class="section-padding bg-dark-navy text-white position-relative">
-    <div class="container position-relative" style="z-index: 2;">
-      <div class="row g-4">
-        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-100">
-          <div class="stat-box text-center">
-            <div class="stat-number text-highlight-custom" data-count="15" data-suffix="+">15+</div>
-            <div class="stat-label text-white-50">Years of Summer Joy</div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-200">
-          <div class="stat-box text-center">
-            <div class="stat-number text-secondary-custom" data-count="4200" data-suffix="+">4,200+</div>
-            <div class="stat-label text-white-50">Happy Campers Enrolled</div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-300">
-          <div class="stat-box text-center">
-            <div class="stat-number text-accent-custom" data-count="85" data-suffix="+">85+</div>
-            <div class="stat-label text-white-50">Certified Counselors</div>
-          </div>
-        </div>
-        <div class="col-6 col-lg-3 reveal-on-scroll reveal-up delay-400">
-          <div class="stat-box text-center">
-            <div class="stat-number text-primary-light" data-count="99" data-suffix="%">99%</div>
-            <div class="stat-label text-white-50">Parent Satisfaction Rate</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-
-  <!-- 12. Final Enrollment CTA -->
+  <!-- 11. Final Enrollment CTA -->
   <section class="section-padding py-5 position-relative">
     <div class="container">
       <div class="cta-banner position-relative overflow-hidden shadow-xl" style="background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #0F766E 100%); border-radius: 24px; padding: 3.5rem 3rem;">

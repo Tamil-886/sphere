@@ -6,14 +6,6 @@
   <meta name="description" content="Explore All 25 Summer Camp Programs | CampSphere Summer 2026. Premier STEM, sports, arts, aquatics, and outdoor adventure tracks.">
   <title>All Camp Programs (25 Tracks) | CampSphere Summer 2026</title>
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
-
   <!-- Google Fonts: Plus Jakarta Sans & Fredoka -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +18,6 @@
 
   <!-- Custom Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/responsive.css">
   <link rel="stylesheet" href="assets/css/dark-mode.css">
   <link rel="stylesheet" href="assets/css/rtl.css">
 </head>
@@ -86,18 +77,17 @@
               Pages
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-speedometer2 text-primary"></i> Parent Dashboard</a></li>
               <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
               <li><a class="dropdown-item" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
-              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
               <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
             </ul>
           </li>
         </ul>
 
         <!-- Right Side: Wishlist, Dark, RTL & Parent Login -->
-        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+        <div class="nav-actions-wrap d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
             <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
           </a>
@@ -105,7 +95,7 @@
             <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
           </button>
           <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
-            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+            <i class="bi bi-arrow-left-right"></i> <span class="rtl-label">RTL</span>
           </button>
           <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
             <i class="bi bi-person-circle me-1"></i> Parent Login
@@ -1144,6 +1134,17 @@
             </div>
 
           </div>
+
+          <!-- View More Programs Container -->
+          <div class="text-center mt-5 pt-2" id="viewMoreContainer">
+            <div class="d-inline-flex flex-column align-items-center gap-2">
+              <button type="button" class="btn btn-primary btn-lg rounded-pill px-4 py-2 shadow-sm" id="btnViewMorePrograms">
+                <i class="bi bi-arrow-down-circle me-2"></i> View More Programs (<span id="viewMoreRemainingBadge">19 Remaining</span>)
+              </button>
+              <small class="text-muted fw-semibold" id="viewMoreProgressText">Showing 6 of 25 Programs</small>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -1164,7 +1165,7 @@
       <div class="row g-4">
         <div class="col-lg-3 col-sm-6">
           <div class="card-camp p-4 text-center h-100 shadow-sm border">
-            <div class="rounded-circle bg-primary-light text-primary d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.6rem;">
+            <div class="rounded-circle bg-primary-light text-primary d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.65rem;">
               <i class="bi bi-egg-fried"></i>
             </div>
             <h5 class="fw-bold text-navy mb-2">Chef Hot Lunch & Snacks</h5>
@@ -1174,7 +1175,7 @@
 
         <div class="col-lg-3 col-sm-6">
           <div class="card-camp p-4 text-center h-100 shadow-sm border">
-            <div class="rounded-circle bg-success-light text-success d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.6rem;">
+            <div class="rounded-circle bg-success-light text-success d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.65rem;">
               <i class="bi bi-people-fill"></i>
             </div>
             <h5 class="fw-bold text-navy mb-2">1:5 Dedicated Ratio</h5>
@@ -1184,7 +1185,7 @@
 
         <div class="col-lg-3 col-sm-6">
           <div class="card-camp p-4 text-center h-100 shadow-sm border">
-            <div class="rounded-circle bg-secondary-light text-secondary d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.6rem;">
+            <div class="rounded-circle bg-secondary-light text-secondary d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.65rem;">
               <i class="bi bi-water"></i>
             </div>
             <h5 class="fw-bold text-navy mb-2">Heated Olympic Pool</h5>
@@ -1194,7 +1195,7 @@
 
         <div class="col-lg-3 col-sm-6">
           <div class="card-camp p-4 text-center h-100 shadow-sm border">
-            <div class="rounded-circle bg-warning-light text-dark d-inline-flex align-items-center justify-content-center mb-3" style="width: 60px; height: 60px; font-size: 1.6rem;">
+            <div class="rounded-circle bg-highlight-light text-warning d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 64px; height: 64px; font-size: 1.65rem;">
               <i class="bi bi-bus-front-fill"></i>
             </div>
             <h5 class="fw-bold text-navy mb-2">12 Campus Shuttles</h5>
@@ -1246,10 +1247,8 @@
             <p class="text-muted small mb-3">
               "My 10-year-old son built his first autonomous robot and gained so much confidence in math and coding. The counselor communication was exceptional!"
             </p>
-            <div class="d-flex align-items-center gap-2 pt-3 border-top mt-auto">
-              <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center fw-bold small" style="width: 36px; height: 36px;">
-                MR
-              </div>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=120&auto=format&fit=crop&q=80" alt="Marcus Roberts - Parent" class="rounded-circle shadow-xs" style="width: 44px; height: 44px; object-fit: cover; border: 2px solid rgba(37, 99, 235, 0.3); flex-shrink: 0;">
               <div>
                 <strong class="text-navy d-block small">Marcus Roberts</strong>
                 <small class="text-muted">Parent of 10-year-old</small>
@@ -1269,10 +1268,8 @@
             <p class="text-muted small mb-3">
               "The coaches focused on sportsmanship and team camaraderie. My daughter made wonderful friends and loved the daily afternoon swimming!"
             </p>
-            <div class="d-flex align-items-center gap-2 pt-3 border-top mt-auto">
-              <div class="rounded-circle bg-accent text-white d-flex align-items-center justify-content-center fw-bold small" style="width: 36px; height: 36px;">
-                SL
-              </div>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=120&auto=format&fit=crop&q=80" alt="Sarah Lin - Parent" class="rounded-circle shadow-xs" style="width: 44px; height: 44px; object-fit: cover; border: 2px solid rgba(234, 88, 12, 0.3); flex-shrink: 0;">
               <div>
                 <strong class="text-navy d-block small">Sarah Lin</strong>
                 <small class="text-muted">Parent of 8-year-old</small>
@@ -1292,10 +1289,8 @@
             <p class="text-muted small mb-3">
               "The high-ropes course and wilderness expedition pushed my teen out of his comfort zone in the safest, most encouraging way possible."
             </p>
-            <div class="d-flex align-items-center gap-2 pt-3 border-top mt-auto">
-              <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center fw-bold small" style="width: 36px; height: 36px;">
-                DK
-              </div>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top mt-auto">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=120&auto=format&fit=crop&q=80" alt="David Kim - Parent" class="rounded-circle shadow-xs" style="width: 44px; height: 44px; object-fit: cover; border: 2px solid rgba(15, 118, 110, 0.3); flex-shrink: 0;">
               <div>
                 <strong class="text-navy d-block small">David Kim</strong>
                 <small class="text-muted">Parent of 14-year-old</small>
@@ -1400,7 +1395,7 @@
         <a href="enrollment.html" class="btn btn-accent btn-lg shadow-lg btn-shimmer px-4">
           <i class="bi bi-clipboard2-check-fill me-2"></i> Register Camper Now
         </a>
-        <a href="contact.html" class="btn btn-outline-light btn-lg px-4">
+        <a href="contact.html" class="btn btn-static-white btn-lg px-4 shadow">
           <i class="bi bi-telephone me-2"></i> Contact Admissions
         </a>
       </div>

@@ -5,14 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Contact CampSphere - Campus Location, Inquiries, Tours & Emergency Hotline.">
   <title>Contact Us - CampSphere Kids Summer Camp</title>
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png">
-  <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="shortcut icon" href="assets/images/favicon.ico">
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +36,7 @@
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-camp">
+  <nav class="navbar navbar-expand-lg navbar-camp sticky-top" id="mainNavbar">
     <div class="container">
       <a class="brand-logo" href="index.html">
         <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
@@ -93,18 +85,17 @@
               Pages
             </a>
             <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="dashboard.html"><i class="bi bi-speedometer2 text-primary"></i> Parent Dashboard</a></li>
               <li><a class="dropdown-item" href="faq.html"><i class="bi bi-question-circle text-info"></i> FAQs</a></li>
               <li><a class="dropdown-item active" href="contact.html"><i class="bi bi-envelope text-accent"></i> Contact Us</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="404.html"><i class="bi bi-exclamation-triangle text-muted"></i> 404 Error Page</a></li>
-              <li><a class="dropdown-item" href="coming-soon.html"><i class="bi bi-hourglass-split text-muted"></i> Coming Soon</a></li>
               <li><a class="dropdown-item" href="maintenance.html"><i class="bi bi-tools text-muted"></i> Maintenance</a></li>
             </ul>
           </li>
         </ul>
 
         <!-- Right Side: Dark, RTL & Parent Login -->
-        <div class="d-flex flex-wrap align-items-center gap-2 mt-3 mt-lg-0">
+        <div class="nav-actions-wrap d-flex align-items-center gap-2 mt-3 mt-lg-0">
           <a href="wishlist.html" class="nav-wishlist-btn" aria-label="View Wishlist" title="Saved Wishlist">
             <i class="bi bi-heart"></i> <span class="wishlist-label">Wishlist</span> <span class="wishlist-nav-count badge bg-danger text-white">0</span>
           </a>
@@ -112,7 +103,7 @@
             <i class="bi bi-moon-stars-fill"></i> <span class="theme-label">Dark</span>
           </button>
           <button type="button" class="rtl-toggle-btn" aria-label="Toggle RTL">
-            <i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>
+            <i class="bi bi-arrow-left-right"></i> <span class="rtl-label">RTL</span>
           </button>
           <a href="login.html" class="btn btn-primary btn-sm ms-lg-1">
             <i class="bi bi-person-circle me-1"></i> Parent Login
@@ -124,10 +115,10 @@
 
   <!-- Header -->
   <section class="section-padding-sm bg-light-blue border-bottom position-relative overflow-hidden">
-    <div class="camp-sticker sticker-sun anim-float d-none d-md-inline-flex" style="top: 15px; left: 5%;">
+    <div class="camp-sticker sticker-sun anim-float" style="top: 15px; left: 5%;">
       <i class="bi bi-envelope-heart-fill me-1 text-danger"></i> We're Here to Help
     </div>
-    <div class="camp-sticker sticker-plane anim-drift d-none d-md-inline-flex" style="top: 15px; right: 5%;">
+    <div class="camp-sticker sticker-plane anim-drift" style="top: 15px; right: 5%;">
       <i class="bi bi-telephone-fill me-1 text-primary"></i> 24h Response
     </div>
 
@@ -178,79 +169,82 @@
         
         <!-- Form -->
         <div class="col-lg-7">
-          <div class="card-camp p-4 p-md-5 shadow-sm">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-              <h3 class="fw-bold text-navy mb-0">Send Us a Message</h3>
-              <span class="badge bg-primary-light text-primary rounded-pill px-3 py-1 small fw-bold"><i class="bi bi-clock-history me-1"></i> Fast 24h Reply</span>
-            </div>
+          <div class="card-camp p-4 p-md-5 shadow-sm h-100">
+            <h3 class="fw-bold text-navy mb-2">Send Us a Message</h3>
             <p class="text-muted small mb-4">Have questions about age brackets, dietary plans, or campus tours? Let us know below.</p>
             
-            <!-- Logged In User Info Banner (Dynamically shown if logged in) -->
-            <div id="contactUserStatusNotice" class="d-none alert alert-info py-2 px-3 small rounded-3 mb-3 border-0 bg-primary-light text-primary d-flex align-items-center justify-content-between">
-              <div>
-                <i class="bi bi-person-check-fill me-1"></i> Signed in as <strong id="contactLoggedInUserName">Parent</strong> (<span id="contactLoggedInUserEmail">parent@campsphere.com</span>)
-              </div>
-              <a href="parent/dashboard.html" class="fw-bold text-primary text-decoration-none">My Dashboard <i class="bi bi-arrow-right"></i></a>
-            </div>
-
-            <!-- Form Validation Alert Container -->
-            <div id="contactFormAlert" class="d-none alert alert-danger py-2 px-3 small rounded-3 mb-3"></div>
-
-            <form id="campContactForm" novalidate>
+            <form id="campContactForm">
               <div class="row g-3 mb-3">
                 <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy" for="contactName">Your Name <span class="text-danger">*</span></label>
+                  <label class="form-label small fw-bold text-navy">Your Name *</label>
                   <input type="text" class="form-control" id="contactName" placeholder="Parent or Guardian Name" required>
-                  <div class="invalid-feedback small">Please enter your full name.</div>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy" for="contactEmail">Email Address <span class="text-danger">*</span></label>
-                  <input type="email" class="form-control" id="contactEmail" placeholder="parent@example.com" required>
-                  <div class="invalid-feedback small">Please provide a valid email address.</div>
+                  <label class="form-label small fw-bold text-navy">Email Address *</label>
+                  <input type="email" class="form-control" placeholder="parent@example.com" required>
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy" for="contactPhone">Phone Number <span class="text-danger">*</span></label>
-                  <input type="tel" class="form-control" id="contactPhone" placeholder="(555) 000-0000" required>
-                  <div class="invalid-feedback small">Please enter your contact phone number.</div>
+                  <label class="form-label small fw-bold text-navy">Phone Number</label>
+                  <input type="tel" class="form-control" placeholder="(555) 000-0000">
                 </div>
                 <div class="col-md-6">
-                  <label class="form-label small fw-bold text-navy" for="contactSubject">Topic / Subject <span class="text-danger">*</span></label>
-                  <select class="form-select" id="contactSubject" required>
-                    <option value="General Program Inquiries">General Program Inquiries</option>
-                    <option value="Registration & Enrollment">Registration & Enrollment</option>
-                    <option value="Schedule a Campus Tour">Schedule a Campus Tour</option>
-                    <option value="Financial Aid & Scholarships">Financial Aid & Scholarships</option>
-                    <option value="Medical & Allergy Needs">Medical & Allergy Needs</option>
-                    <option value="Special Accommodations">Special Accommodations</option>
+                  <label class="form-label small fw-bold text-navy">Topic / Subject</label>
+                  <select class="form-select">
+                    <option value="general">General Program Inquiries</option>
+                    <option value="enrollment">Registration & Enrollment</option>
+                    <option value="tour">Schedule a Campus Tour</option>
+                    <option value="scholarship">Financial Aid & Scholarships</option>
+                    <option value="medical">Medical & Allergy Needs</option>
                   </select>
-                  <div class="invalid-feedback small">Please select a subject topic.</div>
                 </div>
                 <div class="col-12">
-                  <label class="form-label small fw-bold text-navy" for="contactMessage">Your Message <span class="text-danger">*</span></label>
-                  <textarea class="form-control" id="contactMessage" rows="5" placeholder="How can our camp team help you? Please describe your questions or request..." required></textarea>
-                  <div class="invalid-feedback small">Please enter your inquiry message.</div>
+                  <label class="form-label small fw-bold text-navy">Your Message *</label>
+                  <textarea class="form-control" rows="5" placeholder="How can our camp team help you?" required></textarea>
                 </div>
               </div>
-              <button type="submit" id="contactSubmitBtn" class="btn btn-accent btn-lg px-4 fw-bold">
-                <i class="bi bi-send-fill me-1"></i> Send Inquiry
-              </button>
+              <button type="submit" class="btn btn-accent btn-lg"><i class="bi bi-send-fill me-1"></i> Send Inquiry</button>
             </form>
           </div>
         </div>
 
-        <!-- Campus Map & Emergency Info -->
+        <!-- Campus Support & Emergency Info Sidebar -->
         <div class="col-lg-5 d-flex flex-column gap-4">
-          <div class="card-camp p-4 shadow-sm mb-0">
-            <h5 class="fw-bold text-navy mb-3"><i class="bi bi-map-fill text-primary me-2"></i> Camp Location Map</h5>
-            <div class="rounded-3 overflow-hidden border mb-3" style="height: 220px;">
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198863.0205845585!2d-120.16016147631776!3d39.09161908480392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809978a1b91f1151%3A0x8c3f523021075f10!2sLake%20Tahoe!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-            <small class="text-muted d-block"><i class="bi bi-info-circle me-1"></i> Secure gate entrance with 24/7 security guardhouse at West Pines Gate.</small>
-          </div>
-
           <div class="card-camp p-4 shadow-sm bg-accent-light border-0">
             <h5 class="fw-bold text-accent mb-2"><i class="bi bi-telephone-outbound-fill me-2"></i> Current Camper Emergency Line</h5>
             <p class="text-muted small mb-0">For immediate urgent inquiries regarding active enrolled campers on campus today, call our on-duty Camp Director desk at <strong>(555) 992-CAMP</strong>.</p>
+          </div>
+
+          <div class="card-camp p-4 shadow-sm border-start border-4 border-primary">
+            <h5 class="fw-bold text-navy mb-3"><i class="bi bi-clock-history text-primary me-2"></i> Campus Office & Visit Hours</h5>
+            <ul class="list-unstyled small mb-0 d-flex flex-column gap-2 text-muted">
+              <li class="d-flex justify-content-between">
+                <span class="fw-semibold text-navy">Monday – Friday:</span>
+                <span>7:30 AM – 6:30 PM PST</span>
+              </li>
+              <li class="d-flex justify-content-between">
+                <span class="fw-semibold text-navy">Saturday (Family Tours):</span>
+                <span>8:00 AM – 2:00 PM PST</span>
+              </li>
+              <li class="d-flex justify-content-between">
+                <span class="fw-semibold text-navy">Sunday:</span>
+                <span class="text-muted">Camp Activities Only</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="card-camp p-4 shadow-sm border-start border-4 border-success">
+            <h5 class="fw-bold text-navy mb-2"><i class="bi bi-chat-heart text-success me-2"></i> Quick Support & Resources</h5>
+            <p class="text-muted small mb-3">Looking for immediate answers before writing? Explore our parent resources:</p>
+            <div class="d-flex flex-column gap-2">
+              <a href="faq.html" class="btn btn-sm btn-outline-secondary text-start d-flex align-items-center justify-content-between">
+                <span><i class="bi bi-question-circle text-primary me-2"></i> Frequently Asked Questions</span>
+                <i class="bi bi-chevron-right small"></i>
+              </a>
+              <a href="camp-match.html" class="btn btn-sm btn-outline-secondary text-start d-flex align-items-center justify-content-between">
+                <span><i class="bi bi-magic text-accent me-2"></i> 2-Minute Camp Matcher Quiz</span>
+                <i class="bi bi-chevron-right small"></i>
+              </a>
+            </div>
           </div>
         </div>
 
@@ -258,7 +252,81 @@
     </div>
   </section>
 
-    <!-- Footer -->
+  <!-- Dedicated Camp Location Map Section -->
+  <section class="section-padding bg-light border-top position-relative" id="campusMapSection">
+    <div class="container">
+      <div class="row align-items-end justify-content-between mb-4">
+        <div class="col-lg-7">
+          <div class="badge-tag badge-tag-primary mb-2 reveal-on-scroll reveal-up">
+            <i class="bi bi-geo-alt-fill me-1"></i> Campus Location
+          </div>
+          <h2 class="fw-bold text-navy mb-2 reveal-on-scroll reveal-up delay-100">Find Us at Lake Tahoe</h2>
+          <p class="text-muted mb-0 reveal-on-scroll reveal-up delay-150">
+            Convenient curbside drop-off, secure 24/7 gated entry, and designated visitor parking at our 140-acre lakeside campus.
+          </p>
+        </div>
+        <div class="col-lg-5 text-lg-end mt-3 mt-lg-0 reveal-on-scroll reveal-up delay-200">
+          <a href="https://maps.google.com/?q=Lake+Tahoe+CA" target="_blank" rel="noopener noreferrer" class="btn btn-outline-primary">
+            <i class="bi bi-box-arrow-up-right me-1"></i> Open in Google Maps
+          </a>
+        </div>
+      </div>
+
+      <div class="card-camp p-3 p-md-4 shadow-sm reveal-on-scroll reveal-up delay-250">
+        <div class="row g-4 align-items-center">
+          <!-- Google Map Embed -->
+          <div class="col-lg-8">
+            <div class="rounded-4 overflow-hidden border position-relative" style="height: 380px;">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198863.0205845585!2d-120.16016147631776!3d39.09161908480392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809978a1b91f1151%3A0x8c3f523021075f10!2sLake%20Tahoe!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" title="CampSphere Lake Tahoe Campus Map"></iframe>
+            </div>
+          </div>
+
+          <!-- Campus Directions & Arrival Details -->
+          <div class="col-lg-4">
+            <div class="p-2">
+              <h5 class="fw-bold text-navy mb-3"><i class="bi bi-compass text-primary me-2"></i> Campus Arrival & Access</h5>
+              
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="feature-icon-wrap bg-primary-light text-primary flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.1rem;">
+                  <i class="bi bi-shield-lock-fill"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">West Pines Gate</h6>
+                  <p class="text-muted small mb-0">Main secure entrance with 24/7 guardhouse check-in and visitor badge issuance.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="feature-icon-wrap bg-success-light text-success flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.1rem;">
+                  <i class="bi bi-p-circle-fill"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">Visitor Parking (Lots B & C)</h6>
+                  <p class="text-muted small mb-0">Free designated parking for registered family tour guests and parent orientations.</p>
+                </div>
+              </div>
+
+              <div class="d-flex align-items-start gap-3 mb-3">
+                <div class="feature-icon-wrap bg-warning-light text-warning flex-shrink-0" style="width: 42px; height: 42px; font-size: 1.1rem;">
+                  <i class="bi bi-car-front-fill"></i>
+                </div>
+                <div>
+                  <h6 class="fw-bold text-navy mb-1">Express Carline Drop-off</h6>
+                  <p class="text-muted small mb-0">South Loop Zone for seamless 08:00 AM – 08:45 AM morning check-in.</p>
+                </div>
+              </div>
+
+              <div class="alert alert-info py-2 px-3 mb-0 small rounded-3 border-0 bg-info-subtle text-info-emphasis">
+                <i class="bi bi-geo-fill me-1 text-primary"></i> <strong>GPS Coordinates:</strong> 39.0916° N, 120.1601° W
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer-camp">
     <div class="container">
       <!-- 1. Top Highlights Bar -->
@@ -419,73 +487,6 @@
   <button type="button" class="back-to-top" aria-label="Back to top">
     <i class="bi bi-arrow-up-short fs-3"></i>
   </button>
-
-  <!-- Inquiry Success Modal Alert Box -->
-  <div class="modal fade" id="inquirySuccessModal" tabindex="-1" aria-labelledby="inquirySuccessModalLabel" aria-hidden="true" data-bs-backdrop="static">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content border-0 shadow-lg rounded-4 overflow-hidden">
-        <div class="modal-body p-4 p-md-5 text-center position-relative">
-          
-          <!-- Animated Checkmark Icon Badge -->
-          <div class="mx-auto mb-3 d-flex align-items-center justify-content-center bg-success-light text-success rounded-circle shadow-sm" style="width: 80px; height: 80px; font-size: 2.5rem;">
-            <i class="bi bi-check2-circle"></i>
-          </div>
-          
-          <span class="badge bg-success bg-opacity-10 text-success border border-success border-opacity-25 rounded-pill px-3 py-1 fw-bold mb-2 small">
-            <i class="bi bi-shield-check me-1"></i> Inquiry Sent Successfully!
-          </span>
-          
-          <h3 class="fw-bold text-navy mb-2" id="inquirySuccessModalLabel">Inquiry Sent Successfully!</h3>
-          <p class="text-muted small mb-4" style="max-width: 420px; margin: 0 auto;">
-            Your message has been submitted successfully. We’ll get back to you soon. Our camp leadership team will respond within 24 business hours.
-          </p>
-
-          <!-- Inquiry Summary Details Card -->
-          <div class="bg-light p-3 rounded-3 text-start border mb-4" id="inquirySummaryCard">
-            <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
-              <span class="text-muted small">Reference Ticket:</span>
-              <span class="font-monospace fw-bold text-primary small" id="inquiryRefId">INQ-482091</span>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mb-1 small">
-              <span class="text-muted">Topic / Subject:</span>
-              <strong class="text-navy" id="inquirySummaryTopic">General Program Inquiries</strong>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mb-1 small">
-              <span class="text-muted">Sender Name:</span>
-              <span class="text-navy fw-semibold" id="inquirySummaryName">Sarah Watson</span>
-            </div>
-            <div class="d-flex justify-content-between align-items-center mb-1 small">
-              <span class="text-muted">Contact Email:</span>
-              <span class="text-navy" id="inquirySummaryEmail">parent@example.com</span>
-            </div>
-            <div class="d-flex justify-content-between align-items-center small">
-              <span class="text-muted">Status:</span>
-              <span class="badge bg-warning-light text-warning-dark"><i class="bi bi-hourglass-split me-1"></i> Pending</span>
-            </div>
-          </div>
-
-          <!-- User Portal Tip (if logged in or link) -->
-          <div id="inquiryModalDashboardNotice" class="small text-muted mb-4 p-2 bg-primary-light rounded-3 text-start d-flex align-items-center gap-2">
-            <i class="bi bi-info-circle-fill text-primary fs-5"></i>
-            <div>
-              This inquiry has been saved to your account. You can track all responses in your <strong>Parent Dashboard</strong>.
-            </div>
-          </div>
-
-          <!-- Action Buttons -->
-          <div class="d-flex flex-column flex-sm-row gap-2 justify-content-center">
-            <button type="button" class="btn btn-primary px-4 fw-bold" data-bs-dismiss="modal" id="inquirySuccessOkBtn">
-              <i class="bi bi-check-lg me-1"></i> OK / Close
-            </button>
-            <a href="parent/dashboard.html" class="btn btn-outline-primary px-3 fw-bold" id="inquiryDashboardBtn">
-              <i class="bi bi-speedometer2 me-1"></i> View in Dashboard
-            </a>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

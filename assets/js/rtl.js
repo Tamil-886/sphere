@@ -41,10 +41,10 @@
     const toggleBtns = document.querySelectorAll('.rtl-toggle-btn');
     toggleBtns.forEach(btn => {
       if (isRTL) {
-        btn.innerHTML = '<i class="bi bi-translate"></i> <span class="rtl-label">LTR</span>';
+        btn.innerHTML = '<i class="bi bi-arrow-left-right"></i> <span class="rtl-label">LTR</span>';
         btn.setAttribute('aria-label', 'Switch to Left-to-Right');
       } else {
-        btn.innerHTML = '<i class="bi bi-translate"></i> <span class="rtl-label">RTL</span>';
+        btn.innerHTML = '<i class="bi bi-arrow-left-right"></i> <span class="rtl-label">RTL</span>';
         btn.setAttribute('aria-label', 'Switch to Right-to-Left');
       }
     });

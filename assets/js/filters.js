@@ -226,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
   updateWishlistUI();
 
   // ========================================================================
-  // 2. Programs Grid Filtering & Live Count
+  // 2. Programs Grid Filtering, Initial Display Limit & "View More" System
   // ========================================================================
   const programCards = document.querySelectorAll('.program-card-item');
   const categoryFilterBtns = document.querySelectorAll('.filter-cat-btn');
@@ -236,9 +236,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const noResultsMsg = document.getElementById('noProgramsFound');
   const noProgramsSubtext = document.getElementById('noProgramsSubtext');
   const programCountEl = document.getElementById('programCountDisplay');
+  const viewMoreContainer = document.getElementById('viewMoreContainer');
+  const btnViewMore = document.getElementById('btnViewMorePrograms');
+  const viewMoreProgressText = document.getElementById('viewMoreProgressText');
+  const viewMoreRemainingBadge = document.getElementById('viewMoreRemainingBadge');
 
-  function filterPrograms() {
+  // Initial display limit & batch size to maintain balanced visual layout
+  const INITIAL_BATCH = 6;
+  const BATCH_SIZE = 6;
+  let currentDisplayLimit = INITIAL_BATCH;
+
+  function filterPrograms(resetLimit = true) {
     if (!programCards.length) return;
+
+    if (resetLimit) {
+      currentDisplayLimit = INITIAL_BATCH;
+    }
 
     const activeCatBtn = document.querySelector('.filter-cat-btn.active');
     const selectedCategory = activeCatBtn ? activeCatBtn.getAttribute('data-category') : 'all';
@@ -246,7 +259,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchQuery = searchInput ? searchInput.value.toLowerCase().trim() : '';
     const wishlist = getWishlist();
 
-    let visibleCount = 0;
+    const matchingCards = [];
 
     programCards.forEach(card => {
       const cardId = card.getAttribute('data-program-id') || '';
@@ -268,20 +281,47 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesSearch = (!searchQuery || cardTitle.includes(searchQuery) || cardDesc.includes(searchQuery) || cardCategory.includes(searchQuery));
 
       if (matchesCat && matchesAge && matchesSearch) {
+        matchingCards.push(card);
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    const totalMatching = matchingCards.length;
+    const currentlyVisible = Math.min(currentDisplayLimit, totalMatching);
+
+    // Display only up to currentDisplayLimit with smooth reveal
+    matchingCards.forEach((card, index) => {
+      if (index < currentlyVisible) {
         card.style.display = 'block';
         card.classList.add('animate-fade-in');
-        visibleCount++;
       } else {
         card.style.display = 'none';
       }
     });
 
     if (programCountEl) {
-      programCountEl.textContent = `${visibleCount} Programs Available`;
+      programCountEl.textContent = `${totalMatching} Programs Available`;
+    }
+
+    // Update "View More" button & progress text
+    if (viewMoreContainer) {
+      if (totalMatching > currentDisplayLimit) {
+        viewMoreContainer.style.display = 'block';
+        const remaining = totalMatching - currentlyVisible;
+        if (viewMoreRemainingBadge) {
+          viewMoreRemainingBadge.textContent = `${remaining} More`;
+        }
+        if (viewMoreProgressText) {
+          viewMoreProgressText.textContent = `Showing ${currentlyVisible} of ${totalMatching} Programs`;
+        }
+      } else {
+        viewMoreContainer.style.display = 'none';
+      }
     }
 
     if (noResultsMsg) {
-      if (visibleCount === 0) {
+      if (totalMatching === 0) {
         noResultsMsg.style.display = 'block';
         if (selectedCategory === 'wishlist' && noProgramsSubtext) {
           noProgramsSubtext.textContent = 'You have not added any programs to your wishlist yet. Click the heart icon on any camp card to save it!';
@@ -294,6 +334,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // Hook up "View More Programs" button click
+  if (btnViewMore) {
+    btnViewMore.addEventListener('click', (e) => {
+      e.preventDefault();
+      currentDisplayLimit += BATCH_SIZE;
+      filterPrograms(false);
+    });
+  }
+
   // Category filter button click
   categoryFilterBtns.forEach(btn => {
     btn.addEventListener('click', (e) => {
@@ -303,19 +352,19 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       btn.classList.add('active');
-      filterPrograms();
+      filterPrograms(true);
     });
   });
 
-  if (ageSelect) ageSelect.addEventListener('change', filterPrograms);
-  if (searchInput) searchInput.addEventListener('input', filterPrograms);
+  if (ageSelect) ageSelect.addEventListener('change', () => filterPrograms(true));
+  if (searchInput) searchInput.addEventListener('input', () => filterPrograms(true));
 
   // Clear Search Input Button
   const clearSearchBtn = document.getElementById('clearSearchBtn');
   if (clearSearchBtn && searchInput) {
     clearSearchBtn.addEventListener('click', () => {
       searchInput.value = '';
-      filterPrograms();
+      filterPrograms(true);
       searchInput.focus();
     });
   }
@@ -333,7 +382,7 @@ document.addEventListener('DOMContentLoaded', () => {
         categoryFilterBtns.forEach(b => b.classList.remove('active'));
         allBtn.classList.add('active');
       }
-      filterPrograms();
+      filterPrograms(true);
     });
   }
 
@@ -399,7 +448,13 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       cardsArray.forEach(card => container.appendChild(card));
+      filterPrograms(false);
     });
+  }
+
+  // Initialize initial program filtering limit if on programs page
+  if (programCards.length > 0 && document.getElementById('programsContainer')) {
+    filterPrograms(true);
   }
 
   // ========================================================================
