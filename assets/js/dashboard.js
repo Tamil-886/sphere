@@ -1,8 +1,8 @@
 /**
- * CampSphere - Comprehensive Parent Dashboard Controller
+ * CampSphere - Comprehensive User Dashboard Controller
  * assets/js/dashboard.js
  * 
- * Manages all interactive features for the Parent Portal:
+ * Manages all interactive features for the User Portal:
  * 1. Camper Profiles & Add/Edit/Delete Child
  * 2. Enrollments Management, Status Filtering & Cancellations
  * 3. Weekly Day Schedule & Camper Filters
@@ -113,11 +113,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 1.3 User Profile & Security PIN
-    if (!localStorage.getItem('campsphere_parent_profile')) {
+    if (!localStorage.getItem('campsphere_user_profile')) {
       const defaultProfile = {
         firstName: 'Sarah',
         lastName: 'Watson',
-        email: 'parent@campsphere.com',
+        email: 'user@campsphere.com',
         phone: '(555) 019-2834',
         address: '4288 Meadow Pine Way, South Lake Tahoe, CA 96150',
         pickupPin: '4829',
@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         notifyPhotos: true,
         twoFactor: false
       };
-      localStorage.setItem('campsphere_parent_profile', JSON.stringify(defaultProfile));
+      localStorage.setItem('campsphere_user_profile', JSON.stringify(defaultProfile));
     }
   }
 
@@ -366,14 +366,14 @@ document.addEventListener('DOMContentLoaded', () => {
           const userSpecific = globalPay.filter(p => p.userEmail && p.userEmail.toLowerCase() === session.email.toLowerCase());
           if (userSpecific.length > 0) return userSpecific;
         }
-        if (!session || !session.loggedIn || session.email === 'parent@campsphere.com') {
+        if (!session || !session.loggedIn || session.email === 'user@campsphere.com') {
           return globalPay;
         }
       }
     } catch (e) {}
 
     // Fallback default sample for initial logged-in user view
-    if (!session || !session.loggedIn || session.email === 'parent@campsphere.com') {
+    if (!session || !session.loggedIn || session.email === 'user@campsphere.com') {
       return [
         {
           id: 'INV-2026-001',
@@ -381,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
           enrollmentId: 'CS-849201',
           bookingId: 'CS-849201',
           userName: 'Sarah Watson',
-          userEmail: 'parent@campsphere.com',
+          userEmail: 'user@campsphere.com',
           guardianPhone: '(555) 019-2834',
           camperName: 'Emma Watson',
           camperAge: 8,
@@ -407,7 +407,7 @@ document.addEventListener('DOMContentLoaded', () => {
           enrollmentId: 'CS-729104',
           bookingId: 'CS-729104',
           userName: 'Sarah Watson',
-          userEmail: 'parent@campsphere.com',
+          userEmail: 'user@campsphere.com',
           guardianPhone: '(555) 019-2834',
           camperName: 'Lucas Watson',
           camperAge: 11,
@@ -433,7 +433,7 @@ document.addEventListener('DOMContentLoaded', () => {
           enrollmentId: 'CS-510293',
           bookingId: 'CS-510293',
           userName: 'Sarah Watson',
-          userEmail: 'parent@campsphere.com',
+          userEmail: 'user@campsphere.com',
           guardianPhone: '(555) 019-2834',
           camperName: 'Emma Watson',
           camperAge: 8,
@@ -487,10 +487,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Dashboard Campers List
     const campersList = document.getElementById('dashboardCampersList');
-    const isParentSubdir = window.location.pathname.includes('/parent/');
-    const childDetailsPath = isParentSubdir ? 'child-details.html' : 'parent/child-details.html';
-    const enrollmentDetailsPath = isParentSubdir ? 'enrollment-details.html' : 'parent/enrollment-details.html';
-    const enrollmentNewPath = isParentSubdir ? '../enrollment.html' : 'enrollment.html';
+    const isUserSubdir = window.location.pathname.includes('/user/') || window.location.pathname.includes('/user/');
+    const childDetailsPath = isUserSubdir ? 'child-details.html' : 'user/child-details.html';
+    const enrollmentDetailsPath = isUserSubdir ? 'enrollment-details.html' : 'user/enrollment-details.html';
+    const enrollmentNewPath = isUserSubdir ? '../enrollment.html' : 'enrollment.html';
 
     if (campersList) {
       if (children.length > 0) {
@@ -551,7 +551,7 @@ document.addEventListener('DOMContentLoaded', () => {
             progImg = window.CAMPSPHERE_PROGRAMS[en.programId].images[0];
           }
           if (!progImg) progImg = 'assets/images/junior_robotics_python_coding.jpeg';
-          const resolvedImg = progImg.startsWith('http') ? progImg : (isParentSubdir ? (progImg.startsWith('../') ? progImg : '../' + progImg) : (progImg.startsWith('../') ? progImg.replace('../', '') : progImg));
+          const resolvedImg = progImg.startsWith('http') ? progImg : (isUserSubdir ? (progImg.startsWith('../') ? progImg : '../' + progImg) : (progImg.startsWith('../') ? progImg.replace('../', '') : progImg));
           const progCat = en.programCategory || en.track || 'Specialty Camp';
           const enrollDate = en.enrollmentDate || en.dateCreated || 'Summer 2026';
           const txId = en.transactionId || en.id || ('CS-' + Math.floor(100000 + Math.random() * 900000));
@@ -608,7 +608,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 3b. Daily Schedules Table (parent/dashboard.html & parent/daily-schedule.html)
+    // 3b. Daily Schedules Table (user/dashboard.html & user/daily-schedule.html)
     const dailyTableBody = document.getElementById('dashboardDailySchedulesTableBody') || document.getElementById('portalDailySchedulesTableBody');
     const dailyContainer = document.getElementById('dashboardDailySchedulesContainer') || document.getElementById('portalDailySchedulesContainer');
     if (dailyTableBody) {
@@ -675,7 +675,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 3c. Weekly Schedules Table (parent/dashboard.html & parent/weekly-schedule.html)
+    // 3c. Weekly Schedules Table (user/dashboard.html & user/weekly-schedule.html)
     const weeklyTableBody = document.getElementById('dashboardWeeklySchedulesTableBody') || document.getElementById('portalWeeklySchedulesTableBody');
     const weeklyContainer = document.getElementById('dashboardWeeklySchedulesContainer') || document.getElementById('portalWeeklySchedulesContainer');
     if (weeklyTableBody) {
@@ -742,8 +742,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 4. Enrollments Page Table (parent/enrollments.html)
-    const enrollmentsTable = document.getElementById('parentEnrollmentsTable');
+    // 4. Enrollments Page Table (user/enrollments.html)
+    const enrollmentsTable = document.getElementById('userEnrollmentsTable');
     if (enrollmentsTable) {
       const tbody = enrollmentsTable.querySelector('tbody');
       if (tbody) {
@@ -816,7 +816,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (totalBadge) totalBadge.textContent = `${enrollments.length} Confirmed Booking${enrollments.length === 1 ? '' : 's'}`;
     }
 
-    // 5. Children Cards Grid (parent/children.html)
+    // 5. Children Cards Grid (user/children.html)
     const childrenContainer = document.getElementById('childrenCardsContainer');
     if (childrenContainer) {
       if (children.length > 0) {
@@ -868,7 +868,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 6. Enrollment Details Page (parent/enrollment-details.html)
+    // 6. Enrollment Details Page (user/enrollment-details.html)
     const detailProg = document.getElementById('detailProgramName');
     if (detailProg && enrollments.length > 0) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -924,7 +924,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 7. Payments Page Table & Summary KPIs (parent/payments.html)
+    // 7. Payments Page Table & Summary KPIs (user/payments.html)
     const paymentsTableBody = document.getElementById('paymentsHistoryTableBody');
     if (paymentsTableBody) {
       if (payments.length > 0) {
@@ -1028,7 +1028,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    // 8. Payment Details & Official Invoice View (parent/payment-details.html)
+    // 8. Payment Details & Official Invoice View (user/payment-details.html)
     const invoiceContainer = document.getElementById('invoiceContainer');
     if (invoiceContainer) {
       const urlParams = new URLSearchParams(window.location.search);
@@ -1050,9 +1050,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const progType = matched.programType || 'Program';
         const camper = matched.camperName || 'Emma Watson';
         const camperAge = matched.camperAge || 8;
-        const parentName = matched.userName || 'Sarah Watson';
-        const parentEmail = matched.userEmail || 'sarah.watson@example.com';
-        const parentPhone = matched.guardianPhone || '(555) 019-2834';
+        const userName = matched.userName || 'Sarah Watson';
+        const userEmail = matched.userEmail || 'sarah.watson@example.com';
+        const userPhone = matched.guardianPhone || '(555) 019-2834';
         const dates = matched.selectedDate || 'June 15 – June 19, 2026';
         const method = matched.paymentMethod || 'Visa •••• 4242';
         const amount = matched.amount || '$395.00';
@@ -1075,10 +1075,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const methodText = document.getElementById('invoiceMethodText');
         if (methodText) methodText.innerHTML = `<i class="bi bi-credit-card me-1"></i> ${method}`;
 
-        const parentNameEl = document.getElementById('invoiceParentName');
-        if (parentNameEl) parentNameEl.textContent = parentName;
-        const parentAddrEl = document.getElementById('invoiceParentAddress');
-        if (parentAddrEl) parentAddrEl.innerHTML = `Lake Tahoe Area, CA<br>Phone: ${parentPhone} • Email: ${parentEmail}`;
+        const userNameEl = document.getElementById('invoiceUserName');
+        if (userNameEl) userNameEl.textContent = userName;
+        const userAddrEl = document.getElementById('invoiceUserAddress');
+        if (userAddrEl) userAddrEl.innerHTML = `Lake Tahoe Area, CA<br>Phone: ${userPhone} • Email: ${userEmail}`;
 
         const camperInfoEl = document.getElementById('invoiceCamperInfo');
         if (camperInfoEl) camperInfoEl.textContent = `${camper} (Age ${camperAge})`;
@@ -1314,9 +1314,9 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.addEventListener('click', function () {
       const enrollId = this.getAttribute('data-enroll-id') || 'Camp Session';
       if (confirm(`Are you sure you want to cancel enrollment ${enrollId}? 100% refundable up to 14 days before camp.`)) {
-        const parentCard = this.closest('.enrollment-row') || this.closest('.card-camp') || this.closest('tr');
-        if (parentCard) {
-          const badge = parentCard.querySelector('.badge');
+        const rowCard = this.closest('.enrollment-row') || this.closest('.card-camp') || this.closest('tr');
+        if (rowCard) {
+          const badge = rowCard.querySelector('.badge');
           if (badge) {
             badge.className = 'badge bg-secondary text-white';
             badge.textContent = 'Cancelled (Refund Processing)';
@@ -1590,10 +1590,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!user) {
         user = {
           id: session.id || 'usr_session',
-          firstName: session.firstName || (session.name ? session.name.split(' ')[0] : 'Parent'),
+          firstName: session.firstName || (session.name ? session.name.split(' ')[0] : 'User'),
           lastName: session.lastName || (session.name && session.name.split(' ').length > 1 ? session.name.split(' ').slice(1).join(' ') : ''),
-          name: session.name || 'Parent User',
-          email: session.email || 'parent@campsphere.com',
+          name: session.name || 'Demo User',
+          email: session.email || 'user@campsphere.com',
           phone: session.phone || '(555) 019-2834',
           password: 'password123',
           address: '1204 Pine Vista Drive, Tahoe City, CA 96145',
@@ -1602,14 +1602,14 @@ document.addEventListener('DOMContentLoaded', () => {
         };
       }
     } else {
-      user = users.find(u => u.email === 'parent@campsphere.com') || {
-        id: 'usr_demo_parent',
+      user = users.find(u => u.email === 'user@campsphere.com') || {
+        id: 'usr_demo_user',
         firstName: 'Sarah',
         lastName: 'Watson',
         name: 'Sarah Watson',
-        email: 'parent@campsphere.com',
+        email: 'user@campsphere.com',
         phone: '(555) 019-2834',
-        password: 'parent12345',
+        password: 'user12345',
         address: '4288 Meadow Pine Way, South Lake Tahoe, CA 96150',
         pickupPin: '8492',
         avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80'
@@ -1622,10 +1622,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const user = getActiveUser();
     if (!user) return;
 
-    const firstName = user.firstName || (user.name ? user.name.split(' ')[0] : 'Parent');
+    const firstName = user.firstName || (user.name ? user.name.split(' ')[0] : 'User');
     const lastName = user.lastName || (user.name && user.name.split(' ').length > 1 ? user.name.split(' ').slice(1).join(' ') : '');
     const fullName = user.name || `${firstName} ${lastName}`.trim();
-    const email = user.email || 'parent@campsphere.com';
+    const email = user.email || 'user@campsphere.com';
     const phone = user.phone || '(555) 019-2834';
     const avatar = user.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80';
     const pickupPin = user.pickupPin || '8492';
@@ -1676,7 +1676,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const fn = document.getElementById('profileFirstName')?.value.trim() || 'Sarah';
       const ln = document.getElementById('profileLastName')?.value.trim() || 'Watson';
-      const em = document.getElementById('profileEmail')?.value.trim().toLowerCase() || 'parent@campsphere.com';
+      const em = document.getElementById('profileEmail')?.value.trim().toLowerCase() || 'user@campsphere.com';
       const ph = document.getElementById('profilePhone')?.value.trim() || '(555) 019-2834';
       const addr = document.getElementById('profileAddress')?.value.trim() || '1204 Pine Vista Drive, Tahoe City, CA 96145';
 

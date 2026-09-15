@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Weekly Schedule & Sessions - Parent Portal at CampSphere.">
-  <title>Weekly Schedule - Parent Dashboard</title>
+  <meta name="description" content="Daily Schedule & Passes - User Portal at CampSphere.">
+  <title>Daily Schedule - User Dashboard</title>
   
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -47,10 +47,10 @@
             <a class="nav-link" href="enrollments.html"><i class="bi bi-clipboard2-check"></i> My Enrollments</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
+            <a class="nav-link active" href="daily-schedule.html"><i class="bi bi-clock-history"></i> Daily Schedule</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
+            <a class="nav-link" href="weekly-schedule.html"><i class="bi bi-calendar-week"></i> Weekly Schedule</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="payments.html"><i class="bi bi-credit-card"></i> Payments & Billing</a>
@@ -71,10 +71,10 @@
       <div class="sidebar-footer">
         <div class="d-flex align-items-center justify-content-between">
           <div class="d-flex align-items-center gap-2">
-            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="Parent Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80" alt="User Avatar" class="rounded-circle" style="width: 36px; height: 36px; object-fit: cover;">
             <div>
               <strong class="text-navy small d-block">Sarah Watson</strong>
-              <small class="text-muted" style="font-size: 0.75rem;">Parent Account</small>
+              <small class="text-muted" style="font-size: 0.75rem;">User Account</small>
             </div>
           </div>
           <a href="../login.html" class="text-muted" title="Sign Out"><i class="bi bi-box-arrow-right fs-5"></i></a>
@@ -92,14 +92,14 @@
             <i class="bi bi-list fs-5"></i>
           </button>
           <div>
-            <h4 class="mb-0 fw-bold text-navy">Weekly Camp Schedule</h4>
-            <small class="text-muted">Interactive week-by-week timetable and booked cohort sessions</small>
+            <h4 class="mb-0 fw-bold text-navy">Daily Schedule & Single-Day Passes</h4>
+            <small class="text-muted">View your active single-day camp passes and master daily timetable</small>
           </div>
         </div>
 
         <div class="d-flex align-items-center gap-2">
-          <a href="../payment-weekly.html" class="btn btn-success btn-sm">
-            <i class="bi bi-plus-circle me-1"></i> Book New Weekly Cohort
+          <a href="../payment-daily.html" class="btn btn-accent btn-sm">
+            <i class="bi bi-plus-circle me-1"></i> Book New Daily Pass
           </a>
           <button type="button" class="theme-toggle-btn" aria-label="Toggle Theme">
             <i class="bi bi-moon-stars-fill"></i> <span class="theme-label d-none d-sm-inline">Dark</span>
@@ -110,80 +110,89 @@
       <!-- Dashboard Content -->
       <div class="dashboard-content">
         
-        <!-- Active Weekly Cohort Bookings Table -->
-        <div class="card-camp p-4 shadow-sm mb-4 border-top border-4 border-success">
+        <!-- Active Daily Bookings Table -->
+        <div class="card-camp p-4 shadow-sm mb-4 border-top border-4 border-accent">
           <div class="d-flex flex-wrap justify-content-between align-items-center mb-3">
             <div>
-              <h5 class="fw-bold text-navy mb-1"><i class="bi bi-calendar2-check-fill text-success me-2"></i> My Weekly Schedule Bookings</h5>
-              <p class="text-muted small mb-0">Full Monday–Friday 5-day cohort sessions confirmed for your family</p>
+              <h5 class="fw-bold text-navy mb-1"><i class="bi bi-ticket-perforated text-accent me-2"></i> My Daily Schedule Bookings</h5>
+              <p class="text-muted small mb-0">Single-day camp passes confirmed for your children</p>
             </div>
-            <a href="../weekly-schedule.html" class="btn btn-outline-success btn-sm">
-              <i class="bi bi-compass me-1"></i> Explore All 8 Weeks
+            <a href="../daily-schedule.html" class="btn btn-outline-primary btn-sm">
+              <i class="bi bi-compass me-1"></i> Explore Daily Passes
             </a>
           </div>
 
-          <div class="table-responsive" id="portalWeeklySchedulesContainer">
+          <div class="table-responsive" id="portalDailySchedulesContainer">
             <table class="table-camp align-middle">
               <thead>
                 <tr>
-                  <th>Week & Theme</th>
+                  <th>Daily Pass / Schedule</th>
                   <th>Camper</th>
-                  <th>Date Range</th>
+                  <th>Booked Date & Time</th>
                   <th>Paid Amount</th>
                   <th>Status</th>
                   <th>Transaction ID</th>
                 </tr>
               </thead>
-              <tbody id="portalWeeklySchedulesTableBody">
+              <tbody id="portalDailySchedulesTableBody">
                 <!-- Dynamically populated from JS -->
               </tbody>
             </table>
           </div>
         </div>
 
-        <!-- Weekly Timetable Preview -->
+        <!-- Master Daily Routine Overview -->
         <div class="card-camp p-4 shadow-sm">
-          <h5 class="fw-bold text-navy mb-3"><i class="bi bi-calendar3 text-primary me-2"></i> Standard Weekly Program Structure (Mon–Fri)</h5>
+          <h5 class="fw-bold text-navy mb-3"><i class="bi bi-clock-fill text-primary me-2"></i> Master Camp Daily Routine</h5>
           <div class="table-responsive">
             <table class="table-camp align-middle">
               <thead>
                 <tr>
-                  <th>Day</th>
-                  <th>Morning Theme (9:00 - 11:30 AM)</th>
-                  <th>Afternoon Focus (1:00 - 3:30 PM)</th>
-                  <th>Special Highlight</th>
+                  <th style="width: 20%;">Time Slot</th>
+                  <th style="width: 30%;">Session Name</th>
+                  <th style="width: 50%;">Highlights</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td><strong class="text-navy">Monday</strong></td>
-                  <td>Camp Welcome, Team Sorting & Baseline Skills</td>
-                  <td>Aquatics Safety & Group Icebreakers</td>
-                  <td>Color Team Bandanas Awarded</td>
+                  <td><strong>7:30 – 8:30 AM</strong></td>
+                  <td>Early Bird Arrival</td>
+                  <td>Indoor board games, quiet reading & breakfast snacks.</td>
                 </tr>
                 <tr>
-                  <td><strong class="text-navy">Tuesday</strong></td>
-                  <td>Core Workshop Part 1: Building & Design</td>
-                  <td>Electives Rotation & Field Challenges</td>
-                  <td>Skill Challenge Badges</td>
+                  <td><strong>8:30 – 9:00 AM</strong></td>
+                  <td>Morning Rally & Check-In</td>
+                  <td>Campwide morning cheer, team anthems & announcements.</td>
                 </tr>
                 <tr>
-                  <td><strong class="text-navy">Wednesday</strong></td>
-                  <td>Core Workshop Part 2: Advanced Projects</td>
-                  <td>Water Relays & Kayak Plunge</td>
-                  <td>Mid-Week Camper of the Day Ribbons</td>
+                  <td><strong>9:00 – 11:30 AM</strong></td>
+                  <td>Specialty Workshop Block 1</td>
+                  <td>Primary curriculum track immersion (Robotics, sports, arts).</td>
                 </tr>
                 <tr>
-                  <td><strong class="text-navy">Thursday</strong></td>
-                  <td>Showcase Rehearsal & Project Finishing</td>
-                  <td>Mega Obstacle Course Relay</td>
-                  <td>Camp Director Ice Cream Social</td>
+                  <td><strong>11:30 AM – 1:00 PM</strong></td>
+                  <td>Chef Hot Lunch & Recess</td>
+                  <td>Nutritious dining hall hot lunch and lawn games.</td>
                 </tr>
                 <tr>
-                  <td><strong class="text-navy">Friday</strong></td>
-                  <td>Grand Showcase Setup & Dress Rehearsal</td>
-                  <td>Parent Showcase Exhibition & Awards Gala</td>
-                  <td>Official Completion Certificates & Medals</td>
+                  <td><strong>1:00 – 2:30 PM</strong></td>
+                  <td>Aquatics & Pool Free Swim</td>
+                  <td>Certified lifeguard supervised pool splash & kayaking.</td>
+                </tr>
+                <tr>
+                  <td><strong>2:30 – 3:30 PM</strong></td>
+                  <td>Elective Activity Block 2</td>
+                  <td>Camper's choice of archery, crafts, climbing or music.</td>
+                </tr>
+                <tr>
+                  <td><strong>3:30 – 4:00 PM</strong></td>
+                  <td>Campfire Wrap-Up & Pick-Up</td>
+                  <td>Daily ribbons, singalongs and carline dismissals.</td>
+                </tr>
+                <tr>
+                  <td><strong>4:00 – 6:00 PM</strong></td>
+                  <td>After-Camp Club</td>
+                  <td>Supervised extended recreation, crafts & video lounge.</td>
                 </tr>
               </tbody>
             </table>

@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. Determine Paths & Active Nav Link Highlighting
   // ------------------------------------------------------------------------
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
-  const isInSubfolder = window.location.pathname.includes('/parent/');
+  const isInSubfolder = window.location.pathname.includes('/user/');
   const rootPath = isInSubfolder ? '../' : '';
-  const parentPath = isInSubfolder ? '' : 'parent/';
+  const userPath = isInSubfolder ? '' : 'user/';
 
   const navLinks = document.querySelectorAll('.nav-link, .dropdown-item, .sidebar-nav .nav-link');
   navLinks.forEach(link => {
@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const linkFile = href.split('/').pop();
       if (linkFile === currentPath) {
         link.classList.add('active');
-        const dropdownParent = link.closest('.dropdown');
-        if (dropdownParent) {
-          const toggle = dropdownParent.querySelector('.dropdown-toggle');
+        const dropdownContainer = link.closest('.dropdown');
+        if (dropdownContainer) {
+          const toggle = dropdownContainer.querySelector('.dropdown-toggle');
           if (toggle) toggle.classList.add('active');
         }
       }
@@ -64,11 +64,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (session && session.loggedIn) {
-        const userName = session.name || 'Parent User';
-        const userEmail = session.email || 'parent@campsphere.com';
+        const userName = session.name || 'Demo User';
+        const userEmail = session.email || 'user@campsphere.com';
         const userAvatar = session.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80';
 
-        let providerBadge = '<span class="badge bg-success-light text-success mt-1" style="font-size: 0.68rem;"><i class="bi bi-shield-check me-1"></i> Active Parent Account</span>';
+        let providerBadge = '<span class="badge bg-success-light text-success mt-1" style="font-size: 0.68rem;"><i class="bi bi-shield-check me-1"></i> Active User Account</span>';
         if (session.authProvider === 'Google') {
           providerBadge = '<span class="badge bg-primary-light text-primary mt-1" style="font-size: 0.68rem;"><i class="bi bi-google me-1"></i> Google Account</span>';
         } else if (session.authProvider === 'Apple') {
@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <small class="text-muted text-truncate d-block" style="font-size: 0.75rem;">${userEmail}</small>
                 ${providerBadge}
               </li>
-              <li><a class="dropdown-item py-2 rounded-2 fw-semibold" href="${parentPath}dashboard.html"><i class="bi bi-speedometer2 text-primary me-2"></i> Parent Dashboard</a></li>
+              <li><a class="dropdown-item py-2 rounded-2 fw-semibold" href="${userPath}dashboard.html"><i class="bi bi-speedometer2 text-primary me-2"></i> User Dashboard</a></li>
               <li><hr class="dropdown-divider my-1"></li>
               <li><a class="dropdown-item py-2 rounded-2 text-danger nav-logout-action" href="javascript:void(0)"><i class="bi bi-box-arrow-right me-2"></i> Sign Out</a></li>
             </ul>
@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
       } else {
         const loginBtnHtml = `
           <a href="${rootPath}login.html" class="btn btn-primary btn-sm ms-lg-1">
-            <i class="bi bi-person-circle me-1"></i> Parent Login
+            <i class="bi bi-person-circle me-1"></i> User Login
           </a>
         `;
         if (el.classList.contains('nav-user-dropdown')) {

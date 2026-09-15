@@ -2572,7 +2572,7 @@ button.btn-secondary:active * {
 }
 
 /* --------------------------------------------------------------------------
-   10. Dashboard Structure (Parent & Admin)
+   10. Dashboard Structure (User & Admin)
    -------------------------------------------------------------------------- */
 .dashboard-wrapper {
   display: flex;

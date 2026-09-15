@@ -41,7 +41,7 @@ const CAMPSPHERE_PROGRAMS = {
       { day: "Tuesday • Day 2", title: "Sensor Arrays & Autonomous Path Finding", badge: "Perception & Logic", summary: "Integrating ultrasonic distance sensors and dual-color sensors. Campers code their bots to follow black lines and detect obstacles from 30cm.", bullets: ["Calibrating color reflections and ambient light thresholds", "Implementing Proportional (P) line tracking algorithms", "Timed Maze Navigation qualifying heat"] },
       { day: "Wednesday • Day 3", title: "Python Programming & Arcade Game Dev", badge: "Code Mastery", summary: "Bridging graphical blocks to pure Python. Campers learn variables, if/else conditionals, while loops, and functions by building a retro Space Invaders arcade game.", bullets: ["Python syntax fundamentals and indentation rules", "Sprite rendering, collision detection, and score counters", "Exporting game files for home computer play"] },
       { day: "Thursday • Day 4", title: "Drone Aerodynamics & Flight Physics", badge: "Aviation Tech", summary: "Programming indoor micro-quadcopters. Campers script takeoff altitudes, pitch/yaw maneuvers, flip stunts, and sensor-based landing pads.", bullets: ["Thrust, lift, and aerodynamic stability principles", "Autonomous ring obstacle course scripting", "Pre-tournament robot armor customization"] },
-      { day: "Friday • Day 5", title: "Championship Arena & Parent Showcase", badge: "Grand Finale", summary: "The culminating championship day! Morning qualifying rounds followed by a 2:30 PM grand parent showcase, live tournament finals, camper awards, and official STEM medals.", bullets: ["Double-elimination Sumo-Bot & Maze Championship", "Parent Open House & camper live project presentations", "CampSphere STEM Diplomas and take-home project kits"] }
+      { day: "Friday • Day 5", title: "Championship Arena & User Showcase", badge: "Grand Finale", summary: "The culminating championship day! Morning qualifying rounds followed by a 2:30 PM grand user showcase, live tournament finals, camper awards, and official STEM medals.", bullets: ["Double-elimination Sumo-Bot & Maze Championship", "User Open House & camper live project presentations", "CampSphere STEM Diplomas and take-home project kits"] }
     ],
     instructor: {
       name: "Jessica Vance, M.S.",
@@ -51,8 +51,8 @@ const CAMPSPHERE_PROGRAMS = {
       certifications: ["CPR & Pediatric First Aid Certified", "Level 2 Background Checked"]
     },
     reviews: [
-      { name: "Marcus Roberts", meta: "Parent of 10-year-old camper • Attended Summer 2025", stars: 5, quote: "My son came in with zero coding experience and built a functioning maze solver by Wednesday! Coach Jessica is phenomenal at inspiring confidence. The live photo updates on the parent app were the highlight of my workdays." },
-      { name: "Sarah Lin", meta: "Parent of 12-year-old camper • Attended Summer 2025", stars: 5, quote: "The balance between rigorous robotics and afternoon outdoor swimming was perfect. My daughter wasn't glued to a screen all day—she made great friends and is already asking to sign up for Week 2!" }
+      { name: "Marcus Roberts", meta: "User of 10-year-old camper • Attended Summer 2025", stars: 5, quote: "My son came in with zero coding experience and built a functioning maze solver by Wednesday! Coach Jessica is phenomenal at inspiring confidence. The live photo updates on the user app were the highlight of my workdays." },
+      { name: "Sarah Lin", meta: "User of 12-year-old camper • Attended Summer 2025", stars: 5, quote: "The balance between rigorous robotics and afternoon outdoor swimming was perfect. My daughter wasn't glued to a screen all day—she made great friends and is already asking to sign up for Week 2!" }
     ],
     faqs: [
       { q: "Does my child need prior coding or robotics experience?", a: "No experience required! On Day 1, instructors assess each camper and divide them into matched skill pods (Beginner, Intermediate, Advanced) so every child is appropriately supported." },
@@ -100,7 +100,7 @@ const CAMPSPHERE_PROGRAMS = {
       { day: "Tuesday • Day 2", title: "Hoops Clinic & Court Shooting", badge: "Basketball Focus", summary: "Jump shot mechanics, defensive slides, fast-break passing, and skills challenge shootouts.", bullets: ["Free throw and layup form breakdown", "Pick-and-roll team offensive sets", "3-Point & Hotspot Skills Competition"] },
       { day: "Wednesday • Day 3", title: "Track, Field & Relay Races", badge: "Athletics Focus", summary: "Sprint biomechanics, hurdle form, distance pacing, and 4x100m team baton handoffs.", bullets: ["Electronic laser timing for 50m dashes", "Long jump and obstacle course runs", "Camper vs Counselor relay sprint"] },
       { day: "Thursday • Day 4", title: "Multi-Sport Tournament Brackets", badge: "Tournament Play", summary: "Double-elimination flag football, kickball championship, and ultimate frisbee tactical games.", bullets: ["Flag football route running and interception drills", "Kickball strategy and base running", "Championship seeding round"] },
-      { day: "Friday • Day 5", title: "All-Star Games & Gold Medal Ceremony", badge: "Championship", summary: "Final tournament matches, parent cheer squad games, Camper of the Week MVP awards, and gold medal presentations.", bullets: ["All-Star Championship Finals", "Parent vs Camper penalty kick shootout", "Gold medal awards and skills evaluation report"] }
+      { day: "Friday • Day 5", title: "All-Star Games & Gold Medal Ceremony", badge: "Championship", summary: "Final tournament matches, user cheer squad games, Camper of the Week MVP awards, and gold medal presentations.", bullets: ["All-Star Championship Finals", "User vs Camper penalty kick shootout", "Gold medal awards and skills evaluation report"] }
     ],
     instructor: {
       name: "Marcus Hayes",
@@ -110,8 +110,8 @@ const CAMPSPHERE_PROGRAMS = {
       certifications: ["USATF Level 2 Certified Coach", "CPR & First Aid Certified"]
     },
     reviews: [
-      { name: "David Miller", meta: "Parent of 8-year-old camper • Attended Summer 2025", stars: 5, quote: "Coach Marcus brought out the best in my daughter. She was shy about team sports, but by Friday she was volunteering to be team captain!" },
-      { name: "Elena Rostova", meta: "Parent of 11-year-old camper • Attended Summer 2025", stars: 5, quote: "Phenomenal coaching staff! They emphasize hustle, kindness, and positive attitude over winning. My son loved the hot lunches too." }
+      { name: "David Miller", meta: "User of 8-year-old camper • Attended Summer 2025", stars: 5, quote: "Coach Marcus brought out the best in my daughter. She was shy about team sports, but by Friday she was volunteering to be team captain!" },
+      { name: "Elena Rostova", meta: "User of 11-year-old camper • Attended Summer 2025", stars: 5, quote: "Phenomenal coaching staff! They emphasize hustle, kindness, and positive attitude over winning. My son loved the hot lunches too." }
     ],
     faqs: [
       { q: "What should campers wear?", a: "Athletic shorts, t-shirt, and athletic sneakers. Cleats are optional for grass field sessions. Shin guards are recommended for soccer." },
@@ -132,7 +132,7 @@ const CAMPSPHERE_PROGRAMS = {
     rating: 4.9,
     reviewsCount: 52,
     spotsLeft: "3 Spots Available",
-    desc: "Unleash vibrant creativity! Campers master acrylic canvas painting, spin ceramic clay on pottery wheels, create tie-dye textile garments, and host a grand Friday parent gallery exhibition.",
+    desc: "Unleash vibrant creativity! Campers master acrylic canvas painting, spin ceramic clay on pottery wheels, create tie-dye textile garments, and host a grand Friday user gallery exhibition.",
     images: [
       "assets/images/Art_and_pottery_studio_202608241021.jpeg",
       "assets/images/Art_and_pottery_studio_202608241021%20(2).jpeg",
@@ -152,14 +152,14 @@ const CAMPSPHERE_PROGRAMS = {
       { icon: "bi-palette-fill", color: "warning", title: "Canvas Painting & Color Theory", desc: "Color mixing, palette knife textures, impressionist landscapes, and custom stretched canvas painting." },
       { icon: "bi-circle-square", color: "accent", title: "Ceramic Pottery Wheel", desc: "Throwing clay on motorized pottery wheels, trimming bowls, slab building, and colorful glaze kiln firing." },
       { icon: "bi-brush", color: "primary", title: "Sculpture & Mixed Media", desc: "Paper mache animal masks, mosaic tile coasters, and botanical sun prints using sun-sensitive cyanotype." },
-      { icon: "bi-easel2-fill", color: "success", title: "Friday Parent Gallery Gala", desc: "Curating a personalized museum booth complete with artist statement placards and guided parent tours." }
+      { icon: "bi-easel2-fill", color: "success", title: "Friday User Gallery Gala", desc: "Curating a personalized museum booth complete with artist statement placards and guided user tours." }
     ],
     curriculum: [
       { day: "Monday • Day 1", title: "Color Theory & Landscape Painting", badge: "Painting", summary: "Mastering the color wheel, blending gradients with acrylics on large canvas boards, and nature scenery studies.", bullets: ["Warm vs cool color mixing", "Impasto texture techniques with palette knives", "Completed 16x20 stretched canvas landscape"] },
       { day: "Tuesday • Day 2", title: "Pottery Wheel Throwing & Clay Sculpting", badge: "Ceramics", summary: "Centering clay on motorized potter's wheels, pulling clay walls into bowls, and sculpting whimsical animal pinch pots.", bullets: ["Wheel safety and hand positioning", "Creating smooth bowls and cups", "Kiln drying and underglazing"] },
       { day: "Wednesday • Day 3", title: "Tie-Dye Textiles & Fabric Printing", badge: "Fiber Arts", summary: "Spiral, bullseye, and accordion fold tie-dye techniques on official camp shirts and canvas tote bags.", bullets: ["Fiber-reactive non-toxic dyeing methods", "Block printing with carved linoleum stamps", "Custom textile wearable fashion creation"] },
       { day: "Thursday • Day 4", title: "Mixed Media & Mosaic Tile Crafting", badge: "Sculpture", summary: "Designing vibrant stained-glass style mosaic mirrors and botanical nature pressings on wood panels.", bullets: ["Tile laying, grouting, and edge smoothing", "Botanical cyanotype sun-exposure art", "Framing artwork for the Friday exhibition"] },
-      { day: "Friday • Day 5", title: "Grand Art Gallery Gala & Reception", badge: "Exhibition", summary: "Framing all 6 created masterworks, writing artist biography cards, and hosting parents for a wine-glass sparkling cider art walk.", bullets: ["Curating individual studio display booths", "Artist badge awards and certificate presentation", "Packaging all kiln-fired ceramics and canvas art safely for home"] }
+      { day: "Friday • Day 5", title: "Grand Art Gallery Gala & Reception", badge: "Exhibition", summary: "Framing all 6 created masterworks, writing artist biography cards, and hosting users for a wine-glass sparkling cider art walk.", bullets: ["Curating individual studio display booths", "Artist badge awards and certificate presentation", "Packaging all kiln-fired ceramics and canvas art safely for home"] }
     ],
     instructor: {
       name: "Claire Moreau, M.F.A.",
@@ -169,8 +169,8 @@ const CAMPSPHERE_PROGRAMS = {
       certifications: ["Master of Fine Arts (RISD)", "CPR & Child Safety Certified"]
     },
     reviews: [
-      { name: "Jennifer Walsh", meta: "Parent of 7-year-old camper • Attended Summer 2025", stars: 5, quote: "The art pieces my daughter brought home look like they belong in a boutique gallery! She was so proud showing us her ceramic bowl." },
-      { name: "Robert Kim", meta: "Parent of 9-year-old camper • Attended Summer 2025", stars: 5, quote: "Instructor Claire is magical with children. My son usually gets frustrated when art doesn't look perfect, but she taught him how mistakes turn into creative discoveries." }
+      { name: "Jennifer Walsh", meta: "User of 7-year-old camper • Attended Summer 2025", stars: 5, quote: "The art pieces my daughter brought home look like they belong in a boutique gallery! She was so proud showing us her ceramic bowl." },
+      { name: "Robert Kim", meta: "User of 9-year-old camper • Attended Summer 2025", stars: 5, quote: "Instructor Claire is magical with children. My son usually gets frustrated when art doesn't look perfect, but she taught him how mistakes turn into creative discoveries." }
     ],
     faqs: [
       { q: "Are art supplies provided?", a: "Yes! 100% of supplies—canvas, acrylics, studio clay, potter's wheels, aprons, and glazing tools—are provided in tuition." },
@@ -218,7 +218,7 @@ const CAMPSPHERE_PROGRAMS = {
       { day: "Tuesday • Day 2", title: "Backstroke Mastery & Deep Water Treading", badge: "Stroke Dev", summary: "Head alignment, continuous backstroke flutter kicks, and developing relaxed 2-minute water treading endurance.", bullets: ["Flutter kick cadence drills", "Deep-end jump and recover practice", "Water noodle balance races"] },
       { day: "Wednesday • Day 3", title: "Breaststroke & Lifejacket Safety Safari", badge: "Safety Focus", summary: "Whip kick mechanics, synchronized arm recovery, lifejacket jumping, and group huddle safety positions.", bullets: ["Frog kick and gliding coordination", "Coast Guard certified PFD safety drills", "Pool obstacle course relays"] },
       { day: "Thursday • Day 4", title: "Paddleboard Navigation & Water Polo", badge: "Lake & Games", summary: "Intro to lakeside stand-up paddleboarding on calm waters followed by mini water polo matches in the heated pool.", bullets: ["SUP kneeling and standing balance techniques", "Water polo passing, shooting, and goalie defense", "Synchronized team float challenges"] },
-      { day: "Friday • Day 5", title: "Aqua-Olympics & Gold Ribbon Gala", badge: "Championship", summary: "Fun non-competitive race heats, parent observation swim demo, Red Cross progression certificates, and camp ribbons.", bullets: ["Aqua-Olympics relay heats and belly-flop fun", "Parent demonstration showcase", "Official Red Cross level badges awarded"] }
+      { day: "Friday • Day 5", title: "Aqua-Olympics & Gold Ribbon Gala", badge: "Championship", summary: "Fun non-competitive race heats, user observation swim demo, Red Cross progression certificates, and camp ribbons.", bullets: ["Aqua-Olympics relay heats and belly-flop fun", "User demonstration showcase", "Official Red Cross level badges awarded"] }
     ],
     instructor: {
       name: "Chloe Bennett",
@@ -228,8 +228,8 @@ const CAMPSPHERE_PROGRAMS = {
       certifications: ["Red Cross WSI & Lifeguard Trainer", "Pediatric CPR/AED Certified"]
     },
     reviews: [
-      { name: "Amanda Hayes", meta: "Parent of 6-year-old camper • Attended Summer 2025", stars: 5, quote: "My son wouldn't even put his face in the water on Monday. By Friday, he jumped into the deep end with a smile on his face! Coach Chloe is wonderful." },
-      { name: "Kenji Sato", meta: "Parent of 9-year-old camper • Attended Summer 2025", stars: 5, quote: "Extremely attentive lifeguards and 1:4 instructor ratios gave us complete peace of mind. The heated pool made every morning comfortable." }
+      { name: "Amanda Hayes", meta: "User of 6-year-old camper • Attended Summer 2025", stars: 5, quote: "My son wouldn't even put his face in the water on Monday. By Friday, he jumped into the deep end with a smile on his face! Coach Chloe is wonderful." },
+      { name: "Kenji Sato", meta: "User of 9-year-old camper • Attended Summer 2025", stars: 5, quote: "Extremely attentive lifeguards and 1:4 instructor ratios gave us complete peace of mind. The heated pool made every morning comfortable." }
     ],
     faqs: [
       { q: "What if my child cannot swim at all?", a: "We have dedicated Level 1 beginner instructors stationed in our zero-depth entry shallow pool. Non-swimmers wear lifejackets until baseline skills are mastered." },
@@ -287,8 +287,8 @@ const CAMPSPHERE_PROGRAMS = {
       certifications: ["Wilderness First Responder (WFR)", "Leave No Trace Master Educator"]
     },
     reviews: [
-      { name: "Michael Vance", meta: "Parent of 11-year-old camper • Attended Summer 2025", stars: 5, quote: "My son gained so much confidence! He taught the whole family how to build a waterproof shelter on our last weekend camping trip." },
-      { name: "Patricia Gomez", meta: "Parent of 13-year-old camper • Attended Summer 2025", stars: 5, quote: "The best camp experience my daughter has ever had. She loved learning real skills away from screens in the fresh mountain air." }
+      { name: "Michael Vance", meta: "User of 11-year-old camper • Attended Summer 2025", stars: 5, quote: "My son gained so much confidence! He taught the whole family how to build a waterproof shelter on our last weekend camping trip." },
+      { name: "Patricia Gomez", meta: "User of 13-year-old camper • Attended Summer 2025", stars: 5, quote: "The best camp experience my daughter has ever had. She loved learning real skills away from screens in the fresh mountain air." }
     ],
     faqs: [
       { q: "Is this camp safe for younger kids?", a: "Yes, all activities are conducted under strict 1:5 staff supervision in designated, inspected outdoor training zones with full medical staff nearby." },
@@ -336,7 +336,7 @@ const CAMPSPHERE_PROGRAMS = {
       { day: "Tuesday • Day 2", title: "Rock Climbing Technique & Balance", badge: "Climbing", summary: "Three-point contact rule, smearing on friction holds, using leg power over arm fatigue, and conquering the 25ft ledge.", bullets: ["Footwork placement and heel-toe jams", "Autobelay descent comfort training", "Climbing team speed relays"] },
       { day: "Wednesday • Day 3", title: "The 40ft Tower & Overhang Challenge", badge: "High Altitude", summary: "Ascending the top pinnacle of the 40-foot main tower, traversing the horizontal bouldering cave, and practicing rappelling.", bullets: ["Multi-pitch route selection (Easy to Advanced)", "Overhang grip strategies and core tension", "Safe controlled rappelling descent"] },
       { day: "Thursday • Day 4", title: "Canopy Walkways & Twin 500ft Zipline", badge: "Zipline Flights", summary: "Stepping onto suspended wooden swinging bridges 35 feet up, clipping into the twin 500-foot ziplines, and soaring across the canyon.", bullets: ["Dual-carabiner smart clip transitions", "Canopy platform safety protocols", "High-speed 500-foot zipline flights"] },
-      { day: "Friday • Day 5", title: "The Big Leap & Summit Celebration", badge: "Peak Summit", summary: "The famous 'Pamper Pole' trapeze leap, final speed climbing tournament, parent observation flights, and Summit medals.", bullets: ["30ft High-Pole Trapeze Leap challenge", "Climbing tournament finals with parent cheer squad", "Eagle Peak Summit Master ribbons and awards"] }
+      { day: "Friday • Day 5", title: "The Big Leap & Summit Celebration", badge: "Peak Summit", summary: "The famous 'Pamper Pole' trapeze leap, final speed climbing tournament, user observation flights, and Summit medals.", bullets: ["30ft High-Pole Trapeze Leap challenge", "Climbing tournament finals with user cheer squad", "Eagle Peak Summit Master ribbons and awards"] }
     ],
     instructor: {
       name: "Austin Briggs",
@@ -346,8 +346,8 @@ const CAMPSPHERE_PROGRAMS = {
       certifications: ["ACCT Level 2 Challenge Course Manager", "AMGA Certified Single Pitch Instructor"]
     },
     reviews: [
-      { name: "Danielle Cooper", meta: "Parent of 14-year-old camper • Attended Summer 2025", stars: 5, quote: "My teen was afraid of heights and hesitated on Day 1. By Thursday he was doing the 500ft zipline with arms wide open! The safety standards here are unbeatable." },
-      { name: "Jason Brooks", meta: "Parent of 12-year-old camper • Attended Summer 2025", stars: 5, quote: "Fantastic instructors who know how to motivate teenagers. He came home every day full of adrenaline, stories, and pride." }
+      { name: "Danielle Cooper", meta: "User of 14-year-old camper • Attended Summer 2025", stars: 5, quote: "My teen was afraid of heights and hesitated on Day 1. By Thursday he was doing the 500ft zipline with arms wide open! The safety standards here are unbeatable." },
+      { name: "Jason Brooks", meta: "User of 12-year-old camper • Attended Summer 2025", stars: 5, quote: "Fantastic instructors who know how to motivate teenagers. He came home every day full of adrenaline, stories, and pride." }
     ],
     faqs: [
       { q: "What safety equipment is used?", a: "All campers wear Petzl climbing helmets and CE/UIAA certified full-body climbing harnesses. Our courses use continuous belay systems where campers cannot accidentally unclip." },
@@ -397,7 +397,7 @@ const PROGRAM_META_CATALOG = [
     "rating": 4.9,
     "reviewsCount": 62,
     "spotsLeft": "Available",
-    "desc": "Canvas acrylic painting, ceramic pottery wheel spinning, tie-dye textiles, and Friday parent art gala.",
+    "desc": "Canvas acrylic painting, ceramic pottery wheel spinning, tie-dye textiles, and Friday user art gala.",
     "image": "assets/images/Art_and_pottery_studio_202608241021.jpeg"
   },
   {
@@ -721,14 +721,14 @@ PROGRAM_META_CATALOG.forEach(meta => {
         { icon: "bi-stars", color: "primary", title: "Hands-on Mastery", desc: `Comprehensive daily workshops exploring ${meta.track} coached by certified specialist instructors.` },
         { icon: "bi-people-fill", color: "accent", title: "Teamwork & Collaboration", desc: "Collaborative project challenges, peer communication routines, and daily encouragement circles." },
         { icon: "bi-water", color: "secondary", title: "Daily Recreation & Swimming", desc: "Supervised outdoor sports, team lawn games, and afternoon heated pool swim breaks." },
-        { icon: "bi-award-fill", color: "warning", title: "Friday Showcase Gala", desc: "Culminating parent open house, live demonstrations, and official camper diploma awards." }
+        { icon: "bi-award-fill", color: "warning", title: "Friday Showcase Gala", desc: "Culminating user open house, live demonstrations, and official camper diploma awards." }
       ],
       curriculum: [
         { day: "Monday • Day 1", title: "Foundations & Safety Orientation", badge: "Kickoff", summary: `Introduction to safety rules, tool handling, team group sorting, and initial ${meta.track} practice.`, bullets: ["Team icebreakers and safety pledge", "Tool certification and gear fitting", "First hands-on foundation project"] },
         { day: "Tuesday • Day 2", title: "Core Skills & Progressive Drills", badge: "Skill Building", summary: "Deepening practical knowledge, instructor-guided skill drills, and collaborative team tasks.", bullets: ["Specialist skill progression", "1-on-1 counselor guidance", "Mid-day recreation & lawn games"] },
         { day: "Wednesday • Day 3", title: "Project Design & Creation", badge: "Creation", summary: "Campers begin designing, building, and testing their main week-long centerpiece project.", bullets: ["Project drafting & materials planning", "Hands-on creative construction", "Pool games & afternoon snack break"] },
         { day: "Thursday • Day 4", title: "Refinement & Practice Run", badge: "Testing", summary: "Polishing project details, trial demonstrations, peer feedback, and exhibition preparation.", bullets: ["Quality checks and performance tuning", "Dry-run presentation rehearsal", "Team building activities"] },
-        { day: "Friday • Day 5", title: "Grand Finale & Parent Gala", badge: "Grand Finale", summary: "The culminating showcase! Live parent demonstrations, award ceremonies, and camper diplomas.", bullets: ["Live showcase and tournament finals", "Parent Open House & camper presentations", "Official CampSphere medals and certificates"] }
+        { day: "Friday • Day 5", title: "Grand Finale & User Gala", badge: "Grand Finale", summary: "The culminating showcase! Live user demonstrations, award ceremonies, and camper diplomas.", bullets: ["Live showcase and tournament finals", "User Open House & camper presentations", "Official CampSphere medals and certificates"] }
       ],
       instructor: {
         name: "Director & Specialist Team",
@@ -738,8 +738,8 @@ PROGRAM_META_CATALOG.forEach(meta => {
         certifications: ["Pediatric CPR & First Aid Certified", "ACA Accredited Lead"]
       },
       reviews: [
-        { name: "Verified Camp Parent", meta: "Parent of enrolled camper • Summer 2025", stars: 5, quote: `Our child had a wonderful week at ${meta.title}! The staff was attentive and communicative every day.` },
-        { name: "Summer Family", meta: "Parent of enrolled camper • Summer 2025", stars: 5, quote: "Wonderful balance of learning, creative freedom, and outdoor fun. We are already booking our next session!" }
+        { name: "Verified Camp User", meta: "User of enrolled camper • Summer 2025", stars: 5, quote: `Our child had a wonderful week at ${meta.title}! The staff was attentive and communicative every day.` },
+        { name: "Summer Family", meta: "User of enrolled camper • Summer 2025", stars: 5, quote: "Wonderful balance of learning, creative freedom, and outdoor fun. We are already booking our next session!" }
       ],
       faqs: [
         { q: "Who can enroll in this program?", a: `This program is tailored for campers ${meta.age}. No prior experience required; beginners and experienced campers are grouped appropriately.` },
@@ -779,7 +779,7 @@ function renderProgramDetailsPage() {
   if (spotsBadge) spotsBadge.innerHTML = `<i class="bi bi-check-circle-fill me-1"></i> ${prog.spotsLeft}`;
 
   const ratingEl = document.getElementById('detailRatingScore');
-  if (ratingEl) ratingEl.innerHTML = `<i class="bi bi-star-fill text-warning"></i> <strong class="text-dark ms-1">${prog.rating}</strong> (${prog.reviewsCount} parent reviews)`;
+  if (ratingEl) ratingEl.innerHTML = `<i class="bi bi-star-fill text-warning"></i> <strong class="text-dark ms-1">${prog.rating}</strong> (${prog.reviewsCount} user reviews)`;
 
   const mainTitle = document.getElementById('mainCampTitle');
   if (mainTitle) mainTitle.textContent = prog.title;

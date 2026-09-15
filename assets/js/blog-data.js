@@ -6,7 +6,7 @@
 const CAMPSPHERE_BLOG_ARTICLES = {
   "article-1": {
     id: "article-1",
-    title: "The Ultimate Summer Camp Packing Checklist for Parents (2026 Edition)",
+    title: "The Ultimate Summer Camp Packing Checklist for Users (2026 Edition)",
     category: "Packing & Prep",
     categorySlug: "prep",
     date: "May 24, 2026",
@@ -117,8 +117,8 @@ const CAMPSPHERE_BLOG_ARTICLES = {
   "article-3": {
     id: "article-3",
     title: "Helping Shy Children Make Friends at Summer Camp",
-    category: "Parenting & Growth",
-    categorySlug: "parenting",
+    category: "Youth Growth & Development",
+    categorySlug: "youth-growth",
     date: "May 12, 2026",
     readTime: "5 Min Read",
     author: {
@@ -141,7 +141,7 @@ const CAMPSPHERE_BLOG_ARTICLES = {
         </p>
       </div>
 
-      <h3>2. Practical Strategies Parents Can Practice at Home</h3>
+      <h3>2. Practical Strategies Users Can Practice at Home</h3>
       <ul class="article-checklist">
         <li><i class="bi bi-check-circle-fill text-success"></i> <div><strong>Rehearse the Simple Opening:</strong> Role-play asking: <em>"Can I join your team?"</em> or <em>"What track are you doing this afternoon?"</em></div></li>
         <li><i class="bi bi-check-circle-fill text-success"></i> <div><strong>Focus on Shared Interests:</strong> Encourage your child to share their excitement about Minecraft, LEGO, swimming, or comic drawing.</div></li>
@@ -278,7 +278,7 @@ const CAMPSPHERE_BLOG_ARTICLES = {
       </ul>
     `,
     comments: [
-      { name: "Emily Watson", date: "April 22, 2026", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80", text: "As a parent of a son with severe peanut allergies, CampSphere is one of the only places where I sleep peacefully while he's at camp." }
+      { name: "Emily Watson", date: "April 22, 2026", avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80", text: "As a user of a son with severe peanut allergies, CampSphere is one of the only places where I sleep peacefully while he's at camp." }
     ],
     relatedIds: ["article-4", "article-1"]
   },
@@ -326,8 +326,8 @@ const CAMPSPHERE_BLOG_ARTICLES = {
   "article-8": {
     id: "article-8",
     title: "The Neurological Power of Screen-Free Summers for Teens",
-    category: "Parenting & Growth",
-    categorySlug: "parenting",
+    category: "Youth Growth & Development",
+    categorySlug: "youth-growth",
     date: "April 08, 2026",
     readTime: "6 Min Read",
     author: {

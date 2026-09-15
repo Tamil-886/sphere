@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const programSelect = document.getElementById('wizardProgramSelect');
     const sessionSelect = document.getElementById('wizardSessionSelect');
     const addOnCheckboxes = document.querySelectorAll('.wizard-addon-check');
-    const summaryParent = document.getElementById('summaryParentName');
+    const summaryUser = document.getElementById('summaryUserName');
     const summaryCamper = document.getElementById('summaryCamperName');
     const summaryProgram = document.getElementById('summaryProgramName');
     const summarySession = document.getElementById('summarySessionDates');
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const firstName = session.firstName || (session.name ? session.name.split(' ')[0] : 'Sarah');
         const lastName = session.lastName || (session.name && session.name.split(' ').length > 1 ? session.name.split(' ').slice(1).join(' ') : 'Watson');
         const fullName = session.name || `${firstName} ${lastName}`.trim();
-        const email = session.email || 'parent@campsphere.com';
+        const email = session.email || 'user@campsphere.com';
         const phone = session.phone || '(555) 019-2834';
         const address = session.address || '4288 Meadow Pine Way, South Lake Tahoe, CA 96150';
 
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cardholderInput) cardholderInput.value = fullName;
         if (emergNameInput) emergNameInput.value = fullName;
         if (emergPhoneInput) emergPhoneInput.value = phone;
-        if (summaryParent) summaryParent.textContent = fullName;
+        if (summaryUser) summaryUser.textContent = fullName;
       }
     }
 
@@ -148,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Guardian & Camper Names
       const gFn = document.getElementById('guardianFirstName')?.value.trim() || 'Sarah';
       const gLn = document.getElementById('guardianLastName')?.value.trim() || 'Watson';
-      if (summaryParent) summaryParent.textContent = `${gFn} ${gLn}`.trim();
+      if (summaryUser) summaryUser.textContent = `${gFn} ${gLn}`.trim();
 
       const cFn = document.getElementById('camperFirstName')?.value.trim() || 'Emma';
       const cLn = document.getElementById('camperLastName')?.value.trim() || 'Watson';
@@ -365,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const gFirstName = document.getElementById('guardianFirstName')?.value.trim() || 'Sarah';
       const gLastName = document.getElementById('guardianLastName')?.value.trim() || 'Watson';
       const gFullName = `${gFirstName} ${gLastName}`.trim();
-      const gEmail = document.getElementById('guardianEmail')?.value.trim().toLowerCase() || 'parent@campsphere.com';
+      const gEmail = document.getElementById('guardianEmail')?.value.trim().toLowerCase() || 'user@campsphere.com';
       const gPhone = document.getElementById('guardianPhone')?.value.trim() || '(555) 019-2834';
       const gAddress = document.getElementById('guardianAddress')?.value.trim() || '4288 Meadow Pine Way, South Lake Tahoe, CA 96150';
       const gRelationship = document.getElementById('guardianRelationship')?.value || 'Mother';
@@ -536,7 +536,7 @@ document.addEventListener('DOMContentLoaded', () => {
           lastName: gLastName,
           email: gEmail,
           phone: gPhone,
-          role: 'parent',
+          role: 'user',
           avatar: newUser.avatar,
           loginTime: new Date().toISOString()
         };
@@ -654,7 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (contactForm) {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('contactName')?.value || 'Parent';
+      const name = document.getElementById('contactName')?.value || 'User';
       if (window.showCampToast) {
         window.showCampToast(`Thank you, ${name}! Your inquiry has been sent to our Camp Director. We'll reply within 24 hours.`, 'success', 'Message Sent');
       }
@@ -675,13 +675,13 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!users || users.length === 0) {
       users = [
         {
-          id: 'usr_demo_parent',
+          id: 'usr_demo_user',
           firstName: 'Sarah',
           lastName: 'Watson',
           name: 'Sarah Watson',
-          email: 'parent@campsphere.com',
+          email: 'user@campsphere.com',
           phone: '(555) 019-2834',
-          password: 'parent12345',
+          password: 'user12345',
           address: '4288 Meadow Pine Way, South Lake Tahoe, CA 96150',
           pickupPin: '8492',
           registeredAt: '2026-05-01T08:00:00.000Z',
@@ -697,7 +697,7 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('campsphere_registered_users', JSON.stringify(users));
   }
 
-  // 4.1 Parent Registration Form Handler
+  // 4.1 User Registration Form Handler
   const registerForm = document.getElementById('campRegisterForm');
   if (registerForm) {
     registerForm.addEventListener('submit', (e) => {
@@ -798,7 +798,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // 4.2 Login Form Handler & 1-Click Demo Fill
-  const demoParentBtn = document.getElementById('demoParentLoginBtn');
+  const demoUserBtn = document.getElementById('demoUserLoginBtn');
   const googleLoginBtn = document.getElementById('googleLoginBtn');
   const appleLoginBtn = document.getElementById('appleLoginBtn');
   const loginEmailInput = document.getElementById('loginEmail');
@@ -817,14 +817,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  if (demoParentBtn && loginEmailInput && loginPasswordInput) {
-    demoParentBtn.addEventListener('click', () => {
-      loginEmailInput.value = 'parent@campsphere.com';
-      loginPasswordInput.value = 'parent12345';
+  if (demoUserBtn && loginEmailInput && loginPasswordInput) {
+    demoUserBtn.addEventListener('click', () => {
+      loginEmailInput.value = 'user@campsphere.com';
+      loginPasswordInput.value = 'user12345';
       loginEmailInput.classList.remove('is-invalid');
       loginPasswordInput.classList.remove('is-invalid');
       if (window.showCampToast) {
-        window.showCampToast('Parent credentials populated. Click "Sign In" to continue.', 'info', 'Demo Autofill');
+        window.showCampToast('User credentials populated. Click "Sign In" to continue.', 'info', 'Demo Autofill');
       }
     });
   }
@@ -875,7 +875,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lastName: matchedUser.lastName,
         email: matchedUser.email,
         phone: matchedUser.phone,
-        role: 'parent',
+        role: 'user',
         avatar: matchedUser.avatar || 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=80&auto=format&fit=crop&q=80',
         loginTime: new Date().toISOString()
       };
@@ -955,7 +955,7 @@ document.addEventListener('DOMContentLoaded', () => {
           lastName: user.lastName,
           email: email,
           phone: user.phone,
-          role: 'parent',
+          role: 'user',
           authProvider: 'Google',
           avatar: user.avatar,
           loginTime: new Date().toISOString()
@@ -1020,7 +1020,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (hideEmailRadio && hideEmailRadio.checked) {
         const cleanName = name.toLowerCase().replace(/[^a-z0-9]/g, '');
-        email = `${cleanName || 'camper'}.parent@privaterelay.appleid.com`;
+        email = `${cleanName || 'camper'}.user@privaterelay.appleid.com`;
       }
 
       if (confirmBtn) {
@@ -1059,7 +1059,7 @@ document.addEventListener('DOMContentLoaded', () => {
           lastName: user.lastName,
           email: email,
           phone: user.phone,
-          role: 'parent',
+          role: 'user',
           authProvider: 'Apple',
           avatar: user.avatar,
           loginTime: new Date().toISOString()
@@ -1333,7 +1333,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   </div>
                 </div>
                 <div class="d-flex flex-wrap align-items-center gap-2">
-                  <a href="parent/dashboard.html#dailyScheduleSection" class="btn btn-sm btn-success fw-bold">
+                  <a href="user/dashboard.html#dailyScheduleSection" class="btn btn-sm btn-success fw-bold">
                     <i class="bi bi-speedometer2 me-1"></i> View in User Dashboard
                   </a>
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="document.getElementById('bookingSuccessAlertContainer').style.display='none';">
@@ -1567,7 +1567,7 @@ document.addEventListener('DOMContentLoaded', () => {
                   </div>
                 </div>
                 <div class="d-flex flex-wrap align-items-center gap-2">
-                  <a href="parent/dashboard.html#weeklyScheduleSection" class="btn btn-sm btn-success fw-bold">
+                  <a href="user/dashboard.html#weeklyScheduleSection" class="btn btn-sm btn-success fw-bold">
                     <i class="bi bi-speedometer2 me-1"></i> View in User Dashboard
                   </a>
                   <button type="button" class="btn btn-sm btn-outline-secondary" onclick="document.getElementById('bookingSuccessAlertContainer').style.display='none';">

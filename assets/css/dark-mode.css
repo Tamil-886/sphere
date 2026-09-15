@@ -453,7 +453,7 @@ body.dark-mode .nav-wishlist-btn.has-items {
   color: #FCA5A5 !important;
 }
 
-/* Navbar Parent Login Button in Dark Mode */
+/* Navbar User Login Button in Dark Mode */
 [data-theme="dark"] .navbar-camp .btn-primary,
 [data-theme="dark"] .navbar-camp .btn-primary *,
 [data-theme="dark"] .navbar-camp a.btn-primary,
@@ -2059,7 +2059,7 @@ body.dark-mode .stepper-wrap::before {
 }
 
 /* --------------------------------------------------------------------------
-   15. Parent & Admin Dashboard Layout
+   15. User & Admin Dashboard Layout
    -------------------------------------------------------------------------- */
 [data-theme="dark"] .dashboard-wrapper,
 body.dark-mode .dashboard-wrapper {

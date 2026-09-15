@@ -600,7 +600,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ========================================================================
-  // 4. Table Live Search (Parent & Admin Dashboards)
+  // 4. Table Live Search (User & Admin Dashboards)
   // ========================================================================
   const tableSearchInputs = document.querySelectorAll('.table-search-input');
   tableSearchInputs.forEach(input => {
