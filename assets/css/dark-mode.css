@@ -346,12 +346,16 @@ body.dark-mode .dropdown-divider {
 body.dark-mode .navbar-camp {
   background-color: #0F172A !important;
   border-bottom: 1px solid #1E293B !important;
+  min-height: 52px;
+  padding: 0.35rem 0 !important;
 }
 
 [data-theme="dark"] .navbar-camp.is-sticky,
 body.dark-mode .navbar-camp.is-sticky {
   background-color: rgba(15, 23, 42, 0.97) !important;
   backdrop-filter: blur(12px) !important;
+  min-height: 52px;
+  padding: 0.35rem 0 !important;
 }
 
 [data-theme="dark"] .brand-logo,

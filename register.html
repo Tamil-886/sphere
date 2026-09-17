@@ -38,16 +38,13 @@
     <div class="row justify-content-center">
       <div class="col-lg-6 col-md-8">
         
-        <!-- Brand Logo Centered Above Card -->
-        <div class="text-center mb-4">
-          <a class="brand-logo d-inline-flex align-items-center justify-content-center text-decoration-none" href="index.html">
-            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
-            Camp<span class="highlight-text">Sphere</span>
-          </a>
-        </div>
-
         <div class="card-camp p-4 p-md-5 shadow-lg border-0">
+          <!-- Brand Logo Centered Inside Card Header -->
           <div class="text-center mb-4">
+            <a class="brand-logo d-inline-flex align-items-center justify-content-center text-decoration-none mb-3" href="index.html">
+              <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+              Camp<span class="highlight-text">Sphere</span>
+            </a>
             <h3 class="fw-bold text-navy mb-1">Create User Account</h3>
             <p class="text-muted small">Manage camper enrollments, medical forms, and live camp photos in one place.</p>
           </div>
@@ -56,32 +53,32 @@
             <div class="row g-3 mb-3">
               <div class="col-md-6">
                 <label class="form-label small fw-bold text-navy" for="registerFirstName">User First Name *</label>
-                <input type="text" class="form-control" id="registerFirstName" placeholder="First Name" required value="Sarah">
+                <input type="text" class="form-control" id="registerFirstName" placeholder="First Name" required autocomplete="given-name">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold text-navy" for="registerLastName">User Last Name *</label>
-                <input type="text" class="form-control" id="registerLastName" placeholder="Last Name" required value="Watson">
+                <input type="text" class="form-control" id="registerLastName" placeholder="Last Name" required autocomplete="family-name">
               </div>
               <div class="col-12">
                 <label class="form-label small fw-bold text-navy" for="registerEmail">Email Address *</label>
-                <input type="email" class="form-control" id="registerEmail" placeholder="sarah.watson@example.com" required value="sarah.watson@example.com">
+                <input type="email" class="form-control" id="registerEmail" placeholder="name@example.com" required autocomplete="email">
               </div>
               <div class="col-12">
                 <label class="form-label small fw-bold text-navy" for="registerPhone">Cell Phone Number *</label>
-                <input type="tel" class="form-control" id="registerPhone" placeholder="(555) 000-0000" required value="(555) 019-2834">
+                <input type="tel" class="form-control" id="registerPhone" placeholder="(555) 000-0000" required autocomplete="tel">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold text-navy" for="registerPassword">Create Password *</label>
-                <input type="password" class="form-control" id="registerPassword" placeholder="Minimum 6 characters" required value="password123">
+                <input type="password" class="form-control" id="registerPassword" placeholder="Minimum 6 characters" required autocomplete="new-password">
               </div>
               <div class="col-md-6">
                 <label class="form-label small fw-bold text-navy" for="registerConfirmPassword">Confirm Password *</label>
-                <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Repeat password" required value="password123">
+                <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Repeat password" required autocomplete="new-password">
               </div>
             </div>
 
             <div class="form-check mb-4">
-              <input class="form-check-input" type="checkbox" id="termsAgree" required checked>
+              <input class="form-check-input" type="checkbox" id="termsAgree" required>
               <label class="form-check-label small text-muted" for="termsAgree">
                 I agree to the <a href="safety.html" class="text-primary">CampSphere Terms of Service</a> and Privacy Policy.
               </label>

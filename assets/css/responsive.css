@@ -12,6 +12,12 @@
 
 /* 1024px Screen & Medium Laptops (992px - 1199.98px) - Clean 1-Row Alignment */
 @media (min-width: 992px) and (max-width: 1199.98px) {
+  .navbar-camp,
+  .navbar-camp.is-sticky {
+    min-height: 52px !important;
+    padding: 0.35rem 0 !important;
+  }
+
   .navbar-camp .container {
     max-width: 100% !important;
     padding-left: 1.25rem !important;
@@ -107,10 +113,17 @@
   }
   .camp-search-bar {
     margin-top: 2rem;
+    margin-bottom: 3rem;
     padding: 1.25rem;
   }
   
   /* Floating Overlay Mobile Menu (Does NOT push page down) */
+  .navbar-camp,
+  .navbar-camp.is-sticky {
+    min-height: 52px !important;
+    padding: 0.35rem 0 !important;
+  }
+
   .navbar-camp .container {
     position: relative;
   }
@@ -282,6 +295,13 @@
   }
   .stat-number {
     font-size: 2.2rem;
+  }
+
+  .camp-search-bar {
+    margin-top: 1.5rem;
+    margin-bottom: 2.5rem;
+    padding: 1.1rem 1rem;
+    border-radius: 16px;
   }
 
   /* Hero Section Stickers for 360px & Small Mobile */

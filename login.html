@@ -38,47 +38,34 @@
     <div class="row justify-content-center">
       <div class="col-lg-5 col-md-8">
         
-        <!-- Brand Logo Centered Above Card -->
-        <div class="text-center mb-4">
-          <a class="brand-logo d-inline-flex align-items-center justify-content-center text-decoration-none" href="index.html">
-            <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
-            Camp<span class="highlight-text">Sphere</span>
-          </a>
-        </div>
-
         <div class="card-camp p-4 p-md-5 shadow-lg border-0">
+          <!-- Brand Logo Centered Inside Card Header -->
           <div class="text-center mb-4">
+            <a class="brand-logo d-inline-flex align-items-center justify-content-center text-decoration-none mb-3" href="index.html">
+              <div class="brand-icon"><i class="bi bi-tree-fill"></i></div>
+              Camp<span class="highlight-text">Sphere</span>
+            </a>
             <h3 class="fw-bold text-navy mb-1">Welcome Back!</h3>
             <p class="text-muted small">Sign in to your CampSphere user portal account.</p>
           </div>
 
-          <!-- 1-Click Demo Credentials Pill -->
-          <div class="p-3 bg-light-blue rounded-3 mb-4 border text-center">
-            <small class="fw-bold text-navy d-block mb-2"><i class="bi bi-lightning-charge-fill text-warning me-1"></i> Quick Demo 1-Click Login:</small>
-            <div class="d-flex justify-content-center">
-              <button type="button" class="btn btn-sm btn-primary px-4" id="demoUserLoginBtn">
-                <i class="bi bi-person-fill me-1"></i> Fill User Demo Login
-              </button>
-            </div>
-          </div>
-
           <form id="campLoginForm">
             <div class="mb-3">
-              <label class="form-label small fw-bold text-navy">Email Address *</label>
+              <label class="form-label small fw-bold text-navy" for="loginEmail">Email Address *</label>
               <div class="input-group">
                 <span class="input-group-text bg-light"><i class="bi bi-envelope text-muted"></i></span>
-                <input type="email" class="form-control" id="loginEmail" placeholder="user@campsphere.com" required value="user@campsphere.com">
+                <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" required autocomplete="email">
               </div>
             </div>
 
             <div class="mb-3">
               <div class="d-flex justify-content-between align-items-center mb-1">
-                <label class="form-label small fw-bold text-navy mb-0">Password *</label>
+                <label class="form-label small fw-bold text-navy mb-0" for="loginPassword">Password *</label>
                 <a href="forgot-password.html" class="small text-primary">Forgot Password?</a>
               </div>
               <div class="input-group">
                 <span class="input-group-text bg-light"><i class="bi bi-lock text-muted"></i></span>
-                <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required value="user12345">
+                <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required autocomplete="current-password">
               </div>
             </div>
 
