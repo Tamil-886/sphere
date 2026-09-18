@@ -112,8 +112,8 @@
     height: 360px;
   }
   .camp-search-bar {
-    margin-top: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
     padding: 1.25rem;
   }
   
@@ -298,8 +298,8 @@
   }
 
   .camp-search-bar {
-    margin-top: 1.5rem;
-    margin-bottom: 2.5rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
     padding: 1.1rem 1rem;
     border-radius: 16px;
   }
