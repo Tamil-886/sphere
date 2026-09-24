@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (linkFile === currentPath) {
         link.classList.add('active');
         const dropdownContainer = link.closest('.dropdown');
-        if (dropdownContainer) {
+        if (dropdownContainer && currentPath !== 'dashboard.html') {
           const toggle = dropdownContainer.querySelector('.dropdown-toggle');
           if (toggle) toggle.classList.add('active');
         }
