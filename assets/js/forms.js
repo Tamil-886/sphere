@@ -882,10 +882,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
       localStorage.setItem('campsphere_user_session', JSON.stringify(userSession));
       localStorage.setItem('campsphere_active_user_id', matchedUser.id);
-      sessionStorage.setItem('campsphere_welcome_toast', `Welcome back, ${userSession.name}! You are now signed in.`);
 
-      // Redirect to Home page
-      window.location.href = 'index.html';
+      // Display clear success alert and stay on current page
+      alert('Login successful!');
     });
   }
 
@@ -962,7 +961,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         localStorage.setItem('campsphere_user_session', JSON.stringify(googleSession));
         localStorage.setItem('campsphere_active_user_id', user.id);
-        sessionStorage.setItem('campsphere_welcome_toast', `Welcome, ${name}! Logged in with Google.`);
 
         // Close modal
         const modalEl = document.getElementById('googleAuthModal');
@@ -971,7 +969,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (modalInstance) modalInstance.hide();
         }
 
-        window.location.href = 'index.html';
+        alert('Login successful!');
       }, 700);
     });
 
@@ -1066,7 +1064,6 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         localStorage.setItem('campsphere_user_session', JSON.stringify(appleSession));
         localStorage.setItem('campsphere_active_user_id', user.id);
-        sessionStorage.setItem('campsphere_welcome_toast', `Welcome, ${name}! Logged in with Apple ID.`);
 
         // Close modal
         const modalEl = document.getElementById('appleAuthModal');
@@ -1075,7 +1072,7 @@ document.addEventListener('DOMContentLoaded', () => {
           if (modalInstance) modalInstance.hide();
         }
 
-        window.location.href = 'index.html';
+        alert('Login successful!');
       }, 700);
     });
 
